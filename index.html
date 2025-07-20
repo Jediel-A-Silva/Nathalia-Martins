@@ -6,15 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Enfermeira Obstetra</title>
 
-  <!-- Estilos e fontes -->
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <!-- Fontes Google corrigidas -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Arima:wght@100;700&family=Cantata+One&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet" />
 
   <!-- Bibliotecas externas -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+  <!-- Seu CSS -->
+  <link rel="stylesheet" href="style.css" />
 
   <style>
     html {
@@ -28,7 +31,7 @@
   <header class="navbar">
     <nav>
       <div class="menu-wrapper">
-        <button class="menu-btn">
+        <button class="menu-btn" aria-label="Abrir menu">
           <svg width="30" height="30" viewBox="0 0 100 80">
             <rect width="100" height="10"></rect>
             <rect y="30" width="100" height="10"></rect>
@@ -36,9 +39,8 @@
           </svg>
         </button>
 
-        <div class="menu" id="menu">
+        <div class="menu" id="menu" role="menu">
           <a href="index.html">🏠 Início</a>
-
           <div class="categoria">🤰 Pré-natal</div>
           <a href="consulta-enfermagem.html">🩺 Consulta de enfermagem</a>
           <a href="educacao-gestantes.html">📚 Educação para gestantes</a>
@@ -64,7 +66,7 @@
         </div>
       </div>
 
-      <input type="text" placeholder="Buscar..." class="search">
+      <input type="text" placeholder="Buscar..." class="search" aria-label="Buscar no site" />
     </nav>
   </header>
 
@@ -79,38 +81,46 @@
       </div>
     </div>
   </section>
-<div class="ia-container">
-  <div class="ia-avatar" onclick="toggleChat()">
-    <img src="img/img-IA.png" alt="Assistente Virtual">
+
+  <!-- Assistente Virtual -->
+  <div class="ia-container">
+  <div class="ia-avatar" onclick="toggleChat()" role="button" tabindex="0" aria-label="Abrir Assistente Virtual">
+    <img src="img/img-IA.png" alt="Assistente Virtual" />
   </div>
-  <div class="ia-chat" id="iaChat">
-    <div class="ia-header">Assistente Virtual</div>
-    <div class="ia-body">
-      <p>Olá! Em que posso ajudar?</p>
+  <div class="ia-chat" id="iaChat" aria-live="polite" aria-hidden="true">
+    <div class="ia-header">
+      <img src="img/img-IA.png" alt="Enfermeira Nathalia" />
+      <div class="ia-titulo">
+        <h2>Enfermeira Nathalia</h2>
+        <span>Sua assistente virtual</span>
+      </div>
     </div>
-    <input type="text" placeholder="Digite sua pergunta..." />
+    <div class="ia-body">
+      <p>👋 Oi, tudo bem?<br><strong>Sou a Nathalia, enfermeira obstetra.</strong><br>Em que posso te ajudar hoje?</p>
+    </div>
+    <input type="text" placeholder="Digite sua pergunta aqui..." aria-label="Digite sua pergunta para a enfermeira Nathalia" />
   </div>
 </div>
-  <!-- Carrossel -->
-  <section class="carrossel">
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="img/imagem1.jpg" alt="Imagem 1"></div>
-        <div class="swiper-slide"><img src="img/imagem2.jpg" alt="Imagem 2"></div>
-        <div class="swiper-slide"><img src="img/imagem3.jpg" alt="Imagem 3"></div>
-        <div class="swiper-slide"><img src="img/imagem4.jpg" alt="Imagem 4"></div>
-        <div class="swiper-slide"><img src="img/imagem5.jpg" alt="Imagem 5"></div>
-        <div class="swiper-slide"><img src="img/imagem6.jpg" alt="Imagem 6"></div>
-        <div class="swiper-slide"><img src="img/imagem7.jpg" alt="Imagem 7"></div>
-        <div class="swiper-slide"><img src="img/imagem8.jpg" alt="Imagem 8"></div>
-        <div class="swiper-slide"><img src="img/imagem9.jpg" alt="Imagem 9"></div>
-        <div class="swiper-slide"><img src="img/imagem10.jpg" alt="Imagem 10"></div>
-        <div class="swiper-slide"><img src="img/imagem11.jpg" alt="Imagem 11"></div>
-      </div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
+
+
+  <!-- Carrossel Swiper -->
+  <div class="swiper my-carousel">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="/img/imagem1.jpg" alt="Imagem 1" /></div>
+      <div class="swiper-slide"><img src="/img/imagem2.jpg" alt="Imagem 2" /></div>
+      <div class="swiper-slide"><img src="/img/imagem3.jpg" alt="Imagem 2" /></div>
+      <div class="swiper-slide"><img src="/img/imagem4.jpg" alt="Imagem 2" /></div>
+      <div class="swiper-slide"><img src="/img/imagem5.jpg" alt="Imagem 2" /></div>
+      <div class="swiper-slide"><img src="/img/imagem6.jpg" alt="Imagem 2" /></div>
+      <div class="swiper-slide"><img src="/img/imagem7.jpg" alt="Imagem 2" /></div>
+      <div class="swiper-slide"><img src="/img/imagem8.jpg" alt="Imagem 2" /></div>
+      <div class="swiper-slide"><img src="/img/imagem9.jpg" alt="Imagem 2" /></div>
+      <div class="swiper-slide"><img src="/img/imagem10.jpg" alt="Imagem 2" /></div>
+      <div class="swiper-slide"><img src="/img/imagem11.jpg" alt="Imagem 2" /></div>
     </div>
-  </section>
+    <div class="swiper-button-next" aria-label="Próximo slide"></div>
+    <div class="swiper-button-prev" aria-label="Slide anterior"></div>
+  </div>
 
   <!-- Seções -->
   <section id="sobre" class="personalizada" data-aos="fade-up">
@@ -125,7 +135,7 @@
       <li>Acompanhamento durante o parto</li>
       <li>Cuidados no pós-parto</li>
     </ul>
-    <a href="https://wa.me/seunumero" class="btn">Agendar Consulta via WhatsApp</a>
+    <a href="https://wa.me/seunumero" class="btn" target="_blank" rel="noopener noreferrer">Agendar Consulta via WhatsApp</a>
   </section>
 
   <section class="personalizada" data-aos="fade-up">
@@ -156,29 +166,20 @@
 
   <!-- Footer -->
   <footer class="footer">
-    <img src="img/logopg.jpeg" alt="Logo" class="logo-footer">
+    <img src="img/logopg.jpeg" alt="Logo" class="logo-footer" />
     <p>&copy; 2025 Dra. Nathália Martins - Todos os direitos reservados.</p>
   </footer>
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
   <script src="treino.js"></script>
 
   <script>
-    const swiper = new Swiper('.swiper', {
-      slidesPerView: 1,
-      spaceBetween: 20,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      loop: true,
-    });
+    AOS.init();
   </script>
+
+  <script src="treino.js"></script>
 </body>
 
 </html>
