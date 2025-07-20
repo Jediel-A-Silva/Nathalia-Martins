@@ -1,0 +1,302 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fonte base */
+body {
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  background-color: #fff;
+  color: #333;
+}
+
+/* NAVBAR */
+.navbar {
+  background-color: #f8f8f8;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.menu-wrapper {
+  position: relative;
+}
+
+.menu-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+/* Estilo do menu */
+.menu {
+  display: none;
+  position: absolute;
+  top: 45px;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 15px;
+  width: 260px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+.menu a {
+  display: block;
+  text-decoration: none;
+  color: #333;
+  padding: 8px 10px;
+  transition: background 0.2s;
+}
+
+.menu a:hover {
+  background-color: #f0f0f0;
+}
+
+.menu .categoria {
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  color: #555;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Mostrar o menu ao passar o mouse */
+.menu-wrapper:hover .menu {
+  display: block;
+}
+
+/* Campo de busca */
+.search {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Perfil */
+.perfil {
+  text-align: center;
+  padding: 40px 20px;
+  background: #ffe9f0;
+}
+
+.perfil h1 {
+  font-family: "Great Vibes", cursive;
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.perfil h3 {
+  font-size: 1.3rem;
+  color: #a87b8d;
+}
+
+.perfil img.logo {
+  max-width: 220px;
+  border-radius: 50%;
+  margin: 20px 0;
+}
+
+.perfil .info h2 {
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+/* Seções personalizadas */
+.personalizada {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.personalizada h2 {
+  margin-bottom: 15px;
+  color: #a85d7b;
+}
+
+.personalizada p,
+.personalizada ul {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+/* Botão */
+.btn {
+  display: inline-block;
+  background-color: #a85d7b;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: #8c4a64;
+}
+
+.ia-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.ia-avatar img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 10px #999;
+}
+
+.ia-chat {
+  display: none;
+  position: absolute;
+  bottom: 80px;
+  right: 0;
+  width: 250px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-family: sans-serif;
+}
+
+.ia-header {
+  background-color: #f6f6f6;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  font-weight: bold;
+}
+
+.ia-body {
+  padding: 10px;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.ia-chat input {
+  width: 100%;
+  border: none;
+  border-top: 1px solid #ddd;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+
+/* Carrossel */
+/* Carrossel corrigido */
+.carrossel {
+  width: 100%;
+  max-width: 900px;
+  margin: 40px auto 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.swiper {
+  width: 100%;
+  padding: 0 !important;
+  margin: 0 auto;
+}
+
+.swiper-wrapper {
+  display: flex;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  max-height: 450px; /* Limita a altura das imagens */
+}
+
+/* Botões do carrossel */
+.swiper-button-prev,
+.swiper-button-next {
+  top: 50%;
+  transform: translateY(-50%);
+  color: #a85d7b;
+}
+
+/* Formulário */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+form input,
+form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+form button {
+  background-color: #a85d7b;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #8c4a64;
+}
+
+/* Footer */
+.footer {
+  background-color: #fda0acff;
+  padding: 20px;
+  text-align: center;
+}
+
+.logo-footer {
+  max-width: 90px;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .menu {
+    width: 240px;
+    left: -20px;
+    margin-top: 1px;
+  }
+
+  svg {
+    position: absolute;
+    top: -5px;
+    left: 2%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+  }
+
+  .perfil h1 {
+    font-size: 2.5rem;
+  }
+}
