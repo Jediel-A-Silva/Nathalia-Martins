@@ -103,11 +103,22 @@ nav {
   border: 1px solid #ccc;
 }
 
+.container {
+  max-width: 1200px;
+  padding: 20px;
+  margin-top: -3%;
+  position: relative;
+}
+
 /* Perfil */
 .perfil {
   text-align: center;
   padding: 40px 20px;
-  background: #ffe9f0;
+  background-image: url('img/background-capa.png'); /* ou .jpg */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .perfil h1 {
@@ -127,8 +138,8 @@ nav {
 }
 
 .perfil img.logo {
-  max-width: 280px;
-  height: 280px;
+  max-width: 370px;
+  height: 345px;
   border-radius: 50%;
   margin: 20px 0;
   position: relative;
@@ -240,8 +251,9 @@ nav {
 }
 
 .swiper-slide img {
-  width: 450px;
-  height: 350px;
+  width: 950px;
+  height: 450px;
+  border: none;
   border-radius: 20px;
   object-fit: cover;
   box-shadow: 0 10px 20px rgba(0,0,0,0.25);
@@ -262,15 +274,17 @@ nav {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.8);
+  background: transparent;
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-  cursor: poir;
+  cursor: poiter;
 }
 
 .swiper-button-prev:hover,
 .swiper-button-next:hover {
   background: #a85d7b;
-  color: #fff;
+  color: transparent;
+  hover: opacity: 0.8;
+  transition: background 0.3s ease;
 }
 
 /* Seções personalizadas */
@@ -347,10 +361,14 @@ form button:hover {
 
 /* Responsivo */
 @media (max-width: 768px) {
-
+.perfil {
+  width
+    background-size: contain;
+    background-attachment: scroll; /* Evita bugs no mobile */
+  }
   .swiper-slide img {
-    width: 220px;
-    height: 160px;
+    width: 400px;
+    height: 300px;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
