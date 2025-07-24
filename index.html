@@ -185,36 +185,4 @@
     AOS.init();
   </script>
 </body>
-<script src="https://cdn.botpress.cloud/webchat/v3.2/inject.js" defer></script>
-<script>
-  window.botpressWebChat.init({
-    botId: "seu-bot-id-aqui",
-    hostUrl: "https://cdn.botpress.cloud/webchat/v3",
-    messagingUrl: "https://messaging.botpress.cloud",
-    clientId: "seu-bot-id-aqui",
-    lazyLoad: true,
-    hideWidget: true, // <- Oculta o botão original
-    disableAnimations: true
-  });
-
-  function toggleChat() {
-    const iaChat = document.getElementById('iaChat');
-    const isHidden = iaChat.getAttribute('aria-hidden') === 'true';
-
-    iaChat.setAttribute('aria-hidden', !isHidden);
-    if (!window.botpressWebChat.isOpen()) {
-      window.botpressWebChat.sendEvent({ type: 'show' });
-    }
-  }
-
-  function responderIA(texto) {
-    window.botpressWebChat.sendPayload({ type: 'text', text: texto });
-    toggleChat();
-  }
-
-  function enviarSugestao(mensagem) {
-    window.botpressWebChat.sendPayload({ type: 'text', text: mensagem });
-  }
-</script>
-
 </html>
