@@ -9,7 +9,8 @@
   <!-- Fontes Google corrigidas -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Arima:wght@100;700&family=Cantata+One&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Arima:wght@100;700&family=Cantata+One&display=swap"
+    rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet" />
 
   <!-- Bibliotecas externas -->
@@ -42,27 +43,21 @@
         <div class="menu" id="menu" role="menu">
           <a href="index.html">🏠 Início</a>
           <div class="categoria">🤰 Pré-natal</div>
-          <a href="consulta-enfermagem.html">🩺 Consulta de enfermagem</a>
+          <a href="consulta-enfermagem.html">🩺 Consulta de Pré-natal com Enfermeira</a>
           <a href="educacao-gestantes.html">📚 Educação para gestantes</a>
-          <a href="planejamento-familiar.html">📝 Planejamento familiar</a>
-          <a href="prenatal-humanizado.html">🤱 Assistência ao parto humanizado</a>
-
+          <a href="prenatal-humanizado.html">🤱 Assistência de trabalho de parto com embasamento ciêntifico</a>
           <div class="categoria">👶 Parto</div>
           <a href="parto-domiciliar.html">🏠 Parto domiciliar</a>
-          <a href="parto-hospitalar.html">🏥 Parto hospitalar com doula</a>
-
+          <a href="parto-hospitalar.html">🏥 Parto hospitalar com </a>
           <div class="categoria">🍼 Pós-parto</div>
           <a href="puerperio-amamentacao.html">👩‍👧 Acompanhamento do puerpério</a>
-          <a href="consultoria-aleitamento.html">🍼 Consultoria em amamentação</a>
-          <a href="cuidados-bebe.html">👶 Cuidados com o recém-nascido</a>
+          <a href="consultoria-aleitamento.html">🍼 Amamentação</a>
           <a href="acompanhamento-posparto.html">📆 Acompanhamento pós-parto</a>
-
           <div class="categoria">💼 Outros cuidados</div>
-          <a href="aconselhamento-emocional.html">❤️ Aconselhamento emocional</a>
           <a href="atendimento-domiciliar.html">🏠 Atendimento domiciliar</a>
           <a href="tratamento-feridas.html">💉 Tratamento de feridas</a>
           <a href="assistencia-ginecologia.html">👩‍⚕️ Assistência em ginecologia</a>
-          <a href="educacao-saude.html">📖 Educação em saúde</a>
+
         </div>
       </div>
 
@@ -84,23 +79,33 @@
 
   <!-- Assistente Virtual -->
   <div class="ia-container">
-  <div class="ia-avatar" onclick="toggleChat()" role="button" tabindex="0" aria-label="Abrir Assistente Virtual">
-    <img src="img/img-IA.png" alt="Assistente Virtual" />
-  </div>
-  <div class="ia-chat" id="iaChat" aria-live="polite" aria-hidden="true">
-    <div class="ia-header">
-      <img src="img/img-IA.png" alt="Enfermeira Nathalia" />
-      <div class="ia-titulo">
-        <h2>Enfermeira Nathalia</h2>
-        <span>Sua assistente virtual</span>
+    <div class="ia-avatar" onclick="toggleChat()" role="button" tabindex="0" aria-label="Abrir Assistente Virtual">
+      <img src="img/img-IA.png" alt="Assistente Virtual" />
+    </div>
+    <div class="ia-chat" id="iaChat" aria-live="polite" aria-hidden="true">
+      <div class="ia-header">
+        <img src="img/img-IA.png" alt="Enfermeira Nathalia" />
+        <div class="ia-titulo">
+          <h2>Enfermeira Nathalia</h2>
+          <span>Sua assistente virtual</span>
+          
+        </div>
       </div>
-    </div>
-    <div class="ia-body">
-      <p>👋 Oi, tudo bem?<br><strong>Sou a Nathalia, enfermeira obstetra.</strong><br>Em que posso te ajudar hoje?</p>
-    </div>
-    <input type="text" placeholder="Digite sua pergunta aqui..." aria-label="Digite sua pergunta para a enfermeira Nathalia" />
+      <div class="ia-body" id="iaBody">
+  <p>👋 Oi, tudo bem?<br><strong>Sou a Nathalia, enfermeira obstetra.</strong><br>Em que posso te ajudar hoje?</p>
+  <div class="ia-sugestoes">
+    <button onclick="responderIA('parto domiciliar')">Parto domiciliar</button>
+    <button onclick="responderIA('parto hospitalar')">Parto hospitalar</button>
+    <button onclick="responderIA('consulta de pré-natal')">Pré-natal</button>
+    <button onclick="responderIA('amamentação')">Amamentação</button>
+    <button onclick="responderIA('educação para gestantes')">Educação</button>
+    <button onclick="enviarSugestao('parto domiciliar')">Parto domiciliar</button>
   </div>
 </div>
+
+      <input id="iaInput" type="text" placeholder="Digite sua pergunta aqui..." aria-label="Digite sua pergunta para a enfermeira Nathalia" />
+    </div>
+  </div>
 
 
   <!-- Carrossel Swiper -->
@@ -135,7 +140,8 @@
       <li>Acompanhamento durante o parto</li>
       <li>Cuidados no pós-parto</li>
     </ul>
-    <a href="https://wa.me/seunumero" class="btn" target="_blank" rel="noopener noreferrer">Agendar Consulta via WhatsApp</a>
+    <a href="https://wa.me/+5511954519637" class="btn" target="_blank" rel="noopener noreferrer">Agendar Consulta via
+      WhatsApp</a>
   </section>
 
   <section class="personalizada" data-aos="fade-up">
@@ -178,8 +184,37 @@
   <script>
     AOS.init();
   </script>
-
-  <script src="treino.js"></script>
 </body>
+<script src="https://cdn.botpress.cloud/webchat/v3.2/inject.js" defer></script>
+<script>
+  window.botpressWebChat.init({
+    botId: "seu-bot-id-aqui",
+    hostUrl: "https://cdn.botpress.cloud/webchat/v3",
+    messagingUrl: "https://messaging.botpress.cloud",
+    clientId: "seu-bot-id-aqui",
+    lazyLoad: true,
+    hideWidget: true, // <- Oculta o botão original
+    disableAnimations: true
+  });
+
+  function toggleChat() {
+    const iaChat = document.getElementById('iaChat');
+    const isHidden = iaChat.getAttribute('aria-hidden') === 'true';
+
+    iaChat.setAttribute('aria-hidden', !isHidden);
+    if (!window.botpressWebChat.isOpen()) {
+      window.botpressWebChat.sendEvent({ type: 'show' });
+    }
+  }
+
+  function responderIA(texto) {
+    window.botpressWebChat.sendPayload({ type: 'text', text: texto });
+    toggleChat();
+  }
+
+  function enviarSugestao(mensagem) {
+    window.botpressWebChat.sendPayload({ type: 'text', text: mensagem });
+  }
+</script>
 
 </html>
