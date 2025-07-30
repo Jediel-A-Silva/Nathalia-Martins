@@ -104,6 +104,14 @@ nav {
   border: 1px solid #ccc;
 }
 
+/* Keyframes */
+@keyframes aparecer {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .keyframes {
   position: relative;
   min-height: 100vh; /* ou a altura que quiser */
@@ -446,13 +454,6 @@ nav {
   transform: scale(1.05);
 }
 
-/* Keyframes */
-@keyframes aparecer {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
 
 .contact{
@@ -549,48 +550,126 @@ footer::before {
 
 /* Responsivo */
 @media (max-width: 768px) {
-.perfil {
-  width
-    background-size: contain;
+
+  .perfil {
+    background-size: cover;
     background-attachment: scroll; /* Evita bugs no mobile */
-  }
-  .swiper-slide img {
-    width: 400px;
-    height: 300px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
+    padding: 20px 10px;
   }
 
-  .swiper-slide-active img {
-    transform: scale(1.05);
-  }
-
-  .menu {
-    width: 240px;
-    left: -20px;
-    margin-top: -24px;
-    background: #ffe9f0;
-    padding: 10px;
-    border-radius: 8px;
-  }
-
-  .navbar {
-    height: 55px;
-    padding: 10px 20px;
-  }
-
-  svg {
-    position: absolute;
-    top: -5px;
-    left: 2%;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
+  .perfil img.logo {
+    width: 200px;
+    height: auto;
   }
 
   .perfil h1 {
-    font-size: 2.2rem;
-    text-align: center;
+    font-size: 2rem;
+  }
+
+  .perfil h3 {
+    font-size: 1rem;
+  }
+
+  .navbar {
+    height: auto;
+    padding: 8px 16px;
+    flex-direction: column;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu {
+    width: 100%;
+    left: 0;
+    padding: 12px;
+    margin-top: 10px;
+  }
+
+ .search {
+  position: static;
+  width: 30%;
+  margin-top: -49px;
+  margin-left: auto; /* empurra pro canto direito */
+  padding: 10px;
+  font-size: 1rem;
+  display: block;
+}
+
+
+
+
+.keyframes {
+  position: relative;
+  min-height: 300px; /* ou a altura que quiser */
+  background: linear-gradient(-45deg, #e3f2fd, #fce4ec, #fffde7, #e8f5e9);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  z-index: 0;
+}
+
+  .swiper-slide img {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  .ia-container {
+    bottom: 15px;
+    right: 15px;
+  }
+
+  .ia-chat {
+    width: 95%;
+    bottom: 85px;
+    right: 2.5%;
+  }
+
+  .ia-header img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .ia-body {
+    max-height: 180px;
+  }
+
+  .personalizada {
+    max-width: 100%;
+    flex: 1 1 100%;
+    padding: 20px;
+  }
+
+  .caixinha {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .contact {
+    padding: 15px;
+  }
+
+  form input,
+  form textarea {
+    font-size: 1rem;
+  }
+
+  .btn {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  footer {
+    padding: 20px;
+  }
+
+  .logo-footer {
+    max-width: 70px;
   }
 }
