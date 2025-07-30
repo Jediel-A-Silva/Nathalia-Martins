@@ -9,7 +9,7 @@
 body {
   font-family: "Arial", sans-serif;
   line-height: 1.6;
-  background-color: #fff;
+  background-color: #ffe9f0;
   color: #333;
 }
 
@@ -49,10 +49,11 @@ nav {
   position: absolute;
   top: 65px;
   left: -19px;
-  background-color: #ffdeebff;
+  background-color: #fff;
   border: 1px solid #ddd;
-  padding: 15px;
-  width: 260px;
+  padding: 19px;
+  width: 240px;
+  font-size: 12px;
   max-height: 100vh;
   overflow-y: auto;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -103,6 +104,22 @@ nav {
   border: 1px solid #ccc;
 }
 
+.keyframes {
+  position: relative;
+  min-height: 100vh; /* ou a altura que quiser */
+  background: linear-gradient(-45deg, #e3f2fd, #fce4ec, #fffde7, #e8f5e9);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  z-index: 0;
+}
+
+@keyframes gradient {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+
 .container {
   max-width: 1200px;
   padding: 20px;
@@ -151,13 +168,6 @@ nav {
 }
 
 /* Assistente Virtual */
-
-.ia-chat iframe {
-  width: 100% !important;
-  height: 300px !important;
-  border: none;
-}
-
 
 .ia-container {
   position: fixed;
@@ -219,6 +229,29 @@ nav {
   color: #a6004c;
   font-size: 1rem;
 }
+.ia-body {
+  max-height: 250px; /* Limite de altura visível */
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+/* Estiliza a barra de rolagem do chat */
+.ia-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.ia-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.ia-body::-webkit-scrollbar-thumb {
+  background-color: #d3a0b4;
+  border-radius: 4px;
+}
+
+.ia-body::-webkit-scrollbar-thumb:hover {
+  background-color: #b46a89;
+}
 
 .ia-body p {
   margin: 0;
@@ -267,12 +300,12 @@ nav {
 .my-carousel {
   width: 100%;
   max-width: 1000px;
-  padding: 40px 0;
-  margin: 40px auto;
+  padding: 20px 0;
+  margin: 0 auto;
 }
 
 .swiper-slide {
-  background: transparent;
+  background: none;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -280,19 +313,21 @@ nav {
 }
 
 .swiper-slide img {
-  width: 950px;
-  height: 450px;
-  border: none;
+  width: 100%;
+  max-width: 1000px;
+  height: 540px;
+  margin-top: 30px;
   border-radius: 20px;
   object-fit: cover;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
 .swiper-slide-active img {
-  transform: scale(1.1);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
+
 
 /* Botões de navegação */
 .swiper-button-prev,
@@ -310,7 +345,7 @@ nav {
 
 .swiper-button-prev:hover,
 .swiper-button-next:hover {
-  background: #a85d7b;
+  background: transparent;
   color: transparent;
   hover: opacity: 0.8;
   transition: background 0.3s ease;
@@ -319,8 +354,12 @@ nav {
 /* Seções personalizadas */
 .personalizada {
   padding: 40px 20px;
-  max-width: 900px;
-  margin: auto;
+  background-color: #f9f9f9;
+  border: 2px solid #000; /* borda preta */
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  flex: 1 1 250px;
+  max-width: 300px;
 }
 
 .personalizada h2 {
@@ -333,6 +372,97 @@ nav {
   margin-bottom: 20px;
   font-size: 1.1rem;
 }
+
+
+.caixinha {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #ffe9f0;
+  border-radius: 16px;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.05);
+
+}
+#sobre {
+  position: relative;
+  flex: 1 1 100%;
+  padding: 40px 20px;
+  color: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Fundo com imagem + blur */
+#sobre::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('/img/Imagem-efeito-blur.png') center/cover no-repeat;
+  filter: blur(8px) brightness(0.6);
+  z-index: -1;
+}
+
+/* Animação chamativa nos textos */
+#sobre h2, #sobre p, #sobre a {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: aparecer 1s ease-out forwards;
+}
+
+#sobre h2 {
+  animation-delay: 0.3s;
+  font-size: 2em;
+  font-weight: bold;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+}
+
+#sobre p {
+  animation-delay: 0.6s;
+  font-size: 1.1em;
+  margin-top: 10px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+#sobre a {
+  animation-delay: 0.9s;
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #fff;
+  color: #e91e63;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.3s;
+}
+
+#sobre a:hover {
+  background: #fce4ec;
+  transform: scale(1.05);
+}
+
+/* Keyframes */
+@keyframes aparecer {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.contact{
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  align-items: center;
+  background-color: #ffe9f0;
+}
+
 
 /* Botão */
 .btn {
@@ -363,6 +493,17 @@ form textarea {
   font-size: 1rem;
 }
 
+.ia-chat {
+  width: 95%;
+  right: 2.5%;
+  bottom: 90px;
+}
+
+.ia-body {
+  max-height: 200px; /* Um pouco menor para telas pequenas */
+}
+
+
 form button {
   background-color: #a85d7b;
   color: white;
@@ -378,9 +519,10 @@ form button:hover {
 
 /* Footer */
 .footer {
-  background-color: #fda0acff;
-  padding: 20px;
+  background-image: url('img/footeer.png');
+  padding: 35px;
   text-align: center;
+
 }
 
 .logo-footer {

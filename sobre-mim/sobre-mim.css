@@ -1,0 +1,298 @@
+/* Reset e base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fefefe;
+  color: #333;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+.sobre-mim{
+    max-width: 1000px;
+  height: 600px;
+  margin: -1rem auto;
+  text-align: center;
+  font-family: 'Georgia', serif;
+  color: #333;
+  padding: 2rem;
+    background-color: #fff0f5;
+  border-radius: 20px;
+margin-bottom: 4rem;
+}
+
+
+.btn-voltar-fixo {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: #ffb6c1;
+  color: #8b0000;
+  font-weight: bold;
+  padding: 0.7rem 1.3rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.btn-voltar-fixo:hover {
+  background-color: #ffe4e1;
+  color: #d00000;
+  transform: scale(1.08);
+}
+
+
+header {
+  background: linear-gradient(to right, #ffb6c1, #ffe4e1);
+  text-align: center;
+  padding: 3rem 1rem;
+  animation: fadeInDown 1s ease-out;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: #8b0000;
+
+}
+
+header p {
+  font-style: italic;
+  color: #555;
+  margin-top: 0.5rem;
+}
+
+.bloco-nathalia {
+  max-width: 1000px;
+  height: 600px;
+  margin: -1rem auto;
+  text-align: center;
+  font-family: 'Georgia', serif;
+  color: #333;
+  padding: 2rem;
+    background-color: #fff0f5;
+  border-radius: 20px;
+  margin-top: -60px;
+}
+
+.bloco-nathalia h2 {
+  font-family: 'Brush Script MT', cursive;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.bloco-nathalia .texto-topo,
+.bloco-nathalia .texto-baixo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+.imagem-redonda {
+  width: 300px;
+  height: 275px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin: 2rem auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  
+  animation: impactFadeIn 2.2s ease-out forwards;
+  animation-delay: 0.8s;
+  animation-fill-mode: Georgia;
+
+  transition: transform 0.8s ease;
+}
+
+
+
+
+
+/* Sections com espaço para foto */
+section {
+  padding: 4rem 2rem;
+  position: relative;
+  overflow: hidden;
+  background-color: #fff0f5;
+  border-bottom: 2px solid #f4a7b9;
+}
+
+section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 55%;
+  height: 100%;
+  background-image: url('imagem-exemplo.jpg'); /* coloque a imagem certa aqui */
+  background-size: cover;
+  background-position: center;
+  filter: blur(4px) brightness(0.9);
+  z-index: 0;
+  opacity: 0.3;
+}
+
+section h2, section p, section ul {
+  position: relative;
+  z-index: 1;
+  animation: fadeIn 1.5s ease forwards;
+  opacity: 0;
+}
+
+section h2 {
+  font-size: 2rem;
+  color: #8b0000;
+  margin-bottom: 1rem;
+  animation-delay: 0.3s;
+}
+
+section p, section li {
+  font-size: 1.1rem;
+  color: #444;
+  animation-delay: 0.6s;
+}
+
+ul {
+  list-style: disc inside;
+}
+
+
+
+.valor {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.valor .imagem {
+    width: 60%;
+  height: 400px;
+  flex: 1;
+  display: flex;
+  justify-content: flex-start; /* imagem à esquerda */
+  position: relative;
+}
+
+.valor .texto {
+  position: relative;
+  width: 40%;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.valor .img-fundo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  filter: blur(10px);
+  opacity: 0.3;
+}
+
+.valor .texto *:not(.img-fundo) {
+  position: relative;
+  z-index: 1;
+  color: #d22376;
+  font-family: 'Georgia', serif;
+}
+
+.valor .texto h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px #fff;
+  margin-bottom: 0.5rem;
+}
+
+.valor .texto p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #006400;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 2px #fff;
+text-transform: uppercase;
+
+}
+
+.valor .texto ul {
+  font-size: 4.2rem;
+  font-weight: 900; /* Letras mais grossas */
+  color: #000;
+  line-height: 1.6;
+  padding-left: 1.2rem;
+}
+
+.valor .texto ul li {
+  margin-bottom: 0.5rem;
+  list-style: disc;
+}
+
+
+
+
+
+.valor img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+#morney {
+background-color: #20202eff;
+}
+
+
+
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: #ffebef;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* Animações */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

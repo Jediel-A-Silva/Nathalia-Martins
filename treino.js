@@ -3,12 +3,18 @@ const swiper = new Swiper('.my-carousel', {
   grabCursor: true,
   centeredSlides: true,
   slidesPerView: 'auto',
+  spaceBetween: 16,
   loop: true,
+  touchRatio: 1,
+  freeMode: true,
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
 });
+
+
+
 
 // --- Menu Hambúrguer ---
 const menuBtn = document.querySelector('.menu-btn');
@@ -24,20 +30,19 @@ document.addEventListener('click', (e) => {
   }
 });
 
-// --- Acessibilidade IA ---
+// --- Toggle Button IA ---
 const toggleButton = document.querySelector('.ia-avatar');
-if (toggleButton) {
-  toggleButton.setAttribute('aria-controls', 'iaChat');
-  toggleButton.setAttribute('aria-expanded', 'false');
-  toggleButton.setAttribute('role', 'button');
-  toggleButton.setAttribute('tabindex', '0');
-  toggleButton.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      toggleChat();
-    }
-  });
-}
+
+// --- Esconder o chat ao carregar ---
+window.addEventListener('DOMContentLoaded', () => {
+  const chat = document.getElementById('iaChat');
+  if (chat) {
+    chat.style.display = 'none';
+    chat.setAttribute('aria-hidden', 'true');
+    chat.inert = true;
+    toggleButton?.setAttribute('aria-expanded', 'false');
+  }
+});
 
 // --- Toggle chat assistente virtual ---
 window.toggleChat = function () {
@@ -54,15 +59,30 @@ window.toggleChat = function () {
     chat.style.display = 'block';
     chat.setAttribute('aria-hidden', 'false');
     chat.inert = false;
-    Por:
-
-js
-Copiar
-Editar
-setTimeout(() => input?.focus(), 300);
+    setTimeout(() => input?.focus(), 300);
     toggleButton.setAttribute('aria-expanded', 'true');
   }
 };
+
+// --- Acessibilidade e clique IA ---
+if (toggleButton) {
+  toggleButton.setAttribute('aria-controls', 'iaChat');
+  toggleButton.setAttribute('aria-expanded', 'false');
+  toggleButton.setAttribute('role', 'button');
+  toggleButton.setAttribute('tabindex', '0');
+
+  toggleButton.addEventListener('click', () => {
+    toggleChat();
+  });
+
+  toggleButton.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggleChat();
+    }
+  });
+}
+
 
 // --- Funções para mensagens ---
 function adicionarMensagemUsuario(texto) {
