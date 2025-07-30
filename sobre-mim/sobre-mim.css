@@ -296,3 +296,95 @@ footer {
     transform: translateY(0);
   }
 }
+
+
+/* Responsividade para telas menores (celulares) */
+@media (max-width: 768px) {
+  header {
+    padding: 2rem 1rem;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  .bloco-nathalia, .sobre-mim {
+    height: auto;
+    margin: 2rem 1rem;
+    padding: 1.5rem;
+  }
+
+  .bloco-nathalia h2 {
+    font-size: 1.5rem;
+  }
+
+  .bloco-nathalia .texto-topo,
+  .bloco-nathalia .texto-baixo {
+    font-size: 1rem;
+  }
+
+  .imagem-redonda {
+    width: 180px;
+    height: 180px;
+  }
+
+  .valor {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .valor .imagem,
+  .valor .texto {
+    width: 100%;
+    height: auto;
+  }
+
+  .valor .texto {
+    padding: 1rem;
+  }
+
+  .valor .texto h2 {
+    font-size: 1.4rem;
+  }
+
+  .valor .texto p {
+    font-size: 1.1rem;
+  }
+
+  .valor .texto ul {
+    font-size: 1.2rem;
+  }
+
+  .btn-voltar-fixo {
+    top: 10px;
+    left: 10px;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  section {
+    padding: 2rem 1rem;
+  }
+
+  section h2 {
+    font-size: 1.5rem;
+  }
+
+  section p,
+  section li {
+    font-size: 1rem;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+
+  .logo-footer {
+    max-width: 80%;
+    height: auto;
+  }
+}
