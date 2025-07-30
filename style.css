@@ -391,6 +391,7 @@ nav {
   flex: 1 1 100%;
   padding: 40px 20px;
   color: #fff;
+  border: none;
   border-radius: 16px;
   overflow: hidden;
   z-index: 1;
@@ -402,7 +403,7 @@ nav {
   position: absolute;
   inset: 0;
   background: url('/img/Imagem-efeito-blur.png') center/cover no-repeat;
-  filter: blur(8px) brightness(0.6);
+  filter: blur(4px) brightness(0.6);
   z-index: -1;
 }
 
@@ -518,12 +519,28 @@ form button:hover {
 }
 
 /* Footer */
-.footer {
-  background-image: url('img/footeer.png');
+footer {
+  position: relative;
   padding: 35px;
   text-align: center;
-
+  z-index: 1;
+  overflow: hidden;
 }
+
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('img/footeer.png');
+  background-size: cover;
+  background-position: center;
+  filter: blur(8px);
+  z-index: -1;
+}
+
 
 .logo-footer {
   max-width: 90px;
