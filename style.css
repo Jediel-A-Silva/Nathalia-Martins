@@ -197,13 +197,21 @@ nav {
   bottom: 100px;
   right: 30px;
   width: 320px;
+  height: 0;
   background: #fff0f5;
   border-radius: 12px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   font-family: 'Segoe UI', sans-serif;
   overflow: hidden;
   z-index: 1000;
+  transition: height 0.3s ease;
 }
+
+.ia-chat.ativo {
+  width: 320px;
+  height: 300px; /* ou a altura que quiser */
+}
+
 
 .ia-header {
   display: flex;
@@ -242,6 +250,8 @@ nav {
   overflow-y: auto;
   padding-right: 8px;
 }
+
+
 
 /* Estiliza a barra de rolagem do chat */
 .ia-body::-webkit-scrollbar {
@@ -558,7 +568,7 @@ footer::before {
   }
 
   .perfil img.logo {
-    width: 200px;
+    width: 240px;
     height: auto;
   }
 
@@ -616,9 +626,15 @@ footer::before {
     max-height: 250px;
   }
 
-  .container {
-    padding: 10px;
-  }
+  
+   .container {
+    max-width: 1251px;
+    padding: 40px;
+    margin-top: -3%;
+    position: relative;
+    height: 489px;
+}
+  
 
   .ia-container {
     bottom: 15px;

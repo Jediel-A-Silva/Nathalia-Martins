@@ -15,7 +15,6 @@ const swiper = new Swiper('.my-carousel', {
 
 
 
-
 // --- Menu Hambúrguer ---
 const menuBtn = document.querySelector('.menu-btn');
 const menu = document.getElementById('menu');
@@ -37,7 +36,7 @@ const toggleButton = document.querySelector('.ia-avatar');
 window.addEventListener('DOMContentLoaded', () => {
   const chat = document.getElementById('iaChat');
   if (chat) {
-    chat.style.display = 'none';
+    chat.classList.remove('ativo');
     chat.setAttribute('aria-hidden', 'true');
     chat.inert = true;
     toggleButton?.setAttribute('aria-expanded', 'false');
@@ -48,21 +47,22 @@ window.addEventListener('DOMContentLoaded', () => {
 window.toggleChat = function () {
   const chat = document.getElementById('iaChat');
   const input = document.getElementById('iaInput');
-  const isCurrentlyVisible = chat.style.display === 'block';
+  const isOpen = chat.classList.contains('ativo');
 
-  if (isCurrentlyVisible) {
-    chat.style.display = 'none';
+  if (isOpen) {
+    chat.classList.remove('ativo');
     chat.setAttribute('aria-hidden', 'true');
     chat.inert = true;
     toggleButton.setAttribute('aria-expanded', 'false');
   } else {
-    chat.style.display = 'block';
+    chat.classList.add('ativo');
     chat.setAttribute('aria-hidden', 'false');
     chat.inert = false;
     setTimeout(() => input?.focus(), 300);
     toggleButton.setAttribute('aria-expanded', 'true');
   }
 };
+
 
 // --- Acessibilidade e clique IA ---
 if (toggleButton) {
@@ -150,3 +150,18 @@ function enviarSugestao(texto) {
   adicionarMensagemUsuario(texto);
   responderIA(texto.toLowerCase());
 }
+
+// --- Fechar chat ao clicar fora ---
+document.addEventListener('click', (e) => {
+  const chat = document.getElementById('iaChat');
+  const avatar = document.querySelector('.ia-avatar');
+
+  // Se o chat estiver aberto e o clique foi fora do chat e do avatar
+  if (chat.classList.contains('ativo') && !chat.contains(e.target) && !avatar.contains(e.target)) {
+    chat.classList.remove('ativo');
+    chat.setAttribute('aria-hidden', 'true');
+    chat.inert = true;
+    avatar.setAttribute('aria-expanded', 'false');
+  }
+});
+
