@@ -95,19 +95,17 @@ header p {
 }
 
 .imagem-redonda {
-  width: 300px;
-  height: 275px;
-  object-fit: cover;
-  border-radius: 50%;
-  display: block;
-  margin: 2rem auto;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-
-  animation: impactFadeIn 2.2s ease-out forwards;
-  animation-delay: 0.8s;
-  animation-fill-mode: forwards;
-
-  transition: transform 0.8s ease;
+    width: 300px;
+    height: 270px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    margin: 2rem auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    animation: impactFadeIn 2.2s ease-out forwards;
+    animation-delay: 0.8s;
+    animation-fill-mode: forwards;
+    transition: transform 0.8s ease;
 }
 
 /* Sections com espaço para foto */
@@ -145,7 +143,7 @@ section ul {
 section h2 {
   font-size: 2rem;
   color: #8b0000;
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
   animation-delay: 0.3s;
 }
 
@@ -164,6 +162,7 @@ ul {
   margin: 0 auto;
   padding: 2rem;
   border-radius: 80px;
+  margin-top: 1rem;
 }
 
 .box-2 {
@@ -185,6 +184,13 @@ ul {
   gap: 1.5rem;
   flex-wrap: wrap;
   margin-top: -1rem; /* sobe levemente os blocos */
+}
+
+.textos {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
 }
 
 .textos {
@@ -218,10 +224,9 @@ h1 span {
 }
 
 .imagens-box img {
-  width: 90%;
   max-width: 250px;
-  border-radius: 15px;
-  border: 2px solid #f4c2d7;
+  height: auto;
+  border-radius: 65px;
 }
 
 .imagens-box2 {
@@ -231,14 +236,17 @@ h1 span {
 }
 
 .imagens-box2 img {
-  max-width: 400px; /* ou outro tamanho desejado */
-  height: 200px;
-  margin-top: -20px;
+    max-width: 400px;
+    height: 192px;
+    margin-top: -44px;
+    border-radius: 20px;
 }
+
+
 
 .extra-p {
   flex: 1;
-  font-size: 1rem;
+  font-size: 2rem;
   margin-top: -30px;
 }
 
