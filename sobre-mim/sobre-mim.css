@@ -449,6 +449,12 @@ footer {
     font-weight: 900;
 }
 
+.imagens-box2 img {
+    max-width: 169px;
+    height: 121px;
+    margin-top: 2px;
+}
+
 
 .imagem-redonda {
   width: 170px;
