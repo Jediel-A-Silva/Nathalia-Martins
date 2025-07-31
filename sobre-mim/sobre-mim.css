@@ -6,26 +6,25 @@
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
   background-color: #fefefe;
   color: #333;
   line-height: 1.6;
   scroll-behavior: smooth;
 }
 
-.sobre-mim{
-    max-width: 1000px;
+.sobre-mim {
+  max-width: 1000px;
   height: 600px;
   margin: -1rem auto;
   text-align: center;
-  font-family: 'Georgia', serif;
+  font-family: "Georgia", serif;
   color: #333;
   padding: 2rem;
-    background-color: #fff0f5;
+  background-color: #fff0f5;
   border-radius: 20px;
-margin-bottom: 4rem;
+  margin-bottom: 4rem;
 }
-
 
 .btn-voltar-fixo {
   position: fixed;
@@ -37,7 +36,7 @@ margin-bottom: 4rem;
   padding: 0.7rem 1.3rem;
   border-radius: 30px;
   text-decoration: none;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
   z-index: 999;
@@ -49,7 +48,6 @@ margin-bottom: 4rem;
   transform: scale(1.08);
 }
 
-
 header {
   background: linear-gradient(to right, #ffb6c1, #ffe4e1);
   text-align: center;
@@ -60,7 +58,6 @@ header {
 header h1 {
   font-size: 2.5rem;
   color: #8b0000;
-
 }
 
 header p {
@@ -74,16 +71,16 @@ header p {
   height: 600px;
   margin: -1rem auto;
   text-align: center;
-  font-family: 'Georgia', serif;
+  font-family: "Georgia", serif;
   color: #333;
   padding: 2rem;
-    background-color: #fff0f5;
+  background-color: #fff0f5;
   border-radius: 20px;
   margin-top: -60px;
 }
 
 .bloco-nathalia h2 {
-  font-family: 'Brush Script MT', cursive;
+  font-family: "Brush Script MT", cursive;
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 1rem;
@@ -91,7 +88,7 @@ header p {
 
 .bloco-nathalia .texto-topo,
 .bloco-nathalia .texto-baixo {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: "Cormorant Garamond", serif;
   font-size: 1.1rem;
   margin-bottom: 2rem;
   line-height: 1.7;
@@ -105,17 +102,13 @@ header p {
   display: block;
   margin: 2rem auto;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  
+
   animation: impactFadeIn 2.2s ease-out forwards;
   animation-delay: 0.8s;
-  animation-fill-mode: Georgia;
+  animation-fill-mode: forwards;
 
   transition: transform 0.8s ease;
 }
-
-
-
-
 
 /* Sections com espaço para foto */
 section {
@@ -133,7 +126,7 @@ section::before {
   left: 0;
   width: 55%;
   height: 100%;
-  background-image: url('imagem-exemplo.jpg'); /* coloque a imagem certa aqui */
+  background-image: url("imagem-exemplo.jpg"); /* coloque a imagem certa aqui */
   background-size: cover;
   background-position: center;
   filter: blur(4px) brightness(0.9);
@@ -141,7 +134,8 @@ section::before {
   opacity: 0.3;
 }
 
-section h2,  section ul {
+section h2,
+section ul {
   position: relative;
   z-index: 1;
   animation: fadeIn 1.5s ease forwards;
@@ -155,7 +149,7 @@ section h2 {
   animation-delay: 0.3s;
 }
 
- section li {
+section li {
   font-size: 1.1rem;
   color: #444;
   animation-delay: 0.6s;
@@ -165,7 +159,152 @@ ul {
   list-style: disc inside;
 }
 
+.cont-box1 {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 80px;
+}
 
+.box-2 {
+  max-width: 1000px;
+  height: 600px;
+  border-radius: 20px;
+  background-color: #fff0f5;
+  padding: 1.5rem 2rem; /* reduzi o padding vertical */
+  margin: 1.5rem auto; /* sobe um pouco a seção */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centraliza verticalmente o conteúdo */
+}
+
+.conteudo-lateral {
+  display: flex;
+  align-items: flex-start; /* alinha ao topo */
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: -1rem; /* sobe levemente os blocos */
+}
+
+.textos {
+  flex: 1;
+}
+
+h1 {
+  font-size: 1.9rem;
+  text-align: center;
+  margin-top: -40px;
+  margin-bottom: 1rem;
+  top: 0;
+}
+
+h1 span {
+  font-family: "Brush Script MT", cursive;
+  font-size: 1.6rem;
+  color: #333;
+}
+
+.texto-principal,
+.descricao-box {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.imagens-box {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.imagens-box img {
+  width: 90%;
+  max-width: 250px;
+  border-radius: 15px;
+  border: 2px solid #f4c2d7;
+}
+
+.imagens-box2 {
+  display: flex;
+  align-items: center; /* alinha verticalmente */
+  gap: 1rem; /* espaçamento entre imagem e texto */
+}
+
+.imagens-box2 img {
+  max-width: 400px; /* ou outro tamanho desejado */
+  height: 200px;
+  margin-top: -20px;
+}
+
+.extra-p {
+  flex: 1;
+  font-size: 1rem;
+  margin-top: -30px;
+}
+
+.trabalho-parto {
+  max-width: 1000px;
+  height: 600px;
+  border-radius: 20px;
+  margin: 4rem auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+.trabalho-parto h2 {
+  font-family: "Brush Script MT", cursive;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.conteudo-trabalho {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 6rem; /* ou padding-top: 3rem; */
+}
+
+.imagem-circular {
+  width: 380px;
+  height: 360px;
+  border-radius: 50%;
+  object-fit: cover;
+  shape-outside: circle();
+  float: left;
+  margin-left: -20px; /* cerca de 30% fora da div */
+  margin-right: 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.texto-paragraf {
+  font-size: 1.9rem;
+  font-weight: 500;
+  color: #d22376;
+  text-align: justify;
+  text-justify: inter-word;
+  word-spacing: normal;
+  letter-spacing: -0.2px;
+  overflow: hidden;
+  min-height: 350px;
+  position: relative;
+}
+
+.imagem-circular1 {
+  width: 380px;
+  height: 360px;
+  border-radius: 50%;
+  object-fit: cover;
+  shape-outside: circle();
+  float: right; /* agora vai para o lado direito */
+  margin-right: -20px; /* cerca de 30% fora da div */
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
 
 .valor {
   display: flex;
@@ -175,7 +314,7 @@ ul {
 }
 
 .valor .imagem {
-    width: 60%;
+  width: 60%;
   height: 400px;
   flex: 1;
   display: flex;
@@ -215,7 +354,7 @@ ul {
   position: relative;
   z-index: 1;
   color: #d22376;
-  font-family: 'Georgia', serif;
+  font-family: "Georgia", serif;
 }
 
 .valor .texto h2 {
@@ -224,7 +363,6 @@ ul {
   text-shadow: 1px 1px 2px #fff;
   margin-bottom: 0.5rem;
 }
-
 
 .valor .texto ul {
   font-size: 4.2rem;
@@ -239,10 +377,6 @@ ul {
   list-style: disc;
 }
 
-
-
-
-
 .valor img {
   max-width: 100%;
   height: auto;
@@ -250,11 +384,8 @@ ul {
 }
 
 #morney {
-background-color: #20202eff;
+  background-color: #20202eff;
 }
-
-
-
 
 /* Footer */
 footer {
@@ -288,40 +419,77 @@ footer {
   }
 }
 
+.desktop-only {
+  display: block;
+}
+.mobile-only {
+  display: none;
+}
 
 /* Responsividade para telas menores (celulares) */
 @media (max-width: 768px) {
-  header {
-    padding: 2rem 1rem;
-  }
 
-  header h1 {
-    font-size: 1.8rem;
-  }
+    .sobre-mim {
+         margin-top: 2rem;
+    }
 
-  .bloco-nathalia, .sobre-mim {
+.desktop-only {
+        display: none;
+      }
+      .mobile-only {
+        display: block;
+      }
+
+.bloco-nathalia .texto-topo, .bloco-nathalia .texto-baixo {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 0.8rem;
+    margin-bottom: 3rem;
+    line-height: 1.7;
+    font-weight: bold;
+    font-weight: 900;
+}
+
+
+.imagem-redonda {
+  width: 180px;
+  height: 180px;
+}
+
+  .imagem-circular,
+  .imagem-circular1 {
+    float: left;
+    shape-outside: circle();
+    clip-path: circle();
+    width: 60%;
+    max-width: 280px;
     height: auto;
-    margin: 2rem 1rem;
-    padding: 1.5rem;
+    margin: 0 1.2rem 1.2rem -2rem; /* empurra um pouco pra fora */
+    display: block;
   }
 
-  .bloco-nathalia h2 {
-    font-size: 1.5rem;
+  .imagem-circular1 {
+    float: right;
+    margin: 0 -2rem 1.2rem 1.2rem;
   }
 
-  .bloco-nathalia .texto-topo,
-  .bloco-nathalia .texto-baixo {
-    font-size: 1rem;
+  .texto-paragraf {
+    font-size: clamp(1rem, 4vw, 1.3rem);
+    text-align: justify;
+    line-height: 1.7;
+    min-height: auto;
+    padding: 0 1rem;
+    hyphens: auto;
   }
 
-  .imagem-redonda {
-    width: 180px;
-    height: 180px;
+  .conteudo-trabalho {
+    flex-direction: column;
+    align-items: stretch;
   }
 
   .valor {
     flex-direction: column;
     padding: 1rem;
+    gap: 1rem;
   }
 
   .valor .imagem,
@@ -330,51 +498,13 @@ footer {
     height: auto;
   }
 
-  .valor .texto {
-    padding: 1rem;
-  }
-
-  .valor .texto h2 {
-    font-size: 1.4rem;
-  }
-
-  .valor .texto  {
+  .valor .texto ul {
     font-size: 1.1rem;
   }
 
-  .valor .texto ul {
-    font-size: 1.2rem;
-  }
 
   .btn-voltar-fixo {
-    top: 10px;
-    left: 10px;
     padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-  }
-
-  section {
-    padding: 2rem 1rem;
-  }
-
-  section h2 {
-    font-size: 1.5rem;
-  }
-
-  section li {
-    font-size: 1rem;
-  }
-
-  input[type="text"],
-  input[type="email"],
-  textarea {
-    width: 100%;
-    margin-bottom: 1rem;
-    font-size: 1rem;
-  }
-
-  .logo-footer {
-    max-width: 80%;
-    height: auto;
+    font-size: 0.85rem;
   }
 }
