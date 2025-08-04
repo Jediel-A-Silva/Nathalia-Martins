@@ -608,7 +608,7 @@ footer::before {
   }
 
   .perfil img.logo {
-    width: 240px;
+    width: 280px;
     height: auto;
   }
 
@@ -623,6 +623,7 @@ footer::before {
 
   .menu {
     width: 220px;
+    height: 586px;
     top: 50px;
     left: -17px;
     padding: 12px;
