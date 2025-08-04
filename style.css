@@ -122,11 +122,16 @@ nav {
 }
 
 @keyframes gradient {
-  0% {background-position: 0% 50%;}
-  50% {background-position: 100% 50%;}
-  100% {background-position: 0% 50%;}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
-
 
 .container {
   max-width: 1200px;
@@ -139,7 +144,7 @@ nav {
 .perfil {
   text-align: center;
   padding: 40px 20px;
-  background-image: url('img/background-capa.png'); /* ou .jpg */
+  background-image: url("img/background-capa.png"); /* ou .jpg */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -151,10 +156,7 @@ nav {
   font-weight: 400;
   font-size: 50px;
   color: #b58b29;
-  text-shadow:
-    1px 1px 0 #a67c00,
-    2px 2px 1px #8c6b00,
-    3px 3px 2px #735600;
+  text-shadow: 1px 1px 0 #a67c00, 2px 2px 1px #8c6b00, 3px 3px 2px #735600;
 }
 
 .perfil h3 {
@@ -178,12 +180,30 @@ nav {
 .ia-container {
   position: fixed;
   bottom: 20px;
-  right: 20px; /* <-- agora está no lado direito */
-  display: flex;
-  flex-direction: column-reverse; /* Chat sobe sobre o avatar */
-  align-items: flex-end;
+  right: 20px;
   z-index: 1000;
 }
+
+.ia-chat {
+  display: none;
+  position: absolute;
+  bottom: 70px;
+  left: auto;
+  right: 0;
+  width: 300px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  z-index: 1001;
+  flex-direction: column;
+}
+
+.ia-chat.ativo {
+  display: flex;
+}
+
+
 
 .ia-avatar img {
   width: 60px;
@@ -198,7 +218,7 @@ nav {
   background: #fff0f5;
   border-radius: 12px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
   overflow: hidden;
   margin-bottom: 10px;
   transform: scale(1);
@@ -299,15 +319,8 @@ nav {
   background-color: #e0e0e0;
 }
 
-
-
 /* Carrossel Swiper */
-.my-carousel {
-  width: 100%;
-  max-width: 1000px;
-  padding: 20px 0;
-  margin: 0 auto;
-}
+
 
 .swiper-slide {
   background: none;
@@ -319,20 +332,20 @@ nav {
 
 .swiper-slide img {
   width: 100%;
-  max-width: 1000px;
-  height: 540px;
-  margin-top: 30px;
+  max-width: 950px;
+  height: 480px;
+  margin-top: 80px;
   border-radius: 20px;
   object-fit: cover;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   transition: transform 0.5s ease, box-shadow 0.5s ease;
+  margin-bottom: 20px;
 }
 
 .swiper-slide-active img {
   transform: scale(1.05);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
-
 
 /* Botões de navegação */
 .swiper-button-prev,
@@ -342,19 +355,43 @@ nav {
   transform: translateY(-50%);
   width: 44px;
   height: 44px;
+  z-index: 10;
   border-radius: 50%;
   background: transparent;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-  cursor: poiter;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
 }
 
+/* Efeito ao passar o mouse */
 .swiper-button-prev:hover,
 .swiper-button-next:hover {
-  background: transparent;
-  color: transparent;
-  hover: opacity: 0.8;
+  background: rgba(150, 98, 98, 0.8); /* vermelho escuro com opacidade */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* sombra mais suave */
+  color: #fff; /* opcional: muda a cor do ícone para branco */
   transition: background 0.3s ease;
 }
+
+
+.swiper-button-prev,
+.swiper-button-next {
+  position: absolute;
+  bottom: 45%; /* distância do fundo */
+  top: auto; /* remove top para não conflitar */
+  transform: none;
+  background: transparent;
+  
+}
+
+.swiper-button-prev {
+  left: 50%;
+  transform: translateX(-480px); /* ajusta distância entre os botões */
+}
+
+.swiper-button-next {
+  left: 50%;
+  transform: translateX(440px);
+}
+
 
 /* Seções personalizadas */
 .personalizada {
@@ -378,7 +415,6 @@ nav {
   font-size: 1.1rem;
 }
 
-
 .caixinha {
   display: flex;
   flex-wrap: wrap;
@@ -388,8 +424,7 @@ nav {
   padding: 20px;
   background-color: #ffe9f0;
   border-radius: 16px;
-  box-shadow: inset 0 0 5px rgba(0,0,0,0.05);
-
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
 }
 #sobre {
   position: relative;
@@ -407,13 +442,15 @@ nav {
   content: "";
   position: absolute;
   inset: 0;
-  background: url('/img/Imagem-efeito-blur.png') center/cover no-repeat;
+  background: url("/img/Imagem-efeito-blur.png") center/cover no-repeat;
   filter: blur(4px) brightness(0.6);
   z-index: -1;
 }
 
 /* Animação chamativa nos textos */
-#sobre h2, #sobre p, #sobre a {
+#sobre h2,
+#sobre p,
+#sobre a {
   opacity: 0;
   transform: translateY(30px);
   animation: aparecer 1s ease-out forwards;
@@ -423,23 +460,23 @@ nav {
   animation-delay: 0.3s;
   font-size: 2em;
   font-weight: bold;
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
 }
 
 #sobre p {
   animation-delay: 0.6s;
   font-size: 1.1em;
   margin-top: 10px;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 #sobre a {
   animation-delay: 0.9s;
   display: inline-block;
-  margin-top: 15px;
+  margin-top: 22px;
   padding: 10px 20px;
-  background: #fff;
-  color: #e91e63;
+  background: #e91e63;
+  color: #ffb0cbff;
   border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
@@ -451,9 +488,7 @@ nav {
   transform: scale(1.05);
 }
 
-
-
-.contact{
+.contact {
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
@@ -461,7 +496,6 @@ nav {
   align-items: center;
   background-color: #ffe9f0;
 }
-
 
 /* Botão */
 .btn {
@@ -502,7 +536,6 @@ form textarea {
   max-height: 200px; /* Um pouco menor para telas pequenas */
 }
 
-
 form button {
   background-color: #a85d7b;
   color: white;
@@ -532,13 +565,12 @@ footer::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('img/footeer.png');
+  background-image: url("img/footeer.png");
   background-size: cover;
   background-position: center;
   filter: blur(8px);
   z-index: -1;
 }
-
 
 .logo-footer {
   max-width: 90px;
@@ -547,7 +579,28 @@ footer::before {
 
 /* Responsivo */
 @media (max-width: 768px) {
+  .navbar {
+    height: auto;
+    padding: 8px 16px;
+  }
+  
+   nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
 
+  .menu-wrapper {
+    flex: 1;
+  }
+
+  .search {
+    flex: 1;
+    min-width: 100px;
+  }
+  
   .perfil {
     background-size: cover;
     background-attachment: scroll; /* Evita bugs no mobile */
@@ -567,16 +620,6 @@ footer::before {
     font-size: 1rem;
   }
 
-  .navbar {
-    height: auto;
-    padding: 8px 16px;
-    flex-direction: column;
-  }
-
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-  }
 
   .menu {
     width: 220px;
@@ -585,43 +628,58 @@ footer::before {
     padding: 12px;
     margin-top: 10px;
   }
- .search {
-  position: static;
-  width: 30%;
-  margin-top: -49px;
-  margin-left: auto; /* empurra pro canto direito */
-  padding: 10px;
-  font-size: 1rem;
-  display: block;
-}
 
-
-
-
-.keyframes {
-  position: relative;
-  min-height: 350px; /* ou a altura que quiser */
-  background: linear-gradient(-45deg, #e3f2fd, #fce4ec, #fffde7, #e8f5e9);
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
-  z-index: 0;
-}
-
+  .keyframes {
+    position: relative;
+    min-height: 350px; /* ou a altura que quiser */
+    background: linear-gradient(-45deg, #e3f2fd, #fce4ec, #fffde7, #e8f5e9);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    z-index: 0;
+  }
+  
   .swiper-slide img {
-    width: 100%;
+    width: 90%;
     height: auto;
     max-height: 250px;
   }
-
+  .swiper-slide-active img {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  }
   
-   .container {
+  .swiper-button-prev,
+.swiper-button-next {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  width: 36px;
+  height: 36px;
+  font-size: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* sombra mais suave */
+  transition: background 0.3s ease;
+  bottom: 50%;
+  transform: translateY(70%);
+  z-index: 10;
+}
+
+.swiper-button-prev {
+  left: 30px;
+}
+
+.swiper-button-next {
+  left: 88%;
+  
+}
+
+
+  .container {
     max-width: 1251px;
     padding: 40px;
     margin-top: -3%;
     position: relative;
     height: 489px;
-}
-  
+  }
 
   .ia-container {
     bottom: 15px;
@@ -642,6 +700,8 @@ footer::before {
   .ia-body {
     max-height: 180px;
   }
+
+
 
   .personalizada {
     max-width: 100%;
