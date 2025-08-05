@@ -157,7 +157,7 @@ section ul {
 
 section h2 {
   font-size: 2rem;
-  color: #8b0000;
+  color: #ff4646;
   margin-bottom: 3rem;
   animation-delay: 0.3s;
 }
@@ -661,11 +661,11 @@ footer {
     border-radius: 50%;
     float: none;
     margin: 1rem auto;
-    margin-bottom: 20px;
+    margin-bottom: 45px;
   }
 
   .imagem-circular {
-   display: none;
+    display: none;
   }
 
   h2 {
@@ -674,7 +674,7 @@ footer {
   }
 
   .imagem-circular1 {
-   display: none;
+    display: none;
   }
 
   .box-2 {
@@ -701,35 +701,34 @@ footer {
     height: 210px;
   }
 
-  
-.trabalho-parto1 {
+  .trabalho-parto1 {
     width: 100%;
     max-width: 370px;
     border-radius: 20px;
     margin: 4rem auto;
     padding: 1rem;
     text-align: center;
-      background: url('img1/bc-001.jpg') no-repeat center center;
-  background-size: cover;
-}
-.trabalho-parto { 
-  width: 100%;
-    max-width: 370px; 
-  background: url('img1/bc-004.jpg') no-repeat center center;
-  background-size: cover;
-  height: 650px;
-  margin-top: 1rem;
-}
+    background: url("img1/bc-002.jpg") no-repeat center center;
+    background-size: cover;
+  }
+  .trabalho-parto {
+    width: 100%;
+    max-width: 370px;
+    background: url("img1/bc-002.jpg") no-repeat center center;
+    background-size: cover;
+    height: 650px;
+    margin-top: 1rem;
+  }
 
   #partos > .trabalho-parto:nth-of-type(2) {
-     width: 100%;
+    width: 100%;
     max-width: 370px;
     height: 600px;
     padding: 20px;
     margin-top: -1rem;
     margin-bottom: 3.5rem;
     position: relative;
-    background: url('img1/bc-004.jpg') no-repeat center center;
+    background: url("img1/bc-003.jpg") no-repeat center center;
     background-size: cover;
   }
 
@@ -741,7 +740,7 @@ footer {
     margin-top: 2rem;
     margin-bottom: 3.5rem;
     position: relative;
-    background: url('img1/bc-002.jpg') no-repeat center center;
+    background: url("img1/bc-004.jpg") no-repeat center center;
     background-size: cover;
   }
 
@@ -753,7 +752,7 @@ footer {
     margin-top: 2rem;
     margin-bottom: 3.5rem;
     position: relative;
-    background: url('img1/bc-005.jpg') no-repeat center center;
+    background: url("img1/bc-005.jpg") no-repeat center center;
     background-size: cover;
   }
 
@@ -765,7 +764,7 @@ footer {
     margin-top: 1rem;
     margin-bottom: 3.5rem;
     position: relative;
-    background: url('img1/bc-006.jpg') no-repeat center center;
+    background: url("img1/bc-006.jpg") no-repeat center center;
     background-size: cover;
   }
 
@@ -777,6 +776,8 @@ footer {
     margin-top: 1rem;
     margin-bottom: 3.5rem;
     position: relative;
+    background: url("img1/fto2.png") no-repeat center center;
+    background-size: cover;
   }
 
   .inducoes {
@@ -800,22 +801,20 @@ footer {
   }
 
   .imagem-gravida1 {
-    width: 47%;
-    height: 400px;
-    border-radius: 20px;
-    margin: 1rem auto;
-    left: 115px;
-    position: relative;
-    margin-top: -20px;
+    display: none;
   }
 
   .texto-lista li {
     text-align: justify;
-    margin-bottom: 0.8rem;
-    line-height: 8;
-    margin-top: -260px;
-    position: relative; /* necessário para que right funcione */
-    right: 170px; /* negativo move para a esquerda, positivo move para a direita */
+    margin-bottom: 8.8rem;
+    line-height: 1.8;
+    position: relative;
+    right: 170px;
+    margin-top: -88px;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
   }
 
   .imagem-gravida2 {
