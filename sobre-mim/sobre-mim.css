@@ -5,6 +5,21 @@
   box-sizing: border-box;
 }
 
+main {
+background: linear-gradient(to right, #ffb6c1, #ffe4e1);
+  }
+
+header {
+  height: auto;
+  max-height: 800px; /* pode ajustar se quiser menos */
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+}
+
 body {
   font-family: "Segoe UI", sans-serif;
   background-color: #fefefe;
@@ -586,26 +601,39 @@ footer {
 }
 
 @media (max-width: 768px) {
+  header {
+    height: auto;
+    max-height: 700px; /* ou outro valor menor */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem; /* padding menor para compactar */
+    margin-top: 0rem;
+  }
 
- .desktop-only {
+  main {
+background: linear-gradient(to right, #ffb6c1, #ffe4e1);
+  }
+  .desktop-only {
     display: none !important;
   }
   .mobile-only {
     display: block !important;
   }
-  
+
   .sobre-mim {
     max-width: 1251px;
-    height: 557px;
+    height: 600px;
     padding: 20px;
-    margin-top: 2rem;
+    margin-top: 4.5rem;
     margin-bottom: 3.5rem;
     position: relative;
   }
 
   .bloco-nathalia {
     padding: 20px;
-    margin-top: -2.5rem;
+    margin-top: 0.5rem;
     margin-bottom: 3.5rem;
     position: relative;
   }
@@ -616,6 +644,7 @@ footer {
     border-radius: 50%;
     float: none;
     margin: 1rem auto;
+    margin-bottom:20px;
   }
 
   .imagem-circular {
@@ -644,7 +673,7 @@ footer {
 
   .box-2 {
     max-width: 1251px;
-    height: 557px;
+    height: 600px;
     padding: 20px;
     margin-top: 2rem;
     margin-bottom: 3.5rem;
@@ -666,17 +695,17 @@ footer {
   }
 
   #partos > .trabalho-parto:nth-of-type(1) {
-    background-color: #ffe4e1;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 0 10px rgba(255, 192, 203, 0.4);
+    max-width: 1251px;
+    height: 600px;
+    padding: 20px;
     margin-top: 2rem;
     margin-bottom: 3.5rem;
+    position: relative;
   }
 
   #partos > .trabalho-parto:nth-of-type(2) {
     max-width: 1251px;
-    height: 557px;
+    height: 600px;
     padding: 20px;
     margin-top: 2rem;
     margin-bottom: 3.5rem;
@@ -685,7 +714,7 @@ footer {
 
   #partos > .trabalho-parto:nth-of-type(3) {
     max-width: 1251px;
-    height: 557px;
+    height: 600px;
     padding: 20px;
     margin-top: 2rem;
     margin-bottom: 3.5rem;
@@ -694,7 +723,7 @@ footer {
 
   #partos > .trabalho-parto:nth-of-type(4) {
     max-width: 1251px;
-    height: 557px;
+    height: 600px;
     padding: 20px;
     margin-top: 2rem;
     margin-bottom: 3.5rem;
@@ -703,7 +732,7 @@ footer {
 
   #consultas {
     max-width: 1251px;
-    height: 557px;
+    height: 600px;
     padding: 20px;
     margin-top: 2rem;
     margin-bottom: 3.5rem;
@@ -712,7 +741,7 @@ footer {
 
   .inducoes {
     max-width: 1251px;
-    height: 557px;
+    height: 600px;
     padding: 20px;
     margin-top: 2rem;
     margin-bottom: 3.5rem;
@@ -721,7 +750,7 @@ footer {
 
   #diferenciais {
     max-width: 1251px;
-    height: 557px;
+    height: 600px;
     padding: 20px;
     margin-top: 2rem;
     margin-bottom: 3.5rem;
@@ -735,19 +764,17 @@ footer {
     margin: 1rem auto;
     left: 115px;
     position: relative;
-    margin-top: -20px; 
+    margin-top: -20px;
   }
 
-.texto-lista li {
+  .texto-lista li {
     text-align: justify;
     margin-bottom: 0.8rem;
     line-height: 8;
     margin-top: -260px;
     position: relative; /* necessário para que right funcione */
     right: 170px; /* negativo move para a esquerda, positivo move para a direita */
-}
-
-
+  }
 
   .imagem-gravida2 {
     width: 100%;
@@ -779,6 +806,7 @@ footer {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    max-height: 700px;
   }
 
   .texto-consultas3 {
