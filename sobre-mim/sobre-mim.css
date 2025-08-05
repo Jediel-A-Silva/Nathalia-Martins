@@ -6,8 +6,8 @@
 }
 
 main {
-background: linear-gradient(to right, #ffb6c1, #ffe4e1);
-  }
+  background: linear-gradient(to right, #ffb6c1, #ffe4e1);
+}
 
 header {
   height: auto;
@@ -264,6 +264,15 @@ h1 span {
 }
 
 .trabalho-parto {
+  max-width: 1000px;
+  height: 600px;
+  border-radius: 20px;
+  margin: 4rem auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+.trabalho-parto1 {
   max-width: 1000px;
   height: 600px;
   border-radius: 20px;
@@ -613,7 +622,7 @@ footer {
   }
 
   main {
-background: linear-gradient(to right, #ffb6c1, #ffe4e1);
+    background: linear-gradient(to right, #ffb6c1, #ffe4e1);
   }
   .desktop-only {
     display: none !important;
@@ -622,8 +631,16 @@ background: linear-gradient(to right, #ffb6c1, #ffe4e1);
     display: block !important;
   }
 
+  .centraliza-secao {
+    display: block; /* ou flex-direction: column, se ainda quiser flex */
+    justify-content: initial;
+    align-items: initial;
+    height: auto; /* evita ocupar a tela toda */
+  }
+
   .sobre-mim {
-    max-width: 1251px;
+    width: 100%;
+    max-width: 370px;
     height: 650px;
     padding: 20px;
     margin-top: 4.5rem;
@@ -644,17 +661,11 @@ background: linear-gradient(to right, #ffb6c1, #ffe4e1);
     border-radius: 50%;
     float: none;
     margin: 1rem auto;
-    margin-bottom:20px;
+    margin-bottom: 20px;
   }
 
   .imagem-circular {
-    width: 65%;
-    height: auto;
-    border-radius: 50%;
-    margin: 1rem auto;
-    display: block; /* substitua flex se não for necessário */
-    position: relative;
-    z-index: 10; /* garante que fique acima do texto */
+   display: none;
   }
 
   h2 {
@@ -663,19 +674,15 @@ background: linear-gradient(to right, #ffb6c1, #ffe4e1);
   }
 
   .imagem-circular1 {
-    width: 65%;
-    height: auto;
-    position: relative;
-    z-index: 10;
-    margin: 1rem auto -20px auto;
-    display: block;
+   display: none;
   }
 
   .box-2 {
-    max-width: 1251px;
+    width: 100%;
+    max-width: 370px;
     height: 650px;
     padding: 20px;
-    margin-top: 2rem;
+    margin-top: 1rem;
     margin-bottom: 3.5rem;
     position: relative;
   }
@@ -694,53 +701,85 @@ background: linear-gradient(to right, #ffb6c1, #ffe4e1);
     height: 210px;
   }
 
-  #partos > .trabalho-parto:nth-of-type(1) {
-    max-width: 1251px;
+  
+.trabalho-parto1 {
+    max-width: 1000px;
     height: 600px;
-    padding: 20px;
-    margin-top: 2rem;
-    margin-bottom: 3.5rem;
-    position: relative;
-  }
+    border-radius: 20px;
+    margin: 4rem auto;
+    padding: 1rem;
+    text-align: center;
+      background: url('img1/bc-001.jpg') no-repeat center center;
+  background-size: cover;
+}
+.trabalho-parto {  
+  background: url('img1/bc-004.jpg') no-repeat center center;
+  background-size: cover;
+  height: 650px;
+  margin-top: 1rem;
+}
 
   #partos > .trabalho-parto:nth-of-type(2) {
-    max-width: 1251px;
-    height: 650px;
+     width: 100%;
+    max-width: 370px;
+    height: 600px;
     padding: 20px;
-    margin-top: 2rem;
+    margin-top: -1rem;
     margin-bottom: 3.5rem;
     position: relative;
+    background: url('img1/bc-004.jpg') no-repeat center center;
+    background-size: cover;
   }
 
   #partos > .trabalho-parto:nth-of-type(3) {
-    max-width: 1251px;
-    height: 650px;
+    width: 100%;
+    max-width: 370px;
+    height: auto;
     padding: 20px;
     margin-top: 2rem;
     margin-bottom: 3.5rem;
     position: relative;
+    background: url('img1/bc-002.jpg') no-repeat center center;
+    background-size: cover;
   }
 
-  #partos > .trabalho-parto:nth-of-type(4) {
-    max-width: 1251px;
+  #partos > .trabalho-parto:nth-of-type(6) {
+    width: 100%;
+    max-width: 370px;
     height: 650px;
     padding: 20px;
     margin-top: 2rem;
     margin-bottom: 3.5rem;
     position: relative;
+    background: url('img1/bc-005.jpg') no-repeat center center;
+    background-size: cover;
+  }
+
+  #partos > .trabalho-parto:nth-of-type(5) {
+    width: 100%;
+    max-width: 370px;
+    height: 650px;
+    padding: 20px;
+    margin-top: 1rem;
+    margin-bottom: 3.5rem;
+    position: relative;
+    background: url('img1/bc-006.jpg') no-repeat center center;
+    background-size: cover;
   }
 
   #consultas {
-    max-width: 1251px;
+    width: 100%;
+    max-width: 370px;
     height: 650px;
     padding: 20px;
-    margin-top: 2rem;
+    margin-top: 1rem;
     margin-bottom: 3.5rem;
     position: relative;
   }
 
   .inducoes {
-    max-width: 1251px;
+    width: 100%;
+    max-width: 370px;
     height: 650px;
     padding: 20px;
     margin-top: 2rem;
@@ -749,10 +788,11 @@ background: linear-gradient(to right, #ffb6c1, #ffe4e1);
   }
 
   #diferenciais {
-    max-width: 1251px;
+    width: 100%;
+    max-width: 370px;
     height: 650px;
     padding: 20px;
-    margin-top: 2rem;
+    margin-top: 1rem;
     margin-bottom: 3.5rem;
     position: relative;
   }
