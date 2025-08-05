@@ -703,8 +703,8 @@ footer {
 
   
 .trabalho-parto1 {
-    max-width: 1000px;
-    height: 600px;
+    width: 100%;
+    max-width: 370px;
     border-radius: 20px;
     margin: 4rem auto;
     padding: 1rem;
@@ -712,7 +712,9 @@ footer {
       background: url('img1/bc-001.jpg') no-repeat center center;
   background-size: cover;
 }
-.trabalho-parto {  
+.trabalho-parto { 
+  width: 100%;
+    max-width: 370px; 
   background: url('img1/bc-004.jpg') no-repeat center center;
   background-size: cover;
   height: 650px;
