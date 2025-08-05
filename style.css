@@ -676,10 +676,10 @@ footer::before {
 
   .container {
     max-width: 1251px;
+    height: 557px;
     padding: 40px;
     margin-top: -3%;
     position: relative;
-    height: 557px;
   }
 
   .ia-container {

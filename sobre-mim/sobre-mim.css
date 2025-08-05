@@ -585,3 +585,264 @@ footer {
   display: none;
 }
 
+@media (max-width: 768px) {
+
+ .desktop-only {
+    display: none !important;
+  }
+  .mobile-only {
+    display: block !important;
+  }
+  
+  .sobre-mim {
+    max-width: 1251px;
+    height: 557px;
+    padding: 20px;
+    margin-top: 2rem;
+    margin-bottom: 3.5rem;
+    position: relative;
+  }
+
+  .bloco-nathalia {
+    padding: 20px;
+    margin-top: -2.5rem;
+    margin-bottom: 3.5rem;
+    position: relative;
+  }
+
+  .imagem-redonda {
+    width: 65%;
+    height: auto;
+    border-radius: 50%;
+    float: none;
+    margin: 1rem auto;
+  }
+
+  .imagem-circular {
+    width: 65%;
+    height: auto;
+    border-radius: 50%;
+    margin: 1rem auto;
+    display: block; /* substitua flex se não for necessário */
+    position: relative;
+    z-index: 10; /* garante que fique acima do texto */
+  }
+
+  h2 {
+    position: relative;
+    z-index: 1;
+  }
+
+  .imagem-circular1 {
+    width: 65%;
+    height: auto;
+    position: relative;
+    z-index: 10;
+    margin: 1rem auto -20px auto;
+    display: block;
+  }
+
+  .box-2 {
+    max-width: 1251px;
+    height: 557px;
+    padding: 20px;
+    margin-top: 2rem;
+    margin-bottom: 3.5rem;
+    position: relative;
+  }
+
+  .imagens-box2 img {
+    width: 210px;
+    height: 135px;
+    margin-top: -7rem;
+    border-radius: 20px;
+  }
+
+  .extra-p {
+    flex: 1;
+    font-size: 19px;
+    margin-top: -42px;
+    height: 210px;
+  }
+
+  #partos > .trabalho-parto:nth-of-type(1) {
+    background-color: #ffe4e1;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(255, 192, 203, 0.4);
+    margin-top: 2rem;
+    margin-bottom: 3.5rem;
+  }
+
+  #partos > .trabalho-parto:nth-of-type(2) {
+    max-width: 1251px;
+    height: 557px;
+    padding: 20px;
+    margin-top: 2rem;
+    margin-bottom: 3.5rem;
+    position: relative;
+  }
+
+  #partos > .trabalho-parto:nth-of-type(3) {
+    max-width: 1251px;
+    height: 557px;
+    padding: 20px;
+    margin-top: 2rem;
+    margin-bottom: 3.5rem;
+    position: relative;
+  }
+
+  #partos > .trabalho-parto:nth-of-type(4) {
+    max-width: 1251px;
+    height: 557px;
+    padding: 20px;
+    margin-top: 2rem;
+    margin-bottom: 3.5rem;
+    position: relative;
+  }
+
+  #consultas {
+    max-width: 1251px;
+    height: 557px;
+    padding: 20px;
+    margin-top: 2rem;
+    margin-bottom: 3.5rem;
+    position: relative;
+  }
+
+  .inducoes {
+    max-width: 1251px;
+    height: 557px;
+    padding: 20px;
+    margin-top: 2rem;
+    margin-bottom: 3.5rem;
+    position: relative;
+  }
+
+  #diferenciais {
+    max-width: 1251px;
+    height: 557px;
+    padding: 20px;
+    margin-top: 2rem;
+    margin-bottom: 3.5rem;
+    position: relative;
+  }
+
+  .imagem-gravida1 {
+    width: 47%;
+    height: 400px;
+    border-radius: 20px;
+    margin: 1rem auto;
+    left: 115px;
+    position: relative;
+    margin-top: -20px; 
+  }
+
+.texto-lista li {
+    text-align: justify;
+    margin-bottom: 0.8rem;
+    line-height: 8;
+    margin-top: -260px;
+    position: relative; /* necessário para que right funcione */
+    right: 170px; /* negativo move para a esquerda, positivo move para a direita */
+}
+
+
+
+  .imagem-gravida2 {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    float: none;
+    margin: 1rem auto;
+  }
+
+  .conteudo-trabalho {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .texto-consultas {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .container-img {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .valor {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .texto-consultas3 {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .textos {
+    width: 100%;
+    flex: none;
+  }
+
+  .imagens-box {
+    width: 100%;
+    flex: none;
+  }
+
+  .imagens-box2 {
+    width: 100%;
+    flex: none;
+  }
+
+  .texto-lista {
+    width: 100%;
+    flex: none;
+  }
+
+  .texto-lista2 {
+    width: 100%;
+    flex: none;
+  }
+
+  .imgs-coluna {
+    width: 100%;
+    flex: none;
+  }
+
+  .valor .imagem {
+    width: 100%;
+    flex: none;
+  }
+
+  .valor .texto {
+    width: 100%;
+    flex: none;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  .btn-voltar-fixo {
+    top: 10px;
+    left: 10px;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+
+  .mobile-only {
+    display: block;
+  }
+}
