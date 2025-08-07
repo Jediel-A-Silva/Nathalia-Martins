@@ -38,7 +38,9 @@ body {
   padding: 2rem;
   background-color: #fff0f5;
   border-radius: 20px;
-  margin-bottom: 4rem;
+  top: 1rem;
+  margin-top: 2rem;
+  margin-bottom: -1rem;
 }
 
 .btn-voltar-fixo {
@@ -50,6 +52,7 @@ body {
   font-weight: bold;
   padding: 0.7rem 1.3rem;
   border-radius: 30px;
+  border: none;
   text-decoration: none;
   font-family: "Segoe UI", sans-serif;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -105,7 +108,7 @@ header p {
 .bloco-nathalia .texto-baixo {
   font-family: "Cormorant Garamond", serif;
   font-size: 1.1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
   line-height: 1.7;
 }
 
@@ -228,7 +231,7 @@ h1 span {
 
 .texto-principal,
 .descricao-box {
-  font-size: 0.9rem;
+  font-size: 1.9rem;
   margin-bottom: 1rem;
 }
 
@@ -263,16 +266,11 @@ h1 span {
   margin-top: -30px;
 }
 
-.trabalho-parto {
-  max-width: 1000px;
-  height: 600px;
-  border-radius: 20px;
-  margin: 4rem auto;
-  padding: 1rem;
-  text-align: center;
-}
-
-.trabalho-parto1 {
+.trabalho-parto,
+.trabalho-parto1,
+.trabalho-parto2,
+.trabalho-parto3,
+.trabalho-parto4 {
   max-width: 1000px;
   height: 600px;
   border-radius: 20px;
@@ -396,39 +394,41 @@ h1 span {
   border-radius: 20px;
 }
 
-.container-img {
-  display: flex;
-  gap: 2rem; /* Espaço entre texto e imagens */
-  align-items: flex-start;
-}
-
 .principal-p {
   flex: 1; /* Ocupa o espaço disponível do lado esquerdo */
 }
 
+.container-img {
+  display: flex;
+  flex-direction: column; /* empilha os elementos */
+  align-items: center; /* centraliza tudo horizontalmente */
+  gap: 2rem;
+  text-align: center;
+}
+
 .imgs-coluna {
   display: flex;
-  flex-direction: column;
-  gap: 1rem; /* Espaço entre as imagens */
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: center; /* centraliza as imagens */
+  flex-wrap: wrap; /* permite quebrar linha no mobile */
 }
 
 .img-box img {
-  max-width: 200px;
-  width: 100%;
+  width: 160px; /* ajuste de tamanho opcional */
   height: auto;
-  margin-top: 5rem;
-  border-radius: 20px;
+  border-radius: 12px;
 }
 
 .h2-h2 {
   margin-top: 2rem;
 }
+
 .principal-p {
-  width: 620px;
-  font-size: 1rem;
+  width: 575px;
+  font-size: 3rem;
   margin-top: 5.5rem;
   color: #d22376;
-  text-align: justify;
   text-justify: inter-word;
   word-spacing: normal;
   letter-spacing: 1.8px;
@@ -701,84 +701,72 @@ footer {
     height: 210px;
   }
 
-  .trabalho-parto1 {
-    width: 100%;
-    max-width: 370px;
-    border-radius: 20px;
-    margin: 4rem auto;
-    padding: 1rem;
-    text-align: center;
-    background: url("img1/bc-002.jpg") no-repeat center center;
-    background-size: cover;
-  }
-  .trabalho-parto {
-    width: 100%;
-    max-width: 370px;
-    background: url("img1/bc-002.jpg") no-repeat center center;
-    background-size: cover;
-    height: 650px;
-    margin-top: 1rem;
-  }
+#partos > .trabalho-parto1,
+#partos > .trabalho-parto2,
+#partos > .trabalho-parto3,
+#partos > .trabalho-parto4 {
+  position: relative;
+  width: 100%;
+  max-width: 370px;
+  border-radius: 20px;
+  margin: 4rem auto;
+  padding: 1rem;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+  z-index: 1;
+  /* opcional para legibilidade */
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
 
-  #partos > .trabalho-parto:nth-of-type(2) {
-    width: 100%;
-    max-width: 370px;
-    height: 600px;
-    padding: 20px;
-    margin-top: -1rem;
-    margin-bottom: 3.5rem;
-    position: relative;
-    background: url("img1/bc-003.jpg") no-repeat center center;
-    background-size: cover;
-  }
+/* ::before com fundo limpo, sem blur ou brightness */
+#partos > .trabalho-parto1::before,
+#partos > .trabalho-parto2::before,
+#partos > .trabalho-parto3::before,
+#partos > .trabalho-parto4::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  filter: none;
+  opacity: 1;
+  z-index: -1;
+}
 
-  #partos > .trabalho-parto:nth-of-type(3) {
-    width: 100%;
-    max-width: 370px;
-    height: auto;
-    padding: 20px;
-    margin-top: 2rem;
-    margin-bottom: 3.5rem;
-    position: relative;
-    background: url("img1/bc-004.jpg") no-repeat center center;
-    background-size: cover;
-  }
+/* Define a imagem correta para cada um */
+#partos > .trabalho-parto1::before {
+  background-image: url("img1/bc-002.jpg");
+}
 
-  #partos > .trabalho-parto:nth-of-type(6) {
-    width: 100%;
-    max-width: 370px;
-    height: 650px;
-    padding: 20px;
-    margin-top: 2rem;
-    margin-bottom: 3.5rem;
-    position: relative;
-    background: url("img1/bc-005.jpg") no-repeat center center;
-    background-size: cover;
-  }
+#partos > .trabalho-parto2::before {
+  background-image: url("img1/bc-003.jpg");
+}
 
-  #partos > .trabalho-parto:nth-of-type(5) {
-    width: 100%;
-    max-width: 370px;
-    height: 650px;
-    padding: 20px;
-    margin-top: 1rem;
-    margin-bottom: 3.5rem;
-    position: relative;
-    background: url("img1/bc-006.jpg") no-repeat center center;
-    background-size: cover;
-  }
+#partos > .trabalho-parto3::before {
+  background-image: url("img1/bc-005.jpg");
+}
 
-  #consultas {
-    width: 100%;
-    max-width: 370px;
-    height: 650px;
-    padding: 20px;
-    margin-top: 1rem;
-    margin-bottom: 3.5rem;
-    position: relative;
-    background: url("img1/fto2.png") no-repeat center center;
-    background-size: cover;
-  }
+#partos > .trabalho-parto4::before {
+  background-image: url("img1/bc-004.jpg");
+}
+
+
+#consultas {
+  width: 100%;
+  max-width: 370px;
+  height: 650px;
+  padding: 20px;
+  margin-top: 1rem;
+  margin-bottom: 3.5rem;
+  position: relative;
+  background: url("img1/fto2.png") no-repeat center center;
+  background-size: cover;
+}
 
   .inducoes {
     width: 100%;
@@ -837,12 +825,65 @@ footer {
     text-align: center;
   }
 
-  .container-img {
-    flex-direction: column;
+  .imgs-coluna {
+    flex-direction: column; /* empilha as imagens no mobile */
     align-items: center;
-    text-align: center;
   }
 
+  .img-box img {
+    width: 200px; /* aumenta um pouco o tamanho no mobile */
+  }
+
+  .container-img {
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+
+  
+.principal-p {
+    width: 360px;
+    font-size: 3rem;
+    margin-top: -2.5rem;
+    color: #d22376;
+    text-justify: inter-word;
+    word-spacing: normal;
+    letter-spacing: 1.8px;
+    padding: 1px 2rem;
+  }
+
+.texto-paragraf {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: justify;
+    text-justify: inter-word;
+    word-spacing: normal;
+    letter-spacing: -0.2px;
+    overflow: hidden;
+    min-height: 350px;
+    position: relative;
+    bottom: -7rem;
+}
+
+#aviso-mobile-p1 {
+  padding-top: 150px;
+}
+
+#aviso-mobile-p2 {
+  padding-top: 200px;
+}
+
+#aviso-mobile-p3 {
+  padding-top: 200px;
+}
+
+#aviso-mobile-p4 {
+  padding-top: 240px;
+}
+
+#h2-h02 {
+  margin-top: -6rem;
+}
   .valor {
     flex-direction: column;
     align-items: center;
