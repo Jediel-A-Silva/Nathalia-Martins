@@ -839,16 +839,16 @@ footer {
   }
 
   /* paragrafo */
-  .principal-p {
-    width: 360px; /* aumenta um pouco o tamanho no mobile */
-    font-size: 3rem;
-    margin-top: -2.5rem;
-    color: #d22376;
-    text-justify: inter-word;
-    word-spacing: normal;
-    letter-spacing: 1.8px;
-    padding: 1px 2rem;
-  }
+      .principal-p {
+        width: 360px;
+        font-size: 1rem;
+        margin-top: -2.5rem;
+        color: #d22376;
+        text-justify: inter-word;
+        word-spacing: normal;
+        letter-spacing: -0.2px;
+        padding: 1px 2rem;
+    }
 
   .texto-paragraf {
     font-size: 1.5rem;
@@ -891,6 +891,12 @@ footer {
   #h2-h02 {
     margin-top: -6rem;
   }
+
+  .h2-h2 {
+    font-size: 1.5rem;
+        margin-top: -4.5rem;
+  margin-top: 0rem;
+}
 
 #tex-2h2 {
   font-size: 1.5rem;
@@ -943,13 +949,16 @@ footer {
 
   .valor .imagem {
     width: 100%;
+    top: -1rem;
     flex: none;
   }
 
-  .valor .texto {
-    width: 100%;
-    flex: none;
-  }
+      .valor .texto {
+        height: 18rem;
+        width: 105%;
+        flex: none;
+        top: -4.6rem;
+    }
 
   header h1 {
     font-size: 1.8rem;
