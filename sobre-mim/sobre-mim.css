@@ -701,77 +701,77 @@ footer {
     height: 210px;
   }
 
-#partos > .trabalho-parto1,
-#partos > .trabalho-parto2,
-#partos > .trabalho-parto3,
-#partos > .trabalho-parto4 {
-  position: relative;
-  width: 100%;
-  max-width: 370px;
-  border-radius: 20px;
-  margin: 4rem auto;
-  padding: 1rem;
-  text-align: center;
-  color: white;
-  overflow: hidden;
-  z-index: 1;
-  /* opcional para legibilidade */
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
-}
-
-/* ::before com fundo limpo, sem blur ou brightness */
-#partos > .trabalho-parto1::before,
-#partos > .trabalho-parto2::before,
-#partos > .trabalho-parto3::before,
-#partos > .trabalho-parto4::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  filter: none;
-  opacity: 1;
-  z-index: -1;
-}
-
-/* Define a imagem correta para cada um */
-#partos > .trabalho-parto1::before {
-  background-image: url("img1/bc-002.jpg");
-}
-
-#partos > .trabalho-parto2::before {
-  background-image: url("img1/bc-003.jpg");
-}
-
-#partos > .trabalho-parto3::before {
-  background-image: url("img1/bc-005.jpg");
-}
-
-#partos > .trabalho-parto4::before {
-  background-image: url("img1/bc-004.jpg");
-}
-
-
-#consultas {
-  width: 100%;
-  max-width: 370px;
-  height: 650px;
-  padding: 20px;
-  margin-top: 1rem;
-  margin-bottom: 3.5rem;
-  position: relative;
-  background: url("img1/fto2.png") no-repeat center center;
-  background-size: cover;
-}
-
-  .inducoes {
+  #partos > .trabalho-parto1,
+  #partos > .trabalho-parto2,
+  #partos > .trabalho-parto3,
+  #partos > .trabalho-parto4 {
+    position: relative;
     width: 100%;
     max-width: 370px;
     height: 650px;
+    border-radius: 20px;
+    margin: 4rem auto;
+    padding: 1rem;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+    z-index: 1;
+    /* opcional para legibilidade */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  /* ::before com fundo limpo, sem blur ou brightness */
+  #partos > .trabalho-parto1::before,
+  #partos > .trabalho-parto2::before,
+  #partos > .trabalho-parto3::before,
+  #partos > .trabalho-parto4::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    filter: none;
+    opacity: 1;
+    z-index: -1;
+  }
+
+  /* Define a imagem correta para cada um */
+  #partos > .trabalho-parto1::before {
+    background-image: url("img1/bc-002.jpg");
+  }
+
+  #partos > .trabalho-parto2::before {
+    background-image: url("img1/bc-003.jpg");
+  }
+
+  #partos > .trabalho-parto3::before {
+    background-image: url("img1/bc-005.jpg");
+  }
+
+  #partos > .trabalho-parto4::before {
+    background-image: url("img1/bc-004.jpg");
+  }
+
+  #consultas {
+    width: 100%;
+    max-width: 365px;
+    height: 600px;
+    padding: 20px;
+    margin-top: 1rem;
+    margin-bottom: 3.5rem;
+    position: relative;
+    background: url("img1/fto2.png") no-repeat center center;
+    background-size: cover;
+  }
+
+  .inducoes {
+    width: 100%;
+    max-width: 365px;
+    height: 600px;
     padding: 20px;
     margin-top: 2rem;
     margin-bottom: 3.5rem;
@@ -780,8 +780,8 @@ footer {
 
   #diferenciais {
     width: 100%;
-    max-width: 370px;
-    height: 650px;
+    max-width: 365px;
+    height: 600px;
     padding: 20px;
     margin-top: 1rem;
     margin-bottom: 3.5rem;
@@ -840,7 +840,7 @@ footer {
   }
 
   /* paragrafo */
-.principal-p {
+  .principal-p {
     width: 360px; /* aumenta um pouco o tamanho no mobile */
     font-size: 3rem;
     margin-top: -2.5rem;
@@ -851,7 +851,7 @@ footer {
     padding: 1px 2rem;
   }
 
-.texto-paragraf {
+  .texto-paragraf {
     font-size: 1.5rem;
     font-weight: 700;
     color: #ffffff;
@@ -863,27 +863,27 @@ footer {
     min-height: 350px;
     position: relative;
     bottom: -7rem;
-}
+  }
 
-#aviso-mobile-p1 {
-  padding-top: 150px;
-}
+  #aviso-mobile-p1 {
+    padding-top: 150px;
+  }
 
-#aviso-mobile-p2 {
-  padding-top: 200px;
-}
+  #aviso-mobile-p2 {
+    padding-top: 200px;
+  }
 
-#aviso-mobile-p3 {
-  padding-top: 200px;
-}
+  #aviso-mobile-p3 {
+    padding-top: 200px;
+  }
 
-#aviso-mobile-p4 {
-  padding-top: 240px;
-}
+  #aviso-mobile-p4 {
+    padding-top: 240px;
+  }
 
-#h2-h02 {
-  margin-top: -6rem;
-}
+  #h2-h02 {
+    margin-top: -6rem;
+  }
   .valor {
     flex-direction: column;
     align-items: center;
