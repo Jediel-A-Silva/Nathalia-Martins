@@ -29,8 +29,9 @@ body {
 }
 
 .sobre-mim {
-  max-width: 1000px;
-  height: 600px;
+  width: 1010px;
+  max-width: 1400px;
+  height: 620px;
   margin: -1rem auto;
   text-align: center;
   font-family: "Georgia", serif;
@@ -85,8 +86,9 @@ header p {
 }
 
 .bloco-nathalia {
-  max-width: 1000px;
-  height: 600px;
+  width: 360px;
+  max-width: 1400px;
+  height: 620px;
   margin: -1rem auto;
   text-align: center;
   font-family: "Georgia", serif;
@@ -106,10 +108,14 @@ header p {
 
 .bloco-nathalia .texto-topo,
 .bloco-nathalia .texto-baixo {
+  width: 750px;
   font-family: "Cormorant Garamond", serif;
-  font-size: 1.1rem;
+  font-size: 1.4rem;
+  font-weight: 700;
   margin-bottom: 4rem;
-  line-height: 1.7;
+  line-height: 1.5;
+  position: relative;
+  left: -241px;
 }
 
 .imagem-redonda {
@@ -176,7 +182,9 @@ ul {
 }
 
 .cont-box1 {
-  max-width: 1000px;
+  width: 1010px;
+  max-width: 1400px;
+  height: 620px;
   margin: 0 auto;
   padding: 2rem;
   border-radius: 80px;
@@ -184,8 +192,9 @@ ul {
 }
 
 .box-2 {
-  max-width: 1000px;
-  height: 600px;
+  width: 1010px;
+  max-width: 1400px;
+  height: 620px;
   border-radius: 20px;
   background-color: #fff0f5;
   padding: 1.5rem 2rem; /* reduzi o padding vertical */
@@ -271,8 +280,9 @@ h1 span {
 .trabalho-parto2,
 .trabalho-parto3,
 .trabalho-parto4 {
-  max-width: 1000px;
-  height: 600px;
+  width: 1010px;
+  max-width: 1400px;
+  height: 620px;
   border-radius: 20px;
   margin: 4rem auto;
   padding: 1rem;
@@ -342,9 +352,9 @@ h1 span {
 }
 
 .conteudo-consultas {
-  width: 1000px;
+  width: 1010px;
   max-width: 1400px;
-  height: 600px;
+  height: 620px;
   margin: -1rem auto 4rem auto; /* Igual ao .sobre-mim */
   text-align: center;
   font-family: "Georgia", serif;
@@ -382,9 +392,9 @@ h1 span {
 }
 
 .inducoes {
-  max-width: 1000px;
-  height: 600px;
-  height: 600px;
+  width: 1010px;
+  max-width: 1400px;
+  height: 620px;
   margin: -1rem auto 4rem auto; /* Igual ao .sobre-mim */
   text-align: center;
   font-family: "Georgia", serif;
@@ -415,7 +425,7 @@ h1 span {
 }
 
 .img-box img {
-  width: 160px; /* ajuste de tamanho opcional */
+  width: 260px;
   height: auto;
   border-radius: 12px;
 }
@@ -425,8 +435,8 @@ h1 span {
 }
 
 .principal-p {
-  width: 575px;
-  font-size: 3rem;
+  width: 710px;
+  font-size: 1.7rem;
   margin-top: 5.5rem;
   color: #d22376;
   text-justify: inter-word;
@@ -436,9 +446,9 @@ h1 span {
 }
 
 .diferenciais {
-  width: 1000px;
+  width: 1010px;
   max-width: 1400px;
-  height: 600px;
+  height: 620px;
   margin: -1rem auto 4rem auto; /* Igual ao .sobre-mim */
   text-align: center;
   font-family: "Georgia", serif;
@@ -469,19 +479,45 @@ h1 span {
   line-height: 1.6;
 }
 
-.imagens-consultas {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* 2 imagens por linha */
-  grid-template-rows: auto auto; /* 2 linhas */
-  gap: 10px;
-  width: auto;
+.my-carousel {
+  width: 100%;
+  padding: 20px 0;
+}
+
+.swiper-wrapper {
+  display: flex;
+  align-items: stretch;
+  gap: 0.5rem; /* ou use 1rem se quiser mais espaço */
+  margin-top: 3rem;
+}
+
+.swiper-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: auto; /* permite ajuste automático de largura */
 }
 
 .imagem-gravida2 {
-  width: 200px;
-  height: auto;
-  border-radius: 10px;
-  left: -2.5rem;
+  width: 220px;
+  height: 360px;
+  display: block;
+  margin-top: -1.5rem;
+  margin-bottom: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito ao passar o mouse */
+.swiper-slide:hover .imagem-gravida2 {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.descricao-imagem {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: #ff5aa9;
 }
 
 .texto-lista2 {
@@ -608,7 +644,7 @@ footer {
 .mobile-only {
   display: none;
 }
-
+/*           !!!                     RESPONSIVIDADE                 !!!                     */
 @media (max-width: 768px) {
   header {
     height: auto;
@@ -642,10 +678,11 @@ footer {
     width: 100%;
     max-width: 360px;
     height: 600px;
-    padding: 20px;
-    margin-top: 4.5rem;
-    margin-bottom: 3.5rem;
+    padding: 1px;
+    margin-top: 1.4rem;
+    margin-top: 3.5rem;
     position: relative;
+    margin-bottom: 2.5rem;
   }
 
   .bloco-nathalia {
@@ -662,7 +699,7 @@ footer {
     border-radius: 50%;
     float: none;
     margin: 1rem auto;
-    margin-top: -1.7rem;
+    margin-top: -3.5rem;
     margin-bottom: 30px;
   }
 
@@ -690,14 +727,22 @@ footer {
   }
 
   .imagens-box2 img {
-        width: 324px;
-        height: 260px;
-        margin-top: 2rem;
-        border-radius: 20px;
-    }
+    width: 324px;
+    height: 300px;
+    margin-top: -35rem;
+    border-radius: 20px;
+  }
 
+  .descricao-box {
+    width: 22rem;
+    font-size: 1.1rem;
+    color: #ff4646;
+    margin-bottom: -40rem;
+    font-weight: 700;
+    margin-left: -25px;
+  }
   .extra-p {
-   display: none;
+    display: none;
   }
 
   #partos > .trabalho-parto1,
@@ -791,18 +836,18 @@ footer {
     display: none;
   }
 
-     .texto-lista li {
-        width: 351px;
-        text-align: justify;
-        line-height: 2;
-        position: relative;
-        right: 182px;
-        color: #fff;
-        font-size: 1.1rem;
-        font-weight: 900;
-        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
-        margin-top: 1.9rem;
-    }
+  .texto-lista li {
+    width: 351px;
+    text-align: justify;
+    line-height: 2;
+    position: relative;
+    right: 182px;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 900;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    margin-top: 1.9rem;
+  }
 
   .imagem-gravida2 {
     width: 100%;
@@ -839,38 +884,49 @@ footer {
   }
 
   /* paragrafo */
-      .principal-p {
-        width: 360px;
-        font-size: 1rem;
-        margin-top: -2.5rem;
-        color: #d22376;
-        text-justify: inter-word;
-        word-spacing: normal;
-        letter-spacing: -0.2px;
-        padding: 1px 2rem;
-    }
-
-  .texto-paragraf {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #ffffff;
-    text-align: justify;
+  .principal-p {
+    width: 360px;
+    font-size: 1rem;
+    margin-top: -2.5rem;
+    color: #d22376;
     text-justify: inter-word;
     word-spacing: normal;
     letter-spacing: -0.2px;
+    padding: 1px 2rem;
+  }
+
+  .texto-paragraf {
+    font-size: 1.5rem;
+    font-weight: 800; /* um pouco mais forte */
+    color: #ffffff;
+    text-align: justify;
+    text-justify: inter-word;
+    letter-spacing: 0.5px; /* mais espaçamento para leitura */
+    line-height: 1.6; /* mais respiro */
+    
+    /* Destaque extra */
+    text-shadow: 0 0 8px rgba(91, 64, 64, 0.8), 
+                 0 0 15px rgba(24, 24, 24, 0.6); /* brilho suave */
+    
+    /* Estrutura original */
     overflow: hidden;
     min-height: 350px;
     position: relative;
     bottom: -7rem;
-  }
-
-.descricao-box {
-    font-size: 1.2rem;
-    margin-bottom: 0rem;
-    font-weight: 700;
 }
 
 
+  .bloco-nathalia .texto-topo,
+  .bloco-nathalia .texto-baixo {
+    width: 313px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 4rem;
+    line-height: 1.5;
+    position: relative;
+    left: -1px;
+  }
 
   #aviso-mobile-p1 {
     padding-top: 150px;
@@ -894,19 +950,24 @@ footer {
 
   .h2-h2 {
     font-size: 1.5rem;
-        margin-top: -4.5rem;
-  margin-top: 0rem;
-}
+    margin-top: -4.5rem;
+    margin-top: 0rem;
+  }
 
-#tex-2h2 {
-  font-size: 1.5rem;
-  margin-top: -4.5rem; /* Isso puxa ele para cima */
-}
+  #tex-2h2 {
+    font-size: 1.1rem;
+    margin-top: 4.5rem;
+    text-align: left;
+    left: -1.5rem;
+    width: 26.5rem;
+    top: -6rem;
+  }
 
+      #aviso-mobile-p4 {
+        padding-top: 209px;
+    }
 
-
-
- .imagens-consultas {
+  .imagens-consultas {
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
@@ -930,9 +991,11 @@ footer {
 
   .descricao-imagem {
     margin-top: 0.5rem;
-    font-size: 1.5rem;
-    color: #eb4995;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+    font-size: 1rem;
+    color: #c11560;
+    text-shadow: 0 0 8px rgba(255, 180, 180, 0.8), 
+                 0 0 15px rgba(24, 24, 24, 0.6);
+    
   }
 
   .valor {
@@ -958,11 +1021,6 @@ footer {
     flex: none;
   }
 
-  .imagens-box2 {
-    width: 100%;
-    flex: none;
-  }
-
   .texto-lista {
     width: 100%;
     flex: none;
@@ -984,12 +1042,12 @@ footer {
     flex: none;
   }
 
-      .valor .texto {
-        height: 18rem;
-        width: 105%;
-        flex: none;
-        top: -4.6rem;
-    }
+  .valor .texto {
+    height: 18rem;
+    width: 105%;
+    flex: none;
+    top: -4.6rem;
+  }
 
   header h1 {
     font-size: 1.8rem;
