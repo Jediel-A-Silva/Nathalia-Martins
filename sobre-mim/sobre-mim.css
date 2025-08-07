@@ -640,8 +640,8 @@ footer {
 
   .sobre-mim {
     width: 100%;
-    max-width: 370px;
-    height: 650px;
+    max-width: 360px;
+    height: 600px;
     padding: 20px;
     margin-top: 4.5rem;
     margin-bottom: 3.5rem;
@@ -653,6 +653,7 @@ footer {
     margin-top: 0.5rem;
     margin-bottom: 3.5rem;
     position: relative;
+    font-weight: 700;
   }
 
   .imagem-redonda {
@@ -661,7 +662,8 @@ footer {
     border-radius: 50%;
     float: none;
     margin: 1rem auto;
-    margin-bottom: 45px;
+    margin-top: -1.7rem;
+    margin-bottom: 30px;
   }
 
   .imagem-circular {
@@ -679,8 +681,8 @@ footer {
 
   .box-2 {
     width: 100%;
-    max-width: 370px;
-    height: 650px;
+    max-width: 360px;
+    height: 600px;
     padding: 20px;
     margin-top: 1rem;
     margin-bottom: 3.5rem;
@@ -688,17 +690,14 @@ footer {
   }
 
   .imagens-box2 img {
-    width: 210px;
-    height: 135px;
-    margin-top: -7rem;
-    border-radius: 20px;
-  }
+        width: 324px;
+        height: 260px;
+        margin-top: 2rem;
+        border-radius: 20px;
+    }
 
   .extra-p {
-    flex: 1;
-    font-size: 19px;
-    margin-top: -42px;
-    height: 210px;
+   display: none;
   }
 
   #partos > .trabalho-parto1,
@@ -707,8 +706,8 @@ footer {
   #partos > .trabalho-parto4 {
     position: relative;
     width: 100%;
-    max-width: 370px;
-    height: 650px;
+    max-width: 360px;
+    height: 600px;
     border-radius: 20px;
     margin: 4rem auto;
     padding: 1rem;
@@ -758,7 +757,7 @@ footer {
 
   #consultas {
     width: 100%;
-    max-width: 365px;
+    max-width: 360px;
     height: 600px;
     padding: 20px;
     margin-top: 1rem;
@@ -770,7 +769,7 @@ footer {
 
   .inducoes {
     width: 100%;
-    max-width: 365px;
+    max-width: 360px;
     height: 600px;
     padding: 20px;
     margin-top: 2rem;
@@ -780,7 +779,7 @@ footer {
 
   #diferenciais {
     width: 100%;
-    max-width: 365px;
+    max-width: 360px;
     height: 600px;
     padding: 20px;
     margin-top: 1rem;
@@ -792,18 +791,18 @@ footer {
     display: none;
   }
 
-  .texto-lista li {
-    text-align: justify;
-    margin-bottom: 8.8rem;
-    line-height: 1.8;
-    position: relative;
-    right: 170px;
-    margin-top: -88px;
-    color: #fff;
-    font-size: 1.1rem;
-    font-weight: bold;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
-  }
+     .texto-lista li {
+        width: 351px;
+        text-align: justify;
+        line-height: 2;
+        position: relative;
+        right: 182px;
+        color: #fff;
+        font-size: 1.1rem;
+        font-weight: 900;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+        margin-top: 1.9rem;
+    }
 
   .imagem-gravida2 {
     width: 100%;
@@ -865,6 +864,14 @@ footer {
     bottom: -7rem;
   }
 
+.descricao-box {
+    font-size: 1.2rem;
+    margin-bottom: 0rem;
+    font-weight: 700;
+}
+
+
+
   #aviso-mobile-p1 {
     padding-top: 150px;
   }
@@ -884,6 +891,13 @@ footer {
   #h2-h02 {
     margin-top: -6rem;
   }
+
+#tex-2h2 {
+  font-size: 1.5rem;
+  margin-top: -4.5rem; /* Isso puxa ele para cima */
+}
+
+
   .valor {
     flex-direction: column;
     align-items: center;
