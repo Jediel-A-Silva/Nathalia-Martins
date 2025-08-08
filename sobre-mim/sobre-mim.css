@@ -646,6 +646,52 @@ footer {
 }
 /*           !!!                     RESPONSIVIDADE                 !!!                     */
 @media (max-width: 768px) {
+  
+  .desktop-only {
+    display: none !important;
+  }
+  .mobile-only {
+    display: block !important;
+  }
+
+  .swiper {
+    width: 100%;
+    overflow: visible; /* evita bloqueio do swipe */
+  }
+
+  .swiper-wrapper {
+    display: flex !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    gap: 1rem;
+  }
+
+  .swiper-slide {
+    flex-shrink: 0 !important;
+    width: 80% !important; /* controla largura do slide */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    background-color: #fff0f5;
+    padding: 1rem;
+    user-select: none;
+  }
+
+  /* Opcional: ajustar botões */
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: #d22376;
+    top: 50%;
+    width: 30px;
+    height: 30px;
+    margin-top: -15px;
+    opacity: 0.8;
+  }
+
+  .swiper-button-next:hover,
+  .swiper-button-prev:hover {
+    opacity: 1;
+  }
+
   header {
     height: auto;
     max-height: 700px; /* ou outro valor menor */
@@ -659,12 +705,6 @@ footer {
 
   main {
     background: linear-gradient(to right, #ffb6c1, #ffe4e1);
-  }
-  .desktop-only {
-    display: none !important;
-  }
-  .mobile-only {
-    display: block !important;
   }
 
   .centraliza-secao {
@@ -733,14 +773,15 @@ footer {
     border-radius: 20px;
   }
 
-  .descricao-box {
-    width: 22rem;
-    font-size: 1.1rem;
-    color: #ff4646;
-    margin-bottom: -40rem;
-    font-weight: 700;
-    margin-left: -25px;
-  }
+      .descricao-box {
+        width: 19rem;
+        font-size: 1.1rem;
+        color: #ff4646;
+        margin-bottom: -40rem;
+        font-weight: 700;
+        margin-left: -28px;
+    }
+
   .extra-p {
     display: none;
   }

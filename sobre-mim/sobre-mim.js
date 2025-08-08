@@ -1,56 +1,64 @@
-window.addEventListener('DOMContentLoaded', () => {
-  const carrossel = document.getElementById("carrossel");
-  const anterior = document.getElementById("anterior");
-  const proximo = document.getElementById("proximo");
-  const itemWidth = carrossel.querySelector(".item-imagem").offsetWidth + 16;
-const swiper = new Swiper('.my-carousel', {
-  grabCursor: true,
-  centeredSlides: true,
-  slidesPerView: 'auto',
+let swiperInstance;
+let originalClasses = [];
+
+function initCarousel() {
+  const container = document.querySelector(".meu-carrossel");
+  const slides = container ? container.children : [];
+
+  if (window.innerWidth <= 768 && !swiperInstance) {
+    originalClasses = Array.from(slides).map(slide => slide.className);
+
+    container.classList.add("swiper-wrapper");
+    Array.from(slides).forEach(slide => {
+      slide.classList.add("swiper-slide");
+    });
+
+    if (!container.parentElement.classList.contains("swiper")) {
+      const wrapper = document.createElement("div");
+      wrapper.classList.add("swiper");
+      container.parentNode.insertBefore(wrapper, container);
+      wrapper.appendChild(container);
+
+      const nextBtn = document.createElement("div");
+      nextBtn.classList.add("swiper-button-next");
+      const prevBtn = document.createElement("div");
+      prevBtn.classList.add("swiper-button-prev");
+      wrapper.appendChild(nextBtn);
+      wrapper.appendChild(prevBtn);
+    }
+
+    const swiperInstance = new Swiper(".swiper", {
+  slidesPerView: 1.2,
   spaceBetween: 16,
+  grabCursor: true,
+  centeredSlides: false,
   loop: true,
+  // navigation opcional, se quiser manter as setas
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
+  touchStartPreventDefault: false,
 });
 
-const swiper = new Swiper('.my-carousel', {
-  slidesPerView: 'auto',
-  spaceBetween: 16,
-  grabCursor: true,
-});
 
-  let isUserInteracting = false;
+  } else if (window.innerWidth > 768 && swiperInstance) {
+    swiperInstance.destroy(true, true);
+    swiperInstance = null;
 
-  carrossel.addEventListener('mouseenter', () => isUserInteracting = true);
-  carrossel.addEventListener('mouseleave', () => isUserInteracting = false);
-
-  function autoScroll() {
-    if (!isUserInteracting) {
-      carrossel.scrollLeft += 1;
-      if (carrossel.scrollLeft + carrossel.offsetWidth >= carrossel.scrollWidth - 5) {
-        carrossel.scrollLeft = 0;
-      }
+    const wrapper = document.querySelector(".swiper");
+    if (wrapper) {
+      const parent = wrapper.parentNode;
+      parent.insertBefore(wrapper.firstElementChild, wrapper);
+      wrapper.remove();
     }
-    requestAnimationFrame(autoScroll);
+
+    container.classList.remove("swiper-wrapper");
+    Array.from(slides).forEach((slide, i) => {
+      slide.className = originalClasses[i];
+    });
   }
+}
 
-  proximo?.addEventListener("click", () => {
-    if (carrossel.scrollLeft + itemWidth >= carrossel.scrollWidth - carrossel.offsetWidth) {
-      carrossel.scrollLeft = 0;
-    } else {
-      carrossel.scrollLeft += itemWidth;
-    }
-  });
-
-  anterior?.addEventListener("click", () => {
-    if (carrossel.scrollLeft <= 0) {
-      carrossel.scrollLeft = carrossel.scrollWidth;
-    } else {
-      carrossel.scrollLeft -= itemWidth;
-    }
-  });
-
-  autoScroll();
-});
+window.addEventListener("resize", initCarousel);
+window.addEventListener("load", initCarousel);
