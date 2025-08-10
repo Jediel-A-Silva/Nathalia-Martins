@@ -148,7 +148,6 @@ section::before {
   left: 0;
   width: 55%;
   height: 100%;
-  background-image: url("imagem-exemplo.jpg"); /* coloque a imagem certa aqui */
   background-size: cover;
   background-position: center;
   filter: blur(4px) brightness(0.9);
@@ -644,9 +643,9 @@ footer {
 .mobile-only {
   display: none;
 }
-/*           !!!                     RESPONSIVIDADE                 !!!                     */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!        RESPONSIVIDADE       !!!!!!!!!!!!!!!!!!!!!!!!!1 */
 @media (max-width: 768px) {
-  
+  /* Visibilidade */
   .desktop-only {
     display: none !important;
   }
@@ -654,29 +653,26 @@ footer {
     display: block !important;
   }
 
+  /* Swiper */
   .swiper {
     width: 100%;
-    overflow: visible; /* evita bloqueio do swipe */
+    overflow: visible;
   }
-
   .swiper-wrapper {
     display: flex !important;
     overflow-x: auto !important;
     -webkit-overflow-scrolling: touch;
     gap: 1rem;
   }
-
   .swiper-slide {
     flex-shrink: 0 !important;
-    width: 80% !important; /* controla largura do slide */
+    width: 80% !important;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     background-color: #fff0f5;
     padding: 1rem;
     user-select: none;
   }
-
-  /* Opcional: ajustar botões */
   .swiper-button-next,
   .swiper-button-prev {
     color: #d22376;
@@ -686,277 +682,65 @@ footer {
     margin-top: -15px;
     opacity: 0.8;
   }
-
   .swiper-button-next:hover,
   .swiper-button-prev:hover {
     opacity: 1;
   }
 
-  header {
-    height: auto;
-    max-height: 700px; /* ou outro valor menor */
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.5rem 1rem; /* padding menor para compactar */
-    margin-top: 0rem;
-  }
-
-  main {
-    background: linear-gradient(to right, #ffb6c1, #ffe4e1);
-  }
-
-  .centraliza-secao {
-    display: block; /* ou flex-direction: column, se ainda quiser flex */
-    justify-content: initial;
-    align-items: initial;
-    height: auto; /* evita ocupar a tela toda */
-  }
-
-  .sobre-mim {
-    width: 100%;
-    max-width: 360px;
-    height: 600px;
-    padding: 1px;
-    margin-top: 1.4rem;
-    margin-top: 3.5rem;
-    position: relative;
-    margin-bottom: 2.5rem;
-  }
-
-  .bloco-nathalia {
-    padding: 20px;
-    margin-top: 0.5rem;
-    margin-bottom: 3.5rem;
-    position: relative;
-    font-weight: 700;
-  }
-
-  .imagem-redonda {
-    width: 65%;
-    height: auto;
-    border-radius: 50%;
-    float: none;
-    margin: 1rem auto;
-    margin-top: -3.5rem;
-    margin-bottom: 30px;
-  }
-
-  .imagem-circular {
-    display: none;
-  }
-
-  h2 {
-    position: relative;
-    z-index: 1;
-  }
-
-  .imagem-circular1 {
-    display: none;
-  }
-
-  .box-2 {
-    width: 100%;
-    max-width: 360px;
-    height: 600px;
-    padding: 20px;
-    margin-top: 1rem;
-    margin-bottom: 3.5rem;
-    position: relative;
-  }
-
-  .imagens-box2 img {
-    width: 324px;
-    height: 300px;
-    margin-top: -35rem;
-    border-radius: 20px;
-  }
-
-      .descricao-box {
-        width: 19rem;
-        font-size: 1.1rem;
-        color: #ff4646;
-        margin-bottom: -40rem;
-        font-weight: 700;
-        margin-left: -28px;
-    }
-
-  .extra-p {
-    display: none;
-  }
-
+  /* Header e Main */
+  header,
+  .texto-paragraf,
   #partos > .trabalho-parto1,
   #partos > .trabalho-parto2,
   #partos > .trabalho-parto3,
   #partos > .trabalho-parto4 {
-    position: relative;
-    width: 100%;
-    max-width: 360px;
-    height: 600px;
-    border-radius: 20px;
-    margin: 4rem auto;
-    padding: 1rem;
-    text-align: center;
-    color: white;
-    overflow: hidden;
-    z-index: 1;
-    /* opcional para legibilidade */
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    overflow: visible !important; /* Remove corte */
   }
 
-  /* ::before com fundo limpo, sem blur ou brightness */
-  #partos > .trabalho-parto1::before,
-  #partos > .trabalho-parto2::before,
-  #partos > .trabalho-parto3::before,
-  #partos > .trabalho-parto4::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    filter: none;
-    opacity: 1;
-    z-index: -1;
+  header h1 {
+    font-size: 1.8rem;
+  }
+  main {
+    background: linear-gradient(to right, #ffb6c1, #ffe4e1);
   }
 
-  /* Define a imagem correta para cada um */
-  #partos > .trabalho-parto1::before {
-    background-image: url("img1/bc-002.jpg");
+  /* Layout geral */
+  .centraliza-secao {
+    display: block;
+    justify-content: initial;
+    align-items: initial;
+    height: auto;
   }
 
-  #partos > .trabalho-parto2::before {
-    background-image: url("img1/bc-003.jpg");
-  }
-
-  #partos > .trabalho-parto3::before {
-    background-image: url("img1/bc-005.jpg");
-  }
-
-  #partos > .trabalho-parto4::before {
-    background-image: url("img1/bc-004.jpg");
-  }
-
-  #consultas {
-    width: 100%;
-    max-width: 360px;
-    height: 600px;
-    padding: 20px;
-    margin-top: 1rem;
-    margin-bottom: 3.5rem;
-    position: relative;
-    background: url("img1/fto2.png") no-repeat center center;
-    background-size: cover;
-  }
-
-  .inducoes {
-    width: 100%;
-    max-width: 360px;
-    height: 600px;
-    padding: 20px;
-    margin-top: 2rem;
-    margin-bottom: 3.5rem;
-    position: relative;
-  }
-
+  /* Seções principais */
+  .sobre-mim,
+  .box-2,
+  #consultas,
+  .inducoes,
   #diferenciais {
     width: 100%;
     max-width: 360px;
     height: 600px;
     padding: 20px;
-    margin-top: 1rem;
-    margin-bottom: 3.5rem;
+    margin: 1rem auto 3.5rem;
     position: relative;
   }
-
-  .imagem-gravida1 {
-    display: none;
+  .sobre-mim {
+    padding: 1px;
+    margin-top: 3.5rem;
+    margin-bottom: 2.5rem;
+  }
+  #consultas {
+    background-size: cover;
   }
 
-  .texto-lista li {
-    width: 351px;
-    text-align: justify;
-    line-height: 2;
+  /* Bloco Nathalia */
+  .bloco-nathalia {
+    padding: 20px;
+    margin: 0.5rem auto 3.5rem;
     position: relative;
-    right: 182px;
-    color: #fff;
-    font-size: 1.1rem;
-    font-weight: 900;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
-    margin-top: 1.9rem;
+    font-weight: 700;
   }
-
-  .imagem-gravida2 {
-    width: 100%;
-    height: auto;
-    border-radius: 20px;
-    float: none;
-    margin: 1rem auto;
-  }
-
-  .conteudo-trabalho {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .texto-consultas {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .imgs-coluna {
-    flex-direction: column; /* empilha as imagens no mobile */
-    align-items: center;
-  }
-
-  .img-box img {
-    width: 200px; /* aumenta um pouco o tamanho no mobile */
-  }
-
-  .container-img {
-    padding: 1rem;
-    gap: 1.5rem;
-  }
-
-  /* paragrafo */
-  .principal-p {
-    width: 360px;
-    font-size: 1rem;
-    margin-top: -2.5rem;
-    color: #d22376;
-    text-justify: inter-word;
-    word-spacing: normal;
-    letter-spacing: -0.2px;
-    padding: 1px 2rem;
-  }
-
-  .texto-paragraf {
-    font-size: 1.5rem;
-    font-weight: 800; /* um pouco mais forte */
-    color: #ffffff;
-    text-align: justify;
-    text-justify: inter-word;
-    letter-spacing: 0.5px; /* mais espaçamento para leitura */
-    line-height: 1.6; /* mais respiro */
-    
-    /* Destaque extra */
-    text-shadow: 0 0 8px rgba(91, 64, 64, 0.8), 
-                 0 0 15px rgba(24, 24, 24, 0.6); /* brilho suave */
-    
-    /* Estrutura original */
-    overflow: hidden;
-    min-height: 350px;
-    position: relative;
-    bottom: -7rem;
-}
-
-
   .bloco-nathalia .texto-topo,
   .bloco-nathalia .texto-baixo {
     width: 313px;
@@ -969,45 +753,238 @@ footer {
     left: -1px;
   }
 
-  #aviso-mobile-p1 {
-    padding-top: 150px;
+  /* Imagens */
+  .imagem-redonda {
+    width: 65%;
+    height: auto;
+    float: none;
+    margin: -3.5rem auto 30px;
+  }
+  .imagem-gravida1 {
+    display: none;
+  }
+  .imagem-gravida2 {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    float: none;
+    margin: 1rem auto;
+  }
+  .imagens-box2 img {
+    max-width: 320px;
+    height: 240px;
+    margin-top: -33rem;
+    border-radius: 20px;
   }
 
-  #aviso-mobile-p2 {
-    padding-top: 200px;
+  /* configurações das img */
+  .imagem-redonda .imagem-circular {
+    width: 250px;
+    height: 240px;
+    border-radius: 1%;
+    object-fit: cover;
+    shape-outside: circle();
+    float: left;
+    margin-left: -20px;
+    margin-right: 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    margin-top: 3rem;
+    overflow: visible; /* Libera para sair do contêiner */
+    z-index: 2; /* Coloca acima de outros elementos */
+    position: relative; /* Necessário para o z-index funcionar */
   }
 
-  #aviso-mobile-p3 {
-    padding-top: 200px;
+  .imagem-circular1 {
+    width: 250px;
+    height: auto;
+    border-radius: 2%;
+    object-fit: cover;
+    shape-outside: circle();
+    float: right;
+    margin-right: 45px;
+    /* margin-left: -4.5rem; */
+    margin-bottom: 1rem;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    margin-top: -143px;
   }
 
-  #aviso-mobile-p4 {
-    padding-top: 240px;
+  .imagem-circular2 {
+    width: 250px;
+        height: auto;
+        border-radius: 2%;
+        object-fit: cover;
+        shape-outside: circle();
+        float: right;
+        margin-right: 45px;
+        margin-bottom: 1rem;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+        margin-top: -143px;
+  }
+
+  .imagem-circular3 {
+    width: 228px;
+    height: auto;
+    border-radius: 2%;
+    object-fit: cover;
+    shape-outside: circle();
+    float: right;
+    margin-right: 72px;
+    margin-left: -4.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    margin-top: -143px;
+  }
+  .imagem-circular4 {
+    width: 228px;
+    height: auto;
+    border-radius: 2%;
+    object-fit: cover;
+    shape-outside: circle();
+    float: right;
+    margin-right: 72px;
+    margin-left: -4.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    margin-top: -143px;
+  }
+
+  /* configurações dos Textos */
+  .descricao-box {
+    width: 19rem;
+    font-size: 1.16rem;
+    color: #ff4646;
+    margin-bottom: -44rem;
+    font-weight: 700;
+    margin-left: -15px;
+  }
+  .texto-lista li {
+    width: 351px;
+    text-align: justify;
+    line-height: 2;
+    position: relative;
+    right: 182px;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 900;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    margin-top: 1.9rem;
+  }
+  .principal-p {
+    width: 360px;
+    font-size: 1rem;
+    margin-top: -2.5rem;
+    color: #d22376;
+    text-justify: inter-word;
+    letter-spacing: -0.2px;
+    padding: 1px 2rem;
+  }
+  .texto-paragraf {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #ffffff;
+    text-align: justify;
+    letter-spacing: 0.5px;
+    line-height: 1.6;
+    text-shadow: 0 0 8px rgba(91, 64, 64, 0.8), 0 0 15px rgba(24, 24, 24, 0.6);
+    overflow: hidden;
+    min-height: 350px;
+    position: relative;
+    bottom: -7rem;
+  }
+  #tex-2h2 {
+    width: 19rem;
+    font-size: 1.16rem;
+    color: #ff4646;
+    font-weight: 700;
+    margin-left: -15px;
   }
 
   #h2-h02 {
-    margin-top: -6rem;
-  }
-
-  .h2-h2 {
+    width: 350px;
     font-size: 1.5rem;
-    margin-top: -4.5rem;
-    margin-top: 0rem;
+    margin-top: -4rem;
+    color: #ff4646;
+    text-justify: inter-word;
+    letter-spacing: -0.2px;
+    padding: 0px 2rem;
+    left: -36px;
   }
 
-  #tex-2h2 {
-    font-size: 1.1rem;
-    margin-top: 4.5rem;
-    text-align: left;
-    left: -1.5rem;
-    width: 26.5rem;
-    top: -6rem;
+  #aviso-mobile-p1 {
+    width: 336px;
+    font-size: 1.13rem;
+    color: #ff2020;
+    margin-top: 9rem;
+    font-weight: 700;
+    margin-left: -15px;
   }
 
-      #aviso-mobile-p4 {
-        padding-top: 209px;
-    }
+  #aviso-mobile-p2 {
+    width: 336px;
+    font-size: 1.13rem;
+    color: #000000;
+    margin-top: 9rem;
+    font-weight: 700;
+    margin-left: -15px;
+  }
 
+  .trabalho-parto,
+  .trabalho-parto1,
+  .trabalho-parto2,
+  .trabalho-parto3,
+  .trabalho-parto4 {
+    width: 370px;
+    max-width: 1400px;
+    height: auto;
+    border-radius: 20px;
+    margin: 4rem auto;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  /* Partos */
+  #partos > .trabalho-parto1,
+  #partos > .trabalho-parto2,
+  #partos > .trabalho-parto3,
+  #partos > .trabalho-parto4 {
+    position: relative;
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+    border-radius: 20px;
+    margin: 4rem auto;
+    padding: 1rem;
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    z-index: 8;
+  }
+
+  /* Listas e colunas */
+  .conteudo-trabalho,
+  .texto-consultas,
+  .texto-consultas3,
+  .valor {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .imgs-coluna {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .img-box img {
+    width: 200px;
+  }
+  .container-img {
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+
+  /* Consultas imagens */
   .imagens-consultas {
     display: flex;
     overflow-x: auto;
@@ -1017,95 +994,38 @@ footer {
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
   }
-
   .item-imagem {
     flex: 0 0 80%;
     max-width: 300px;
     scroll-snap-align: center;
     text-align: center;
   }
-
   .item-imagem img {
     width: 100%;
     border-radius: 10px;
   }
-
   .descricao-imagem {
     margin-top: 0.5rem;
     font-size: 1rem;
     color: #c11560;
-    text-shadow: 0 0 8px rgba(255, 180, 180, 0.8), 
-                 0 0 15px rgba(24, 24, 24, 0.6);
-    
+    text-shadow: 0 0 8px rgba(255, 180, 180, 0.8),
+      0 0 15px rgba(24, 24, 24, 0.6);
   }
 
-  .valor {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    max-height: 700px;
-  }
-
-  .texto-consultas3 {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .textos {
-    width: 100%;
-    flex: none;
-  }
-
-  .imagens-box {
-    width: 100%;
-    flex: none;
-  }
-
-  .texto-lista {
-    width: 100%;
-    flex: none;
-  }
-
-  .texto-lista2 {
-    width: 100%;
-    flex: none;
-  }
-
-  .imgs-coluna {
-    width: 100%;
-    flex: none;
-  }
-
+  /* Ajustes finais */
   .valor .imagem {
     width: 100%;
     top: -1rem;
-    flex: none;
   }
-
   .valor .texto {
     height: 18rem;
     width: 105%;
-    flex: none;
     top: -4.6rem;
   }
-
-  header h1 {
-    font-size: 1.8rem;
-  }
-
   .btn-voltar-fixo {
     top: 10px;
     left: 10px;
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
-  }
-
-  .desktop-only {
-    display: none;
-  }
-
-  .mobile-only {
-    display: block;
   }
 }
