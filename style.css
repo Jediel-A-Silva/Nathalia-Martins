@@ -134,12 +134,12 @@ nav {
 }
 
 .container {
-  max-width: 1200px;
-  padding: 20px;
-  margin-top: -3%;
-  position: relative;
+    max-width: 1200px;
+    padding: 20px;
+    margin-top: 1%;
+    position: relative;
+    left: 7rem;
 }
-
 /* Perfil */
 .perfil {
   text-align: center;
