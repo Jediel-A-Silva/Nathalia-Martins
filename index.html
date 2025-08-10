@@ -158,15 +158,16 @@
   </div>
 
   <section id="contato" class="contact" data-aos="fade-up">
-    <h2>Contato</h2>
-    <form>
-      <input type="text" placeholder="Nome" required />
-      <input type="email" placeholder="Email" required />
-      <input type="text" placeholder="Assunto" />
-      <textarea placeholder="Mensagem" required></textarea>
-      <button type="submit">Enviar</button>
-    </form>
-  </section>
+  <h2>Contato</h2>
+  <form action="envia_email.php" method="POST">
+    <input type="text" name="nome" placeholder="Nome" required />
+    <input type="email" name="email" placeholder="Email" required />
+    <input type="text" name="assunto" placeholder="Assunto" />
+    <textarea name="mensagem" placeholder="Mensagem" required></textarea>
+    <button type="submit">Enviar</button>
+  </form>
+</section>
+
 
   <!-- Footer -->
   <footer class="footer">
