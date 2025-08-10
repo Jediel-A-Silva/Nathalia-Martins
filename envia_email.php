@@ -6,29 +6,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mensagem = trim($_POST["mensagem"]);
 
     if (!$nome || !$email || !$mensagem) {
-        // Campos obrigatórios faltando
         echo "Por favor, preencha os campos obrigatórios.";
         exit;
     }
 
-    // Destino do e-mail (e-mail da sua cliente)
-    $para = "andradejediel70@gmail.com";  // <<<<< TROQUE AQUI PELO E-MAIL REAL
-
-    // Assunto do e-mail
+    $para = "andradejediel70@gmail.com"; // seu e-mail aqui
     $assunto_email = $assunto ?: "Mensagem pelo formulário do site";
 
-    // Corpo do e-mail
     $corpo = "Você recebeu uma nova mensagem do site:\n\n";
     $corpo .= "Nome: $nome\n";
     $corpo .= "Email: $email\n";
     $corpo .= "Assunto: $assunto_email\n";
     $corpo .= "Mensagem:\n$mensagem\n";
 
-    // Cabeçalho
-    $headers = "From: $nome <$email>";
+    // Ajuste do header para evitar problemas de spam
+    $headers = "From: contato@seudominio.com.br\r\n"; // email do seu domínio
+    $headers .= "Reply-To: $nome <$email>\r\n";
+    $headers .= "Content-Type: text/plain; charset=utf-8\r\n";
 
-    // Enviar e-mail
-    if (mail($para, $assunto_email, $corpo, $headers)) {
+    if (mail($para, $assunto_email, wordwrap($corpo, 70), $headers)) {
         echo "Mensagem enviada com sucesso!";
     } else {
         echo "Erro ao enviar a mensagem. Tente novamente.";
