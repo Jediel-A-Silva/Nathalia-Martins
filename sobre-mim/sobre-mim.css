@@ -669,38 +669,21 @@ footer {
   }
 
   /* Swiper */
-  .swiper {
-    width: 100%;
-    overflow: visible;
-  }
-  .swiper-wrapper {
-    display: flex !important;
-    overflow-x: auto !important;
-    -webkit-overflow-scrolling: touch;
-    gap: 1rem;
-  }
-  .swiper-slide {
-    flex-shrink: 0 !important;
-    width: 80% !important;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    background-color: #fff0f5;
-    padding: 1rem;
-    user-select: none;
-  }
-  .swiper-button-next,
-  .swiper-button-prev {
-    color: #d22376;
-    top: 50%;
-    width: 30px;
-    height: 30px;
-    margin-top: -15px;
-    opacity: 0.8;
-  }
-  .swiper-button-next:hover,
-  .swiper-button-prev:hover {
-    opacity: 1;
-  }
+  .my-carousel {
+  width: 100%;
+  overflow: hidden;
+}
+
+.my-carousel .swiper-slide {
+  width: auto; /* deixa o Swiper controlar */
+}
+
+.swiper-wrapper {
+  display: flex;
+}
+
+  
+  
 
   /* Header e Main */
   header,
@@ -944,7 +927,7 @@ footer {
     width: 19rem;
     font-size: 1.5rem;
     color: #ff4646;
-    font-weight: 900;
+    font-weight: 700;
     margin-left: 5px;
     margin-top: -1rem;
     animation: fadeIn 1.5s ease forwards;
