@@ -134,11 +134,11 @@ nav {
 }
 
 .container {
-    max-width: 1200px;
-    padding: 20px;
-    margin-top: 1%;
-    position: relative;
-    left: 7rem;
+  max-width: 1200px;
+  padding: 20px;
+  margin-top: 1%;
+  position: relative;
+  left: 7rem;
 }
 /* Perfil */
 .perfil {
@@ -194,7 +194,7 @@ nav {
   background: white;
   border: 1px solid #ccc;
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   z-index: 1001;
   flex-direction: column;
 }
@@ -202,8 +202,6 @@ nav {
 .ia-chat.ativo {
   display: flex;
 }
-
-
 
 .ia-avatar img {
   width: 60px;
@@ -321,7 +319,6 @@ nav {
 
 /* Carrossel Swiper */
 
-
 .swiper-slide {
   background: none;
   display: flex;
@@ -371,7 +368,6 @@ nav {
   transition: background 0.3s ease;
 }
 
-
 .swiper-button-prev,
 .swiper-button-next {
   position: absolute;
@@ -379,7 +375,6 @@ nav {
   top: auto; /* remove top para não conflitar */
   transform: none;
   background: transparent;
-  
 }
 
 .swiper-button-prev {
@@ -391,7 +386,6 @@ nav {
   left: 50%;
   transform: translateX(440px);
 }
-
 
 /* Seções personalizadas */
 .personalizada {
@@ -583,8 +577,8 @@ footer::before {
     height: auto;
     padding: 8px 16px;
   }
-  
-   nav {
+
+  nav {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -600,7 +594,7 @@ footer::before {
     flex: 1;
     min-width: 100px;
   }
-  
+
   .perfil {
     background-size: cover;
     background-attachment: scroll; /* Evita bugs no mobile */
@@ -620,7 +614,6 @@ footer::before {
     font-size: 1rem;
   }
 
-
   .menu {
     width: 220px;
     height: 586px;
@@ -638,7 +631,7 @@ footer::before {
     animation: gradient 15s ease infinite;
     z-index: 0;
   }
-  
+
   .swiper-slide img {
     width: 90%;
     height: auto;
@@ -648,38 +641,37 @@ footer::before {
     transform: scale(1.05);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
   }
-  
+
   .swiper-button-prev,
-.swiper-button-next {
-  display: block !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  width: 36px;
-  height: 36px;
-  font-size: 14px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* sombra mais suave */
-  transition: background 0.3s ease;
-  bottom: 50%;
-  transform: translateY(70%);
-  z-index: 10;
-}
+  .swiper-button-next {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* sombra mais suave */
+    transition: background 0.3s ease;
+    bottom: 50%;
+    transform: translateY(70%);
+    z-index: 10;
+  }
 
-.swiper-button-prev {
-  left: 30px;
-}
+  .swiper-button-prev {
+    left: 30px;
+  }
 
-.swiper-button-next {
-  left: 88%;
-  
-}
-
+  .swiper-button-next {
+    left: 88%;
+  }
 
   .container {
-    max-width: 1251px;
+    max-width: 1150px;
     height: 557px;
     padding: 40px;
     margin-top: -3%;
     position: relative;
+    left: auto;
   }
 
   .ia-container {
@@ -701,8 +693,6 @@ footer::before {
   .ia-body {
     max-height: 180px;
   }
-
-
 
   .personalizada {
     max-width: 100%;
