@@ -1,8 +1,13 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'vendor/autoload.php';
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome = strip_tags(trim($_POST["nome"]));
     $email = filter_var(trim($_POST["email"]), FILTER_VALIDATE_EMAIL);
-    $assunto = strip_tags(trim($_POST["assunto"]));
+    $assunto = strip_tags(trim($_POST["assunto"])) ?: "Mensagem pelo formulário do site";
     $mensagem = trim($_POST["mensagem"]);
 
     if (!$nome || !$email || !$mensagem) {
@@ -10,24 +15,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-    $para = "andradejediel70@gmail.com"; // seu e-mail aqui
-    $assunto_email = $assunto ?: "Mensagem pelo formulário do site";
+    $mail = new PHPMailer(true);
 
-    $corpo = "Você recebeu uma nova mensagem do site:\n\n";
-    $corpo .= "Nome: $nome\n";
-    $corpo .= "Email: $email\n";
-    $corpo .= "Assunto: $assunto_email\n";
-    $corpo .= "Mensagem:\n$mensagem\n";
+    try {
+        // Configuração SMTP Brevo
+        $mail->isSMTP();
+        $mail->Host       = 'smtp-relay.brevo.com';
+        $mail->SMTPAuth   = true;
+        $mail->Username   = '946b86001@smtp-brevo.com'; // seu usuário SMTP Brevo
+        $mail->Password   = 'O8EZjcU3tqBMpws4';          // sua senha SMTP Brevo
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->Port       = 587;
 
-    // Ajuste do header para evitar problemas de spam
-    $headers = "From: contato@seudominio.com.br\r\n"; // email do seu domínio
-    $headers .= "Reply-To: $nome <$email>\r\n";
-    $headers .= "Content-Type: text/plain; charset=utf-8\r\n";
+        // Remetente e destinatário
+        $mail->setFrom('andradejediel70@gmail.com', $nome);
+        $mail->addAddress('dra.nathalia.enfobstetra@gmail.com', 'Nathalia Martins');
 
-    if (mail($para, $assunto_email, wordwrap($corpo, 70), $headers)) {
+        // Conteúdo do e-mail
+        $mail->isHTML(true);
+        $mail->Subject = $assunto;
+        $mail->Body    = nl2br("Nome: $nome\nEmail: $email\n\nMensagem:\n$mensagem");
+        $mail->AltBody = "Nome: $nome\nEmail: $email\n\nMensagem:\n$mensagem";
+
+        $mail->send();
         echo "Mensagem enviada com sucesso!";
-    } else {
-        echo "Erro ao enviar a mensagem. Tente novamente.";
+    } catch (Exception $e) {
+        echo "Erro ao enviar a mensagem: {$mail->ErrorInfo}";
     }
 } else {
     echo "Método inválido.";
