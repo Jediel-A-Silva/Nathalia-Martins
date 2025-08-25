@@ -15,7 +15,7 @@ body {
 
 /* NAVBAR */
 .navbar {
-  height: 75px;
+  height: 70px;
   background-color: #ff86b4ff;
   padding: 10px 20px;
   position: sticky;
@@ -703,17 +703,20 @@ nav {
 }
 
 .contact form {
-  background: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 500px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+ width: 370px;
+    height: 275px;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 12px;
+    left: 22rem;
+    position: relative;
+    top: -1rem;
 }
-
+ 
 .contact label {
   font-weight: bold;
   color: #444;
@@ -794,7 +797,9 @@ footer::before {
 }
 
 .logo-footer {
-  max-width: 90px;
+  max-width: 180px;
+  overflow: hidden;
+  border-radius: 20px;
   margin-bottom: 10px;
 }
 
@@ -804,7 +809,7 @@ footer::before {
   .container {
     left: 0;
     padding: -18px;
-    height: 37.3rem;
+    height: 33rem;
     top: 3rem;
   }
 
@@ -864,9 +869,9 @@ footer::before {
     height: auto;
   }
 
-   .perfil h1 {
-        font-size: 2.2rem;
-        margin-top: -3rem;
+          .perfil h1 {
+        font-size: 2.3rem;
+        margin-top: -2rem;
         margin-bottom: 3rem;
     }
 
@@ -965,6 +970,9 @@ footer::before {
     width: 250px;
   }
 
+  .perfil h1 {
+    font-size: 1.6rem;
+  }
 
   .swiper-slide img {
     max-height: 280px;

@@ -7,13 +7,15 @@
 
     <!-- Fontes Google corrigidas -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Arima:wght@100;700&family=Cantata+One&display=swap"
       rel="stylesheet"
     />
-    
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Bibliotecas externas -->
     <link
@@ -218,7 +220,7 @@
         
       </section>
 
-      <section id="servicos2" class="personalizada" data-aos="fade-up">
+      <section id="servicos2" class="personalizada2" data-aos="fade-up">
         <h2>Dúvidas Frequentes</h2>
         <p>Quais tipos de parto você realiza?</p>
          <a href="depoimentos/depoimentos.html" id="duvidas" class="btn1"> Principais Dúvidas</a>
@@ -227,24 +229,29 @@
 
 
     
-    <section id="contato" class="contact" data-aos="fade-up">
-      <h2>Contato</h2>
-      <form action="https://formsubmit.co/dra.nathalia.enfobstetra2605@gmail.com" method="POST"
-        class="form">
-       <label for="name">Nome:</label>
-        <input type="text" name="name" id="name" required>
-        <label for="email">Email:</label>
-        <input type="email" name="email" id="email" required>
-        <input type="text" name="assunto" placeholder="Assunto" />
-        <label for="message">Mensagem:</label>
-        <textarea name="message" id="message" required></textarea>
-         <!-- Proteção contra spam -->
-        <input type="hidden" name="_captcha" value="true">
-<!-- Redirecionamento após envio -->
-        <input type="hidden" name="_next" value="http://127.0.0.1:5500/index.html">
-        <button type="submit">Enviar</button>
-      </form>
-    </section>
+   <section id="contato" class="contact" data-aos="fade-up">
+  <h2>Contato</h2>
+  <form action="http://localhost:5678/webhook/formulario-contato2" method="POST" class="form">
+    <label for="name">Nome:</label>
+    <input type="text" name="name" id="name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email" required>
+
+    <input type="text" name="assunto" placeholder="Assunto" />
+
+    <label for="message">Mensagem:</label>
+    <textarea name="message" id="message" required></textarea>
+
+    <!-- Proteção contra spam -->
+    <input type="hidden" name="_captcha" value="true">
+
+    <!-- Redirecionamento após envio -->
+    <input type="hidden" name="_next" value="http://127.0.0.1:5500/index.html">
+
+    <button type="submit">Enviar</button>
+  </form>
+</section>
 
     <!-- Footer -->
     <footer class="footer">
