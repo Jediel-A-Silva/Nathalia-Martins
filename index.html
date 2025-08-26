@@ -235,40 +235,68 @@
     <input type="email" name="email" placeholder="Seu email" required>
     <input type="text" name="title" placeholder="Assunto" required>
     <textarea name="message" placeholder="Sua mensagem" required></textarea>
+    
+    <!-- reCAPTCHA -->
+    <div class="g-recaptcha" data-sitekey="6LfAPrMrAAAAANMZWLfhuZWPNfi5ZG2VF3lPFZGK"></div>
+
     <button type="submit">Enviar</button>
   </form>
 </section>
 
 <!-- EmailJS -->
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<!-- reCAPTCHA -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 <script>
   (function() {
-    // ⚡ Use a sua PUBLIC KEY
-    emailjs.init("FoxmtgyUG8gGXaMnL");
+    emailjs.init("FoxmtgyUG8gGXaMnL"); // sua public key do EmailJS
   })();
 
   document.getElementById("contact-form").addEventListener("submit", function(event) {
     event.preventDefault();
 
-    // 1️⃣ Envia para você
-    emailjs.sendForm("service_6qzuusd", "template_phoeaje", this)
-      .then(function() {
-        console.log("📩 Email enviado para você!");
-      }, function(error) {
-        console.error("Erro ao enviar para você:", error);
-      });
+    // ⚡ Limite de 3 e-mails por dia
+    const today = new Date().toISOString().slice(0, 10); // formato AAAA-MM-DD
+    const storedData = JSON.parse(localStorage.getItem("email_limit")) || { date: today, count: 0 };
 
-    // 2️⃣ Envia auto-reply para o cliente
-   emailjs.sendForm("service_6qzuusd", "template_a5m980j", this)
+    if (storedData.date !== today) {
+      // Novo dia, reseta contador
+      storedData.date = today;
+      storedData.count = 0;
+    }
 
+    if (storedData.count >= 3) {
+      alert("⚠️ Você já enviou o limite de 3 mensagens hoje. Tente novamente amanhã.");
+      return;
+    }
+
+    // ⚡ Valida reCAPTCHA
+    const recaptchaResponse = grecaptcha.getResponse();
+    if (!recaptchaResponse) {
+      alert("⚠️ Confirme o reCAPTCHA antes de enviar.");
+      return;
+    }
+
+    // Envia o e-mail
+    emailjs.sendForm("service_XXXX", "template_XXXX", this)
       .then(function() {
-        alert("✅ Mensagem enviada com sucesso! Você receberá uma cópia no seu email.");
+        alert("✅ Mensagem enviada com sucesso!");
         document.getElementById("contact-form").reset();
+
+        // Atualiza contador
+        storedData.count++;
+        localStorage.setItem("email_limit", JSON.stringify(storedData));
+
+        // Reseta reCAPTCHA
+        grecaptcha.reset();
       }, function(error) {
-        alert("❌ Erro no auto-reply: " + JSON.stringify(error));
+        alert("❌ Erro ao enviar: " + JSON.stringify(error));
       });
   });
 </script>
+
+
 
 
 

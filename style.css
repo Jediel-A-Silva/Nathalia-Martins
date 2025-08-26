@@ -491,6 +491,16 @@ nav {
   transition: background 0.3s ease, transform 0.3s ease;
 }
 
+#servicos2 {
+    width: 18.8rem;
+    height: 25rem;
+    border-radius: 10px;
+    align-content: center;
+    align-items: center;
+    position: relative;
+    display: block;
+}
+
 #servicos h2,
 #servicos p,
 #servicos .btn,
@@ -703,20 +713,20 @@ nav {
 }
 
 .contact form {
- width: 370px;
-    height: 275px;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    margin-bottom: 12px;
-    left: 22rem;
-    position: relative;
-    top: -1rem;
+  width: 370px;
+  height: 275px;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 12px;
+  left: 22rem;
+  position: relative;
+  top: -1rem;
 }
- 
+
 .contact label {
   font-weight: bold;
   color: #444;
@@ -804,18 +814,17 @@ footer::before {
 }
 
 /* Responsivo */
-/* Responsivo */
 @media (max-width: 768px) {
   .container {
     left: 0;
-    padding: -18px;
-    height: 33rem;
+    padding: 10px; /* Corrigido: antes estava -18px */
+    height: auto;
     top: 3rem;
   }
 
   .keyframes {
     position: relative;
-    min-height: 1rem; /* ou a altura que quiser */
+    min-height: 1rem;
     background: linear-gradient(-45deg, #e3f2fd, #fce4ec, #fffde7, #e8f5e9);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
@@ -836,68 +845,119 @@ footer::before {
     flex: 1;
   }
 
+  .menu-wrapper {
+    display: flex
+;
+    align-items: center;
+    gap: 4rem;
+}
+
   .search {
     flex: 1;
+    width: 100%;
     min-width: 120px;
-    margin-left: 0; /* remove o 70rem que quebrava no mobile */
+    margin: 10px 0; /* Corrigido */
   }
 
   .personalizada {
-    padding: 40px 20px;
+    padding: 20px;
     background-color: #f9f9f9;
-    border: 2px solid #000; /* borda preta */
+    border: 2px solid #000;
     border-radius: 12px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-    flex: 1 1 250px;
-    max-width: 600px;
-    height: 30rem;
-  }
-
-  .personalizada::before {
-    width: 100%;
+    flex: 1 1 100%;
     max-width: 100%;
+    height: auto; /* Evita cortes no mobile */
   }
 
-  .perfil {
-    background-size: cover;
-    background-attachment: scroll; /* evita bug no mobile */
-    padding: 20px 10px;
-  }
+      #servicos2 {
+        width: 25.8rem;
+        height: 20rem;
+        border-radius: 10px;
+        align-content: center;
+        align-items: center;
+        position: relative;
+    }
+#servicos2, h2 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 1rem;
+}
+#servicos2, .btn1 {
+  font-size: 0.95rem;
+  display: inline-block;
+  color: white;
+  border: none;
+  padding: 10px 8px;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-top: 1.7rem;
+  position: relative;
+}
+
+    
+
+      .perfil {
+        background-size: cover;
+        background-attachment: scroll;
+        padding: 102px 20px;
+        text-align: center;
+    }
 
   .perfil img.logo {
-    width: 265px;
+    width: 220px;
     height: auto;
   }
 
-          .perfil h1 {
-        font-size: 2.3rem;
-        margin-top: -2rem;
-        margin-bottom: 3rem;
-    }
+  .perfil h1 {
+    font-size: 1.8rem;
+    margin: 1rem 0;
+  }
 
   .perfil h3 {
-    font-size: 1.3rem;
-    color: #a87b8d;
-    margin-top: -2rem;
-    margin-bottom: 2rem;
-}
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+  }
 
   .menu {
-        width: 100%;
-        height: 33rem;
-        top: 70px;
-        left: 0;
-        padding: 10px;
-    }
+    width: 100%;
+    height: auto;
+    top: 70px;
+    left: 0;
+    padding: 10px;
+  }
+
+  .contact form {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px auto; /* Centraliza */
+    position: relative; /* Corrigido: antes estava absolute */
+    left: 0rem;
+  }
 
   .ia-avatar img {
     width: 60px;
     height: 60px;
-    border-radius: 50%;
-    cursor: pointer;
-    box-shadow: 0 0 10px #999;
-    position: static;
   }
+
+      .swiper-slide img {
+        width: 91%;
+        max-width: 950px;
+        height: 480px;
+        margin-top: 80px;
+        border-radius: 20px;
+        object-fit: cover;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        transition: transform 0.5s ease, box-shadow 0.5s ease;
+    }
 
   .swiper-button-prev,
   .swiper-button-next {
@@ -905,98 +965,34 @@ footer::before {
     height: 36px;
     font-size: 14px;
     bottom: 50%;
-    top: auto;
     transform: translateY(50%);
-    z-index: 10;
-    background: transparent; /* botão com fundo rosado */
-    border-radius: 50%;
-    color: #fff;
-  }
+  left: auto;
+}
 
   .swiper-button-prev {
-    left: 10px; /* encosta no lado esquerdo */
+    left: 10px;
   }
-
   .swiper-button-next {
-    right: 10px; /* encosta no lado direito */
-    left: auto;
+    right: 10px;
   }
 }
-
-.container {
-  left: 0;
-  padding: 10px;
-}
-
-
-/* Ajuste especial para botoes */
-#sobre a ,
-.btn { 
-    margin-top: 202px;
-}
-
-#relatos , #duvidas a, .btn1 {
-    margin-top: 240px;
-}
-
-#duvidas {
-    position: relative;
-    display: block;
-    padding: 40px 20px;
-    border-radius: 8px;
-    overflow: hidden;
-    color: white;
-    font-size: 0.95rem;
-    margin: 6.98rem 0 0 0.7rem;
-    z-index: 0;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: aparecer 0.6s forwards;
-    animation-delay: 2.3s;
-    top: 14.3rem;
-}
-
-
-
 
 /* Ajuste especial para Samsung S23 e similares */
 @media (max-width: 430px) {
-  .search {
-    width: 100%;
-    margin: 10px 0;
-  }
-
   .perfil img.logo {
-    width: 250px;
+    width: 180px;
   }
-
   .perfil h1 {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
-
   .swiper-slide img {
-    max-height: 280px;
+    max-height: 250px;
   }
-
   .swiper-button-prev,
   .swiper-button-next {
-    width: 30px;
-    height: 30px;
+    width: 28px;
+    height: 28px;
     font-size: 12px;
     bottom: 45%;
   }
-}
-
-.ia-chat {
-  width: 90%;
-  right: 5%;
-}
-
-.swiper-button-prev {
-  left: 15px;
-}
-
-.swiper-button-next {
-  right: 15px;
-  left: auto;
 }
