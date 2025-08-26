@@ -816,10 +816,11 @@ footer::before {
 /* Responsivo */
 @media (max-width: 768px) {
   .container {
+    width: 22rem;
     left: 0;
     padding: 10px; /* Corrigido: antes estava -18px */
     height: auto;
-    top: 3rem;
+    top: 0rem;
   }
 
   .keyframes {
@@ -870,9 +871,14 @@ footer::before {
     height: auto; /* Evita cortes no mobile */
   }
 
+  #sobre, #servicos, #servicos1 {
+    width: 25.8rem;
+        height: 22rem;
+  }
+
       #servicos2 {
         width: 25.8rem;
-        height: 20rem;
+        height: 22rem;
         border-radius: 10px;
         align-content: center;
         align-items: center;
@@ -930,9 +936,9 @@ footer::before {
 
   .contact form {
     width: 100%;
-    max-width: 350px;
+    max-width: 400px;
     height: auto;
-    padding: 12px;
+    padding: 35px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -951,7 +957,7 @@ footer::before {
       .swiper-slide img {
         width: 91%;
         max-width: 950px;
-        height: 480px;
+        height: 20rem;
         margin-top: 80px;
         border-radius: 20px;
         object-fit: cover;
@@ -976,17 +982,25 @@ footer::before {
     right: 10px;
   }
 }
+/* Ajuste for formulario */
+.contact button {
+    margin-top: 1rem;
+}
+
+.contact input, .contact textarea {
+    padding: 19px;
+}
 
 /* Ajuste especial para Samsung S23 e similares */
 @media (max-width: 430px) {
   .perfil img.logo {
-    width: 180px;
+    width: 280px;
   }
   .perfil h1 {
-    font-size: 1.5rem;
+    font-size: 2.3rem;
   }
   .swiper-slide img {
-    max-height: 250px;
+    max-height: 100rem;
   }
   .swiper-button-prev,
   .swiper-button-next {
