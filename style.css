@@ -55,11 +55,11 @@ nav {
   cursor: pointer;
 }
 
-.redes-sociais {
+.redes-sociais, .redes-icons {
   text-align: center;
   margin-top: 20px;
   padding: 15px 10px;
-  border-top: 1px solid #ddd;
+  border-top: none;
 }
 
 .redes-sociais p {
@@ -70,7 +70,7 @@ nav {
 }
 
 /* aqui que garante os ícones lado a lado */
-.redes-sociais-icons {
+.redes-sociais-icons, .redes-icons {
   display: flex;
   justify-content: center;
   gap: 15px;
@@ -897,6 +897,18 @@ footer::before {
   z-index: -1;
 }
 
+.redes-icons{
+  margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    gap: 0.4rem;
+}
+
+.redes-sociais-icons {
+    margin-bottom: 1.8rem;
+    margin-top: 1.8rem;
+    gap: 1.8rem;
+  }
+
 .logo-footer {
   max-width: 180px;
   overflow: hidden;
@@ -1080,6 +1092,15 @@ footer::before {
 
   .swiper-button-next {
     right: 10px;
+  }
+
+  .redes-sociais-icons {
+    margin-bottom: 1.8rem;
+    margin-top: 1.8rem;
+    gap: 1.8rem;
+  }
+  .logo-footer {
+    max-width: 80px;
   }
 }
 
