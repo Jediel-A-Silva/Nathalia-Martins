@@ -492,13 +492,13 @@ nav {
 }
 
 #servicos2 {
-    width: 18.8rem;
-    height: 25rem;
-    border-radius: 10px;
-    align-content: center;
-    align-items: center;
-    position: relative;
-    display: block;
+  width: 18.8rem;
+  height: 25rem;
+  border-radius: 10px;
+  align-content: center;
+  align-items: center;
+  position: relative;
+  display: block;
 }
 
 #servicos h2,
@@ -817,10 +817,10 @@ footer::before {
 @media (max-width: 768px) {
   .container {
     width: 22rem;
-    left: 0;
+    left: 15px;
     padding: 10px; /* Corrigido: antes estava -18px */
     height: auto;
-    top: 0rem;
+    top: -3rem;
   }
 
   .keyframes {
@@ -847,11 +847,10 @@ footer::before {
   }
 
   .menu-wrapper {
-    display: flex
-;
+    display: flex;
     align-items: center;
     gap: 4rem;
-}
+  }
 
   .search {
     flex: 1;
@@ -871,45 +870,47 @@ footer::before {
     height: auto; /* Evita cortes no mobile */
   }
 
-  #sobre, #servicos, #servicos1 {
+  #sobre,
+  #servicos,
+  #servicos1 {
     width: 25.8rem;
-        height: 22rem;
+    height: 22rem;
   }
 
-      #servicos2 {
-        width: 25.8rem;
-        height: 22rem;
-        border-radius: 10px;
-        align-content: center;
-        align-items: center;
-        position: relative;
-    }
-#servicos2, h2 {
-  font-size: 1.3rem;
-  font-weight: bold;
-  text-align: center;
-  margin-top: 1rem;
-}
-#servicos2, .btn1 {
-  font-size: 0.95rem;
-  display: inline-block;
-  color: white;
-  border: none;
-  padding: 10px 8px;
-  border-radius: 8px;
-  text-decoration: none;
-  margin-top: 1.7rem;
-  position: relative;
-}
+  #servicos2 {
+    width: 25.8rem;
+    height: 22rem;
+    border-radius: 10px;
+    align-content: center;
+    align-items: center;
+    position: relative;
+  }
+  #servicos2,
+  h2 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 1rem;
+  }
+  #servicos2,
+  .btn1 {
+    font-size: 0.95rem;
+    display: inline-block;
+    color: white;
+    border: none;
+    padding: 10px 8px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-top: 1.7rem;
+    position: relative;
+  }
 
-    
-
-      .perfil {
-        background-size: cover;
-        background-attachment: scroll;
-        padding: 102px 20px;
-        text-align: center;
-    }
+  .perfil {
+    background-size: cover;
+    background-attachment: scroll;
+    padding: 102px 20px;
+    text-align: center;
+  }
 
   .perfil img.logo {
     width: 220px;
@@ -954,16 +955,16 @@ footer::before {
     height: 60px;
   }
 
-      .swiper-slide img {
-        width: 91%;
-        max-width: 950px;
-        height: 20rem;
-        margin-top: 80px;
-        border-radius: 20px;
-        object-fit: cover;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        transition: transform 0.5s ease, box-shadow 0.5s ease;
-    }
+  .swiper-slide img {
+    width: 91%;
+    max-width: 950px;
+    height: 20rem;
+    margin-top: 80px;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+  }
 
   .swiper-button-prev,
   .swiper-button-next {
@@ -972,8 +973,8 @@ footer::before {
     font-size: 14px;
     bottom: 50%;
     transform: translateY(50%);
-  left: auto;
-}
+    left: auto;
+  }
 
   .swiper-button-prev {
     left: 10px;
@@ -982,13 +983,74 @@ footer::before {
     right: 10px;
   }
 }
-/* Ajuste for formulario */
-.contact button {
-    margin-top: 1rem;
+
+/* Ajuste for card */
+#servicos h2,
+p {
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 1rem;
 }
 
-.contact input, .contact textarea {
-    padding: 19px;
+#sobre h2 {
+  font-size: 1.4rem;
+}
+
+#servicos2,
+h2 {
+  font-size: 1.6rem;
+}
+
+#servicos li {
+  font-size: 1.2rem;
+  padding-left: 15px;
+}
+
+/* Ajuste for botao formulario */
+.contact button {
+  margin-top: 1rem;
+}
+
+#sobre a {
+  margin-top: 7.8rem;
+}
+
+.btn {
+  margin-top: 4.8rem;
+}
+
+#relatos {
+  margin-top: 8.96rem;
+}
+
+#servicos2 .btn1 {
+  left: -4rem;
+  margin-bottom: 2.2rem;
+}
+
+.contact input,
+.contact textarea {
+  padding: 19px;
+}
+
+.logo-footer {
+  max-width: 150px;
+  overflow: hidden;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+footer p {
+  font-size: 0.9rem;
+  color: #5d3f3f;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  margin-top: 10px;
+  line-height: 1.4;
+  font-weight: 500;
+  text-align: center;
+  padding: 0 10px;
+  position: relative;
 }
 
 /* Ajuste especial para Samsung S23 e similares */
