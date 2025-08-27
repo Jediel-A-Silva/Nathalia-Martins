@@ -1120,8 +1120,8 @@ footer::before {
 
   #menu .fechar {
     position: fixed;
-    top: 85px;
-    left: rem;
+    top: 89px;
+    left: 21rem;
     font-size: 19px;
     background: transparent;
     border: none;
