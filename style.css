@@ -55,12 +55,12 @@ nav {
 .menu {
   display: none;
   position: absolute;
-  top: 75px;
+  top: 70px;
   left: -19px;
   background-color: #fff;
   border: 1px solid #ddd;
   padding: 19px;
-  width: 240px;
+  width: 280px;
   font-size: 12px;
   height: 40rem;
   overflow-y: auto;
@@ -471,6 +471,8 @@ nav {
   transition: transform 0.3s ease;
 }
 
+
+
 #servicos1::before {
   content: "";
   position: absolute;
@@ -493,12 +495,31 @@ nav {
 
 #servicos2 {
   width: 18.8rem;
-  height: 25rem;
+  height: 29rem;
   border-radius: 10px;
   align-content: center;
   align-items: center;
   position: relative;
   display: block;
+}
+
+#servicos2 h2{
+  margin-top: -9.9rem;
+}
+
+#servicos2 .btn1 {
+  left: 1rem;
+  top: 11rem;
+}
+
+#servicos p,
+h2 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 0.2rem;
+  margin-bottom: 15px;
+  color: #ff78ae;
 }
 
 #servicos h2,
@@ -562,6 +583,7 @@ nav {
   background-color: #ffe9f0;
   border-radius: 16px;
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
+  gap: 2.5rem;
 }
 #sobre {
   position: relative;
@@ -602,7 +624,7 @@ nav {
 
 #sobre p {
   animation-delay: 0.6s;
-  font-size: 1.1em;
+  font-size: 1.4em;
   margin-top: 10px;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
@@ -631,19 +653,17 @@ nav {
   background-color: #e91e63;
   color: white;
   border: none;
-  padding: 13px 10px;
+  padding: 12px 10px;
   border-radius: 8px;
   text-decoration: none;
-  margin-top: 6.98rem;
+  top: 5.4rem;
   left: 0.7rem;
   position: relative;
   transition: background 0.3s, transform 0.3s;
-
-  /* animação */
   opacity: 0;
   transform: translateY(20px);
   animation: aparecer 0.6s forwards;
-  animation-delay: 2.3s; /* ajuste conforme quiser */
+  animation-delay: 2.3s;
 }
 
 #relatos.btn:hover {
@@ -684,10 +704,10 @@ nav {
   background-color: #e91e63;
   color: white;
   border: none;
-  padding: 13px 10px;
+  padding: 12px 10px;
   border-radius: 8px;
   text-decoration: none;
-  margin-top: 1.7rem;
+  top: 3.7rem;
   left: 0.7rem;
   position: relative;
 }
@@ -713,19 +733,22 @@ nav {
 }
 
 .contact form {
-  width: 370px;
-  height: 275px;
-  padding: 10px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin-bottom: 12px;
-  left: 22rem;
-  position: relative;
-  top: -1rem;
+    width: 370px;
+    height: 442px;
+    padding: 18px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex
+;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 8px;
+    left: 22rem;
+    position: relative;
+    top: -4rem;
 }
+
+
 
 .contact label {
   font-weight: bold;
@@ -817,7 +840,6 @@ footer::before {
 @media (max-width: 768px) {
   .container {
     width: 22rem;
-    left: 15px;
     padding: 10px; /* Corrigido: antes estava -18px */
     height: auto;
     top: -3rem;
@@ -990,7 +1012,7 @@ p {
   font-size: 1.4rem;
   font-weight: bold;
   text-align: center;
-  margin-top: 1rem;
+  margin-top: 0.2rem;
 }
 
 #sobre h2 {
@@ -1013,7 +1035,7 @@ h2 {
 }
 
 #sobre a {
-  margin-top: 7.8rem;
+  margin-top: 9.8rem;
 }
 
 .btn {
@@ -1024,10 +1046,7 @@ h2 {
   margin-top: 8.96rem;
 }
 
-#servicos2 .btn1 {
-  left: -4rem;
-  margin-bottom: 2.2rem;
-}
+
 
 .contact input,
 .contact textarea {
