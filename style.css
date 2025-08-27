@@ -5,6 +5,12 @@
   box-sizing: border-box;
 }
 
+html.menu-aberto,
+body.menu-aberto {
+  height: 100%;
+  overflow: hidden;
+}
+
 /* Fonte base */
 body {
   font-family: "Arial", sans-serif;
@@ -31,6 +37,56 @@ nav {
   align-items: center;
 }
 
+.menu {
+  display: none;
+}
+.menu.ativo {
+  display: block;
+}
+
+/* Opcional: posicionar o X */
+.menu .fechar {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: transparent;
+  border: 0;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.redes-sociais {
+  text-align: center;
+  margin-top: 20px;
+  padding: 15px 10px;
+  border-top: 1px solid #ddd;
+}
+
+.redes-sociais p {
+  font-size: 14px;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 12px;
+}
+
+/* aqui que garante os ícones lado a lado */
+.redes-sociais-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.redes-sociais a {
+  font-size: 24px;
+  color: #555;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.redes-sociais a:hover {
+  color: #d63384; /* cor de destaque */
+  transform: scale(1.2);
+}
+
 .search {
   padding: 8px;
   border-radius: 5px;
@@ -54,18 +110,35 @@ nav {
 /* Menu */
 .menu {
   display: none;
-  position: absolute;
+  position: fixed; /* melhor que absolute pra menu lateral */
   top: 70px;
-  left: -19px;
+  left: 0;
+  width: 280px;
+  height: calc(100% - 70px); /* ocupa o resto da tela abaixo da navbar */
   background-color: #fff;
   border: 1px solid #ddd;
   padding: 19px;
-  width: 280px;
   font-size: 12px;
-  height: 40rem;
-  overflow-y: auto;
+
+  overflow-y: auto; /* ativa rolagem se o conteúdo for maior */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   z-index: 999;
+}
+
+#menu .fechar {
+  position: absolute;
+  top: 27px;
+  left: 14rem;
+  font-size: 15px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 2001;
+}
+
+/* menu aberto */
+.menu.ativo {
+  display: block;
 }
 
 .menu::-webkit-scrollbar {
@@ -471,8 +544,6 @@ nav {
   transition: transform 0.3s ease;
 }
 
-
-
 #servicos1::before {
   content: "";
   position: absolute;
@@ -503,7 +574,7 @@ nav {
   display: block;
 }
 
-#servicos2 h2{
+#servicos2 h2 {
   margin-top: -9.9rem;
 }
 
@@ -733,22 +804,19 @@ h2 {
 }
 
 .contact form {
-    width: 370px;
-    height: 442px;
-    padding: 18px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    display: flex
-;
-    flex-direction: column;
-    gap: 8px;
-    margin-bottom: 8px;
-    left: 22rem;
-    position: relative;
-    top: -4rem;
+  width: 370px;
+  height: 442px;
+  padding: 18px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 8px;
+  left: 22rem;
+  position: relative;
+  top: -4rem;
 }
-
-
 
 .contact label {
   font-weight: bold;
@@ -836,11 +904,10 @@ footer::before {
   margin-bottom: 10px;
 }
 
-/* Responsivo */
 @media (max-width: 768px) {
   .container {
     width: 22rem;
-    padding: 10px; /* Corrigido: antes estava -18px */
+    padding: 10px;
     height: auto;
     top: -3rem;
     left: auto;
@@ -867,9 +934,6 @@ footer::before {
 
   .menu-wrapper {
     flex: 1;
-  }
-
-  .menu-wrapper {
     display: flex;
     align-items: center;
     gap: 4rem;
@@ -879,7 +943,7 @@ footer::before {
     flex: 1;
     width: 100%;
     min-width: 120px;
-    margin: 10px 0; /* Corrigido */
+    margin: 10px 0;
   }
 
   .personalizada {
@@ -890,7 +954,7 @@ footer::before {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
     flex: 1 1 100%;
     max-width: 100%;
-    height: auto; /* Evita cortes no mobile */
+    height: auto;
   }
 
   #sobre,
@@ -909,20 +973,34 @@ footer::before {
     position: relative;
   }
 
- #servicos1 p, #servicos2 p {
+  #servicos1 p,
+  #servicos2 p {
     font-size: 1.3rem;
     font-weight: 900;
     text-align: center;
-        margin-top: 1.9rem;
-  } 
+    margin-top: 1.9rem;
+  }
 
-
-  #servicos2
-  h2  {
+  #servicos2 h2 {
     font-size: 1.3rem;
     font-weight: 900;
     text-align: center;
-        margin-top: -5.9rem;
+    margin-top: -5.9rem;
+  }
+
+  #servicos2 .btn1 {
+    left: 1rem;
+    top: 5rem;
+  }
+
+  #relatos {
+    top: 7.4rem;
+    left: 0.7rem;
+  }
+
+  .btn {
+    top: 5rem;
+    left: 0.7rem;
   }
 
   .perfil {
@@ -965,8 +1043,8 @@ footer::before {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin: 20px auto; /* Centraliza */
-    position: relative; /* Corrigido: antes estava absolute */
+    margin: 20px auto;
+    position: relative;
     left: 0rem;
   }
 
@@ -999,92 +1077,70 @@ footer::before {
   .swiper-button-prev {
     left: 10px;
   }
+
   .swiper-button-next {
     right: 10px;
   }
 }
 
-/* Ajuste for card */
-#servicos h2,
-p {
-  font-size: 1.4rem;
-  font-weight: bold;
-  text-align: center;
-  margin-top: 0.2rem;
-}
-
-#sobre h2 {
-  font-size: 1.4rem;
-}
-
-#servicos2,
-h2 {
-  font-size: 1.6rem;
-}
-
-#servicos li {
-  font-size: 1.2rem;
-  font-weight: 800;
-  padding-left: 15px;
-}
-
-/* Ajuste for botao formulario */
-.contact button {
-  margin-top: 1rem;
-}
-
-#sobre a {
-    margin-top: 4.9rem;
-}
-
-.btn {
-  margin-top: -0.5rem;
-}
-
-#relatos {
-  top: 6.5rem;
-}
-
-#servicos2 .btn1 {
-    left: 1rem;
-    top: 6rem;
-}
-
-.contact input,
-.contact textarea {
-  padding: 19px;
-}
-
-.logo-footer {
-  max-width: 150px;
-  overflow: hidden;
-  border-radius: 20px;
-  margin-bottom: 10px;
-}
-
-footer p {
-  font-size: 0.9rem;
-  color: #5d3f3f;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-  margin-top: 10px;
-  line-height: 1.4;
-  font-weight: 500;
-  text-align: center;
-  padding: 0 10px;
-  position: relative;
-}
-
-/* Ajuste especial para Samsung S23 e similares */
+/* =========================
+   📱 RESPONSIVO - até 430px
+========================= */
 @media (max-width: 430px) {
+  .menu {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 60%;
+    padding: 13px 0px 24px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+    z-index: 2000;
+    background: #fff;
+    border: 0;
+    box-shadow: none;
+    margin-top: 0rem;
+  }
+
+  #menu {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    width: 100%;
+    height: 75%;
+    background: #fff;
+    transition: right 0.3s ease;
+    z-index: 2000;
+  }
+
+  #menu.ativo {
+    right: 0;
+  }
+
+  #menu .fechar {
+    position: fixed;
+    top: 85px;
+    left: 23rem;
+    font-size: 19px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 2001;
+  }
+
   .perfil img.logo {
     width: 280px;
   }
+
   .perfil h1 {
     font-size: 2.3rem;
   }
+
   .swiper-slide img {
     max-height: 100rem;
   }
+
   .swiper-button-prev,
   .swiper-button-next {
     width: 28px;

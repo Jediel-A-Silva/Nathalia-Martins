@@ -23,6 +23,10 @@
       href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
     />
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
 
     <!-- Seu CSS -->
     <link rel="stylesheet" href="style.css" />
@@ -32,6 +36,7 @@
         scroll-behavior: smooth;
       }
     </style>
+    
   </head>
 
   <body>
@@ -48,6 +53,7 @@
           </button>
           
           <div class="menu" id="menu" role="menu">
+            <button type="button" class="fechar" onclick="fechar()" aria-label="Fechar menu">✖</button>
             <a href="index.html">🏠 Início</a>
             <div class="categoria">🤰 Pré-natal</div>
             <a href="consulta-enfermagem.html"
@@ -74,7 +80,28 @@
             <a href="https://www.instagram.com/farmaciamaterna" target="_blank">💊 Farmácia Materna</a><br>
             <a href="https://www.instagram.com/assocobstetricabrasil" target="_blank">📚 Associação Obstétrica Brasil</a><br>
             <a href="https://www.instagram.com/curso_parto" target="_blank">🎓 Curso de Preparação para Parto</a><br>
-            <a href="https://www.instagram.com/mamaeinformada" target="_blank">📝 Blog Mamãe Informada</a></div>
+            <a href="https://www.instagram.com/mamaeinformada" target="_blank">📝 Blog Mamãe Informada</a>
+          <!-- Redes Sociais -->
+<div class="redes-sociais">
+  <p>Nos siga nas redes sociais</p>
+  <div class="redes-sociais-icons">
+    <a href="https://x.com" target="_blank" aria-label="X (Twitter)">
+      <i class="fab fa-x-twitter"></i>
+    </a>
+    <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+      <i class="fab fa-facebook"></i>
+    </a>
+    <a href="https://youtube.com" target="_blank" aria-label="YouTube">
+      <i class="fab fa-youtube"></i>
+    </a>
+    <a href="https://www.instagram.com/nathalia_enf.obstetra" target="_blank" aria-label="Instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+  </div>
+</div>
+
+
+          </div>
             <input type="text" placeholder="Buscar..." class="search" aria-label="Buscar no site" />
 
       </nav>

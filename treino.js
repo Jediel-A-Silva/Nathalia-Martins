@@ -27,18 +27,34 @@ const swiper = new Swiper(".my-carousel", {
 // =====================
 // Menu
 // =====================
-const menuBtn = document.querySelector(".menu-btn");
-const menu = document.getElementById("menu");
 
-menuBtn.addEventListener("click", () => {
-  menu.style.display = menu.style.display === "block" ? "none" : "block";
+
+
+// =====================
+// Menu (único)
+// =====================
+document.addEventListener("DOMContentLoaded", () => {
+  const menuBtn = document.querySelector(".menu-btn");
+  const menu = document.getElementById("menu");
+
+  menuBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    menu.classList.toggle("ativo");
+  });
+
+  document.addEventListener("click", (e) => {
+    if (menu.classList.contains("ativo") && !menu.contains(e.target) && !menuBtn.contains(e.target)) {
+      menu.classList.remove("ativo");
+    }
+  });
+
+  // torna a função acessível ao onclick do HTML
+  window.fechar = function () {
+    menu.classList.remove("ativo");
+  };
 });
 
-document.addEventListener("click", (e) => {
-  if (!menu.contains(e.target) && !menuBtn.contains(e.target)) {
-    menu.style.display = "none";
-  }
-});
+
 
 // =====================
 // IA - Abrir/Fechar Chat
