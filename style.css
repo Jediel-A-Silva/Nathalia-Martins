@@ -48,7 +48,7 @@ nav {
 .menu .fechar {
   position: absolute;
   top: 8px;
-  right: 8px;
+  right: 22px;
   background: transparent;
   border: 0;
   font-size: 20px;
@@ -1006,7 +1006,7 @@ footer::before {
   .perfil {
     background-size: cover;
     background-attachment: scroll;
-    padding: 102px 20px;
+    padding: 80px 20px;
     text-align: center;
   }
 
@@ -1121,7 +1121,7 @@ footer::before {
   #menu .fechar {
     position: fixed;
     top: 85px;
-    left: 23rem;
+    left: rem;
     font-size: 19px;
     background: transparent;
     border: none;
