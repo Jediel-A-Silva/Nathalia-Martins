@@ -44,7 +44,7 @@
     };
 
     try {
-      const response = await fetch("http://dra-nathaliamartins.netlify.app/webhook/depoimentos", {
+      const response = await fetch("https://late-buckets-remain.loca.lt/webhook/depoimentos", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data)
@@ -68,8 +68,6 @@
       document.getElementById("msg").innerText = "❌ Falha de conexão.";
     }
   });
-</script>
-
-
+  </script>
 </body>
 </html>
