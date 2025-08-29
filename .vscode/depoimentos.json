@@ -1,0 +1,54 @@
+{
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "comentarios",
+        "options": {}
+      },
+      "id": "Webhook_Node",
+      "name": "Webhook (Receber formulário)",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [250, 250],
+      "webhookDescription": "Recebe dados do formulário em JSON via POST"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "sheetId": "1efjZGfM4FREKPWi5G3RmEgfsEcm01Dt77YcVGd1LkJw",
+        "range": "Depoimento1",
+        "options": {
+          "valueInputMode": "USER_ENTERED"
+        },
+        "columns": [
+          "timestamp",
+          "nome",
+          "mensagem"
+        ],
+        "values": "={{ [ $now, $json[\"nome\"], $json[\"mensagem\"] ] }}"
+      },
+      "id": "Google_Sheets_Node",
+      "name": "Google Sheets (Salvar comentário)",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 2,
+      "position": [550, 250],
+      "credentials": {
+        "googleSheetsOAuth2Api": "Google Sheets OAuth2"
+      }
+    }
+  ],
+  "connections": {
+    "Webhook_Node": {
+      "main": [
+        [
+          {
+            "node": "Google_Sheets_Node",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  ]
+}

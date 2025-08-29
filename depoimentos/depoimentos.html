@@ -22,13 +22,54 @@
     <section class="formulario">
       <h2>Envie seu depoimento</h2>
       <form id="form-depoimento">
-        <input type="text" id="nome" placeholder="Seu nome" required>
-        <textarea id="mensagem" placeholder="Escreva seu depoimento" required></textarea>
+        <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+        <textarea id="mensagem" name="mensagem" placeholder="Escreva seu depoimento" required></textarea>
         <button type="submit">Enviar</button>
       </form>
+      <p id="msg"></p>
     </section>
   </main>
 
-  <script src="depoimentos.js"></script>
+  <footer class="footer">
+    <p>&copy; 2024 Depoimentos. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+  document.getElementById("form-depoimento").addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    const data = {
+      nome: document.getElementById("nome").value,
+      mensagem: document.getElementById("mensagem").value
+    };
+
+    try {
+      const response = await fetch("http://dra-nathaliamartins.netlify.app/webhook/depoimentos", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      });
+
+      if (response.ok) {
+        document.getElementById("msg").innerText = "✅ Depoimento enviado com sucesso!";
+        
+        // --- ADICIONA O DEPOIMENTO NA PÁGINA ---
+        const container = document.getElementById("depoimentos-container");
+        const div = document.createElement("div");
+        div.classList.add("depoimento");
+        div.innerHTML = `<strong>${data.nome}</strong><p>${data.mensagem}</p>`;
+        container.prepend(div);
+
+        this.reset();
+      } else {
+        document.getElementById("msg").innerText = "⚠️ Erro ao enviar. Tente novamente.";
+      }
+    } catch (error) {
+      document.getElementById("msg").innerText = "❌ Falha de conexão.";
+    }
+  });
+</script>
+
+
 </body>
 </html>
