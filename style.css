@@ -63,10 +63,10 @@ nav {
 }
 
 .redes-sociais p {
-  font-size: 14px;
-  font-weight: 600;
-  color: #444;
-  margin-bottom: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: -20px;
 }
 
 /* aqui que garante os ícones lado a lado */
@@ -190,7 +190,7 @@ nav {
 
 .keyframes {
   position: relative;
-  min-height: 100vh; /* ou a altura que quiser */
+  min-height: 75vh; /* ou a altura que quiser */
   background: linear-gradient(-45deg, #e3f2fd, #fce4ec, #fffde7, #e8f5e9);
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
@@ -228,16 +228,20 @@ nav {
 }
 
 .perfil h1 {
-  font-family: "Great Vibes", cursive;
-  font-weight: 400;
-  font-size: 50px;
-  color: #b58b29;
-  text-shadow: 1px 1px 0 #a67c00, 2px 2px 1px #8c6b00, 3px 3px 2px #735600;
+    font-family: "Great Vibes", cursive;
+    font-weight: 400;
+    font-size: 50px;
+    color: #b58b29;
+    text-shadow: 1px 1px 0 #a67c00, 2px 2px 1px #8c6b00, 3px 3px 2px #735600;
+    top: -2rem;
+    position: relative;
 }
 
 .perfil h3 {
-  font-size: 1.3rem;
-  color: #a87b8d;
+    font-size: 1.3rem;
+    color: #a87b8d;
+    top: -1rem;
+    position: relative;
 }
 
 .perfil img.logo {
@@ -289,6 +293,7 @@ nav {
 
 #iaChat {
   width: 320px;
+  height: 320px;
   background: #fff0f5;
   border-radius: 12px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -471,7 +476,7 @@ nav {
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
   flex: 1 1 250px;
-  max-width: 300px;
+  max-width: 325px;
 }
 
 .personalizada h2 {
@@ -513,26 +518,56 @@ nav {
 }
 
 #duvidas.btn1:hover {
-  background: #f797caff;
+  background: 
+  rgb(240, 66, 159);
   transform: scale(1.05);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
-#duvidas a,
+
+#servicos2 {
+  width: 20.8rem;
+  height: 29rem;
+  border-radius: 10px;
+  align-content: center;
+  align-items: center;
+  position: relative;
+  display: block;
+}
 #servicos2 .btn1 {
   display: inline-block;
-  margin-top: 20px;
   padding: 10px 20px;
   background-color: #e91e63;
-  color: white;
+  color: rgb(255, 255, 255);
   border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
   transition: background-color 0.3s, transform 0.3s;
-
+  
   /* animação diferenciada */
   animation-delay: 2.5s;
 }
+
+#servicos2 p {
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 0.2rem;
+    top: 0rem;
+    color: #ffffff;
+    position: relative;
+}
+
+#servicos2 h2 {
+  top: -2rem;
+  position: relative;
+}
+
+#servicos2 .btn1 {
+  left: 1rem;
+  top: 2.3rem;
+}
+
 
 #servicos2::before {
   content: "";
@@ -564,24 +599,7 @@ nav {
   transition: background 0.3s ease, transform 0.3s ease;
 }
 
-#servicos2 {
-  width: 18.8rem;
-  height: 29rem;
-  border-radius: 10px;
-  align-content: center;
-  align-items: center;
-  position: relative;
-  display: block;
-}
 
-#servicos2 h2 {
-  margin-top: -9.9rem;
-}
-
-#servicos2 .btn1 {
-  left: 1rem;
-  top: 11rem;
-}
 
 #servicos p,
 h2 {
@@ -659,12 +677,12 @@ h2 {
 #sobre {
   position: relative;
   flex: 1 1 100%;
-  padding: 40px 20px;
   color: #fff;
   border: none;
   border-radius: 16px;
   overflow: hidden;
   z-index: 1;
+  height: 29rem;
 }
 
 /* Fundo com imagem + blur */
@@ -688,7 +706,6 @@ h2 {
 
 #sobre h2 {
   animation-delay: 0.3s;
-  font-size: 1.7rem;
   font-weight: bold;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
 }
@@ -703,7 +720,7 @@ h2 {
 #sobre a {
   animation-delay: 0.9s;
   display: inline-block;
-  margin-top: 40px;
+  margin-top: 3rem;
   padding: 10px 20px;
   background: #e91e63;
   color: rgb(255, 255, 255);
@@ -724,10 +741,10 @@ h2 {
   background-color: #e91e63;
   color: white;
   border: none;
-  padding: 12px 10px;
+  padding: 12px 20px;
   border-radius: 8px;
   text-decoration: none;
-  top: 5.4rem;
+  top: 11.14rem;
   left: 0.7rem;
   position: relative;
   transition: background 0.3s, transform 0.3s;
@@ -759,98 +776,130 @@ h2 {
   animation-delay: 1.8s;
 }
 
-.contact {
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  align-items: center;
-  background-color: #e9185aff;
-}
+
 
 /* Botão */
 .btn {
-  font-size: 0.95rem;
-  display: inline-block;
-  background-color: #e91e63;
-  color: white;
-  border: none;
-  padding: 12px 10px;
-  border-radius: 8px;
-  text-decoration: none;
-  top: 3.7rem;
-  left: 0.7rem;
-  position: relative;
+    font-size: 0.95rem;
+    display: inline-block;
+    background-color: #e91e63;
+    color: white;
+    border: none;
+    padding: 12px 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    top: 10.99rem;
+    left: 0.7rem;
+    position: relative;
 }
 
 .btn:hover {
   background-color: #ff1493;
 }
 
-/* Formulário */
-/* Seção de contato */
-.contact {
-  background: transparent;
-  padding: 50px 20px;
+
+
+
+/* Container principal */
+.health-card { 
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  background: #ffe9f0;
+  border-radius: 20px;
+  padding: 50px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  gap: 40px;
+  margin-bottom: 40px;
 }
 
-.contact h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #333;
+/* Texto */
+.health-text {
+  flex: 1;
 }
 
-.contact form {
-  width: 370px;
-  height: 442px;
-  padding: 18px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+
+.health-text h1 {
+  font-family: "Great Vibes", cursive;
+  font-weight: 500;
+  font-size: 59px;
+  line-height: 2.9rem;
+  color: #fb10c8;
+  text-shadow: 0 0 10px rgba(255, 78, 80, 0.7),
+               0 0 20px rgba(255, 78, 80, 0.5),
+               0 0 30px rgba(255, 78, 80, 0.3);
+  animation: glowPulse 2s infinite alternate;
+}
+
+@keyframes glowPulse {
+  from {
+    text-shadow: 0 0 5px rgba(255, 78, 80, 0.5);
+  }
+  to {
+    text-shadow: 0 0 20px rgba(255, 78, 80, 1);
+  }
+}
+
+
+.health-text .blue {
+  color: #ff00d4;
+}
+
+.health-text p {
+  font-family: "Great Vibes", cursive;
+    font-size: 2.7rem;
+    line-height: 1.6;
+    color: #000000;
+    margin-bottom: 25px;
+    font-weight: 600;
+    margin-top: 4rem;
+}
+
+
+/* Imagem */
+.health-image {
+  flex: 1;
   display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-bottom: 8px;
-  left: 22rem;
+  justify-content: center;
+  width: 433px;
+  height: 400px;
+}
+
+.health-image img {
+  width: 433px;
+  height: 400px;
+    max-width: 100%;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    width: 524px;
+    height: 400px;
+}
+
+.carousel {
+  width: 601px;
+  height: 400px;
+  overflow: hidden;
   position: relative;
-  top: -4rem;
+  border-radius: 14px;
 }
 
-.contact label {
-  font-weight: bold;
-  color: #444;
+.slides {
+  display: flex;
+  gap: 10px;
 }
 
-.contact input,
-.contact textarea {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 14px;
+.slides img {
+  width: 433px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
 }
 
-.contact textarea {
-  resize: none;
-  height: 100px;
-}
 
-.contact button {
-  background: #fa0d9f;
-  color: white;
-  border: none;
-  padding: 12px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background 0.3s;
-}
 
-.contact button:hover {
-  background: #45a049;
-}
-
+           /* Ia  chat */
 .ia-chat {
   width: 95%;
   right: 2.5%;
@@ -874,6 +923,8 @@ form button:hover {
   background-color: #8c4a64;
 }
 
+
+
 /* Footer */
 footer {
   position: relative;
@@ -890,7 +941,7 @@ footer::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("img/footeer.png");
+  background-image: url("img/footer.png.jpg");
   background-size: cover;
   background-position: center;
   filter: blur(8px);
@@ -910,10 +961,15 @@ footer::before {
   }
 
 .logo-footer {
-  max-width: 180px;
-  overflow: hidden;
-  border-radius: 20px;
-  margin-bottom: 10px;
+    max-width: 80rem;
+    overflow: clip;
+    border-radius: 31px 10px;
+    margin-bottom: -3rem;
+    width: 15rem;
+    border: none;
+    top: -2rem;
+    position: relative;
+    margin-top: 2rem;
 }
 
 @media (max-width: 768px) {
@@ -1001,8 +1057,8 @@ footer::before {
   }
 
   #servicos2 .btn1 {
-    left: 1rem;
-    top: 5rem;
+    left: 11rem;
+    top: 11.14rem;
   }
 
   #relatos {

@@ -1,69 +1,60 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Depoimentos</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-      background: #f9f9f9;
-    }
-
-    header {
-      background: #6a1b9a;
-      color: #fff;
-      padding: 20px;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-    }
-
-    header p {
-      margin: 5px 0 0;
-    }
-
-    .form-container {
-      padding: 20px;
-    }
-
-    iframe {
-      width: 100%;
-      max-width: 800px;
-      height: 900px;
-      border: none;
-    }
-
-    footer {
-      background: #eee;
-      padding: 10px;
-      font-size: 0.9rem;
-      color: #555;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depoimentos</title>
+    <link rel="stylesheet" href="depoimentos.css">
 </head>
 <body>
-  <header>
-    <h1>💬 Depoimentos!</h1>
-    <p>Deixe aqui sua experiência conosco</p>
-  </header>
+    <section class="testimonials">
+        <div class="testimonial-card">
+            <div class="quote-icon">“</div>
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">
+                "Em 1 semana meu site VIP estava no ar e já estava recebendo novos clientes premium. O suporte via WhatsApp é excepcional!"
+            </p>
+            <div class="user-info">
+                <img src="maria.jpg" alt="Maria Silva" class="user-photo">
+                <div>
+                    <p class="user-name">Maria Silva</p>
+                    <p class="user-role">CEO</p>
+                    <p class="user-company">Silva Consultoria Premium</p>
+                </div>
+            </div>
+        </div>
 
-  <main class="form-container">
-    <!-- Google Form embutido -->
-    <iframe 
-      src="https://docs.google.com/forms/d/e/1FAIpQLSfFNKW3a2gD6p6yi84RGd33l0rVey1BJsIZIELYasXXWvKANw/viewform?embedded=true" 
-      allowfullscreen>
-      Carregando…
-    </iframe>
-  </main>
+        <div class="testimonial-card">
+            <div class="quote-icon">“</div>
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">
+                "O melhor investimento que fiz para minha empresa. Site premium com preço justo e atendimento VIP no WhatsApp."
+            </p>
+            <div class="user-info">
+                <img src="joao.jpg" alt="João Santos" class="user-photo">
+                <div>
+                    <p class="user-name">João Santos</p>
+                    <p class="user-role">Sócio-Diretor</p>
+                    <p class="user-company">Santos & Associados</p>
+                </div>
+            </div>
+        </div>
 
-  <footer>
-    <p>&copy; 2024 Depoimentos. Todos os direitos reservados.</p>
-  </footer>
+        <div class="testimonial-card">
+            <div class="quote-icon">“</div>
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">
+                "Minha loja online cresceu 500% depois que migrei para o PRO VIP SITES. WhatsApp sempre disponível!"
+            </p>
+            <div class="user-info">
+                <img src="ana.jpg" alt="Ana Costa" class="user-photo">
+                <div>
+                    <p class="user-name">Ana Costa</p>
+                    <p class="user-role">Empreendedora</p>
+                    <p class="user-company">Costa E-commerce VIP</p>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 </html>

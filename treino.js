@@ -239,3 +239,20 @@ function responderIA(pergunta) {
   adicionarMensagemIA("Desculpe, não encontrei uma resposta exata. 😊");
 }
 
+const slides = document.querySelector('.slides');
+const slideWidth = slides.querySelector('img').offsetWidth;
+let scrollPosition = 0;
+
+// Duplicar slides no JS para loop suave
+slides.innerHTML += slides.innerHTML;
+
+function animate() {
+  scrollPosition += 1; // velocidade (px por frame)
+  if (scrollPosition >= slides.scrollWidth / 2) {
+    scrollPosition = 0; // reinicia no início
+  }
+  slides.style.transform = `translateX(-${scrollPosition}px)`;
+  requestAnimationFrame(animate);
+}
+
+animate();
