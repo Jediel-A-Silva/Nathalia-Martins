@@ -156,29 +156,22 @@ button.next {
   }
 
   .testimonials h1 {
-        font-size: 3rem;
-        top: -1rem;
-        margin-bottom: -2rem;
-    }
+    font-size: 2.5rem;
+    top: -4rem;
+    margin-bottom: -1rem;
+  }
 
-      .testimonials h2 {
-        font-size: 3.5rem;
-        top: 0rem;
-        margin-bottom: -6.5rem;
-    }
+  .testimonials h2 {
+    font-size: 2rem;
+    top: -3rem;
+    margin-bottom: -1.5rem;
+  }
 
   .card {
-        max-width: 90%;
-        min-height: 300px;
-        padding: 24px;
-        margin: 139px auto 20px;
-        bottom: 0rem;
-        position: relative;
-    }
-
-    button.prev, button.next {
-    position: absolute;
-    top: 61%;
+    max-width: 90%;
+    min-height: 300px;
+    padding: 15px;
+    margin: 0 auto 20px;
   }
 
   .slide img,
@@ -190,42 +183,5 @@ button.next {
   .slide p {
     font-size: 1rem;
     max-width: 90%;
-  }
-}
-/* Tablet (iPad Mini, iPad, etc.) */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-  body {
-    background-position-x: 75%; /* deixa a mulher bem enquadrada */
-    background-position-y: center;
-    background-size: cover;
-  }
-
-  .testimonials h1 {
-    font-size: 3.2rem;
-    top: -5rem;
-    margin-bottom: -1.5rem;
-  }
-
-  .testimonials h2 {
-    font-size: 2.5rem;
-    top: -4rem;
-    margin-bottom: -2rem;
-  }
-
-  .card {
-    max-width: 70%; /* mais largo que no mobile */
-    min-height: 350px;
-    margin: 20px auto;
-  }
-
-  .slide img,
-  .card img {
-    width: 120px;
-    height: 120px;
-  }
-
-  .slide p {
-    font-size: 1.1rem;
-    max-width: 80%;
   }
 }
