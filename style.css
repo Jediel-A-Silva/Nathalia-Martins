@@ -84,7 +84,7 @@ margin: 1rem 0 -14px;
 }
 
 .redes-sociais a:hover {
-  color: #d63384; /* cor de destaque */
+  color: #da3889; /* cor de destaque */
   transform: scale(1.2);
 }
 
@@ -240,7 +240,7 @@ margin: 1rem 0 -14px;
 
 .perfil h3 {
     font-size: 1.3rem;
-    color: #a87b8d;
+    color: #9f7586;
     top: -1rem;
     position: relative;
 }
