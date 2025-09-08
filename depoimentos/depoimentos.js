@@ -9,7 +9,11 @@ let direction = 1; // 1 = indo pra frente, -1 = voltando
 
 // Mostrar slide atual
 function showSlide(index) {
-  slidesContainer.style.transform = `translateX(-${index * 100}%)`;
+  const slideWidth = slidesContainer.querySelector(".slide").offsetWidth;
+  const gap = 20; // mesmo valor do CSS
+  const offset = index * (slideWidth + gap);
+
+  slidesContainer.style.transform = `translateX(-${offset}px)`;
 }
 
 // Próximo/Anterior automático (ping-pong)
