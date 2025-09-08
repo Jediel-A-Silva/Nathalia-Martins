@@ -55,7 +55,7 @@ body {
 }
 .slides {
   display: flex;
-  gap: 20px;
+  gap: 25px;
   transition: transform 0.8s ease-in-out;
   width: 100%; /* será sobrescrito no JS */
 }
