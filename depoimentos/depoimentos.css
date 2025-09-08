@@ -1,6 +1,6 @@
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #fdfcfc;
+  background-color: #ffe9f4;
   margin: 0;
   padding: 0;
   text-align: center;
@@ -25,29 +25,6 @@ body {
   margin-bottom: 1.5em;
 }
 
-.card {
-  background: #fff;
-  color: #333;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-  text-align: center;
-  max-width: 350px;
-  margin: auto;
-}
-
-.card img {
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin: 15px 0;
-}
-
-.card .stars {
-  color: #fbbf24; /* dourado */
-  font-size: 1.2rem;
-}
 
 
 .carousel {
@@ -57,14 +34,6 @@ body {
   min-height: 280px;
 }
 
-.slides {
-  display: flex;
-  transition: transform 0.8s ease-in-out;
-  width: 100%; /* será sobrescrito no JS */
-}
-.slide {
-  flex: 0 0 100%; /* cada slide ocupa 100% */
-}
 
 
 
@@ -83,6 +52,44 @@ body {
   object-fit: cover;
   border: 3px solid #f5595f;
   margin-bottom: 10px;
+}
+.slides {
+  display: flex;
+  transition: transform 0.8s ease-in-out;
+  width: 100%; /* será sobrescrito no JS */
+}
+.slide {
+  flex: 0 0 100%; /* cada slide ocupa 100% */
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  flex: 1;
+  max-width: 350px;
+  min-height: 400px; /* garante que fiquem iguais */
+  padding: 20px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 15px auto; /* auto = centraliza horizontalmente */
+  display: block;    /* transforma em bloco para o margin funcionar */
+}
+
+
+.card .stars {
+  color: #fbbf24; /* dourado */
+  font-size: 1.2rem;
 }
 
 .stars {
