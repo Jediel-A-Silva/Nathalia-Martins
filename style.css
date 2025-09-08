@@ -1083,6 +1083,13 @@ footer::before {
     margin: 0.5rem 0;
   }
 
+  .redes-sociais p {
+    font-size: 17px;
+    font-weight: 600;
+    color: #ff0a52;
+    margin-bottom: -20px;
+}
+
   .menu {
     width: 100%;
     height: auto;
@@ -1145,8 +1152,9 @@ footer::before {
     margin-top: 1.8rem;
     gap: 1.8rem;
   }
+  
   .logo-footer {
-    max-width: 80px;
+    max-width: 180px;
   }
 }
 
@@ -1224,11 +1232,12 @@ footer::before {
   }
 
   .health-text h1 {
-    font-size: 1.6rem;
-  }
+        font-size: 2.4rem;
+        margin-bottom: -2rem;
+    }
 
   .health-text p {
-    font-size: 1rem;
+    font-size: 1.7rem;
   }
 
   .health-image {
@@ -1237,7 +1246,7 @@ footer::before {
   }
 
   .slides img {
-    width: 120px;  /* reduz imagens no mobile */
+    width: 150px;  /* reduz imagens no mobile */
     height: auto;
   }
 }
