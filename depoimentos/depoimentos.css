@@ -113,7 +113,7 @@ body {
 }
 
 .card .stars {
-  color: #fbbf24;
+  color: #fec22a;
   font-size: 1.2rem;
 }
 
@@ -126,7 +126,7 @@ button.next {
   background: none;
   border: none;
   font-size: 2rem;
-  color: #bbb;
+  color: #bab9b9;
   cursor: pointer;
   transition: 0.3s;
   z-index: 10;
