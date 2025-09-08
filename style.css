@@ -1038,22 +1038,23 @@ footer::before {
     margin-top: 1.9rem;
   }
 
-  #servicos2 h2 {
-    font-size: 1.3rem;
-    font-weight: 900;
-    text-align: center;
-    margin-top: -5.9rem;
-  }
+      #servicos2 h2 {
+        font-size: 1.4rem;
+        font-weight: 900;
+        text-align: center;
+        margin-top: 3.1rem;
+        margin-bottom: -3rem;
+    }
 
-  #servicos2 .btn1 {
-    left: 11rem;
-    top: 11.14rem;
-  }
+      #servicos2 .btn1 {
+        left: 1rem;
+        top: -4.86rem;
+    }
 
-  #relatos {
-    top: 7.4rem;
-    left: 0.7rem;
-  }
+     #relatos {
+        top: 4rem;
+        left: 0.7rem;
+    }
 
   .btn {
     top: 5rem;
@@ -1213,5 +1214,30 @@ footer::before {
     height: 28px;
     font-size: 12px;
     bottom: 45%;
+  }
+
+
+    .contact .health-card {
+    flex-direction: column;   /* vira coluna */
+    text-align: center;       /* centraliza o texto */
+    padding: 20px;
+  }
+
+  .health-text h1 {
+    font-size: 1.6rem;
+  }
+
+  .health-text p {
+    font-size: 1rem;
+  }
+
+  .health-image {
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  .slides img {
+    width: 120px;  /* reduz imagens no mobile */
+    height: auto;
   }
 }
