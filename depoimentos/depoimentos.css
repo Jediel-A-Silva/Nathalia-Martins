@@ -1,6 +1,6 @@
+/* Estilo base do body */
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #ffe9f4;
   margin: 0;
   padding: 0;
   text-align: center;
@@ -8,17 +8,17 @@ body {
   background-size: cover;       /* cobre toda a tela */
   background-repeat: no-repeat; /* não repete */
   background-position: 97% center; /* desloca a imagem mais pra direita */
+  background-attachment: fixed; /* mantém a imagem fixa */
 }
 
-
-
-
+/* Ajustes para seções */
 .testimonials {
   padding: 60px 20px;
   max-width: 900px;
   margin: 0 auto;
 }
 
+/* Textos com gradiente */
 .testimonials h1 {
   font-family: "Brush Script MT", cursive;
   font-size: 4rem;
@@ -26,7 +26,6 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  border: #444;
   color: transparent;
   position: relative;
   top: -6rem;
@@ -47,9 +46,7 @@ body {
   margin-bottom: -2.5rem;
 }
 
-
-
-
+/* Carousel */
 .carousel {
   position: relative;
   overflow: hidden;
@@ -58,8 +55,18 @@ body {
   margin-bottom: 1rem;
 }
 
+.slides {
+  display: flex;
+  gap: 25px;
+  transition: transform 0.8s ease-in-out;
+  width: 100%;
+}
 
-
+.slide {
+  flex: 0 0 100%;
+  display: flex;
+  justify-content: center;
+}
 
 .slide p {
   max-width: 700px;
@@ -75,23 +82,10 @@ body {
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
-  border: none;
   margin-bottom: 100px;
 }
 
-.slides {
-  display: flex;
-  gap: 25px;
-  transition: transform 0.8s ease-in-out;
-  width: 100%; /* será sobrescrito no JS */
-}
-
-.slide {
-  flex: 0 0 100%; /* cada slide ocupa 100% */
-  display: flex;
-  justify-content: center;
-}
-
+/* Cards */
 .card {
   flex: 1;
   max-width: 350px;
@@ -107,29 +101,23 @@ body {
   justify-content: space-between;
   transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-} 
-
+}
 
 .card img {
   width: 150px;
   height: 150px;
   object-fit: cover;
   border-radius: 50%;
-  margin: 15px auto; /* auto = centraliza horizontalmente */
-  display: block;    /* transforma em bloco para o margin funcionar */
+  margin: 15px auto;
+  display: block;
 }
-
 
 .card .stars {
-  color: #fbbf24; /* dourado */
+  color: #fbbf24;
   font-size: 1.2rem;
 }
 
-.stars {
-  font-size: 1.2rem;
-  color: #FFD700;
-}
-
+/* Botões do carrossel */
 button.prev,
 button.next {
   position: absolute;
@@ -156,26 +144,44 @@ button.prev {
 button.next {
   right: 10px;
 }
-@media (max-width: 600px) {
+
+/* ----------------------------
+   RESPONSIVO PARA MOBILE
+---------------------------- */
+@media screen and (max-width: 768px) {
+  body {
+    background-position-x: 65%; /* horizontal */
+    background-position-y: 50%; /* vertical */
+    background-size: cover;
+  }
+
   .testimonials h1 {
-    font-size: 1.8rem;
+    font-size: 2.5rem;
+    top: -4rem;
+    margin-bottom: -1rem;
   }
 
   .testimonials h2 {
-    font-size: 1.5rem;
+    font-size: 2rem;
+    top: -3rem;
+    margin-bottom: -1.5rem;
+  }
+
+  .card {
+    max-width: 90%;
+    min-height: 300px;
+    padding: 15px;
+    margin: 0 auto 20px;
+  }
+
+  .slide img,
+  .card img {
+    width: 100px;
+    height: 100px;
   }
 
   .slide p {
     font-size: 1rem;
-  }
-}
-@media (max-width: 400px) {
-  .slide img {
-    width: 50px;
-    height: 50px;
-  }
-
-  .stars {
-    font-size: 1rem;
+    max-width: 90%;
   }
 }
