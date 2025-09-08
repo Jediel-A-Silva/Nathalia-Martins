@@ -4,7 +4,14 @@ body {
   margin: 0;
   padding: 0;
   text-align: center;
+  background-image: url('../depoimentos/img/gravx.png');
+  background-size: cover;       /* cobre toda a tela */
+  background-repeat: no-repeat; /* não repete */
+  background-position: 97% center; /* desloca a imagem mais pra direita */
 }
+
+
+
 
 .testimonials {
   padding: 60px 20px;
@@ -14,22 +21,32 @@ body {
 
 .testimonials h1 {
   font-family: "Brush Script MT", cursive;
-    font-size: 4rem;
-    color: #111;
-    top: -6rem;
-    position: relative;
-    margin-bottom: -2rem;
+  font-size: 4rem;
+  background: linear-gradient(45deg, #ffd700, #ff00aa, #ff3679);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  border: #444;
+  color: transparent;
+  position: relative;
+  top: -6rem;
+  margin-bottom: -2rem;
 }
 
 .testimonials h2 {
   font-family: "Brush Script MT", cursive;
   font-size: 3rem;
-  color: #f5595f;
+  background: linear-gradient(45deg, #ffd700, #ff00aa, #ff3679);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
   font-style: italic;
-  margin-bottom: -2.5rem;
   position: relative;
-    top: -5rem;
+  top: -5rem;
+  margin-bottom: -2.5rem;
 }
+
 
 
 
@@ -47,8 +64,9 @@ body {
 .slide p {
   max-width: 700px;
   font-size: 1.1rem;
+  font-weight: 800;
   line-height: 1.6;
-  color: #444;
+  color: #f71683;
   margin-bottom: 20px;
 }
 
@@ -77,19 +95,24 @@ body {
 .card {
   flex: 1;
   max-width: 350px;
-  min-height: 400px; /* garante que fiquem iguais */
+  min-height: 400px;
   padding: 20px;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(5px);
   border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.2), 0 10px 10px rgba(0,0,0,0.1);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
+  transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+} 
+
 
 .card img {
-  width: 80px;
-  height: 80px;
+  width: 150px;
+  height: 150px;
   object-fit: cover;
   border-radius: 50%;
   margin: 15px auto; /* auto = centraliza horizontalmente */
