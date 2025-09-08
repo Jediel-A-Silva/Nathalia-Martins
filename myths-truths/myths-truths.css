@@ -1,0 +1,85 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #0f172a;
+    color: #f8fafc;
+    display: flex;
+    justify-content: center;
+    padding: 50px 20px;
+}
+
+.testimonials {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.testimonial-card {
+    background-color: #1e293b;
+    border-radius: 12px;
+    padding: 20px;
+    width: 300px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.quote-icon {
+    background-color: #facc15;
+    color: #0f172a;
+    font-size: 24px;
+    font-weight: bold;
+    width: 30px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    position: absolute;
+    top: -15px;
+    left: 20px;
+}
+
+.stars {
+    color: #facc15;
+    font-size: 18px;
+}
+
+.testimonial-text {
+    font-style: italic;
+    line-height: 1.5;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: auto;
+}
+
+.user-photo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #facc15;
+}
+
+.user-name {
+    font-weight: bold;
+    margin: 0;
+}
+
+.user-role {
+    color: #facc15;
+    margin: 0;
+    font-size: 0.9em;
+}
+
+.user-company {
+    color: #cbd5e1;
+    margin: 0;
+    font-size: 0.85em;
+}
+

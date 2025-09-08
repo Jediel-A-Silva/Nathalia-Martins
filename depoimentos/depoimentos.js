@@ -1,55 +1,80 @@
-const urlPlanilha = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6tbMbvUrYWiRqLempQCTqqLnpO1z9MqavPBrVvhuupY2im9g_z49VmRZEEqbrfwQ0c1VMlee2u41A/pub?gid=1044557584&single=true&output=csv";
-const urlWebApp = "https://script.google.com/macros/s/AKfycbwvbTxP4fQp9b5P0tWUoq9VSH99AIoI6dW-wHu0zj444pcVR5VyJ95EyJWBktXm5RELZw/exec";
+const slidesContainer = document.querySelector(".slides");
+const totalSlides = document.querySelectorAll(".slide").length;
+const prevBtn = document.querySelector(".prev");
+const nextBtn = document.querySelector(".next");
 
-// Carrega e exibe depoimentos
-function carregarDepoimentos() {
-  fetch(urlPlanilha)
-    .then(res => res.text())
-    .then(csv => {
-      const linhas = csv.split("\n").slice(1);
-      const container = document.getElementById("depoimentos-container");
-      container.innerHTML = "";
+let currentIndex = 0;
+let autoSlide;
+let direction = 1; // 1 = indo pra frente, -1 = voltando
 
-      linhas.forEach(linha => {
-        const [nome, depoimento] = linha.split(",");
-        if (nome && depoimento) {
-          const div = document.createElement("div");
-          div.classList.add("depoimento-item");
-          div.innerHTML = `
-            <h3>${nome}</h3>
-            <p>${depoimento}</p>
-          `;
-          container.appendChild(div);
-        }
-      });
-    })
-    .catch(err => console.error("Erro ao carregar depoimentos:", err));
+// Mostrar slide atual
+function showSlide(index) {
+  slidesContainer.style.transform = `translateX(-${index * 100}%)`;
 }
 
-document.addEventListener("DOMContentLoaded", carregarDepoimentos);
+// Próximo/Anterior automático (ping-pong)
+function autoNext() {
+  currentIndex += direction;
 
-// Envio de novo depoimento
-document.getElementById("form-depoimento").addEventListener("submit", function(e) {
-  e.preventDefault();
+  if (currentIndex >= totalSlides - 1) {
+    direction = -1; // chegou no fim, começa a voltar
+  } else if (currentIndex <= 0) {
+    direction = 1; // chegou no início, começa a ir pra frente
+  }
 
-  const nome = document.getElementById("nome").value.trim();
-  const mensagem = document.getElementById("mensagem").value.trim();
+  showSlide(currentIndex);
+}
 
-  if (nome && mensagem) {
-    fetch(urlWebApp, {
-      method: "POST",
-      body: JSON.stringify({ nome, depoimento: mensagem }),
-      headers: { "Content-Type": "application/json" }
-    })
-    .then(res => res.json())
-    .then(() => {
-      alert("Depoimento enviado com sucesso! Aguarde aprovação.");
-      document.getElementById("form-depoimento").reset();
-      carregarDepoimentos(); // Atualiza a lista (opcional)
-    })
-    .catch(err => {
-      console.error(err);
-      alert("Erro ao enviar. Tente novamente.");
-    });
+// Botão próximo (sempre vai pra frente, se puder)
+function nextSlide() {
+  if (currentIndex < totalSlides - 1) {
+    currentIndex++;
+    showSlide(currentIndex);
+  }
+}
+
+// Botão anterior (sempre vai pra trás, se puder)
+function prevSlide() {
+  if (currentIndex > 0) {
+    currentIndex--;
+    showSlide(currentIndex);
+  }
+}
+
+// Auto
+function startAutoSlide() {
+  stopAutoSlide(); // evita duplicar
+  autoSlide = setInterval(autoNext, 7000); // troca a cada 7s
+}
+
+function stopAutoSlide() {
+  if (autoSlide) clearInterval(autoSlide);
+}
+
+// Eventos
+nextBtn.addEventListener("click", () => {
+  nextSlide();
+  startAutoSlide();
+});
+
+// Eventos do teclado
+document.addEventListener("keydown", (event) => {
+  if (event.key === "ArrowRight") {
+    nextSlide();
+    startAutoSlide(); // reinicia o auto-slide
+  } else if (event.key === "ArrowLeft") {
+    prevSlide();
+    startAutoSlide(); // reinicia o auto-slide
   }
 });
+
+
+prevBtn.addEventListener("click", () => {
+  prevSlide();
+  startAutoSlide();
+});
+
+// Inicialização
+showSlide(currentIndex);
+startAutoSlide();
+
