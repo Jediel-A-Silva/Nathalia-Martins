@@ -11,6 +11,27 @@ body {
   background-attachment: fixed; /* mantém a imagem fixa */
 }
 
+a.back-link {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        background-color: #ffb6c1;
+        color: #8b0000;
+        font-weight: bold;
+        padding: 0.7rem 1.3rem;
+        border-radius: 30px;
+        border: none;
+        text-decoration: none;
+        font-family: "Segoe UI", sans-serif;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+        z-index: 999;
+      }
+
+      a.back-link:hover {
+        text-decoration: underline;
+      }
+
 /* Ajustes para seções */
 .testimonials {
   padding: 60px 20px;
@@ -78,110 +99,167 @@ body {
 }
 
 .slide img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 100px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: -6px;
 }
 
 /* Cards */
+/* ===========================
+   AJUSTE DE LAYOUT DO CARD
+=========================== */
 .card {
-  flex: 1;
-  max-width: 350px;
-  min-height: 400px;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(5px);
-  border-radius: 15px;
-  box-shadow: 0 15px 25px rgba(0,0,0,0.2), 0 10px 10px rgba(0,0,0,0.1);
+    flex: 1;
+    max-width: 440px;
+    min-height: 400px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 15px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.1);
+    display: flex
+;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Área principal de conteúdo: imagem à esquerda, texto à direita */
+.card-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Imagem retangular */
+.card-content img {
+  width: 163px;
+  height: 230px;
+  border-radius: 6%;
+  object-fit: cover;
+  flex-shrink: 0;
+  /* sombra para a ESQUERDA (-X) e para BAIXO (+Y) */
+  box-shadow: -10px 10px 20px rgba(94, 82, 203, 0.9);
+}
+
+
+
+.card-content img:hover {
+  transform: scale(1.03);
+  transition: all 0.3s ease;
+}
+
+
+
+
+/* Texto e informações do feedback */
+.text-area {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  align-items: flex-start;
+  text-align: left;
+  color: #f71683;
 }
 
-.card img {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin: 15px auto;
-  display: block;
+.text-area p {
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.6;
+  margin: 0 0 10px 0;
+  color: #f71683;
+  max-width: 480px;
 }
 
-.card .stars {
+.text-area .stars {
   color: #fec22a;
   font-size: 1.2rem;
+  margin-top: 5px;
 }
 
-/* Botões do carrossel */
+.text-area .client-name {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #ffffff;
+  margin-top: 5px;
+}
+
 button.prev,
 button.next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: none;
+  background: rgba(255, 255, 255, 0.15);
   border: none;
   font-size: 2rem;
-  color: #bab9b9;
+  color: #ff80ab;
   cursor: pointer;
   transition: 0.3s;
   z-index: 10;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
 }
 
+/* Hover suave */
 button.prev:hover,
 button.next:hover {
-  color: #f1585d;
+  color: #fff;
+  background: rgba(255, 0, 100, 0.4);
+  transform: translateY(-50%) scale(1.1);
 }
 
+/* Agora ficam ao lado das imagens */
 button.prev {
-  left: 10px;
+  left: calc(50% - 350px); /* ajusta conforme a largura do card */
 }
 
 button.next {
-  right: 10px;
+  right: calc(50% - 350px);
 }
 
-/* ----------------------------
-   RESPONSIVO PARA MOBILE
----------------------------- */
+/* ================
+   RESPONSIVIDADE
+================ */
 @media screen and (max-width: 768px) {
-  body {
-    background-position-x: 65%; /* horizontal */
-    background-position-y: 50%; /* vertical */
-    background-size: cover;
+  .card-content {
+    flex-direction: column;
+    text-align: center;
   }
 
-  .testimonials h1 {
-    font-size: 2.5rem;
-    top: -4rem;
-    margin-bottom: -1rem;
+  .text-area {
+    align-items: center;
+    text-align: center;
   }
 
-  .testimonials h2 {
-    font-size: 2rem;
-    top: -3rem;
-    margin-bottom: -1.5rem;
-  }
-
-  .card {
-    max-width: 90%;
-    min-height: 300px;
-    padding: 15px;
-    margin: 0 auto 20px;
-  }
-
-  .slide img,
-  .card img {
+  .card-content img {
     width: 100px;
     height: 100px;
+    margin-bottom: 10px;
   }
 
-  .slide p {
-    font-size: 1rem;
+  .text-area p {
+    font-size: 0.95rem;
     max-width: 90%;
+  }
+    button.prev,
+  button.next {
+    top: 45%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.6rem;
+  }
+
+  button.prev {
+    left: 10px;
+  }
+
+  button.next {
+    right: 10px;
   }
 }
