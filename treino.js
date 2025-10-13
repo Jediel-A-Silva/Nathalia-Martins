@@ -163,15 +163,17 @@ function initBindings() {
       }
     });
   }
+}
 
   if (toggle && container) {
-    toggle.addEventListener("click", () => {
-      const isOpen = container.classList.toggle("ativo");
-      toggle.setAttribute("aria-expanded", isOpen);
-      if (isOpen && input) setTimeout(() => input.focus(), 200);
-    });
-  }
+  toggle.addEventListener("click", () => {
+    const isOpen = container.classList.toggle("ativo");
+    toggle.setAttribute("aria-expanded", isOpen);
+    container.setAttribute("aria-hidden", !isOpen); // 🔥 Corrige o alerta
+    if (isOpen && input) setTimeout(() => input.focus(), 200);
+  });
 }
+
 
 /* ============================
    Inicialização principal
