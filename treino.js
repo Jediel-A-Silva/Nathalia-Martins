@@ -88,7 +88,7 @@ async function processMessage(rawText) {
     renderUserMessage(text);
 
     // 🌐 Envio ao webhook da Nathalia no n8n
-    const response = await fetch("https://nerddaprogramacao.app.n8n.cloud/webhook-test/agent-nathalia", {
+    const response = await fetch("https://nerddaprogramacao.app.n8n.cloud/webhook/agent-nathalia", {
       method: "POST",
       headers: { 
         "Content-Type": "application/json",
