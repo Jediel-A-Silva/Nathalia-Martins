@@ -77,45 +77,39 @@ function renderAssistantMessage(htmlText) {
 /* ============================
    Comunicação com o n8n
    ============================ */
-async function processMessage(rawText) {
+async function enviarMensagem() {
+  const input = document.querySelector("#iaInput");
+  const chatBox = document.querySelector("#chatBox");
+  const pergunta = input.value.trim();
+
+  if (!pergunta) return;
+
+  // Exibe a mensagem do usuário
+  chatBox.innerHTML += `<div class="mensagem usuario">Você: ${pergunta}</div>`;
+  input.value = "";
+
   try {
-    if (ChatState.isProcessing) return;
-    const text = safeText(rawText).trim();
-    if (!text) return;
-
-    ChatState.isProcessing = true;
-    pushMessage("user", text);
-    renderUserMessage(text);
-
-    // 🌐 Envio ao webhook da Nathalia no n8n
-    const response = await fetch("https://nerddaprogramacao.app.n8n.cloud/webhook/agent-nathalia", {
+    const resposta = await fetch("https://nerddaprogramacao.app.n8n.cloud/webhook/agent-nathalia", {
       method: "POST",
-      headers: { 
-        "Content-Type": "application/json",
-        "Accept": "application/json"
-      },
-      body: JSON.stringify({ mensagem: text })
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ pergunta })
     });
 
-    if (!response.ok) throw new Error("Erro ao se comunicar com o n8n.");
+    const data = await resposta.json();
 
-    const data = await response.json();
+    // ✅ Aqui é o ponto certo
+    if (data.resposta) {
+      chatBox.innerHTML += `<div class="mensagem ia">Nathalia: ${data.resposta}</div>`;
+    } else {
+      chatBox.innerHTML += `<div class="mensagem ia">🤖 A Nathalia não respondeu agora, tente novamente.</div>`;
+    }
 
-    // 💬 Ajuste conforme retorno do n8n
-    const reply =
-      data.resposta ||
-      data.mensagem ||
-      "🤖 A Nathalia não respondeu agora, tente novamente.";
-
-    renderAssistantMessage(reply);
-
-  } catch (err) {
-    console.error("Erro:", err);
-    renderAssistantMessage("⚠️ Ocorreu um erro interno. Tente novamente mais tarde.");
-  } finally {
-    ChatState.isProcessing = false;
+  } catch (erro) {
+    console.error("Erro:", erro);
+    chatBox.innerHTML += `<div class="mensagem ia">⚠️ Erro na conexão com o servidor.</div>`;
   }
 }
+
 
 /* ============================
    Inicialização de eventos
