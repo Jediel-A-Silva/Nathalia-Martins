@@ -95,12 +95,24 @@ async function processMessage(pergunta) {
 
     const data = await response.json();
 
-    if (data.resposta) {
-      pushMessage("assistant", data.resposta);
-      renderAssistantMessage(data.resposta);
-    } else {
-      renderAssistantMessage("🤖 A Nathalia não respondeu agora, tente novamente.");
-    }
+// Mostra o que o n8n realmente enviou (debug temporário)
+console.log("🔍 Resposta do n8n:", data);
+
+let respostaIA =
+  data.resposta ||
+  data.Resposta ||
+  data.message ||
+  data.mensagem ||
+  data.output ||
+  JSON.stringify(data);
+
+if (respostaIA) {
+  pushMessage("assistant", respostaIA);
+  renderAssistantMessage(respostaIA);
+} else {
+  renderAssistantMessage("🤖 A Nathalia não respondeu agora, tente novamente.");
+}
+
 
   } catch (erro) {
     console.error("Erro:", erro);
