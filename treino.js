@@ -1,12 +1,12 @@
 /* ============================================
-   IA Nathalia - versão v9.6.2 (fix mensagens + n8n)
+   IA Nathalia - versão v9.6.3 integrada ao n8n
    ============================================ */
 
-const IA_VERSION = "v9.6.2";
+const IA_VERSION = "v9.6.3";
 const SELECTORS = {
   input: ["#inputChat", "#iaInput", "[data-ia-input]"],
   sendBtn: ["#iaSend", ".ia-send-btn", "[data-ia-send]"],
-  chatBody: ["#respostaChat", "#iaBody", "[data-ia-body]"],
+  chatBody: ["#respostaChat", "#iaBody", "[data-ia-body]", "#chatBox"],
   toggle: [".ia-avatar", "[data-ia-toggle]"],
   container: ["#iaChat", ".ia-container", "[data-ia-container]"]
 };
@@ -60,7 +60,7 @@ function renderUserMessage(text) {
   chatBodyEl.scrollTo({ top: chatBodyEl.scrollHeight, behavior: "smooth" });
 }
 
-function renderAssistantMessage(text) {
+function renderAssistantMessage(htmlText) {
   const chatBodyEl = findFirst(SELECTORS.chatBody);
   if (!chatBodyEl) return;
   const block = document.createElement("div");
@@ -68,7 +68,7 @@ function renderAssistantMessage(text) {
   block.innerHTML = `
     <div class="ia-msg-bubble ia-assistant-bubble">
       <strong>Nathalia:</strong>
-      <div class="ia-msg-text">${escapeHtml(text)}</div>
+      <div class="ia-msg-text">${htmlText}</div>
     </div>`;
   chatBodyEl.appendChild(block);
   chatBodyEl.scrollTo({ top: chatBodyEl.scrollHeight, behavior: "smooth" });
@@ -79,46 +79,37 @@ function renderAssistantMessage(text) {
    ============================ */
 async function processMessage(pergunta) {
   if (!pergunta) return;
-
-  pushMessage("user", pergunta);
+  const chatBodyEl = findFirst(SELECTORS.chatBody);
   renderUserMessage(pergunta);
 
-  const chatBodyEl = findFirst(SELECTORS.chatBody);
-  ChatState.isProcessing = true;
-
   try {
-    const response = await fetch("https://nerddaprogramacao.app.n8n.cloud/webhook/agent-nathalia", {
+    const resposta = await fetch("https://nerddaprogramacao.app.n8n.cloud/webhook/agent-nathalia", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ pergunta })
     });
 
-    const data = await response.json();
+    const data = await resposta.json();
+    console.log("🔍 Resposta do n8n:", data);
 
-// Mostra o que o n8n realmente enviou (debug temporário)
-console.log("🔍 Resposta do n8n:", data);
+    let respostaIA =
+      data.resposta ||
+      data.Resposta ||
+      data.message ||
+      data.mensagem ||
+      data.output ||
+      JSON.stringify(data);
 
-let respostaIA =
-  data.resposta ||
-  data.Resposta ||
-  data.message ||
-  data.mensagem ||
-  data.output ||
-  JSON.stringify(data);
-
-if (respostaIA) {
-  pushMessage("assistant", respostaIA);
-  renderAssistantMessage(respostaIA);
-} else {
-  renderAssistantMessage("🤖 A Nathalia não respondeu agora, tente novamente.");
-}
-
+    if (respostaIA) {
+      pushMessage("assistant", respostaIA);
+      renderAssistantMessage(respostaIA);
+    } else {
+      renderAssistantMessage("🤖 A Nathalia não respondeu agora, tente novamente.");
+    }
 
   } catch (erro) {
-    console.error("Erro:", erro);
+    console.error("❌ Erro:", erro);
     renderAssistantMessage("⚠️ Erro na conexão com o servidor.");
-  } finally {
-    ChatState.isProcessing = false;
   }
 }
 
@@ -141,14 +132,17 @@ function initBindings() {
     }
     input.disabled = true;
     if (sendBtn) sendBtn.disabled = true;
-    await processMessage(texto);
-    input.value = "";
-    input.disabled = false;
-    if (sendBtn) sendBtn.disabled = false;
-    input.focus();
+    try {
+      await processMessage(texto);
+    } finally {
+      input.value = "";
+      input.disabled = false;
+      if (sendBtn) sendBtn.disabled = false;
+      input.focus();
+    }
   };
 
-  // Corrige botão enviar
+  // 🧠 Corrige botão enviar
   if (sendBtn) {
     const newBtn = sendBtn.cloneNode(true);
     sendBtn.parentNode.replaceChild(newBtn, sendBtn);
@@ -158,7 +152,7 @@ function initBindings() {
     });
   }
 
-  // Corrige Enter
+  // 🔥 Corrige Enter
   if (input) {
     input.addEventListener("keydown", (e) => {
       if (e.key === "Enter" && !e.shiftKey) {
@@ -168,7 +162,7 @@ function initBindings() {
     });
   }
 
-  // Abrir/fechar chat
+  // ✅ Abertura do chat
   if (toggle && container) {
     toggle.addEventListener("click", () => {
       const isOpen = container.classList.toggle("ativo");
@@ -199,7 +193,7 @@ if (document.readyState === "loading") {
 }
 
 /* ============================
-   Estilos básicos (inline)
+   Estilos básicos
    ============================ */
 (function injectStyles() {
   if (document.getElementById("ia-style-v9")) return;
