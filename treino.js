@@ -1,8 +1,8 @@
 /* ============================================
-   IA Nathalia - versão v9.6.1 integrada ao n8n
+   IA Nathalia - versão v9.6.2 (fix mensagens + n8n)
    ============================================ */
 
-const IA_VERSION = "v9.6.1";
+const IA_VERSION = "v9.6.2";
 const SELECTORS = {
   input: ["#inputChat", "#iaInput", "[data-ia-input]"],
   sendBtn: ["#iaSend", ".ia-send-btn", "[data-ia-send]"],
@@ -60,7 +60,7 @@ function renderUserMessage(text) {
   chatBodyEl.scrollTo({ top: chatBodyEl.scrollHeight, behavior: "smooth" });
 }
 
-function renderAssistantMessage(htmlText) {
+function renderAssistantMessage(text) {
   const chatBodyEl = findFirst(SELECTORS.chatBody);
   if (!chatBodyEl) return;
   const block = document.createElement("div");
@@ -68,7 +68,7 @@ function renderAssistantMessage(htmlText) {
   block.innerHTML = `
     <div class="ia-msg-bubble ia-assistant-bubble">
       <strong>Nathalia:</strong>
-      <div class="ia-msg-text">${htmlText}</div>
+      <div class="ia-msg-text">${escapeHtml(text)}</div>
     </div>`;
   chatBodyEl.appendChild(block);
   chatBodyEl.scrollTo({ top: chatBodyEl.scrollHeight, behavior: "smooth" });
@@ -77,39 +77,38 @@ function renderAssistantMessage(htmlText) {
 /* ============================
    Comunicação com o n8n
    ============================ */
-async function enviarMensagem() {
-  const input = document.querySelector("#iaInput");
-  const chatBox = document.querySelector("#chatBox");
-  const pergunta = input.value.trim();
-
+async function processMessage(pergunta) {
   if (!pergunta) return;
 
-  // Exibe a mensagem do usuário
-  chatBox.innerHTML += `<div class="mensagem usuario">Você: ${pergunta}</div>`;
-  input.value = "";
+  pushMessage("user", pergunta);
+  renderUserMessage(pergunta);
+
+  const chatBodyEl = findFirst(SELECTORS.chatBody);
+  ChatState.isProcessing = true;
 
   try {
-    const resposta = await fetch("https://nerddaprogramacao.app.n8n.cloud/webhook/agent-nathalia", {
+    const response = await fetch("https://nerddaprogramacao.app.n8n.cloud/webhook/agent-nathalia", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ pergunta })
     });
 
-    const data = await resposta.json();
+    const data = await response.json();
 
-    // ✅ Aqui é o ponto certo
     if (data.resposta) {
-      chatBox.innerHTML += `<div class="mensagem ia">Nathalia: ${data.resposta}</div>`;
+      pushMessage("assistant", data.resposta);
+      renderAssistantMessage(data.resposta);
     } else {
-      chatBox.innerHTML += `<div class="mensagem ia">🤖 A Nathalia não respondeu agora, tente novamente.</div>`;
+      renderAssistantMessage("🤖 A Nathalia não respondeu agora, tente novamente.");
     }
 
   } catch (erro) {
     console.error("Erro:", erro);
-    chatBox.innerHTML += `<div class="mensagem ia">⚠️ Erro na conexão com o servidor.</div>`;
+    renderAssistantMessage("⚠️ Erro na conexão com o servidor.");
+  } finally {
+    ChatState.isProcessing = false;
   }
 }
-
 
 /* ============================
    Inicialização de eventos
@@ -130,17 +129,14 @@ function initBindings() {
     }
     input.disabled = true;
     if (sendBtn) sendBtn.disabled = true;
-    try {
-      await processMessage(texto);
-    } finally {
-      input.value = "";
-      input.disabled = false;
-      if (sendBtn) sendBtn.disabled = false;
-      input.focus();
-    }
+    await processMessage(texto);
+    input.value = "";
+    input.disabled = false;
+    if (sendBtn) sendBtn.disabled = false;
+    input.focus();
   };
 
-  // 🧠 Corrige botão enviar
+  // Corrige botão enviar
   if (sendBtn) {
     const newBtn = sendBtn.cloneNode(true);
     sendBtn.parentNode.replaceChild(newBtn, sendBtn);
@@ -150,7 +146,7 @@ function initBindings() {
     });
   }
 
-  // 🔥 Corrige Enter
+  // Corrige Enter
   if (input) {
     input.addEventListener("keydown", (e) => {
       if (e.key === "Enter" && !e.shiftKey) {
@@ -160,7 +156,7 @@ function initBindings() {
     });
   }
 
-  // ✅ Corrige abertura do chat (ficou fora antes)
+  // Abrir/fechar chat
   if (toggle && container) {
     toggle.addEventListener("click", () => {
       const isOpen = container.classList.toggle("ativo");
