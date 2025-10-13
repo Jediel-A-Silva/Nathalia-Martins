@@ -1153,7 +1153,7 @@ h2 {
 }
 
 form button {
-  background-color: #a85d7b;
+  background-color: #ab5779;
   color: white;
   padding: 10px;
   border: none;
@@ -1195,7 +1195,7 @@ footer::before {
 footer .redes-sociais p {
   font-size: 19px;
   font-weight: 800;
-  color: #ffffff;
+  color: #ffeeee;
   margin-bottom: -20px;
   top: 3px;
 }
