@@ -44,6 +44,26 @@ nav {
 }
 
 
+/* typing dots */
+.nathalia-typing { display:inline-block; margin:6px 0; }
+.nathalia-typing .dot { display:inline-block; width:6px; height:6px; border-radius:50%; background:#aaa; margin:0 3px; opacity:0.3;
+  animation: n-dot 1s infinite; }
+.nathalia-typing .dot:nth-child(2){ animation-delay:0.12s; } 
+.nathalia-typing .dot:nth-child(3){ animation-delay:0.24s; }
+@keyframes n-dot { 0%{opacity:0.3; transform:translateY(0);} 50%{opacity:1; transform:translateY(-4px);} 100%{opacity:0.3; transform:translateY(0);} }
+
+/* avatar expressions (exemplo mínimo) */
+.ia-avatar { transition: transform .25s ease; }
+.ia-avatar.express-neutral { transform: scale(1); filter: none; }
+.ia-avatar.express-happy { transform: scale(1.02) translateY(-2px); filter: saturate(1.05); }
+.ia-avatar.express-calm { transform: scale(1.00); filter: brightness(0.98); }
+.ia-avatar.express-worried { transform: scale(0.99) rotate(-1deg); filter: grayscale(0.2); }
+.ia-avatar.express-sad { transform: scale(0.98) rotate(0.5deg); filter: grayscale(0.5) contrast(0.9); }
+.ia-avatar.typing { transform: translateY(0); /* you can add mouth animation with pseudo-elements */}
+
+/* mensagens */
+.mensagem.ia { background:#fff; padding:8px 10px; border-radius:8px; margin:6px 0; }
+.mensagem.usuario { background:#f3f3f3; padding:8px 10px; border-radius:8px; margin:6px 0; text-align:right;}
 
 
 .menu {
@@ -367,10 +387,11 @@ nav {
   box-shadow: 0 0 10px #999;
 }
 
+/* 🟢 ALTERAÇÃO PRINCIPAL: Aumento do tamanho da caixa da IA */
 #iaChat {
-  width: 320px;
-  height: 320px;
-  background: #fff0f5;
+  width: 380px; /* Aumentado de 330px para 380px */
+  height: 450px; /* Aumentado de 299px para 450px */
+  background: #63000f;
   border-radius: 12px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   font-family: "Segoe UI", sans-serif;
@@ -391,7 +412,7 @@ nav {
 .ia-header {
   display: flex;
   align-items: center;
-  background: #ffb6c1;
+  background: #63000f;
   padding: 10px;
 }
 
@@ -414,14 +435,15 @@ nav {
   color: #fff5f5;
 }
 
+/* 🟢 ALTERAÇÃO: Ajuste da altura máxima do corpo para preencher a nova caixa */
 .ia-body {
-  max-height: 250px;
-  overflow-y: auto;
-  padding: 15px;
-  background-color: #fff;
-  color: #a6004c;
-  font-size: 1rem;
-  padding-right: 8px;
+    height: 327px;
+    overflow-y: auto;
+    padding: 15px;
+    background-color: #fff;
+    color: #a6004c;
+    font-size: 1rem;
+    padding-right: 8px;
 }
 
 .ia-body::-webkit-scrollbar {
@@ -443,6 +465,7 @@ nav {
   line-height: 1.5;
 }
 
+/* A entrada de texto tem a largura ajustada automaticamente pela nova largura de #iaChat */
 .ia-chat input {
   width: 100%;
   padding: 10px;
@@ -472,6 +495,29 @@ nav {
 
 .ia-sugestoes button:hover {
   background-color: #e0e0e0;
+}
+
+/* ... Seu código CSS anterior (até o Carrossel Swiper) ... */
+
+/* Ia  chat (Ajuste para mobile) */
+.ia-chat {
+  width: 95%;
+  right: 2.5%;
+  bottom: 90px;
+}
+
+/* 🟢 ALTERAÇÃO: Ajuste da altura no primeiro breakpoint de mobile */
+.ia-body {
+  max-height: 300px; /* Aumentado de 200px para 300px no mobile */
+}
+
+form button {
+  background-color: #a85d7b;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 /* Carrossel Swiper */
@@ -1103,7 +1149,7 @@ h2 {
 }
 
 .ia-body {
-  max-height: 200px; /* Um pouco menor para telas pequenas */
+  max-height: 260px; /* Um pouco menor para telas pequenas */
 }
 
 form button {

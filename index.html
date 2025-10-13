@@ -8,13 +8,25 @@
     <!-- ==================== FONTES GOOGLE ==================== -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Arima:wght@100;700&family=Cantata+One&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet"/>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arima:wght@100;700&family=Cantata+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- ==================== BIBLIOTECAS EXTERNAS ==================== -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
 
     <!-- ==================== SEU CSS ==================== -->
     <link rel="stylesheet" href="style.css" />
@@ -22,6 +34,28 @@
     <style>
       html {
         scroll-behavior: smooth;
+      }
+      /* ajuste mínimo para o chat: evita que o input se sobreponha nos mobiles */
+      .ia-chat {
+        box-sizing: border-box;
+      }
+      .ia-chat input#iaInput {
+        padding-right: 72px;
+      } /* espaço pro botão enviar */
+      .ia-send-btn {
+        position: absolute;
+        right: 10px;
+        bottom: 12px;
+        background: #e91e63;
+        color: #fff;
+        border: none;
+        padding: 8px 10px;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      .ia-send-btn:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
       }
     </style>
   </head>
@@ -33,7 +67,7 @@
         <div class="menu-wrapper">
           <!-- Botão do Menu -->
           <button class="menu-btn" aria-label="Abrir menu">
-            <svg width="30" height="30" viewBox="0 0 100 80">
+            <svg width="30" height="30" viewBox="0 0 100 80" aria-hidden="true">
               <rect width="100" height="10"></rect>
               <rect y="30" width="100" height="10"></rect>
               <rect y="60" width="100" height="10"></rect>
@@ -41,100 +75,180 @@
           </button>
 
           <!-- Menu Lateral -->
-          <div class="menu" id="menu" role="menu">
-            <!-- Botão Fechar -->
-            <button type="button" class="fechar" onclick="fechar()" aria-label="Fechar menu">
-              <img src="/img/letra-x.png" alt="Fechar" style="width:26px; height:26px;">
+          <div class="menu" id="menu" role="menu" aria-hidden="true">
+            <button
+              type="button"
+              class="fechar"
+              onclick="fechar()"
+              aria-label="Fechar menu"
+            >
+              <img
+                src="/img/letra-x.png"
+                alt="Fechar"
+                style="width: 26px; height: 26px"
+              />
             </button>
-            
-            <!-- Links de Navegação -->
+
             <a href="index.html">🏠 Início</a>
             <div class="categoria">🤰 Pré-natal</div>
             <a href="consulta-pre-natal.html">🩺 Consulta de Pré-natal</a>
             <a href="educacao-gestantes.html">📚 Educação perinatal</a>
-            
-            <!-- Parcerias -->
-            <div class="categoria">💼 Parcerias</div>
-            <a href="https://www.instagram.com/alemdoamparo" target="_blank">Além do Amparo</a><br>
-            <a href="https://www.instagram.com/espacoaldeiadonascer" target="_blank">Espaço Aldeia Do Nascer</a><br>
-            <a href="https://www.instagram.com/clinic.viverbem" target="_blank">Clinica Viver Bem</a><br>
-            <a href="https://www.instagram.com/aina.clinica" target="_blank">Clinica Ainá</a><br>
-            <a href="https://www.instagram.com/iledourado" target="_blank">Ilê dourado</a><br>
-            <a href="https://www.instagram.com/parteiras.piracema/" target="_blank">Parteiras Piracema</a><br>
 
-            <!-- Redes Sociais no Menu -->
+            <div class="categoria">💼 Parcerias</div>
+            <a href="https://www.instagram.com/alemdoamparo" target="_blank"
+              >Além do Amparo</a
+            ><br />
+            <a
+              href="https://www.instagram.com/espacoaldeiadonascer"
+              target="_blank"
+              >Espaço Aldeia Do Nascer</a
+            ><br />
+            <a href="https://www.instagram.com/clinic.viverbem" target="_blank"
+              >Clinica Viver Bem</a
+            ><br />
+            <a href="https://www.instagram.com/aina.clinica" target="_blank"
+              >Clinica Ainá</a
+            ><br />
+            <a href="https://www.instagram.com/iledourado" target="_blank"
+              >Ilê dourado</a
+            ><br />
+            <a
+              href="https://www.instagram.com/parteiras.piracema/"
+              target="_blank"
+              >Parteiras Piracema</a
+            ><br />
+
             <header class="redes-sociais">
               <p>Me acompanhe nas redes sociais</p>
               <div class="redes-icons">
-                <a href="https://www.instagram.com/nathalia_enf.obstetra" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                <a href="https://br.linkedin.com/in/nathalia-martins-de-faria-9263b51a1" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="https://wa.me/11954519637" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a
+                  href="https://www.instagram.com/nathalia_enf.obstetra"
+                  target="_blank"
+                  aria-label="Instagram"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a
+                  href="https://facebook.com"
+                  target="_blank"
+                  aria-label="Facebook"
+                  ><i class="fab fa-facebook"></i
+                ></a>
+                <a
+                  href="https://br.linkedin.com/in/nathalia-martins-de-faria-9263b51a1"
+                  target="_blank"
+                  aria-label="LinkedIn"
+                  ><i class="fab fa-linkedin"></i
+                ></a>
+                <a
+                  href="https://wa.me/11954519637"
+                  target="_blank"
+                  aria-label="WhatsApp"
+                  ><i class="fab fa-whatsapp"></i
+                ></a>
               </div>
             </header>
           </div>
 
           <!-- Barra de Busca -->
-          <!-- Barra de busca -->
-<input 
-  type="text" 
-  id="campoBusca" 
-  class="search" 
-  placeholder="Buscar..." 
-  aria-label="Buscar no site" 
-  autocomplete="off" 
-/>
-
-<!-- Resultados da busca -->
-<div class="resultados-busca" id="resultadosBusca"></div>
-
+          <input
+            type="text"
+            id="campoBusca"
+            class="search"
+            placeholder="Buscar..."
+            aria-label="Buscar no site"
+            autocomplete="off"
+          />
+          <div
+            class="resultados-busca"
+            id="resultadosBusca"
+            aria-hidden="true"
+          ></div>
         </div>
       </nav>
     </header>
-      
+
     <!-- ==================== PERFIL ==================== -->
     <section id="home" class="perfil" data-aos="fade-in">
       <div class="container">
-       <div class="hero-text">
-         <h1>Dra. Nathália Martins</h1>
-        <h3>E n f. O b s t e t r a</h3>
-        <div class="info">
-          <h2>Cuidando do seu parto com amor e segurança</h2>
-       </div>
+        <div class="hero-text">
+          <h1>Dra. Nathália Martins</h1>
+          <h3>E n f. O b s t e t r a</h3>
+          <div class="info">
+            <h2>Cuidando do seu parto com amor e segurança</h2>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- ==================== ASSISTENTE VIRTUAL ==================== -->
-    <div class="ia-container">
-      <!-- Avatar -->
-      <div class="ia-avatar" role="button" tabindex="0" aria-label="Abrir Assistente Virtual">
+    <!-- ==================== ASSISTENTE VIRTUAL (CHAT) ==================== -->
+    <div class="ia-container" aria-live="polite">
+      <!-- Avatar (toggle) -->
+      <div
+        class="ia-avatar"
+        role="button"
+        tabindex="0"
+        aria-controls="iaChat"
+        aria-expanded="false"
+        aria-label="Abrir Assistente Virtual"
+      >
         <img src="img/img-IA.png" alt="Assistente Virtual" />
       </div>
 
-      <!-- Chat -->
-      <div class="ia-chat" id="iaChat" aria-live="polite" aria-hidden="true">
-        <div class="ia-header">
+      <!-- Chat (início fechado, será aberto pelo JS) -->
+      <div
+        class="ia-chat"
+        id="iaChat"
+        aria-hidden="true"
+        role="dialog"
+        aria-label="Chat com a Enfermeira Nathalia"
+      >
+        <div class="ia-header" role="heading" aria-level="1">
           <img src="img/img-IA.png" alt="Enfermeira Nathalia" />
           <div class="ia-titulo">
             <h2>Enfermeira Nathalia</h2>
             <span>Sua assistente virtual</span>
           </div>
         </div>
-        <div class="ia-body" id="iaBody">
+
+        <div class="ia-body" id="iaBody" role="log" aria-live="polite">
           <p>
             👋 Oi, tudo bem?<br />
             <strong>Sou a Nathalia, enfermeira obstetra.</strong><br />
             Em que posso te ajudar hoje?
           </p>
-          <div class="ia-sugestoes">
-            <button onclick="responderIA('consulta de pré-natal')">Pré-natal</button>
-            <button onclick="responderIA('puerpério')">Puerpério</button>
-            <button onclick="responderIA('whatsapp')">WhatsApp</button>
-            <button onclick="responderIA('instagram')">Instagram</button>
-          </div>
+          <!-- removi os botões fixos aqui para a conversa fluir livremente -->
         </div>
-        <!-- Campo de entrada -->
-        <input id="iaInput" type="text" placeholder="Digite sua pergunta aqui..." aria-label="Digite sua pergunta para a enfermeira Nathalia"/>
+
+        <!-- Campo de entrada + botão enviar -->
+        <div
+          style="
+            position: relative;
+            padding: 12px;
+            background: #fff;
+            border-top: 1px solid #ffdce6;
+          "
+        >
+          <input
+            id="iaInput"
+            type="text"
+            placeholder="Digite sua pergunta aqui..."
+            aria-label="Digite sua pergunta para a enfermeira Nathalia"
+            style="
+              width: 100%;
+              padding: 10px 14px;
+              border-radius: 8px;
+              border: 1px solid #ffdce6;
+            "
+          />
+          <button
+            id="iaSend"
+            class="ia-send-btn"
+            aria-label="Enviar mensagem para a enfermeira Nathalia"
+            title="Enviar"
+          >
+            Enviar
+          </button>
+        </div>
       </div>
     </div>
 
@@ -142,37 +256,54 @@
     <section class="sessao-carrossel">
       <div id="containerCarrosselCustom" class="container-carrossel-custom">
         <div class="slides-carrossel">
-          <!-- Slides -->
-          <div class="slide-item ativo-slide"><img src="/img/imagem1.jpg" alt="Modelo 1" /></div>
-          <div class="slide-item"><img src="/img/Imagem-efeito-blur.png" alt="Modelo 2" /></div>
-          <div class="slide-item"><img src="/img/imagem6.jpg" alt="Modelo 3" /></div>
-          <div class="slide-item"><img src="/img/a01.jpg" alt="Modelo 4" /></div>
-          <div class="slide-item"><img src="/img/imagem4.jpg" alt="Modelo 5" /></div>
-          <div class="slide-item"><img src="/img/imagem5.jpg" alt="Modelo 6" /></div>
+          <div class="slide-item ativo-slide">
+            <img src="/img/imagem1.jpg" alt="Modelo 1" />
+          </div>
+          <div class="slide-item">
+            <img src="/img/Imagem-efeito-blur.png" alt="Modelo 2" />
+          </div>
+          <div class="slide-item">
+            <img src="/img/imagem6.jpg" alt="Modelo 3" />
+          </div>
+          <div class="slide-item">
+            <img src="/img/a01.jpg" alt="Modelo 4" />
+          </div>
+          <div class="slide-item">
+            <img src="/img/imagem4.jpg" alt="Modelo 5" />
+          </div>
+          <div class="slide-item">
+            <img src="/img/imagem5.jpg" alt="Modelo 6" />
+          </div>
         </div>
       </div>
 
-      <!-- Texto + Botões -->
       <div class="descricao-carrossel">
         <h2>Dê o próximo passo para o sucesso da sua marca</h2>
-        <p>Design moderno para destacar seus conteúdos de forma profissional.</p>
+        <p>
+          Design moderno para destacar seus conteúdos de forma profissional.
+        </p>
         <div class="nav-carrossel">
-          <button class="btn-nav prev-custom">❮</button>
-          <button class="btn-nav next-custom">❯</button>
+          <button class="btn-nav prev-custom" aria-label="Slide anterior">
+            ❮
+          </button>
+          <button class="btn-nav next-custom" aria-label="Próximo slide">
+            ❯
+          </button>
         </div>
       </div>
     </section>
 
     <!-- ==================== SEÇÕES DE CONTEÚDO ==================== -->
     <div class="caixinha">
-      <!-- Sobre -->
       <section id="sobre" class="personalizada" data-aos="fade-up">
         <h2>Conheça Sobre Meu Trabalho</h2>
-        <p>Especialista dedicada ao acompanhamento de partos humanizados, com foco no bem-estar da mãe e do bebê.</p>
+        <p>
+          Especialista dedicada ao acompanhamento de partos humanizados, com
+          foco no bem-estar da mãe e do bebê.
+        </p>
         <a href="sobre-mim/sobre-mim.html">Clique Aqui</a>
       </section>
 
-      <!-- Serviços -->
       <section id="servicos" class="personalizada" data-aos="fade-up">
         <h2>Serviços</h2>
         <ul id="servicos-lista">
@@ -180,45 +311,66 @@
           <li>Acompanhamento durante o parto</li>
           <li>Cuidados no pós-parto</li>
         </ul>
-        <a href="https://wa.me/5511954519637?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20consulta" class="btn" target="_blank" rel="noopener noreferrer">Agendar Consulta via WhatsApp</a>
+        <a
+          href="https://wa.me/5511954519637?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20consulta"
+          class="btn"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Agendar Consulta via WhatsApp</a
+        >
       </section>
 
-      <!-- Relatos -->
       <section id="servicos1" class="personalizada" data-aos="fade-up">
         <h2>Partos que Acompanhei</h2>
-        <p>"Momentos inesquecíveis de mães e bebês que tive a honra de acompanhar."</p>
-        <a href="depoimentos/depoimentos.html" id="relatos" class="btn">Ver Histórias 🌸</a>
+        <p>
+          "Momentos inesquecíveis de mães e bebês que tive a honra de
+          acompanhar."
+        </p>
+        <a href="depoimentos/depoimentos.html" id="relatos" class="btn"
+          >Ver Histórias 🌸</a
+        >
       </section>
 
-      <!-- Mitos e Verdades -->
       <section id="servicos2" class="personalizada2" data-aos="fade-up">
         <h2>Mitos e Verdades</h2>
-        <p>Na gestação e no parto surgem muitas informações — nem todas verdadeiras. Aqui você descobre o que é mito e o que realmente faz diferença.</p>
-        <a href="myths-truths/myths-truths.html" id="duvidas" class="btn1">Quero Saber Mais</a>
+        <p>
+          Na gestação e no parto surgem muitas informações — nem todas
+          verdadeiras. Aqui você descobre o que é mito e o que realmente faz
+          diferença.
+        </p>
+        <a href="myths-truths/myths-truths.html" id="duvidas" class="btn1"
+          >Quero Saber Mais</a
+        >
       </section>
     </div>
 
     <!-- ==================== CONTATO ==================== -->
     <section id="contato" class="contact" data-aos="fade-up">
       <div class="health-card">
-        <!-- Texto à esquerda -->
         <div class="health-text">
-          <h1><span class="blue">O nascimento é o início de uma nova vida e merece ser vivido com respeito, cuidado e amor.</span></h1>
-          <p>Minha missão é apoiar você para viver essa experiência de forma única e transformadora.</p>
+          <h1>
+            <span class="blue"
+              >O nascimento é o início de uma nova vida e merece ser vivido com
+              respeito, cuidado e amor.</span
+            >
+          </h1>
+          <p>
+            Minha missão é apoiar você para viver essa experiência de forma
+            única e transformadora.
+          </p>
         </div>
 
-        <!-- Carrossel de imagens à direita -->
         <div class="health-image">
           <div class="carousel">
             <div class="slides">
-              <img src="img/a01.jpg" alt="Foto 3">
-              <img src="img/a02.jpg" alt="Foto 4">
-              <img src="img/a03.jpg" alt="Foto 5">
-              <img src="img/a04.jpg" alt="Foto 6">
-              <img src="img/a05.jpg" alt="Foto 7">
-              <img src="img/a06.jpg" alt="Foto 1">
-              <img src="img/a07.jpg" alt="Foto 8">
-              <img src="img/a09.jpg" alt="Foto 2">
+              <img src="img/a01.jpg" alt="Foto 3" />
+              <img src="img/a02.jpg" alt="Foto 4" />
+              <img src="img/a03.jpg" alt="Foto 5" />
+              <img src="img/a04.jpg" alt="Foto 6" />
+              <img src="img/a05.jpg" alt="Foto 7" />
+              <img src="img/a06.jpg" alt="Foto 1" />
+              <img src="img/a07.jpg" alt="Foto 8" />
+              <img src="img/a09.jpg" alt="Foto 2" />
             </div>
           </div>
         </div>
@@ -231,10 +383,30 @@
       <div class="redes-sociais">
         <p>Me acompanhe nas redes sociais</p>
         <div class="redes-sociais-icons">
-          <a href="https://www.instagram.com/nathalia_enf.obstetra" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.facebook.com/borapartejar" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-          <a href="https://br.linkedin.com/in/nathalia-martins-de-faria-9263b51a1" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-          <a href="https://wa.me/11954519637" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a
+            href="https://www.instagram.com/nathalia_enf.obstetra"
+            target="_blank"
+            aria-label="Instagram"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a
+            href="https://www.facebook.com/borapartejar"
+            target="_blank"
+            aria-label="Facebook"
+            ><i class="fab fa-facebook"></i
+          ></a>
+          <a
+            href="https://br.linkedin.com/in/nathalia-martins-de-faria-9263b51a1"
+            target="_blank"
+            aria-label="LinkedIn"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <a
+            href="https://wa.me/11954519637"
+            target="_blank"
+            aria-label="WhatsApp"
+            ><i class="fab fa-whatsapp"></i
+          ></a>
         </div>
         <p>&copy; 2025 Dra. Nathália Martins - Todos os direitos reservados.</p>
       </div>
@@ -243,93 +415,157 @@
     <!-- ==================== SCRIPTS ==================== -->
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="treino.js"></script>
 
-    <script>AOS.init();</script>
+    <!-- jsPDF (opcional — necessário para gerar PDF se você usar essa feature) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
-    <!-- Script de Busca e Carrossel -->
+    <!-- Seu script principal (mantenha separado) -->
+    <!-- COLE AQUI O ARQUIVO 'nathalia_v7_9.js' (versão da IA que te enviei) -->
+    <script src="treino.js" defer></script>
+
+    <!-- Script de inicialização (AOS + funções de busca e carrossel) -->
     <script>
-      const searchInput = document.querySelector('.search');
-      const resultadosBox = document.querySelector('#resultadosBusca');
+      AOS.init();
 
-      // 📌 Lista de conteúdos importantes do site
+      // ===== Busca simples =====
+      const searchInput = document.querySelector("#campoBusca");
+      const resultadosBox = document.querySelector("#resultadosBusca");
+
       const conteudos = [
-        { nome: '🏠 Início', link: 'index.html' },
-        { nome: '🤰 Pré-natal', link: 'consulta-pre-natal.html' },
-        { nome: '🩺 Consulta de Pré-natal', link: 'consulta-pre-natal.html' },
-        { nome: '📚 Educação Perinatal', link: 'educacao-gestantes.html' },
-        { nome: '📅 Agendar Consulta via WhatsApp', link: 'https://wa.me/5511954519637?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20consulta' },
-        { nome: '🌸 Histórias de Partos (Relatos)', link: 'depoimentos/depoimentos.html' },
-        { nome: '🔎 Mitos e Verdades na Gestação', link: 'myths-truths/myths-truths.html' },
-        { nome: '👩‍⚕️ Sobre a Enfermeira Nathália', link: 'sobre-mim/sobre-mim.html' },
-        { nome: '💼 Além do Amparo', link: 'https://www.instagram.com/alemdoamparo' },
-        { nome: '💼 Espaço Aldeia do Nascer', link: 'https://www.instagram.com/espacoaldeiadonascer' },
-        { nome: '💼 Clínica Viver Bem', link: 'https://www.instagram.com/clinic.viverbem' },
-        { nome: '💼 Clínica Ainá', link: 'https://www.instagram.com/aina.clinica' },
-        { nome: '💼 Ilê Dourado', link: 'https://www.instagram.com/iledourado' },
-        { nome: '💼 Parteiras Piracema', link: 'https://www.instagram.com/parteiras.piracema/' },
-        { nome: '📞 Contato', link: '#contato' },
-        { nome: 'WhatsApp', link: 'https://wa.me/11954519637' },
-        { nome: 'Instagram', link: 'https://www.instagram.com/nathalia_enf.obstetra' },
-        { nome: 'Facebook', link: 'https://www.facebook.com/borapartejar' },
-        { nome: 'LinkedIn', link: 'https://br.linkedin.com/in/nathalia-martins-de-faria-9263b51a1' }
+        { nome: "🏠 Início", link: "index.html" },
+        { nome: "🤰 Pré-natal", link: "consulta-pre-natal.html" },
+        { nome: "🩺 Consulta de Pré-natal", link: "consulta-pre-natal.html" },
+        { nome: "📚 Educação Perinatal", link: "educacao-gestantes.html" },
+        {
+          nome: "📅 Agendar Consulta via WhatsApp",
+          link: "https://wa.me/5511954519637?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20consulta",
+        },
+        {
+          nome: "🌸 Histórias de Partos (Relatos)",
+          link: "depoimentos/depoimentos.html",
+        },
+        {
+          nome: "🔎 Mitos e Verdades na Gestação",
+          link: "myths-truths/myths-truths.html",
+        },
+        {
+          nome: "👩‍⚕️ Sobre a Enfermeira Nathália",
+          link: "sobre-mim/sobre-mim.html",
+        },
+        {
+          nome: "💼 Além do Amparo",
+          link: "https://www.instagram.com/alemdoamparo",
+        },
+        {
+          nome: "💼 Espaço Aldeia do Nascer",
+          link: "https://www.instagram.com/espacoaldeiadonascer",
+        },
+        {
+          nome: "💼 Clínica Viver Bem",
+          link: "https://www.instagram.com/clinic.viverbem",
+        },
+        {
+          nome: "💼 Clínica Ainá",
+          link: "https://www.instagram.com/aina.clinica",
+        },
+        {
+          nome: "💼 Ilê Dourado",
+          link: "https://www.instagram.com/iledourado",
+        },
+        {
+          nome: "💼 Parteiras Piracema",
+          link: "https://www.instagram.com/parteiras.piracema/",
+        },
+        { nome: "📞 Contato", link: "#contato" },
+        { nome: "WhatsApp", link: "https://wa.me/11954519637" },
+        {
+          nome: "Instagram",
+          link: "https://www.instagram.com/nathalia_enf.obstetra",
+        },
+        { nome: "Facebook", link: "https://www.facebook.com/borapartejar" },
+        {
+          nome: "LinkedIn",
+          link: "https://br.linkedin.com/in/nathalia-martins-de-faria-9263b51a1",
+        },
       ];
 
-      // 🔎 Função de busca
-      searchInput.addEventListener('input', function () {
-        const termo = this.value.toLowerCase();
-        resultadosBox.innerHTML = '';
+      if (searchInput) {
+        searchInput.addEventListener("input", function () {
+          const termo = this.value.toLowerCase();
+          resultadosBox.innerHTML = "";
+          if (termo.trim() === "") {
+            resultadosBox.style.display = "none";
+            return;
+          }
+          const filtrados = conteudos.filter((item) =>
+            item.nome.toLowerCase().includes(termo)
+          );
+          if (filtrados.length > 0) {
+            filtrados.forEach((item) => {
+              const p = document.createElement("p");
+              p.textContent = item.nome;
+              p.onclick = () => (window.location.href = item.link);
+              resultadosBox.appendChild(p);
+            });
+          } else {
+            resultadosBox.innerHTML = "<p>Nenhum resultado encontrado</p>";
+          }
+          resultadosBox.style.display = "block";
+        });
 
-        if (termo.trim() === '') {
-          resultadosBox.style.display = 'none';
-          return;
-        }
+        document.addEventListener("click", function (e) {
+          if (
+            !searchInput.contains(e.target) &&
+            !resultadosBox.contains(e.target)
+          ) {
+            resultadosBox.style.display = "none";
+          }
+        });
+      }
 
-        const filtrados = conteudos.filter(item => item.nome.toLowerCase().includes(termo));
-
-        if (filtrados.length > 0) {
-          filtrados.forEach(item => {
-            const p = document.createElement('p');
-            p.textContent = item.nome;
-            p.onclick = () => window.location.href = item.link;
-            resultadosBox.appendChild(p);
-          });
-        } else {
-          resultadosBox.innerHTML = '<p>Nenhum resultado encontrado</p>';
-        }
-
-        resultadosBox.style.display = 'block';
-      });
-
-      // Fecha resultados ao clicar fora
-      document.addEventListener('click', function (e) {
-        if (!searchInput.contains(e.target) && !resultadosBox.contains(e.target)) {
-          resultadosBox.style.display = 'none';
-        }
-      });
-
-      // Carrossel de imagens contato
+      // ===== Carrossel de imagens (contato) =====
       document.addEventListener("DOMContentLoaded", () => {
-        const healthSlides = document.querySelector('.carousel .slides');
-        let scrollPos = 0;
-
-        function autoScroll() {
-          scrollPos += 1;
-          if (scrollPos >= healthSlides.scrollWidth / 2) scrollPos = 0;
-          healthSlides.style.transform = `translateX(-${scrollPos}px)`;
-          requestAnimationFrame(autoScroll);
+        const healthSlides = document.querySelector(".carousel .slides");
+        if (healthSlides) {
+          let scrollPos = 0;
+          function autoScroll() {
+            scrollPos += 1;
+            if (scrollPos >= healthSlides.scrollWidth / 2) scrollPos = 0;
+            healthSlides.style.transform = `translateX(-${scrollPos}px)`;
+            requestAnimationFrame(autoScroll);
+          }
+          autoScroll();
         }
+      });
 
-        autoScroll();
+      // ===== Menu toggle =====
+      document.addEventListener("DOMContentLoaded", () => {
+        const menuBtn = document.querySelector(".menu-btn");
+        const menu = document.getElementById("menu");
+        if (menuBtn && menu) {
+          menuBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            menu.classList.toggle("ativo");
+            menu.setAttribute("aria-hidden", !menu.classList.contains("ativo"));
+          });
+          document.addEventListener("click", (e) => {
+            if (
+              menu.classList.contains("ativo") &&
+              !menu.contains(e.target) &&
+              !menuBtn.contains(e.target)
+            ) {
+              menu.classList.remove("ativo");
+              menu.setAttribute("aria-hidden", "true");
+            }
+          });
+          window.fechar = function () {
+            menu.classList.remove("ativo");
+            menu.setAttribute("aria-hidden", "true");
+          };
+        }
       });
     </script>
-    <!-- Webchat da Dra. Nathália Martins -->
-<script src="https://cdn.botpress.cloud/webchat/v3.3/inject.js"></script>
-<script>
-  window.botpressWebChat.init({
-    configUrl: "https://files.bpcontent.cloud/2025/10/10/13/20251010131403-6DRD6VUB.json"
-  });
-</script>
-
+    
+    
   </body>
 </html>

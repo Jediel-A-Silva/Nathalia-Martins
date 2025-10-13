@@ -1,0 +1,27 @@
+{
+  "name": "nathalia-martins",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^4.21.2",
+    "node-fetch": "^3.3.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nerddaprogramacao/Nathalia-Martins.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nerddaprogramacao/Nathalia-Martins/issues"
+  },
+  "homepage": "https://github.com/nerddaprogramacao/Nathalia-Martins#readme"
+}
