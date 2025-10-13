@@ -1,8 +1,8 @@
 /* ============================================
-   IA Nathalia - versão v9.6 integrada ao n8n
+   IA Nathalia - versão v9.6.1 integrada ao n8n
    ============================================ */
 
-const IA_VERSION = "v9.6";
+const IA_VERSION = "v9.6.1";
 const SELECTORS = {
   input: ["#inputChat", "#iaInput", "[data-ia-input]"],
   sendBtn: ["#iaSend", ".ia-send-btn", "[data-ia-send]"],
@@ -146,6 +146,7 @@ function initBindings() {
     }
   };
 
+  // 🧠 Corrige botão enviar
   if (sendBtn) {
     const newBtn = sendBtn.cloneNode(true);
     sendBtn.parentNode.replaceChild(newBtn, sendBtn);
@@ -155,6 +156,7 @@ function initBindings() {
     });
   }
 
+  // 🔥 Corrige Enter
   if (input) {
     input.addEventListener("keydown", (e) => {
       if (e.key === "Enter" && !e.shiftKey) {
@@ -163,17 +165,17 @@ function initBindings() {
       }
     });
   }
-}
 
+  // ✅ Corrige abertura do chat (ficou fora antes)
   if (toggle && container) {
-  toggle.addEventListener("click", () => {
-    const isOpen = container.classList.toggle("ativo");
-    toggle.setAttribute("aria-expanded", isOpen);
-    container.setAttribute("aria-hidden", !isOpen); // 🔥 Corrige o alerta
-    if (isOpen && input) setTimeout(() => input.focus(), 200);
-  });
+    toggle.addEventListener("click", () => {
+      const isOpen = container.classList.toggle("ativo");
+      toggle.setAttribute("aria-expanded", isOpen);
+      container.setAttribute("aria-hidden", !isOpen);
+      if (isOpen && input) setTimeout(() => input.focus(), 200);
+    });
+  }
 }
-
 
 /* ============================
    Inicialização principal
