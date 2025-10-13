@@ -87,33 +87,33 @@ async function processMessage(rawText) {
     pushMessage("user", text);
     renderUserMessage(text);
 
-    try {
-  // 🌐 URL DO WEBHOOK NA NUVEM (n8n.cloud)
-  const response = await fetch("https://nerddaprogramacao.app.n8n.cloud/webhook/agent-nathalia", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ mensagem: text })
-  });
+    // 🌐 Envio ao webhook da Nathalia no n8n.cloud
+    const response = await fetch("https://nerddaprogramacao.app.n8n.cloud/webhook/agent-nathalia", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ mensagem: text })
+});
 
-  if (!response.ok) throw new Error("Erro ao se comunicar com o n8n.");
 
-  const data = await response.json();
+    if (!response.ok) throw new Error("Erro ao se comunicar com o n8n.");
 
-  // 💬 Ajuste conforme o retorno do seu nó "Code" no n8n
-  const reply =
-    data.resposta ||
-    data.mensagem ||
-    "🤖 A Nathalia não respondeu agora, tente novamente.";
+    const data = await response.json();
 
-  renderAssistantMessage(reply);
+    // 💬 Ajuste conforme retorno do nó "Code" do n8n
+    const reply =
+      data.resposta ||
+      data.mensagem ||
+      "🤖 A Nathalia não respondeu agora, tente novamente.";
 
-} catch (err) {
-  console.error("Erro:", err);
-  renderAssistantMessage("⚠️ Ocorreu um erro interno. Tente novamente mais tarde.");
-} finally {
-  ChatState.isProcessing = false;
-}
+    renderAssistantMessage(reply);
 
+  } catch (err) {
+    console.error("Erro:", err);
+    renderAssistantMessage("⚠️ Ocorreu um erro interno. Tente novamente mais tarde.");
+  } finally {
+    ChatState.isProcessing = false;
+  }
+} // 👈 AGORA a função processMessage fecha aqui corretamente!
 
 /* ============================
    Inicialização de eventos
@@ -214,4 +214,4 @@ if (document.readyState === "loading") {
     }
   `;
   document.head.appendChild(s);
-})(); // 👈 Aqui fecha a função corretamente
+})();
