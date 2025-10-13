@@ -1,8 +1,8 @@
 /* ============================================
-   IA Nathalia - versão v9.5 integrada ao n8n
+   IA Nathalia - versão v9.6 integrada ao n8n
    ============================================ */
 
-const IA_VERSION = "v9.5";
+const IA_VERSION = "v9.6";
 const SELECTORS = {
   input: ["#inputChat", "#iaInput", "[data-ia-input]"],
   sendBtn: ["#iaSend", ".ia-send-btn", "[data-ia-send]"],
@@ -87,19 +87,21 @@ async function processMessage(rawText) {
     pushMessage("user", text);
     renderUserMessage(text);
 
-    // 🌐 Envio ao webhook da Nathalia no n8n.cloud
-    const response = await fetch("https://nerddaprogramacao.app.n8n.cloud/webhook/agent-nathalia", {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({ mensagem: text })
-});
-
+    // 🌐 Envio ao webhook da Nathalia no n8n
+    const response = await fetch("https://nerddaprogramacao.app.n8n.cloud/webhook-test/agent-nathalia", {
+      method: "POST",
+      headers: { 
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify({ mensagem: text })
+    });
 
     if (!response.ok) throw new Error("Erro ao se comunicar com o n8n.");
 
     const data = await response.json();
 
-    // 💬 Ajuste conforme retorno do nó "Code" do n8n
+    // 💬 Ajuste conforme retorno do n8n
     const reply =
       data.resposta ||
       data.mensagem ||
@@ -113,7 +115,7 @@ async function processMessage(rawText) {
   } finally {
     ChatState.isProcessing = false;
   }
-} // 👈 AGORA a função processMessage fecha aqui corretamente!
+}
 
 /* ============================
    Inicialização de eventos
