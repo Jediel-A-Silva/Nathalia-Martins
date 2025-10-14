@@ -31,33 +31,7 @@
     <!-- ==================== SEU CSS ==================== -->
     <link rel="stylesheet" href="style.css" />
 
-    <style>
-      html {
-        scroll-behavior: smooth;
-      }
-      /* ajuste mínimo para o chat: evita que o input se sobreponha nos mobiles */
-      .ia-chat {
-        box-sizing: border-box;
-      }
-      .ia-chat input#iaInput {
-        padding-right: 72px;
-      } /* espaço pro botão enviar */
-      .ia-send-btn {
-        position: absolute;
-        right: 10px;
-        bottom: 12px;
-        background: #e91e63;
-        color: #fff;
-        border: none;
-        padding: 8px 10px;
-        border-radius: 8px;
-        cursor: pointer;
-      }
-      .ia-send-btn:disabled {
-        opacity: 0.6;
-        cursor: not-allowed;
-      }
-    </style>
+    
   </head>
 
   <body>
@@ -180,78 +154,7 @@
       </div>
     </section>
 
-    <!-- ==================== ASSISTENTE VIRTUAL (CHAT) ==================== -->
-    <div class="ia-container" aria-live="polite">
-      <!-- Avatar (toggle) -->
-      <div
-        class="ia-avatar"
-        role="button"
-        tabindex="0"
-        aria-controls="iaChat"
-        aria-expanded="false"
-        aria-label="Abrir Assistente Virtual"
-      >
-        <img src="img/img-IA.png" alt="Assistente Virtual" />
-      </div>
-
-      <!-- Chat (início fechado, será aberto pelo JS) -->
-      <div
-        class="ia-chat"
-        id="iaChat"
-        aria-hidden="true"
-        role="dialog"
-        aria-label="Chat com a Enfermeira Nathalia"
-      >
-        <div class="ia-header" role="heading" aria-level="1">
-          <img src="img/img-IA.png" alt="Enfermeira Nathalia" />
-          <div class="ia-titulo">
-            <h2>Enfermeira Nathalia</h2>
-            <span>Sua assistente virtual</span>
-          </div>
-        </div>
-
-        <div class="ia-body" id="iaBody" role="log" aria-live="polite">
-          <p>
-            👋 Oi, tudo bem?<br />
-            <strong>Sou a Nathalia, enfermeira obstetra.</strong><br />
-            Em que posso te ajudar hoje?
-          </p>
-          <!-- removi os botões fixos aqui para a conversa fluir livremente -->
-        </div>
-
-        <!-- Campo de entrada + botão enviar -->
-        <div
-          style="
-            position: relative;
-            padding: 12px;
-            background: #fff;
-            border-top: 1px solid #ffdce6;
-          "
-        >
-          <input
-            id="iaInput"
-            type="text"
-            placeholder="Digite sua pergunta aqui..."
-            aria-label="Digite sua pergunta para a enfermeira Nathalia"
-            style="
-              width: 100%;
-              padding: 10px 14px;
-              border-radius: 8px;
-              border: 1px solid #ffdce6;
-            "
-          />
-          <button
-            id="iaSend"
-            class="ia-send-btn"
-            aria-label="Enviar mensagem para a enfermeira Nathalia"
-            title="Enviar"
-          >
-            Enviar
-          </button>
-        </div>
-      </div>
-    </div>
-
+    
     <!-- ==================== CARROSSEL PERSONALIZADO ==================== -->
     <section class="sessao-carrossel">
       <div id="containerCarrosselCustom" class="container-carrossel-custom">
@@ -538,34 +441,182 @@
         }
       });
 
-      // ===== Menu toggle =====
-      document.addEventListener("DOMContentLoaded", () => {
-        const menuBtn = document.querySelector(".menu-btn");
-        const menu = document.getElementById("menu");
-        if (menuBtn && menu) {
-          menuBtn.addEventListener("click", (e) => {
-            e.stopPropagation();
-            menu.classList.toggle("ativo");
-            menu.setAttribute("aria-hidden", !menu.classList.contains("ativo"));
-          });
-          document.addEventListener("click", (e) => {
-            if (
-              menu.classList.contains("ativo") &&
-              !menu.contains(e.target) &&
-              !menuBtn.contains(e.target)
-            ) {
-              menu.classList.remove("ativo");
-              menu.setAttribute("aria-hidden", "true");
-            }
-          });
-          window.fechar = function () {
-            menu.classList.remove("ativo");
-            menu.setAttribute("aria-hidden", "true");
-          };
-        }
-      });
+
     </script>
-    
-    
-  </body>
+
+<!-- GPTMaker Widget (não remova) -->
+<script async src="https://app.gptmaker.ai/widget/3E8B3E6D467D32B2A9236ADC2CAB5388/float.js"></script>
+
+<!-- Script que cria overlay com a sua imagem e esconde a seta -->
+<script>
+(function () {
+  const IMAGE_URL = 'img/img-IA.png'; // <- coloque aqui o caminho da sua imagem
+  const OVERLAY_ID = 'nathalia-gptmaker-overlay';
+  let originalButton = null;
+  let overlay = null;
+  let observer = null;
+
+  // Cria o overlay (botão visual) se não existir
+  function criarOverlay() {
+    if (overlay) return;
+    overlay = document.createElement('div');
+    overlay.id = OVERLAY_ID;
+    Object.assign(overlay.style, {
+      position: 'fixed',
+      width: '70px',
+      height: '70px',
+      borderRadius: '50%',
+      backgroundImage: `url("${IMAGE_URL}")`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      boxShadow: '0 6px 18px rgba(0,0,0,0.25)',
+      cursor: 'pointer',
+      zIndex: 999999, // acima de quase tudo
+      transition: 'transform .18s ease, filter .18s ease',
+      transform: 'scale(1)',
+      display: 'none', // aparece quando posicionado
+    });
+
+    // hover
+    overlay.addEventListener('mouseenter', () => {
+      overlay.style.transform = 'scale(1.08)';
+      overlay.style.filter = 'brightness(1.05)';
+    });
+    overlay.addEventListener('mouseleave', () => {
+      overlay.style.transform = 'scale(1)';
+      overlay.style.filter = 'brightness(1)';
+    });
+
+    // clique: dispara clique no botão original (se existir)
+    overlay.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (originalButton) {
+        try {
+          originalButton.click();
+        } catch (err) {
+          // fallback: tenta disparar evento mouse
+          const evt = new MouseEvent('click', { bubbles: true, cancelable: true, view: window });
+          originalButton.dispatchEvent(evt);
+        }
+      }
+    });
+
+    document.body.appendChild(overlay);
+  }
+
+  // Posiciona o overlay sobre o botão original
+  function posicionarOverlay(btn) {
+    if (!btn || !overlay) return;
+
+    const rect = btn.getBoundingClientRect();
+
+    // se o botão tiver display:none ou não visível, esconde o overlay também
+    const visible = rect.width > 0 && rect.height > 0;
+    if (!visible) {
+      overlay.style.display = 'none';
+      return;
+    }
+
+    // fixa o overlay no canto inferior direito, independente do scroll
+overlay.style.position = 'fixed';
+overlay.style.left = 'auto';
+overlay.style.right = '20px';
+overlay.style.bottom = '20px';
+overlay.style.top = 'auto';
+overlay.style.width = '70px';
+overlay.style.height = '70px';
+overlay.style.display = 'block';
+
+
+    // Esconde visualmente elementos internos problemáticos (seta) do botão original, mas mantemos o botão funcional
+    try {
+      // torna original invisível (mantém interatividade oculta)
+      btn.style.opacity = '0';
+      btn.style.background = 'transparent';
+      btn.style.border = 'none';
+      btn.style.boxShadow = 'none';
+      // remove svgs se estiverem acessíveis
+      const svgs = btn.querySelectorAll && btn.querySelectorAll('svg, path');
+      if (svgs && svgs.length) svgs.forEach(s => { s.style.display = 'none'; });
+    } catch (err) {
+      // ignorar cross-origin ou erro de acesso
+    }
+  }
+
+  // Procura o botão do GPTMaker com vários seletores possíveis
+  function encontrarBotao() {
+    const selectors = [
+      '#gptmaker-float-button',
+      '#gptmaker-widget-button',
+      '[id*="gptmaker"] button',
+      'button[aria-label*="GPTMaker"]',
+      'div[style*="position: fixed"] button'
+    ];
+    for (const s of selectors) {
+      const el = document.querySelector(s);
+      if (el) return el;
+    }
+    // fallback: procurar qualquer botão fixo no canto inferior direito
+    const allButtons = Array.from(document.querySelectorAll('button'));
+    for (const b of allButtons) {
+      const rect = b.getBoundingClientRect();
+      if (rect.bottom > (window.innerHeight - 120) && rect.right > (window.innerWidth - 120)) {
+        return b;
+      }
+    }
+    return null;
+  }
+
+  // Reinicia referência e reaplica posicionamento
+  function atualizar() {
+    const btn = encontrarBotao();
+    if (!btn) {
+      originalButton = null;
+      if (overlay) overlay.style.display = 'none';
+      return;
+    }
+    // atualiza referência
+    originalButton = btn;
+    // garante que overlay exista
+    criarOverlay();
+    // posiciona overlay exatamente sobre o botão
+    posicionarOverlay(btn);
+  }
+
+  // Observador para mudanças no DOM (recriação do botão)
+  function startObserving() {
+    if (observer) return;
+    observer = new MutationObserver(() => {
+      // tenta reaplicar quando houver mudanças
+      atualizar();
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+  }
+
+  // também reposiciona ao rolar/resize
+  window.addEventListener('resize', () => atualizar());
+  window.addEventListener('scroll', () => atualizar());
+
+  // início: tenta várias vezes até encontrar o botão (widget pode demorar)
+  function initTryLoop(retries = 30, delay = 300) {
+    startObserving();
+    let tries = 0;
+    const t = setInterval(() => {
+      tries++;
+      atualizar();
+      if (originalButton || tries >= retries) {
+        clearInterval(t);
+      }
+    }, delay);
+  }
+
+  // inicia quando DOM estiver pronto
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => initTryLoop(60, 300));
+  } else {
+    initTryLoop(60, 300);
+  }
+})();
+</script>
+</body>
 </html>

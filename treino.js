@@ -1,219 +1,157 @@
-/* ============================================
-   IA Nathalia - versão v9.6.3 integrada ao n8n
-   ============================================ */
+// =====================
+// INICIALIZAÇÃO GERAL
+// =====================
+document.addEventListener("DOMContentLoaded", () => {
 
-const IA_VERSION = "v9.6.3";
-const SELECTORS = {
-  input: ["#inputChat", "#iaInput", "[data-ia-input]"],
-  sendBtn: ["#iaSend", ".ia-send-btn", "[data-ia-send]"],
-  chatBody: ["#respostaChat", "#iaBody", "[data-ia-body]", "#chatBox"],
-  toggle: [".ia-avatar", "[data-ia-toggle]"],
-  container: ["#iaChat", ".ia-container", "[data-ia-container]"]
-};
-
-/* ============================
-   Funções auxiliares
-   ============================ */
-function findFirst(selectors) {
-  for (const s of selectors) {
-    const el = document.querySelector(s);
-    if (el) return el;
-  }
-  return null;
-}
-function safeText(v) {
-  return String(v ?? "");
-}
-function escapeHtml(str = "") {
-  return safeText(str)
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;");
-}
-
-/* ============================
-   Estado do chat
-   ============================ */
-const ChatState = {
-  version: IA_VERSION,
-  conversation: [],
-  isProcessing: false
-};
-function pushMessage(role, text) {
-  ChatState.conversation.push({ role, text: safeText(text), time: new Date() });
-}
-
-/* ============================
-   Renderização das mensagens
-   ============================ */
-function renderUserMessage(text) {
-  const chatBodyEl = findFirst(SELECTORS.chatBody);
-  if (!chatBodyEl) return;
-  const block = document.createElement("div");
-  block.className = "ia-msg ia-user";
-  block.innerHTML = `
-    <div class="ia-msg-bubble ia-user-bubble">
-      <strong>Você:</strong>
-      <div class="ia-msg-text">${escapeHtml(text)}</div>
-    </div>`;
-  chatBodyEl.appendChild(block);
-  chatBodyEl.scrollTo({ top: chatBodyEl.scrollHeight, behavior: "smooth" });
-}
-
-function renderAssistantMessage(htmlText) {
-  const chatBodyEl = findFirst(SELECTORS.chatBody);
-  if (!chatBodyEl) return;
-  const block = document.createElement("div");
-  block.className = "ia-msg ia-assistant";
-  block.innerHTML = `
-    <div class="ia-msg-bubble ia-assistant-bubble">
-      <strong>Nathalia:</strong>
-      <div class="ia-msg-text">${htmlText}</div>
-    </div>`;
-  chatBodyEl.appendChild(block);
-  chatBodyEl.scrollTo({ top: chatBodyEl.scrollHeight, behavior: "smooth" });
-}
-
-/* ============================
-   Comunicação com o n8n
-   ============================ */
-async function processMessage(pergunta) {
-  if (!pergunta) return;
-  const chatBodyEl = findFirst(SELECTORS.chatBody);
-  renderUserMessage(pergunta);
-
-  try {
-    const resposta = await fetch("https://nerddaprogramacao.app.n8n.cloud/webhook/agent-nathalia", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ pergunta })
-    });
-
-    const data = await resposta.json();
-    console.log("🔍 Resposta do n8n:", data);
-
-    let respostaIA =
-      data.resposta ||
-      data.Resposta ||
-      data.message ||
-      data.mensagem ||
-      data.output ||
-      JSON.stringify(data);
-
-    if (respostaIA) {
-      pushMessage("assistant", respostaIA);
-      renderAssistantMessage(respostaIA);
-    } else {
-      renderAssistantMessage("🤖 A Nathalia não respondeu agora, tente novamente.");
-    }
-
-  } catch (erro) {
-    console.error("❌ Erro:", erro);
-    renderAssistantMessage("⚠️ Erro na conexão com o servidor.");
-  }
-}
-
-/* ============================
-   Inicialização de eventos
-   ============================ */
-function initBindings() {
-  const input = findFirst(SELECTORS.input);
-  const sendBtn = findFirst(SELECTORS.sendBtn);
-  const container = findFirst(SELECTORS.container);
-  const toggle = findFirst(SELECTORS.toggle);
-
-  const enviar = async () => {
-    if (!input) return;
-    const texto = input.value.trim();
-    if (!texto) {
-      input.classList.add("ia-input-empty");
-      setTimeout(() => input.classList.remove("ia-input-empty"), 300);
-      return;
-    }
-    input.disabled = true;
-    if (sendBtn) sendBtn.disabled = true;
-    try {
-      await processMessage(texto);
-    } finally {
-      input.value = "";
-      input.disabled = false;
-      if (sendBtn) sendBtn.disabled = false;
-      input.focus();
-    }
-  };
-
-  // 🧠 Corrige botão enviar
-  if (sendBtn) {
-    const newBtn = sendBtn.cloneNode(true);
-    sendBtn.parentNode.replaceChild(newBtn, sendBtn);
-    newBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      enviar();
+  // =====================
+  // Swiper
+  // =====================
+  if (typeof Swiper !== "undefined") {
+    new Swiper(".my-carousel", {
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: "auto",
+      spaceBetween: 16,
+      loop: true,
+      navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
     });
   }
 
-  // 🔥 Corrige Enter
-  if (input) {
-    input.addEventListener("keydown", (e) => {
-      if (e.key === "Enter" && !e.shiftKey) {
-        e.preventDefault();
-        enviar();
+  // =====================
+  // MENU HAMBÚRGUER
+  // =====================
+  const menuBtn = document.querySelector(".menu-btn");
+  const menu = document.getElementById("menu");
+  const btnFechar = menu?.querySelector(".fechar");
+
+  if (menuBtn && menu) {
+    menuBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      menu.classList.toggle("ativo");
+      menuBtn.classList.toggle("ativo");
+    });
+
+    if (btnFechar) {
+      btnFechar.addEventListener("click", () => {
+        menu.classList.remove("ativo");
+        menuBtn.classList.remove("ativo");
+      });
+    }
+  }
+
+  // =====================
+  // FECHAR AO CLICAR FORA (menu)
+  // =====================
+  document.addEventListener("click", (e) => {
+    const clicouForaMenu = menu && menu.classList.contains("ativo") &&
+      !menu.contains(e.target) && !menuBtn.contains(e.target);
+
+    if (clicouForaMenu) {
+      menu.classList.remove("ativo");
+      menuBtn.classList.remove("ativo");
+    }
+  });
+
+  // =====================
+  // FormSubmit
+  // =====================
+  class FormSubmit {
+    constructor(settings) {
+      this.settings = settings;
+      this.form = document.querySelector(settings.form);
+      this.button = document.querySelector(settings.button);
+      if (this.form && this.button) {
+        this.url = this.form.getAttribute("action");
+        this.button.addEventListener("click", this.sendForm.bind(this));
       }
-    });
-  }
-
-  // ✅ Abertura do chat
-  if (toggle && container) {
-    toggle.addEventListener("click", () => {
-      const isOpen = container.classList.toggle("ativo");
-      toggle.setAttribute("aria-expanded", isOpen);
-      container.setAttribute("aria-hidden", !isOpen);
-      if (isOpen && input) setTimeout(() => input.focus(), 200);
-    });
-  }
-}
-
-/* ============================
-   Inicialização principal
-   ============================ */
-function init() {
-  initBindings();
-  window.IA_NATHALIA = {
-    version: IA_VERSION,
-    state: ChatState,
-    send: (text) => processMessage(text),
-    renderAssistantMessage
-  };
-}
-
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", init);
-} else {
-  init();
-}
-
-/* ============================
-   Estilos básicos
-   ============================ */
-(function injectStyles() {
-  if (document.getElementById("ia-style-v9")) return;
-  const s = document.createElement("style");
-  s.id = "ia-style-v9";
-  s.innerHTML = `
-    .ia-msg { margin: 8px 12px; display:block; clear:both; }
-    .ia-msg-bubble { padding:10px 12px; border-radius:12px; max-width:90%; box-shadow:0 2px 6px rgba(0,0,0,0.08); }
-    .ia-user { text-align:right; }
-    .ia-user-bubble { background: linear-gradient(90deg,#fdf1f4,#fff); margin-left:auto; display:inline-block; }
-    .ia-assistant-bubble { background:#f6f8ff; margin-right:auto; display:inline-block; }
-    .ia-msg-text { margin-top:6px; white-space:pre-wrap; }
-    .ia-input-empty { animation: ia-shake .25s linear; border-color:#e91e63; }
-    @keyframes ia-shake {
-      0%{ transform:translateX(0) } 
-      25%{ transform:translateX(-4px) }
-      50%{ transform:translateX(4px) } 
-      75%{ transform:translateX(-4px) }
-      100%{ transform:translateX(0) }
     }
-  `;
-  document.head.appendChild(s);
-})();
+
+    displaySuccess() { this.form.innerHTML = this.settings.success; }
+    displayError() { this.form.innerHTML = this.settings.error; }
+
+    getFormObject() {
+      const obj = {};
+      this.form.querySelectorAll("[name]").forEach(f => obj[f.name] = f.value);
+      return obj;
+    }
+
+    onSubmission(event) {
+      event.preventDefault();
+      event.target.disabled = true;
+      event.target.innerText = "Enviando...";
+    }
+
+    async sendForm(event) {
+      try {
+        this.onSubmission(event);
+        await fetch(this.url, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          body: JSON.stringify(this.getFormObject())
+        });
+        this.displaySuccess();
+      } catch {
+        this.displayError();
+      }
+    }
+  }
+
+  new FormSubmit({
+    form: "[data-form]",
+    button: "[data-button]",
+    success: "<h1 class='success'>Mensagem enviada com sucesso!</h1>",
+    error: "<h1 class='error'>Ops! Algo deu errado.</h1>"
+  });
+
+  // =====================
+  // CARROSSEL PRINCIPAL
+  // =====================
+  (function () {
+    const slides = document.querySelectorAll(".slide-item");
+    const prevBtn = document.querySelector(".prev-custom");
+    const nextBtn = document.querySelector(".next-custom");
+    const textoBox = document.querySelector(".descricao-carrossel");
+
+    if (!slides.length || !prevBtn || !nextBtn || !textoBox) return;
+
+    const textos = [
+      { titulo: "Parto Humanizado com Respeito", descricao: "Acolhimento em cada etapa..." },
+      { titulo: "Gestante como Protagonista", descricao: "Você no centro das decisões..." },
+      { titulo: "Acolhimento e Confiança", descricao: "Um ambiente seguro e acolhedor..." },
+      { titulo: "Cuidado Integral com a Gestante", descricao: "Assistência completa..." },
+      { titulo: "Experiência Única no Parto", descricao: "Vivencie o nascimento..." },
+      { titulo: "Amor e Segurança no Nascer", descricao: "Cada momento do parto é pensado..." }
+    ];
+
+    let index = 0;
+    function atualizar() {
+      slides.forEach((slide, i) => slide.classList.toggle("ativo-slide", i === index));
+      textoBox.querySelector("h2").innerText = textos[index].titulo;
+      textoBox.querySelector("p").innerText = textos[index].descricao;
+    }
+
+    nextBtn.addEventListener("click", () => { index = (index + 1) % slides.length; atualizar(); });
+    prevBtn.addEventListener("click", () => { index = (index - 1 + slides.length) % slides.length; atualizar(); });
+    atualizar();
+  })();
+
+  // =====================
+  // CARROSSEL FINAL
+  // =====================
+  (function () {
+    const slides = document.querySelectorAll("#carrosselFinal .slide-final");
+    const prevBtn = document.querySelector("#carrosselFinal .prev-final");
+    const nextBtn = document.querySelector("#carrosselFinal .next-final");
+
+    if (!slides.length || !prevBtn || !nextBtn) return;
+
+    let index = 0;
+    function atualizar() {
+      slides.forEach((slide, i) => slide.classList.toggle("ativo-slide-final", i === index));
+    }
+
+    nextBtn.addEventListener("click", () => { index = (index + 1) % slides.length; atualizar(); });
+    prevBtn.addEventListener("click", () => { index = (index - 1 + slides.length) % slides.length; atualizar(); });
+    atualizar();
+  })();
+});
