@@ -115,13 +115,32 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!slides.length || !prevBtn || !nextBtn || !textoBox) return;
 
     const textos = [
-      { titulo: "Parto Humanizado com Respeito", descricao: "Acolhimento em cada etapa..." },
-      { titulo: "Gestante como Protagonista", descricao: "Você no centro das decisões..." },
-      { titulo: "Acolhimento e Confiança", descricao: "Um ambiente seguro e acolhedor..." },
-      { titulo: "Cuidado Integral com a Gestante", descricao: "Assistência completa..." },
-      { titulo: "Experiência Única no Parto", descricao: "Vivencie o nascimento..." },
-      { titulo: "Amor e Segurança no Nascer", descricao: "Cada momento do parto é pensado..." }
-    ];
+  { 
+    titulo: "Parto Humanizado com Respeito", 
+    descricao: "Cada detalhe é pensado para garantir acolhimento, conforto e segurança em um momento tão especial." 
+  },
+  { 
+    titulo: "Gestante como Protagonista", 
+    descricao: "Você é o centro de todas as decisões. Vivencie o parto com autonomia, amor e apoio contínuo." 
+  },
+  { 
+    titulo: "Acolhimento e Confiança", 
+    descricao: "Uma jornada guiada pela empatia e pelo cuidado, onde cada gesto transmite tranquilidade." 
+  },
+  { 
+    titulo: "Cuidado Integral com a Gestante", 
+    descricao: "Acompanhamento físico e emocional em todas as fases da gestação, garantindo bem-estar completo." 
+  },
+  { 
+    titulo: "Experiência Única no Parto", 
+    descricao: "Transforme o nascimento em um momento inesquecível, cheio de significado e carinho." 
+  },
+  { 
+    titulo: "Amor e Segurança no Nascer", 
+    descricao: "Um ambiente preparado com dedicação para receber sua história com amor e serenidade." 
+  }
+];
+
 
     let index = 0;
     function atualizar() {
