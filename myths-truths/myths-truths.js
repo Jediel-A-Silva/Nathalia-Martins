@@ -1,39 +1,56 @@
-// Seleciona modal e frame
-const modal = document.getElementById("videoModal");
-const videoFrame = document.getElementById("videoFrame");
-const closeBtn = document.querySelector(".close");
+// =============================
+// 🎬 Controle de vídeos - Enfermeira Obstetra
+// =============================
 
-// Botão principal de play
-const heroPlayBtn = document.querySelector(".play-btn");
-heroPlayBtn.addEventListener("click", () => {
-  const videoURL = heroPlayBtn.getAttribute("data-video");
-  openVideo(videoURL);
-});
+// Guardar o vídeo e capa principal
+const videoPrincipal = document.getElementById("videoPrincipal");
+const source = videoPrincipal.querySelector("source");
 
-// Clique nos cards do carrossel
-document.querySelectorAll(".carrossel-item").forEach(item => {
-  item.addEventListener("click", () => {
-    const videoURL = item.getAttribute("data-video");
-    openVideo(videoURL);
-  });
-});
+const videoPrincipalOriginal = {
+  src: source.src,
+  poster: videoPrincipal.poster
+};
 
-// Função para abrir vídeo no modal
-function openVideo(url) {
-  modal.style.display = "flex";
-  videoFrame.src = url + "?autoplay=1";
+// Guardar vídeos assistidos
+const videosAssistidos = new Set();
+
+// Função para trocar o vídeo
+function trocarVideo(novoSrc, novoPoster) {
+  try {
+    source.src = novoSrc;
+    videoPrincipal.poster = novoPoster;
+    videoPrincipal.load();
+    videoPrincipal.play();
+
+    // Marca o vídeo como assistido
+    videosAssistidos.add(novoSrc);
+
+  } catch (error) {
+    console.warn("Vídeo não encontrado:", novoSrc);
+    alert("⚠️ Não foi possível carregar o vídeo selecionado.");
+  }
 }
 
-// Fechar modal
-closeBtn.addEventListener("click", () => {
-  modal.style.display = "none";
-  videoFrame.src = "";
-});
+// Quando o vídeo terminar...
+videoPrincipal.addEventListener("ended", () => {
+  console.log("Vídeo terminou:", source.src);
 
-// Fechar clicando fora
-window.addEventListener("click", (e) => {
-  if (e.target === modal) {
-    modal.style.display = "none";
-    videoFrame.src = "";
+  // Se todos os vídeos do carrossel já foram assistidos
+  const totalVideos = document.querySelectorAll(".carrossel-item").length;
+
+  if (videosAssistidos.size >= totalVideos) {
+    // Volta para o principal
+    voltarVideoPrincipal();
   }
 });
+
+// Função para voltar ao vídeo principal original
+function voltarVideoPrincipal() {
+  source.src = videoPrincipalOriginal.src;
+  videoPrincipal.poster = videoPrincipalOriginal.poster;
+  videoPrincipal.load();
+  videoPrincipal.play();
+  videosAssistidos.clear(); // reseta a contagem
+  console.log("Retornou ao vídeo principal.");
+}
+// =============================
