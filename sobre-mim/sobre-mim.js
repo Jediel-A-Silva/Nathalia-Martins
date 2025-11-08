@@ -9,9 +9,15 @@ function initCarousel() {
       slidesPerView: 1.2,
       spaceBetween: 16,
       grabCursor: true,
+      loop: true,
       centeredSlides: false,
-      loop: true, // volta para o início automaticamente
-      touchStartPreventDefault: false,
+      freeMode: true,          // permite deslizar contínuo
+      speed: 3000,             // velocidade da animação (ms)
+      autoplay: {
+        delay: 0,              // delay 0 para movimento contínuo
+        disableOnInteraction: false,
+      },
+      allowTouchMove: true,    // ainda permite arrastar
     });
   } 
   else if (window.innerWidth > 768 && swiperInstance) {

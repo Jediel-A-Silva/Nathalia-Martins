@@ -495,7 +495,12 @@ h1 span {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: auto; /* permite ajuste automático de largura */
+  width: auto; /* largura automática */
+  margin-right: 0.5rem; /* espaço igual entre slides */
+}
+
+.swiper-slide:last-child {
+  margin-right: 0; /* remove espaço do último slide */
 }
 
 .imagem-gravida2 {
