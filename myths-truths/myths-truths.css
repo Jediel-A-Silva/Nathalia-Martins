@@ -13,6 +13,7 @@ body {
   font-family: "Poppins", sans-serif;
   background: linear-gradient(180deg, #fff8f8 0%, #fdeef3 100%);
   color: #333;
+  overflow-x: hidden;
 }
 
 /* =============================
@@ -22,53 +23,23 @@ header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255, 204, 221, 0.9);
+  background:#4b1024;
   backdrop-filter: blur(8px);
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 18px 50px;
+  padding: 10px 50px;
   box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.4);
 }
 
-header h1 {
-  color: #b72f6b;
-  font-size: 1.5rem;
-  font-weight: 700;
-}
-
-header nav a {
-  color: #7c224b;
-  margin-left: 25px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
-
-header nav a:hover {
-  color: #b72f6b;
-  text-shadow: 0 0 10px rgba(183, 47, 107, 0.3);
-}
-
-header {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center; /* centraliza o h1 */
-  background: #ffd6e0;
-  padding: 1rem 0;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Botão "Início" fixo à esquerda */
 .btn-voltar-fixo {
   position: absolute;
   left: 20px;
-  background-color: #ffb6c1;
-  color: #8b0000;
+  background-color: #6e1332;
+  color: #ffffff;
   font-weight: bold;
-  padding: 0.7rem 1.3rem;
+  padding: 0.4rem 0.8rem;
   border-radius: 30px;
   text-decoration: none;
   font-family: "Poppins", sans-serif;
@@ -81,100 +52,99 @@ header {
   transform: translateY(-2px);
 }
 
-/* Centraliza o h1 perfeitamente */
 header h1 {
-  margin: 0;
-  color: #b72f6b;
-  font-size: 1.8rem;
+  color: #ffffff;
+  font-size: 1.6rem;
   font-weight: 700;
   text-align: center;
 }
 
-
 /* =============================
-   🌷 HERO SECTION
+   🌷 HERO SECTION (ajustada para caber tudo na tela)
    ============================= */
 .hero {
-    position: relative;
-    height: 50vh;
-    background: linear-gradient(180deg, rgba(255, 220, 230, 0.5), rgba(255, 255, 255, 0.3)), url(https://img.freepik.com/fotos-gratis/mae-e-medico-cuidando-de-um-recém-nascido-na-maternidade_1157-36815.jpg) center / cover no-repeat;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-    text-align: center;
-    padding-bottom: 100px;
+  position: relative;
+  height: 60vh; /* ocupa toda a tela */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  /* 🔥 Gradiente suave e imagem nítida */
+  background: 
+    linear-gradient(
+      180deg, 
+      rgba(0, 0, 0, 0.15) 0%,   /* leve escurecimento no topo */
+      rgba(0, 0, 0, 0.05) 50%,  /* quase transparente no meio */
+      rgba(0, 0, 0, 0.25) 100%  /* um leve contraste no rodapé */
+    ),
+    url("imgg/blaid.jpg") center / cover no-repeat;
+  text-align: center;
+  padding: 2vh 0;
+  overflow: hidden;
 }
-
 
 
 /* =============================
-   🎬 VÍDEO PRINCIPAL
+   🎬 VÍDEO PRINCIPAL (ocupa 60% da tela)
    ============================= */
 .main-video {
-  position: relative;
   width: 40%;
-  max-width: 900px;   /* mantém seu limite */
-  margin: -70px auto 50px auto;
+  max-width: 900px;
+  height: 50vh;
   border-radius: 20px;
   overflow: hidden;
-  background: #000;   /* fundo escuro para barras quando usar contain */
+  background: #000;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
-  z-index: 2;
-  top: 2rem;
-  height: auto;
-  max-height: 60vh;    /* nunca ocupe mais que 60% da altura da viewport */
+  transition: transform 0.3s ease;
+  top: 1.5rem;
+  position:relative
 }
 
-/* vídeo preenche o espaço do container, mas sem cortar quando necessário */
 .main-video video,
 .main-video iframe {
   width: 100%;
   height: 100%;
-  border-radius: 16px;
+  object-fit: contain;
+  border-radius: 20px;
   display: block;
-  object-fit: contain;   /* padrão mais seguro (mostra o quadro todo) */
-  background: "myths-truths/imgg/seramparo.jpg";      /* evita área branca em volta */
 }
 
 .main-video:hover {
   transform: scale(1.02);
-  transition: transform 0.3s ease;
 }
 
 /* =============================
-   🎥 CARROSSEL DE VÍDEOS
+   🎥 CARROSSEL DE VÍDEOS (ocupa 35–40% da tela)
    ============================= */
 .carrossel {
+  width: 100%;
+  height: 35vh;
   text-align: center;
-  padding: 10px 20px 80px 20px;
-  background: linear-gradient(180deg, #fdeef3, #fff8f8);
+  background: #230911;
+  padding: 10px 20px;
 }
 
 .carrossel h2 {
-  color: #b72f6b;
-  font-size: 1.8rem;
-  margin-bottom: 5px;
+  color: #ffffff;
+  font-size: 1.6rem;
+  margin-bottom: 10px;
 }
 
 .carrossel-container {
   display: flex;
   gap: 20px;
   align-items: center;
-  overflow-x: auto;              /* ativa rolagem lateral */
-  scroll-behavior: smooth;       /* rolagem suave */
-  scroll-snap-type: x mandatory; /* encaixe leve ao parar */
-  -webkit-overflow-scrolling: touch;
-  padding: 10px;
-  cursor: grab;
+  justify-content: center;
+  overflow-x: auto;
+  scroll-behavior: smooth;      /* mantém rolagem suave para usuário */
+  /* desative o snap por CSS — vamos controlar via JS quando quiser */
+  scroll-snap-type: none !important;
+  padding: 5px;
 }
 
-.carrossel-container:active {
-  cursor: grabbing;
-}
 
 .carrossel-item {
-  flex: 0 0 200px;
+  flex: 0 60 170px;
   scroll-snap-align: center;
   background: #fff;
   border-radius: 14px;
@@ -186,260 +156,10 @@ header h1 {
   height: 10rem;
 }
 
-
 .carrossel-item video {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    border-radius: 14px;
-    height: 10rem;
-}
-
-.carrossel-item span {
-  position: absolute;
-  bottom: 8px;
-  left: 10px;
-  background: rgba(255, 255, 255, 0.85);
-  padding: 6px 12px;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #b72f6b;
-}
-
-.carrossel-item:hover {
-  transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 10px 35px rgba(183, 47, 107, 0.3);
-}
-
-/* =============================
-   🎞️ ANIMAÇÃO FADE
-   ============================= */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
-
-/* =============================
-   📱 RESPONSIVIDADE
-   ============================= */
-@media (min-width: 1024px) {
-  .main-video { max-height: 60vh; }
-}
-
-@media (max-width: 768px) {
-/* =============================
-   💎 ENFERMAGEM OBSTÉTRICA - LUX PREMIUM
-   ============================= */
-
-/* RESET */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: "Poppins", sans-serif;
-  background: linear-gradient(180deg, #fff8f8 0%, #fdeef3 100%);
-  color: #333;
-  overflow-x: hidden;
-}
-
-/* =============================
-   🌸 NAVBAR
-   ============================= */
-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(255, 204, 221, 0.9);
-  backdrop-filter: blur(8px);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 18px 50px;
-  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-}
-
-header h1 {
-  color: #b72f6b;
-  font-size: 1.5rem;
-  font-weight: 700;
-}
-
-header nav a {
-  color: #7c224b;
-  margin-left: 25px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
-
-header nav a:hover {
-  color: #b72f6b;
-  text-shadow: 0 0 10px rgba(183, 47, 107, 0.3);
-}
-
-header {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center; /* centraliza o h1 */
-  background: #ffd6e0;
-  padding: 1rem 0;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Botão "Início" fixo à esquerda */
-.btn-voltar-fixo {
-  position: absolute;
-  left: 20px;
-  background-color: #ffb6c1;
-  color: #8b0000;
-  font-weight: bold;
-  padding: 0.7rem 1.3rem;
-  border-radius: 30px;
-  text-decoration: none;
-  font-family: "Poppins", sans-serif;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
-}
-
-.btn-voltar-fixo:hover {
-  background-color: #ff92ac;
-  transform: translateY(-2px);
-}
-
-/* Centraliza o h1 perfeitamente */
-header h1 {
-  margin: 0;
-  color: #b72f6b;
-  font-size: 1.8rem;
-  font-weight: 700;
-  text-align: center;
-}
-
-
-/* =============================
-   🌷 HERO SECTION
-   ============================= */
-.hero {
-  position: relative;
-  height: 75vh;
-  background: linear-gradient(180deg, rgba(255, 220, 230, 0.5), rgba(255, 255, 255, 0.3)),
-    url("https://img.freepik.com/fotos-gratis/mae-e-medico-cuidando-de-um-recém-nascido-na-maternidade_1157-36815.jpg") center/cover no-repeat;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  text-align: center;
-  padding-bottom: 100px;
-}
-
-
-
-/* =============================
-   🎬 VÍDEO PRINCIPAL
-   ============================= */
-.main-video {
-    position: relative;
-    width: 100%;
-    max-width: 850px;
-    margin: -70px auto 50px auto;
-    border-radius: 20px;
-    overflow: hidden;
-    background: #fff;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
-    z-index: 2;
-    top: 7rem;
-}
-
-.main-video video,
-.main-video iframe {
   width: 100%;
   height: 100%;
-  aspect-ratio: 16/9;
-  border-radius: 16px;
-  display: block;
-}
-
-.main-video:hover {
-  transform: scale(1.02);
-  transition: transform 0.3s ease;
-}
-
-/* =============================
-   🎥 CARROSSEL DE VÍDEOS
-   ============================= */
-.carrossel {
-  text-align: center;
-  padding: 60px 20px 80px 20px;
-  background: linear-gradient(180deg, #fdeef3, #fff8f8);
-}
-
-.carrossel h2 {
-  color: #b72f6b;
-  font-size: 1.8rem;
-  margin-bottom: 30px;
-}
-
-.carrossel-container {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  padding: 10px;
-}
-
-.carrossel-container::-webkit-scrollbar {
-  height: 8px;
-}
-.carrossel-container::-webkit-scrollbar-thumb {
-  background-color: #b72f6b;
-  border-radius: 10px;
-}
-
-.carrossel-item {
-    flex: 0 0 240px;
-    background: #fff;
-    border-radius: 14px;
-    overflow: hidden;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
-    position: relative;
-    height: 15rem;
-}
-
-.carrossel-item video {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    border-radius: 14px;
-    height: 15rem;
-}
-
-.carrossel-item span {
-  position: absolute;
-  bottom: 8px;
-  left: 10px;
-  background: rgba(255, 255, 255, 0.85);
-  padding: 6px 12px;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #b72f6b;
+  object-fit: cover;
 }
 
 .carrossel-item:hover {
@@ -447,18 +167,16 @@ header h1 {
   box-shadow: 0 10px 35px rgba(183, 47, 107, 0.3);
 }
 
-/* =============================
-   🎞️ ANIMAÇÃO FADE
-   ============================= */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.carrossel-item span {
+    position: absolute;
+    bottom: 8px;
+    left: 10px;
+    background: rgb(28 28 28 / 85%);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #ffffff;
 }
 
 /* =============================
@@ -481,7 +199,8 @@ header h1 {
   }
 
   .carrossel-item {
-    flex: 0 0 75%;                        /* cada vídeo ocupa 75% da largura da tela */
+    flex: 0 0 50%;
+    height: 15.4rem;                        /* cada vídeo ocupa 75% da largura da tela */
     scroll-snap-align: center;            /* centraliza cada item ao parar de rolar */
     margin-right: 15px;                   /* espaço entre os vídeos */
   }
@@ -555,5 +274,4 @@ header h1 {
     width: 95%;                           /* ocupa quase toda a largura */
     top: 3rem;                            /* leve afastamento do topo */
   }
-}
 }
