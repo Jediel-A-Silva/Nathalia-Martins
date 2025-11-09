@@ -23,7 +23,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background:#4b1024;
+  background: #4b1024;
   backdrop-filter: blur(8px);
   display: flex;
   justify-content: center;
@@ -70,19 +70,18 @@ header h1 {
   justify-content: space-between;
   align-items: center;
   /* 🔥 Gradiente suave e imagem nítida */
-  background: 
-    linear-gradient(
-      180deg, 
-      rgba(0, 0, 0, 0.15) 0%,   /* leve escurecimento no topo */
-      rgba(0, 0, 0, 0.05) 50%,  /* quase transparente no meio */
-      rgba(0, 0, 0, 0.25) 100%  /* um leve contraste no rodapé */
+  background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.15) 0%,
+      /* leve escurecimento no topo */ rgba(0, 0, 0, 0.05) 50%,
+      /* quase transparente no meio */ rgba(0, 0, 0, 0.25) 100%
+        /* um leve contraste no rodapé */
     ),
     url("imgg/blaid.jpg") center / cover no-repeat;
   text-align: center;
   padding: 2vh 0;
   overflow: hidden;
 }
-
 
 /* =============================
    🎬 VÍDEO PRINCIPAL (ocupa 60% da tela)
@@ -97,7 +96,7 @@ header h1 {
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
   transition: transform 0.3s ease;
   top: 1.5rem;
-  position:relative
+  position: relative;
 }
 
 .main-video video,
@@ -136,12 +135,11 @@ header h1 {
   align-items: center;
   justify-content: center;
   overflow-x: auto;
-  scroll-behavior: smooth;      /* mantém rolagem suave para usuário */
+  scroll-behavior: smooth; /* mantém rolagem suave para usuário */
   /* desative o snap por CSS — vamos controlar via JS quando quiser */
   scroll-snap-type: none !important;
   padding: 5px;
 }
-
 
 .carrossel-item {
   flex: 0 60 170px;
@@ -168,15 +166,15 @@ header h1 {
 }
 
 .carrossel-item span {
-    position: absolute;
-    bottom: 8px;
-    left: 10px;
-    background: rgb(28 28 28 / 85%);
-    padding: 6px 12px;
-    border-radius: 6px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: #ffffff;
+  position: absolute;
+  bottom: 8px;
+  left: 10px;
+  background: rgb(28 28 28 / 85%);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ffffff;
 }
 
 /* =============================
@@ -186,27 +184,26 @@ header h1 {
    📱 RESPONSIVIDADE (para telas menores que 768px)
    ============================= */
 @media (max-width: 768px) {
-
   /* =============================
      🎥 CARROSSEL (mantém horizontal no mobile)
      ============================= */
   .carrossel-container {
-    overflow-x: auto;                     /* permite deslizar lateralmente com o dedo */
-    scroll-snap-type: x mandatory;        /* faz o "encaixe" suave entre os vídeos */
-    -webkit-overflow-scrolling: touch;    /* rolagem fluida em iPhones */
-    justify-content: flex-start;          /* alinha os vídeos à esquerda */
-    padding-bottom: 10px;                 /* espaçamento inferior para evitar corte */
+    overflow-x: auto; /* permite deslizar lateralmente com o dedo */
+    scroll-snap-type: x mandatory; /* faz o "encaixe" suave entre os vídeos */
+    -webkit-overflow-scrolling: touch; /* rolagem fluida em iPhones */
+    justify-content: flex-start; /* alinha os vídeos à esquerda */
+    padding-bottom: 10px; /* espaçamento inferior para evitar corte */
   }
 
   .carrossel-item {
     flex: 0 0 50%;
-    height: 15.4rem;                        /* cada vídeo ocupa 75% da largura da tela */
-    scroll-snap-align: center;            /* centraliza cada item ao parar de rolar */
-    margin-right: 15px;                   /* espaço entre os vídeos */
+    height: 11rem; /* cada vídeo ocupa 75% da largura da tela */
+    scroll-snap-align: center; /* centraliza cada item ao parar de rolar */
+    margin-right: 15px; /* espaço entre os vídeos */
   }
 
   .carrossel h2 {
-    font-size: 1.5rem;                    /* título um pouco menor no mobile */
+    font-size: 1.5rem; /* título um pouco menor no mobile */
   }
 
   /* =============================
@@ -215,24 +212,24 @@ header h1 {
   header {
     display: flex;
     align-items: center;
-    justify-content: center;              /* centraliza o h1 */
+    justify-content: center; /* centraliza o h1 */
     position: relative;
-    background: #ffd6e0;                  /* fundo rosa suave */
-    padding: 1rem 0;
+    background: #ffd6e0; /* fundo rosa suave */
+    padding: 1.5rem 0;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   }
 
   /* Botão “Início” no canto esquerdo, fixo dentro do header */
   .btn-voltar-fixo {
     position: absolute;
-    left: 20px;                           /* alinha à esquerda */
-    top: 50%;                             /* centraliza verticalmente */
-    transform: translateY(-50%);          /* corrige o alinhamento */
-    background-color: #ffb6c1;            /* cor do botão */
-    color: #8b0000;                       /* texto vermelho escuro */
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #58101b;
+    color: #ffffff;
     font-weight: bold;
-    padding: 0.6rem 1.2rem;
-    border-radius: 30px;                  /* bordas arredondadas */
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
     text-decoration: none;
     font-family: "Poppins", sans-serif;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -241,37 +238,37 @@ header h1 {
   }
 
   .btn-voltar-fixo:hover {
-    background-color: #ff92ac;            /* cor mais viva ao passar o mouse */
+    background-color: #ff92ac; /* cor mais viva ao passar o mouse */
     transform: translateY(-50%) scale(1.05); /* leve aumento */
   }
 
   /* Centralização e estilo do título */
   header h1 {
-    display: none;;
+    display: none;
   }
 
   /* =============================
      🌷 HERO SECTION (ajuste para caber na tela menor)
      ============================= */
   .hero {
-    height: auto;                         /* altura automática */
-    padding: 100px 20px;                   /* espaço interno confortável */
+    height: auto; /* altura automática */
+    padding: 45px 20px; /* espaço interno confortável */
   }
 
   .hero-text {
     padding: 20px;
-    max-width: 90%;                       /* limita o tamanho no mobile */
+    max-width: 90%; /* limita o tamanho no mobile */
   }
 
   .hero-text h2 {
-    font-size: 1.6rem;                    /* título menor */
+    font-size: 1.6rem; /* título menor */
   }
 
   /* =============================
      🎬 VÍDEO PRINCIPAL (mantém centralizado)
      ============================= */
   .main-video {
-    width: 95%;                           /* ocupa quase toda a largura */
-    top: 3rem;                            /* leve afastamento do topo */
+    width: 95%; /* ocupa quase toda a largura */
+    top: 0rem; /* leve afastamento do topo */
   }
 }
