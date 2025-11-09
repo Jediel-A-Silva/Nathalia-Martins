@@ -23,6 +23,35 @@ function trocarVideo(novoSrc, novoPoster) {
     videoPrincipal.load();
     videoPrincipal.play();
     videosAssistidos.add(novoSrc);
+
+    // 🟢 Ajuste automático do tamanho conforme proporção
+    videoPrincipal.addEventListener("loadedmetadata", () => {
+      const ratio = videoPrincipal.videoWidth / videoPrincipal.videoHeight;
+      const container = document.querySelector(".main-video");
+
+      // Aplica transição suave no container
+      container.style.transition = "all 0.6s ease";
+      videoPrincipal.style.transition = "all 0.6s ease";
+
+      if (ratio < 1) {
+        // 📱 Vídeo vertical: mais alto e estreito
+        container.style.maxWidth = "400px";
+        container.style.maxHeight = "80vh";
+        videoPrincipal.style.objectFit = "contain";
+      } else {
+        // 💻 Vídeo horizontal: mais largo e menor altura
+        container.style.maxWidth = "600px";
+        container.style.maxHeight = "90vh";
+        videoPrincipal.style.objectFit = "cover";
+      }
+
+      // Centraliza o vídeo sempre no meio
+      container.style.margin = "0 auto";
+      container.style.display = "flex";
+      container.style.justifyContent = "center";
+      container.style.alignItems = "center";
+    });
+
   } catch (error) {
     console.warn("Vídeo não encontrado:", novoSrc);
     alert("⚠️ Não foi possível carregar o vídeo selecionado.");

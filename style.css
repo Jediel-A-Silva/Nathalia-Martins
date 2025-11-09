@@ -1336,10 +1336,10 @@ footer .redes-sociais p {
   }
   
     .redes-icons {
-        margin-bottom: 0.5rem;
-        margin-top: -1.5rem;
-        gap: 1.4rem;
-    }
+    margin-bottom: 0.5rem;
+    margin-top: -1.5rem;
+    gap: 0.4rem;
+}
 
   .logo-footer {
     max-width: 180px;
