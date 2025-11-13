@@ -193,6 +193,7 @@ header h1 {
     -webkit-overflow-scrolling: touch; /* rolagem fluida em iPhones */
     justify-content: flex-start; /* alinha os vídeos à esquerda */
     padding-bottom: 10px; /* espaçamento inferior para evitar corte */
+  gap: 10px;
   }
 
   .carrossel-item {
