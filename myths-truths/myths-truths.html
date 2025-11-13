@@ -5,75 +5,111 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vídeos da Enfermeira Obstetra</title>
   <link rel="stylesheet" href="myths-truths.css">
+  <style>
+    /* ✅ Evita tela branca no Edge */
+    video {
+      background-color: #000;
+      display: block;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+  </style>
 </head>
 <body>
 
   <!-- Navbar -->
   <header>
-  <a href="/index.html" class="btn-voltar-fixo">🤰🏽 Início</a>
-  <h1>Bem-vinda ao meu espaço</h1>
-  <nav></nav>
-</header>
-
+    <a href="/index.html" class="btn-voltar-fixo">🤰🏽 Início</a>
+    <h1>Bem-vinda ao meu espaço</h1>
+    <nav></nav>
+  </header>
 
   <!-- Seção principal -->
   <section class="hero">
-   <!-- Container do vídeo principal -->
-<div class="main-video">
-  <video id="videoPrincipal" controls poster="/img/a01.jpg">
-    <source src="1video.mp4" type="video/mp4">
-    Seu navegador não suporta vídeos.
-  </video>
-</div>
-</section>
-
-<!-- Carrossel de vídeos -->
-<section class="carrossel">
-  <h2>Vídeos Educativos</h2>
-  <div class="carrossel-container">
-
-    <div class="carrossel-item" onclick="trocarVideo('2video.mp4', '/myths-truths/imgg/seramparo.jpg')">
-      <video src="2video.mp4" muted></video>
-      <span>Pré-natal</span>
+    <!-- Container do vídeo principal -->
+    <div class="main-video">
+      <video id="videoPrincipal" controls preload="metadata" playsinline poster="/img/a01.jpg">
+        <source src="/myths-truths/videos/1video.mp4" type="video/mp4">
+        Seu navegador não suporta vídeos.
+      </video>
     </div>
+  </section>
 
-    <div class="carrossel-item" onclick="trocarVideo('3video.mp4', 'imagens/video2.jpg')">
-      <video src="3video.mp4" muted></video>
-      <span>Parto Humanizado</span>
+  <!-- Carrossel de vídeos -->
+  <section class="carrossel">
+    <h2>Vídeos Educativos</h2>
+    <div class="carrossel-container">
+      
+      <div class="carrossel-item" onclick="trocarVideo('/myths-truths/videos/6video.mp4', '/myths-truths/imgg/imagem3.jpg')">
+        <video preload="metadata" muted playsinline poster="">
+          <source src="/myths-truths/videos/6video.mp4" type="video/mp4">
+        </video>
+        <span>Pré-natal</span>
+      </div>
+
+      <div class="carrossel-item" onclick="trocarVideo('/myths-truths/videos/2video.mp4', '/myths-truths/imgg/seramparo.jpg')">
+        <video preload="metadata" muted playsinline poster="">
+          <source src="/myths-truths/videos/2video.mp4" type="video/mp4">
+        </video>
+        <span>aguardando titulo</span>
+      </div>
+      
+      <div class="carrossel-item" onclick="trocarVideo('/myths-truths/videos/7video.mp4', 'imagens/video2.jpg')">
+        <video preload="metadata" muted playsinline poster="">
+          <source src="/myths-truths/videos/7video.mp4" type="video/mp4">
+        </video>
+        <span>aguardando titulo</span>
+      </div>
+
+      <div class="carrossel-item" onclick="trocarVideo('/myths-truths/videos/8video.mp4', 'imagens/video3.jpg')">
+        <video preload="metadata" muted playsinline poster="">
+          <source src="/myths-truths/videos/8video.mp4" type="video/mp4">
+        </video>
+        <span>aguardando titulo</span>
+      </div>
+
+      <div class="carrossel-item" onclick="trocarVideo('/myths-truths/videos/3video.mp4', 'imagens/video2.jpg')">
+        <video preload="metadata" muted playsinline poster="">
+          <source src="/myths-truths/videos/3video.mp4" type="video/mp4">
+        </video>
+        <span>aguardando titulo</span>
+      </div>
+
+      <div class="carrossel-item" onclick="trocarVideo('/myths-truths/videos/4video.mp4', 'imagens/video3.jpg')">
+        <video preload="metadata" muted playsinline poster="">
+          <source src="/myths-truths/videos/4video.mp4" type="video/mp4">
+        </video>
+        <span>aguardando titulo</span>
+      </div>
+
+      <div class="carrossel-item" onclick="trocarVideo('/myths-truths/videos/5video.mp4', 'imagens/video4.jpg')">
+        <video preload="metadata" muted playsinline poster="">
+          <source src="/myths-truths/videos/5video.mp4" type="video/mp4">
+        </video>
+        <span>aguardando titulo</span>
+      </div>
+
+
+
+
+      <div class="carrossel-item" onclick="trocarVideo('/myths-truths/videos/9video.mp4', 'imagens/video4.jpg')">
+        <video preload="metadata" muted playsinline poster="">
+          <source src="/myths-truths/videos/9video.mp4" type="video/mp4">
+        </video>
+        <span>aguardando titulo</span>
+      </div>
+
     </div>
+  </section>
 
-    <div class="carrossel-item" onclick="trocarVideo('4video.mp4', 'imagens/video3.jpg')">
-      <video src="4video.mp4" muted></video>
-      <span>Amamentação</span>
-    </div>
-
-    <div class="carrossel-item" onclick="trocarVideo('5video.mp4', 'imagens/video4.jpg')">
-      <video src="5video.mp4" muted></video>
-      <span>Depoimentos</span>
-    </div>
-
-     <div class="carrossel-item" onclick="trocarVideo('6video.mp4', 'imagens/capa-video.jpg')">
-      <video src="6video.mp4" muted></video>
-      <span>Pré-natal</span>
-    </div>
-
-    <div class="carrossel-item" onclick="trocarVideo('7video.mp4', 'imagens/video2.jpg')">
-      <video src="7video.mp4" muted></video>
-      <span>Parto Humanizado</span>
-    </div>
-
-    <div class="carrossel-item" onclick="trocarVideo('8video.mp4', 'imagens/video3.jpg')">
-      <video src="8video.mp4" muted></video>
-      <span>Amamentação</span>
-    </div>
-
-    <div class="carrossel-item" onclick="trocarVideo('9video.mp4', 'imagens/video4.jpg')">
-      <video src="9video.mp4" muted></video>
-      <span>Depoimentos</span>
-    </div>
-  </div>
-</section>
-
+  <!-- ✅ Corrige o bug visual no Edge -->
+  <script>
+    document.querySelectorAll('video').forEach(video => {
+      video.addEventListener('loadeddata', () => {
+        video.style.opacity = '1';
+      });
+    });
+  </script>
 
   <script src="myths-truths.js"></script>
 </body>
