@@ -435,27 +435,29 @@
           autoScroll();
         }
       });
-
-
     </script>
 
  <!-- GPTMaker Widget (não remova) -->
-<script async src="https://app.gptmaker.ai/widget/3EA3DB0260BC014DEF561624B1DA7CAB/float.js"></script>
 
-<!-- Script que cria overlay com a sua imagem e esconde a seta -->
+
 <script>
 (function () {
-  const IMAGE_URL = 'img/img-IA.png'; // <- coloque aqui o caminho da sua imagem
+  const IMAGE_URL = 'img/img-IA.png'; 
   const OVERLAY_ID = 'nathalia-gptmaker-overlay';
+
   let originalButton = null;
   let overlay = null;
   let observer = null;
 
-  // Cria o overlay (botão visual) se não existir
+  // -----------------------------
+  // Criar overlay customizado
+  // -----------------------------
   function criarOverlay() {
     if (overlay) return;
+
     overlay = document.createElement('div');
     overlay.id = OVERLAY_ID;
+
     Object.assign(overlay.style, {
       position: 'fixed',
       width: '70px',
@@ -466,153 +468,136 @@
       backgroundPosition: 'center',
       boxShadow: '0 6px 18px rgba(0,0,0,0.25)',
       cursor: 'pointer',
-      zIndex: 999999, // acima de quase tudo
+      zIndex: '999999',
       transition: 'transform .18s ease, filter .18s ease',
-      transform: 'scale(1)',
-      display: 'none', // aparece quando posicionado
+      display: 'none',
+      right: '20px',
+      bottom: '20px'
     });
 
-    // hover
     overlay.addEventListener('mouseenter', () => {
       overlay.style.transform = 'scale(1.08)';
       overlay.style.filter = 'brightness(1.05)';
     });
+
     overlay.addEventListener('mouseleave', () => {
       overlay.style.transform = 'scale(1)';
       overlay.style.filter = 'brightness(1)';
     });
 
-    // clique: dispara clique no botão original (se existir)
-    overlay.addEventListener('click', (e) => {
-      e.stopPropagation();
-      if (originalButton) {
-        try {
-          originalButton.click();
-        } catch (err) {
-          // fallback: tenta disparar evento mouse
-          const evt = new MouseEvent('click', { bubbles: true, cancelable: true, view: window });
-          originalButton.dispatchEvent(evt);
-        }
+    overlay.addEventListener('click', () => {
+      if (!originalButton) return;
+
+      try {
+        originalButton.click();
+      } catch {
+        const evt = new MouseEvent('click', { bubbles: true, cancelable: true });
+        originalButton.dispatchEvent(evt);
       }
     });
 
     document.body.appendChild(overlay);
   }
 
-  // Posiciona o overlay sobre o botão original
+  // -----------------------------
+  // Posicionar e ocultar botão original
+  // -----------------------------
   function posicionarOverlay(btn) {
     if (!btn || !overlay) return;
 
     const rect = btn.getBoundingClientRect();
-
-    // se o botão tiver display:none ou não visível, esconde o overlay também
     const visible = rect.width > 0 && rect.height > 0;
-    if (!visible) {
-      overlay.style.display = 'none';
-      return;
-    }
 
-    // fixa o overlay no canto inferior direito, independente do scroll
-overlay.style.position = 'fixed';
-overlay.style.left = 'auto';
-overlay.style.right = '20px';
-overlay.style.bottom = '20px';
-overlay.style.top = 'auto';
-overlay.style.width = '70px';
-overlay.style.height = '70px';
-overlay.style.display = 'block';
+    overlay.style.display = visible ? 'block' : 'none';
 
-
-    // Esconde visualmente elementos internos problemáticos (seta) do botão original, mas mantemos o botão funcional
+    // Ocultar qualquer elemento visual do botão original
     try {
-      // torna original invisível (mantém interatividade oculta)
       btn.style.opacity = '0';
       btn.style.background = 'transparent';
       btn.style.border = 'none';
       btn.style.boxShadow = 'none';
-      // remove svgs se estiverem acessíveis
-      const svgs = btn.querySelectorAll && btn.querySelectorAll('svg, path');
-      if (svgs && svgs.length) svgs.forEach(s => { s.style.display = 'none'; });
-    } catch (err) {
-      // ignorar cross-origin ou erro de acesso
-    }
+
+      const svgs = btn.querySelectorAll?.('svg, path');
+      svgs?.forEach(s => (s.style.display = 'none'));
+    } catch {}
   }
 
-  // Procura o botão do GPTMaker com vários seletores possíveis
+  // -----------------------------
+  // Encontrar botão verdadeiro
+  // -----------------------------
   function encontrarBotao() {
     const selectors = [
       '#gptmaker-float-button',
       '#gptmaker-widget-button',
       '[id*="gptmaker"] button',
-      'button[aria-label*="GPTMaker"]',
-      'div[style*="position: fixed"] button'
+      'button[aria-label*="GPTMaker"]'
     ];
+
     for (const s of selectors) {
       const el = document.querySelector(s);
       if (el) return el;
     }
-    // fallback: procurar qualquer botão fixo no canto inferior direito
-    const allButtons = Array.from(document.querySelectorAll('button'));
-    for (const b of allButtons) {
-      const rect = b.getBoundingClientRect();
-      if (rect.bottom > (window.innerHeight - 120) && rect.right > (window.innerWidth - 120)) {
-        return b;
-      }
-    }
+
     return null;
   }
 
-  // Reinicia referência e reaplica posicionamento
+  // -----------------------------
+  // Atualizar lógica principal
+  // -----------------------------
   function atualizar() {
     const btn = encontrarBotao();
+
     if (!btn) {
       originalButton = null;
       if (overlay) overlay.style.display = 'none';
       return;
     }
-    // atualiza referência
+
     originalButton = btn;
-    // garante que overlay exista
     criarOverlay();
-    // posiciona overlay exatamente sobre o botão
     posicionarOverlay(btn);
   }
 
-  // Observador para mudanças no DOM (recriação do botão)
+  // -----------------------------
+  // Observação do DOM
+  // -----------------------------
   function startObserving() {
     if (observer) return;
-    observer = new MutationObserver(() => {
-      // tenta reaplicar quando houver mudanças
-      atualizar();
-    });
+
+    observer = new MutationObserver(atualizar);
     observer.observe(document.body, { childList: true, subtree: true });
   }
 
-  // também reposiciona ao rolar/resize
-  window.addEventListener('resize', () => atualizar());
-  window.addEventListener('scroll', () => atualizar());
-
-  // início: tenta várias vezes até encontrar o botão (widget pode demorar)
-  function initTryLoop(retries = 30, delay = 300) {
+  // -----------------------------
+  // Tentativas iniciais
+  // -----------------------------
+  function initTryLoop(retries = 60, delay = 300) {
     startObserving();
+
     let tries = 0;
-    const t = setInterval(() => {
-      tries++;
+    const timer = setInterval(() => {
       atualizar();
+      tries++;
       if (originalButton || tries >= retries) {
-        clearInterval(t);
+        clearInterval(timer);
       }
     }, delay);
   }
 
-  // inicia quando DOM estiver pronto
+  // -----------------------------
+  // Inicialização
+  // -----------------------------
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => initTryLoop(60, 300));
+    document.addEventListener('DOMContentLoaded', () => initTryLoop());
   } else {
-    initTryLoop(60, 300);
+    initTryLoop();
   }
+
 })();
 </script>
-
-  </body>
+<script 
+ async 
+ src="https://app.gptmaker.ai/widget/3EA3E187268B804434ADE2F67A1F05AC/float.js">
+</script>
+</body>
 </html>
