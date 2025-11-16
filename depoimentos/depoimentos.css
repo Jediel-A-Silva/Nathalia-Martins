@@ -42,7 +42,7 @@ a.back-link {
 /* Textos com gradiente */
 .testimonials h1 {
   font-family: "Brush Script MT", cursive;
-  font-size: 4rem;
+  font-size: 5rem;
   background: linear-gradient(45deg, #ffdb10, #ff00aa, #ff3679);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -51,20 +51,6 @@ a.back-link {
   position: relative;
   top: -6rem;
   margin-bottom: -2rem;
-}
-
-.testimonials h2 {
-  font-family: "Brush Script MT", cursive;
-  font-size: 3rem;
-  background: linear-gradient(45deg, #ffdb10, #ff00aa, #ff3679);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-  font-style: italic;
-  position: relative;
-  top: -5rem;
-  margin-bottom: -2.5rem;
 }
 
 /* Carousel */
@@ -112,8 +98,8 @@ a.back-link {
 =========================== */
 .card {
     flex: 1;
-    max-width: 440px;
-    min-height: 400px;
+    max-width: 750px;
+    min-height: 385px;
     padding: 20px;
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
@@ -131,19 +117,19 @@ a.back-link {
   display: flex;
   align-items: center;
   gap: 20px;
+  position: relative;
+  top: -1rem;
 }
 
 /* Imagem retangular */
 .card-content img {
-  width: 163px;
-  height: 230px;
-  border-radius: 6%;
-  object-fit: cover;
-  flex-shrink: 0;
-  /* sombra para a ESQUERDA (-X) e para BAIXO (+Y) */
-  box-shadow: -10px 10px 20px rgba(94, 82, 203, 0.9);
+    width: 220px;
+    height: 230px;
+    border-radius: 6%;
+    object-fit: cover;
+    flex-shrink: 0;
+    box-shadow: -10px 10px 20px rgba(94, 82, 203, 0.9);
 }
-
 
 
 .card-content img:hover {
@@ -188,7 +174,7 @@ a.back-link {
 button.prev,
 button.next {
   position: absolute;
-  top: 50%;
+  top: 90%;
   transform: translateY(-50%);
   background: rgba(255, 255, 255, 0.15);
   border: none;
@@ -216,11 +202,11 @@ button.next:hover {
 
 /* Agora ficam ao lado das imagens */
 button.prev {
-  left: calc(50% - 350px); /* ajusta conforme a largura do card */
+  left: calc(60% - 350px); /* ajusta conforme a largura do card */
 }
 
 button.next {
-  right: calc(50% - 350px);
+  right: calc(60% - 350px);
 }
 
 /* ================
