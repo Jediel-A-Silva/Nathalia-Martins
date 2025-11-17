@@ -214,7 +214,7 @@ button.next {
 ================ */
 @media screen and (max-width: 768px) {
 .card{
-  margin-top: 9rem;
+  margin-top: 6rem;
 }
 
   .card-content {
@@ -245,17 +245,17 @@ button.next {
   }
     button.prev,
   button.next {
-    top: 90%;
+    top: 95%;
     width: 40px;
     height: 40px;
     font-size: 1.6rem;
   }
 
   button.prev {
-    left: 10px;
+    left: 70px;
   }
 
   button.next {
-    right: 10px;
+    right: 70px;
   }
 }
