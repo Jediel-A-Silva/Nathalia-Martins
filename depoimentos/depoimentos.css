@@ -138,7 +138,12 @@ a.back-link {
 }
 
 
-
+.foto-kouch {
+  height: 140px;
+  object-fit: cover;
+  margin-top: 10px;   /* controla a posição para baixo/cima no desktop */
+  border-radius: 12px;
+}
 
 /* Texto e informações do feedback */
 .text-area {
@@ -231,6 +236,11 @@ button.next {
     width: 150px;
     height: 150px;
     margin-bottom: 10px;
+  }
+
+.foto-kouch {
+    margin-top: 25px;   /* aqui você controla só no mobile */
+    height: 120px;      /* pode ajustar a altura só no mobile também */
   }
 
 
