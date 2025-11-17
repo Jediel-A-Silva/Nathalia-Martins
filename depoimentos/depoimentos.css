@@ -214,7 +214,7 @@ button.next {
 ================ */
 @media screen and (max-width: 768px) {
 .card{
-  margin-top: 6rem;
+  margin-top: 3.5rem;
 }
 
   .card-content {
@@ -235,8 +235,8 @@ button.next {
 
 
   .testimonials h1 {
-    font-size: 2rem;
-    top: 2rem;
+    font-size: 2.4rem;
+    top: 0rem;
 }
 
   .text-area p {
