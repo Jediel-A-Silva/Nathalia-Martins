@@ -1183,6 +1183,18 @@ footer .redes-sociais p {
    📱📖 */
 
 @media (max-width: 768px) {
+.menu .categoria {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: #555;
+    border-bottom: 1px solid #ddd;
+    font-size: 15px;
+    left: 1rem;
+    position: relative;
+}
+
+
   .container {
     max-width: 100%;
     width: 100%;
