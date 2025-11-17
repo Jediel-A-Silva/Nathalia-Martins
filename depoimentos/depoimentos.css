@@ -29,7 +29,7 @@ a.back-link {
       }
 
       a.back-link:hover {
-        text-decoration: underline;
+        text-decoration: none;
       }
 
 /* Ajustes para seções */
@@ -213,6 +213,10 @@ button.next {
    RESPONSIVIDADE
 ================ */
 @media screen and (max-width: 768px) {
+.card{
+  margin-top: 9rem;
+}
+
   .card-content {
     flex-direction: column;
     text-align: center;
@@ -224,10 +228,16 @@ button.next {
   }
 
   .card-content img {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     margin-bottom: 10px;
   }
+
+
+  .testimonials h1 {
+    font-size: 2rem;
+    top: 2rem;
+}
 
   .text-area p {
     font-size: 0.95rem;
@@ -235,7 +245,7 @@ button.next {
   }
     button.prev,
   button.next {
-    top: 45%;
+    top: 90%;
     width: 40px;
     height: 40px;
     font-size: 1.6rem;
