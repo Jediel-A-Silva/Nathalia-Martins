@@ -1099,15 +1099,15 @@ footer .redes-sociais p {
    — Faixa ideal: 768px até 1024px
 ==================================================================== */
 @media (min-width: 768px) and (max-width: 1024px) {
-  .container {
-    max-width: 90%;
-    margin: 0 auto;
-    padding: 18px;
-  }
+      .container {
+        max-width: 70%;
+        margin: 0 auto;
+        padding: 18px;
+    }
 
   /* HERO */
       .hero-text {
-        margin-top: 3rem;
+        margin-top: 1rem;
     }
 
   /* NAVBAR */
@@ -1119,10 +1119,10 @@ footer .redes-sociais p {
   .menu-wrapper {
     gap: 2.5rem;
   }
-      #campoBusca {
-        width: 20px;
+          #campoBusca {
+        width: 20rem;
         margin-top: 8px;
-        left: 0rem;
+        left: -16rem;
         position: relative;
         top: 0rem;
     }
@@ -1360,7 +1360,7 @@ footer .redes-sociais p {
   .menu {
     display: none;
     position: fixed;
-    top: 81px;
+    top: 71px;
     left: 0;
     width: 280px;
     height: calc(100% - 70px);
