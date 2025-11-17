@@ -1063,6 +1063,125 @@ footer .redes-sociais p {
   box-shadow: 0 0 60px 20px rgba(255, 77, 109, 0.9); /* brilho mais forte */
 }
 
+/* ==================================
+   💻 TABLET — HORIZONTAL (LANDSCAPE)
+   De 900px até 1366px
+================================== */
+@media (min-width: 900px) and (max-width: 1366px) and (orientation: landscape) {
+  .container {
+        max-width: 90%;
+        padding: 20px;
+        margin-top: 1%;
+        position: relative;
+        left: 8rem;
+    }
+  /* Seu CSS aqui */
+  .search {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-left: 50rem;
+  }
+
+  .hero-text {
+    background: rgb(124 152 181 / 34%);
+    padding: 0px 30px;
+    border-radius: 12px;
+    top: 24rem;
+    left: -7.5rem;
+    position: relative;
+  }
+}
+
+/* =================================================================
+   📱📖 RESPONSIVO PARA TABLETS (Galaxy Tab A7 Lite)
+   — Viewport real: 800px × 1340px (DPR 2)
+   — Faixa ideal: 768px até 1024px
+==================================================================== */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .container {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 18px;
+  }
+
+  /* HERO */
+      .hero-text {
+        margin-top: 3rem;
+    }
+
+  /* NAVBAR */
+  .navbar {
+    height: auto;
+    padding: 12px 22px;
+  }
+
+  .menu-wrapper {
+    gap: 2.5rem;
+  }
+      #campoBusca {
+        width: 20px;
+        margin-top: 8px;
+        left: 0rem;
+        position: relative;
+        top: 0rem;
+    }
+
+  /* LOGO */
+  .perfil img.logo {
+    width: 240px; /* suavizado para tablets médios */
+  }
+
+  /* SEÇÕES GRANDES */
+  #sobre,
+  #servicos,
+  #servicos1,
+  #servicos2 {
+    width: 30rem; /* antes 32rem — ficava grande demais no Tab A7 */
+    height: auto;
+  }
+
+  #servicos1 p,
+  #servicos2 p {
+    font-size: 1.15rem;
+    margin-top: 1.6rem;
+  }
+
+  .menu {
+    width: 330px; /* ajustado para ficar proporcional */
+    height: calc(100% - 70px);
+  }
+
+  /* CARROSSEL */
+  .sessao-carrossel {
+    padding: 1.2rem;
+    gap: 1.4rem;
+  }
+
+  .container-carrossel-custom {
+    width: 78%;
+    max-width: 620px;
+  }
+
+  .descricao-carrossel h2 {
+    font-size: 1.5rem;
+  }
+
+  .descricao-carrossel p {
+    font-size: 1.05rem;
+    line-height: 1.45;
+  }
+
+  /* SETAS SWIPER */
+  .swiper-button-next,
+  .swiper-button-prev {
+    font-size: 34px !important;
+  }
+}
+
+/* =================== Responsivo para mobile==============================================
+   📱📖 */
+
 @media (max-width: 768px) {
   .container {
     max-width: 100%;
@@ -1149,14 +1268,14 @@ footer .redes-sociais p {
     height: 22rem;
   }
 
-  #servicos2 {
-    width: 25.8rem;
-    height: 22rem;
-    border-radius: 10px;
-    align-content: center;
-    align-items: center;
-    position: relative;
-  }
+     #servicos2 {
+        width: 45.8rem;
+        height: 22rem;
+        border-radius: 10px;
+        align-content: center;
+        align-items: center;
+        position: relative;
+    }
 
   #servicos1 p,
   #servicos2 p {
