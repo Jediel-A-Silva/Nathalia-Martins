@@ -273,18 +273,18 @@ button.next {
 
   button.prev,
   button.next {
-    top: 90%;
+    top: 55rem;
     width: 40px;
     height: 40px;
     font-size: 1.6rem;
   }
 
   button.prev {
-    left: 70px;
+    left: 65px;
   }
 
   button.next {
-    right: 70px;
+    right: 65px;
   }
 }
 
