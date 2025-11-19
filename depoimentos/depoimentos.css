@@ -214,25 +214,31 @@ button.next {
   right: calc(60% - 350px);
 }
 
-/* ================
-   RESPONSIVIDADEs
+/* ================  
+   RESPONSIVIDADE  
 ================ */
 
+/* Tablet 768–1024 */
 @media (min-width: 768px) and (max-width: 1024px) {
-
-
-@media (min-width: 900px) and (max-width: 1366px) and (orientation: landscape) {
-
-
-@media (min-width: 768px) {
-
-
-  
-@media screen and (max-width: 768px) {
-.card{
-  margin-top: 3.5rem;
-  padding: 17px;
+  /* Adicione ajustes específicos aqui se quiser
+     (mantive vazio para não alterar o layout) */
 }
+
+
+/* Tablet grande / landscape 900–1366 */
+@media (min-width: 900px) and (max-width: 1366px) and (orientation: landscape) {
+  /* Se quiser ajustes aqui, posso colocar depois.
+     Mantido vazio como pediu: sem mudar desktop. */
+}
+
+
+/* Mobile geral */
+@media screen and (max-width: 768px) {
+
+  .card {
+    margin-top: 3.5rem;
+    padding: 17px;
+  }
 
   .card-content {
     flex-direction: column;
@@ -250,24 +256,24 @@ button.next {
     margin-bottom: 10px;
   }
 
-.foto-kouch {
-    margin-top: 25px;   /* aqui você controla só no mobile */
-    height: 120px;      /* pode ajustar a altura só no mobile também */
+  .foto-kouch {
+    margin-top: 25px;
+    height: 120px;
   }
-
 
   .testimonials h1 {
     font-size: 2rem;
     top: 0rem;
-}
+  }
 
   .text-area p {
     font-size: 0.95rem;
     max-width: 90%;
   }
-    button.prev,
+
+  button.prev,
   button.next {
-    top: 95%;
+    top: 90%;
     width: 40px;
     height: 40px;
     font-size: 1.6rem;
@@ -279,5 +285,14 @@ button.next {
 
   button.next {
     right: 70px;
+  }
+}
+
+
+/* Mobile pequeno (iPhone Mini) */
+@media (max-width: 430px) {
+  .testimonials h1 {
+    font-size: 3rem;
+    top: 0rem;
   }
 }

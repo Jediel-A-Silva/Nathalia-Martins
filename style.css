@@ -1157,12 +1157,6 @@ footer .redes-sociais p {
     width: 30rem; /* antes 32rem — ficava grande demais no Tab A7 */
     height: auto;
   }
-
-  #servicos1 p,
-  #servicos2 p {
-    font-size: 1.4rem;
-    margin-top: 1.6rem;
-  }
   
   .menu {
     width: 330px; /* ajustado para ficar proporcional */
@@ -1262,7 +1256,7 @@ footer .redes-sociais p {
 
   .hero-text {
     left: 0;
-    top: 24rem;
+    top: 23rem;
     padding: 0px 0px;
     text-align: center;
   }
@@ -1322,9 +1316,9 @@ footer .redes-sociais p {
   }
 
   .personalizada ul {
-    font-size: 1rem;
-    font-weight: 700;
-    top: 2rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    top: 1rem;
     position: relative;
   }
 
@@ -1346,18 +1340,16 @@ footer .redes-sociais p {
 
   #servicos1 p,
   #servicos2 p {
-    font-size: 1.3rem;
-    font-weight: 900;
+    font-size: 1.2rem;
+    font-weight: 400;
     text-align: center;
-    margin-top: 1.9rem;
+    margin-top: 0.9rem;
   }
 
   #servicos2 h2 {
     font-size: 1.4rem;
     font-weight: 900;
     text-align: center;
-    margin-top: 3.1rem;
-    margin-bottom: -3rem;
   }
 
   #servicos2 .btn1 {
@@ -1366,12 +1358,12 @@ footer .redes-sociais p {
   }
 
   #relatos {
-    top: 4rem;
+    top: 1.5rem;
     left: 0.7rem;
   }
 
   .btn {
-    top: 5rem;
+    top: 2rem;
     left: 0.7rem;
   }
 
@@ -1681,11 +1673,11 @@ footer .redes-sociais p {
   }
   /* ajustes dos links das seções */
   #sobre p {
-    font-size: 1.3em;
+    font-size: 1.2em;
   }
 
   #sobre a {
-    margin-top: 2.7rem;
+    margin-top: 0.3rem;
   }
 
   #servicos2 p {
@@ -1706,6 +1698,6 @@ footer .redes-sociais p {
 
   #servicos2 .btn1 {
     left: 1rem;
-    top: -0.5rem;
+    top: -1.5rem;
   }
 }
