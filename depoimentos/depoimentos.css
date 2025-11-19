@@ -179,12 +179,12 @@ a.back-link {
 button.prev,
 button.next {
   position: absolute;
-  top: 90%;
+  top: 80%;
   transform: translateY(-50%);
   background: rgba(255, 255, 255, 0.15);
   border: none;
   font-size: 2rem;
-  color: #ff80ab;
+  color: #651d35;
   cursor: pointer;
   transition: 0.3s;
   z-index: 10;
@@ -200,7 +200,7 @@ button.next {
 /* Hover suave */
 button.prev:hover,
 button.next:hover {
-  color: #fff;
+  color: #bd0404;
   background: rgba(255, 0, 100, 0.4);
   transform: translateY(-50%) scale(1.1);
 }
@@ -215,8 +215,19 @@ button.next {
 }
 
 /* ================
-   RESPONSIVIDADE
+   RESPONSIVIDADEs
 ================ */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+
+@media (min-width: 900px) and (max-width: 1366px) and (orientation: landscape) {
+
+
+@media (min-width: 768px) {
+
+
+  
 @media screen and (max-width: 768px) {
 .card{
   margin-top: 3.5rem;
