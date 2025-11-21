@@ -296,7 +296,7 @@ button.next {
 
 #feedback-form button[type="submit"] {
   background: #ff478a;
-  color: white;
+  color: rgb(119, 84, 84);
   padding: 10px 16px;
   border-radius: 8px;
   border: none;
