@@ -652,7 +652,7 @@ form button {
 }
 #servicos2 .btn1 {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 12px 10px;
   background-color: #e91e63;
   color: rgb(255, 255, 255);
   border-radius: 8px;
@@ -666,14 +666,14 @@ form button {
 
 #servicos2 p {
     font-size: 1.3rem;
-    text-align: center;
+    text-align: inherit;
     color: #ffffff;
     position: relative;
     line-height: 1.4;
     margin: 0 auto;
     max-width: 90%;
     backdrop-filter: blur(1px);
-    top: 3rem;
+    top: 1.5rem;
 }
 
 
@@ -684,7 +684,7 @@ form button {
 
 #servicos2 .btn1 {
   left: 1rem;
-  top: 0rem;
+  top: -0.4rem;
 }
 
 #servicos2::before {
@@ -837,12 +837,13 @@ h2 {
   animation-delay: 0.9s;
   display: inline-block;
   margin-top: 0.5rem;
-  padding: 10px 20px;
+  padding: 12px 10px;
   background: #e91e63;
   color: rgb(255, 255, 255);
   border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
+  font-size: 0.95rem;
   transition: background 0.3s, transform 0.3s;
 }
 
@@ -857,7 +858,7 @@ h2 {
   background-color: #e91e63;
   color: white;
   border: none;
-  padding: 12px 20px;
+  padding: 12px 10px;
   border-radius: 8px;
   text-decoration: none;
   top: 2.3rem;
