@@ -295,8 +295,8 @@ button.next {
 }
 
 #feedback-form button[type="submit"] {
-  background: #ff478a;
-  color: rgb(119, 84, 84);
+  background: #ff79aa;
+  color: rgb(133, 98, 98);
   padding: 10px 16px;
   border-radius: 8px;
   border: none;
@@ -306,7 +306,7 @@ button.next {
 
 #feedback-form button.secondary {
   background: transparent;
-  border: 1px solid #ccc;
+  border: 1px solid #c1c1c1;
   padding: 10px 14px;
   border-radius: 8px;
   cursor: pointer;
@@ -314,7 +314,7 @@ button.next {
 
 .form-status {
   margin-top: 10px;
-  color: #333;
+  color: #756e6e;
   font-weight: 700;
 }
 
