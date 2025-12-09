@@ -1330,7 +1330,7 @@ footer .redes-sociais p {
     padding: 8px;
     border-radius: 5px;
     border: 1px solid #ccc;
-    margin-left: 43rem;
+    margin-left: 27rem;
   }
   
   /* 1) Anula o left global */
@@ -1353,8 +1353,6 @@ footer .redes-sociais p {
   align-items: stretch;
 }
 
-
-
 #sobre, #servicos, #servicos1, #servicos2 {
   width: 100%;
   min-height: 800px; /* cresce conforme o conteúdo */
@@ -1362,10 +1360,11 @@ footer .redes-sociais p {
 }
   
   .hero-text {
-        top: 43rem;
+        top: 41rem;
         margin-top: 1rem;
         left: 0rem;
         position: relative;
+        height: 12rem;
     }
 
   #relatos {
@@ -1465,7 +1464,7 @@ footer .redes-sociais p {
    💻 TABLET — LANDSCAPE (Horizontal) (900px até 1366px)
    → 2 COLUNAS EM CIMA / 2 EM BAIXO
 ============================================================ */
-@media (min-width: 900px) and (max-width: 1224px) and (orientation: landscape) {
+@media (min-width: 900px) and (max-width: 1366px) and (orientation: landscape) {
   .menu {
     display: none;
     position: fixed;
