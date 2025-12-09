@@ -11,6 +11,11 @@ body.menu-aberto {
   overflow: hidden;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+
 /* Fonte base */
 body {
   font-family: "Arial", sans-serif;
@@ -43,41 +48,6 @@ nav {
   fill: #ffffff; /* coloca a cor que você quiser */
 }
 
-/* typing dots */
-.nathalia-typing {
-  display: inline-block;
-  margin: 6px 0;
-}
-.nathalia-typing .dot {
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #aaa;
-  margin: 0 3px;
-  opacity: 0.3;
-  animation: n-dot 1s infinite;
-}
-.nathalia-typing .dot:nth-child(2) {
-  animation-delay: 0.12s;
-}
-.nathalia-typing .dot:nth-child(3) {
-  animation-delay: 0.24s;
-}
-@keyframes n-dot {
-  0% {
-    opacity: 0.3;
-    transform: translateY(0);
-  }
-  50% {
-    opacity: 1;
-    transform: translateY(-4px);
-  }
-  100% {
-    opacity: 0.3;
-    transform: translateY(0);
-  }
-}
 
 .menu {
   display: none;
@@ -173,7 +143,8 @@ nav {
 .menu-wrapper {
   display: flex;
   align-items: center;
-  gap: 15px; /* espaço entre o botão e os links */
+  justify-content: space-between;
+  gap: 20px;
 }
 
 .menu-btn {
@@ -218,7 +189,7 @@ nav {
 }
 
 .menu::-webkit-scrollbar {
-  width: 6px;
+  width: 10px;
 }
 
 .menu::-webkit-scrollbar-track {
@@ -226,12 +197,12 @@ nav {
 }
 
 .menu::-webkit-scrollbar-thumb {
-  background-color: #ccc;
-  border-radius: 4px;
+  background-color: #4b1024;
+  border-radius: 1px;
 }
 
 .menu::-webkit-scrollbar-thumb:hover {
-  background-color: #999;
+  background-color: #622f40;
 }
 
 .menu a {
@@ -384,6 +355,7 @@ form button {
 }
 
 #btn2 {
+  width: 12rem;
     font-size: 0.95rem;
     display: inline-block;
     background-color: #e91e63;
@@ -392,7 +364,7 @@ form button {
     padding: 12px 10px;
     border-radius: 8px;
     text-decoration: none;
-    top: 1.3rem;
+    top: -0.1rem;
     left: 0.7rem;
     position: relative;
 }
@@ -628,7 +600,7 @@ form button {
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
   flex: 1 1 250px;
-  max-width: 325px;
+  max-width: 100%;
 }
 
 .personalizada h2 {
@@ -651,13 +623,14 @@ form button {
 }
 
 #duvidas {
-  position: relative; /* cria contexto para o ::before */
-  display: block; /* ocupa toda a largura */
-  padding: 40px 20px; /* mais espaço interno */
+  position: relative;              /* cria contexto para o ::before */
+  display: block;                  /* ocupa toda a largura */
+  padding: 40px 20px;              /* espaço interno */
   border-radius: 8px;
-  overflow: hidden; /* esconde o ::before que passa */
+  overflow: hidden;                /* esconde o ::before */
   color: white;
   font-size: 0.95rem;
+  font-weight: 900;
   margin: 6.98rem 0 0 0.7rem;
   z-index: 0;
 
@@ -666,7 +639,8 @@ form button {
   transform: translateY(20px);
   animation: aparecer 0.6s forwards;
   animation-delay: 2.3s;
-  top: 4.3rem;
+
+  top: 4.3rem;                     /* posição final */
 }
 
 #duvidas.btn1:hover {
@@ -718,7 +692,7 @@ form button {
 
 #servicos2 .btn1 {
   left: 1rem;
-  top: -0.4rem;
+  top: -0.1rem;
 }
 
 #servicos2::before {
@@ -868,6 +842,7 @@ h2 {
 }
 
 #sobre a {
+  width: 9rem;
   animation-delay: 0.9s;
   display: inline-block;
   margin-top: 0.5rem;
@@ -887,15 +862,16 @@ h2 {
 }
 
 #relatos {
+  width: 9rem;
   font-size: 0.95rem;
   display: inline-block;
   background-color: #e91e63;
   color: white;
   border: none;
-  padding: 12px 10px;
+  padding: 12px 12px;
   border-radius: 8px;
   text-decoration: none;
-  top: 2.3rem;
+  top: -0.1rem;
   left: 0.7rem;
   position: relative;
   transition: background 0.3s, transform 0.3s;
@@ -1333,53 +1309,72 @@ footer .redes-sociais p {
 
 
 /* ============================================================
-   📱📖 TABLET — PORTRAIT (em vertical) (768px até 1024px)
+📱📖 TABLET — PORTRAIT (em vertical) (768px até 1024px)
 ============================================================ */
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
-  .search {
-    padding: 8px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    margin-left: 30rem;
+  .perfil {
+    text-align: center;
+    padding: 40px 20px;
+    background-image: url(img/Imagem-efeito-blur.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 60rem;
 }
-
-
-  .four-sections {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
-
-  .container {
-    max-width: 70%;
-    margin: 0 auto;
-    padding: 18px;
-  }
-
-  .hero-text {
-    margin-top: 1rem;
-  }
-
   .navbar {
     height: auto;
     padding: 12px 22px;
   }
-
-  .menu-wrapper {
-    gap: 2.5rem;
+  .search {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-left: 43rem;
   }
+  
+  /* 1) Anula o left global */
+.container {
+  max-width: 100% !important;
+  width: 100%;
+  left: 0;             /* <--- remove deslocamento */
+  margin: 0 auto;
+  padding: 18px;
+}
 
-  #campoBusca {
-    width: 20rem;
-    margin-top: 8px;
-    left: 0rem;
-    position: relative;
-    top: 0rem;
-  }
+/* 2) Força o pai a usar 90% da viewport */
+.four-sections {
+  width: 90vw;         /* confiável: 90% da viewport */
+  max-width: 90vw;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+
+
+#sobre, #servicos, #servicos1, #servicos2 {
+  width: 100%;
+  min-height: 800px; /* cresce conforme o conteúdo */
+  height: auto;
+}
+  
+  .hero-text {
+        top: 43rem;
+        margin-top: 1rem;
+        left: 0rem;
+        position: relative;
+    }
 
   #relatos {
-    margin-top: 4%;
-    left: 0.7rem;
+  margin-top: 4%;
+  left: 0.7rem;
+  }
+  
+  .menu-wrapper {
+    gap: 2.5rem;
   }
 
   #servicos2 .btn1 {
@@ -1395,17 +1390,12 @@ footer .redes-sociais p {
     width: 240px;
   }
 
-  #sobre,
-  #servicos,
-  #servicos1,
-  #servicos2 {
-    width: 30rem;
-    height: auto;
-  }
+
 
   .menu {
-    width: 330px;
-    height: calc(100% - 70px);
+    width: 45%;
+    height: calc(100% - 30%);
+    top: 5rem;
   }
 
   .health-text .blue {
@@ -1475,7 +1465,7 @@ footer .redes-sociais p {
    💻 TABLET — LANDSCAPE (Horizontal) (900px até 1366px)
    → 2 COLUNAS EM CIMA / 2 EM BAIXO
 ============================================================ */
-@media (min-width: 900px) and (max-width: 1366px) and (orientation: landscape) {
+@media (min-width: 900px) and (max-width: 1224px) and (orientation: landscape) {
   .menu {
     display: none;
     position: fixed;
@@ -1534,6 +1524,7 @@ footer .redes-sociais p {
     max-width: 300px;
     height: 300px;
   }
+
 
 }
 
