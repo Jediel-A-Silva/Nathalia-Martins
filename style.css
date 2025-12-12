@@ -15,7 +15,6 @@ html {
   scroll-behavior: smooth;
 }
 
-
 /* Fonte base */
 body {
   font-family: "Arial", sans-serif;
@@ -26,28 +25,84 @@ body {
   color: #ffffff;
 }
 
+/* Container principal */
+.perfil {
+  position: relative;
+  text-align: center;
+  padding: 40px 0;
+   padding-bottom: 10px;
+  background-image: url(img/Imagem-efeito-blur.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+
+  min-height: 90vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* DESCE O HERO */
+  align-items: center;       /* CENTRALIZA */
+}
+
+.hero-text {
+  background: rgba(124,152,181,0.34);
+  padding: 20px 40px;
+  border-radius: 12px;
+
+  width: 100%;
+  max-width: 52rem;
+
+  margin: 0 auto;
+  
+}
+
+
+
+
+
+/* Títulos */
+.perfil h1 {
+  font-family: "Great Vibes", cursive;
+  font-weight: 400;
+  font-size: 50px;
+  color: #b3b529;
+  text-shadow: 2px 2px 4px #00000080, 0 0 10px #af3838, 0 0 20px #fbff00;
+  letter-spacing: 2px;
+}
+
+.perfil h3 {
+  font-size: 1.3rem;
+  color: #7c0019;
+  margin-top: -5px;
+}
+
+.perfil .info h2 {
+  font-family: "Arima", system-ui;
+  color: #7c0019;
+}
 /* NAVBAR */
 .navbar {
   height: 70px;
   background-color: #4b1024;
-  padding: 10px 20px;
+  padding: 10px 15px;
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
-  border: none;
 }
 
-nav {
-  display: flex;
-  justify-content: space-between; /* separa as duas áreas */
-  align-items: center;
+.search {
+  padding: 8px 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 150px; /* ajuste como quiser */
+  max-width: 60%;
+  margin-left: 0; /* remove margens antigas */
 }
 
 .menu-btn svg rect {
   fill: #ffffff; /* coloca a cor que você quiser */
 }
-
 
 .menu {
   display: none;
@@ -133,18 +188,11 @@ nav {
   text-shadow: 0 0 10px #ff4d6d, 0 0 20px #ff99aa; /* brilho suave */
 }
 
-.search {
-  padding: 8px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  margin-left: 70rem;
-}
-
 .menu-wrapper {
   display: flex;
+  justify-content: space-between; /* afasta o menu do search */
   align-items: center;
-  justify-content: space-between;
-  gap: 20px;
+  width: 100%;
 }
 
 .menu-btn {
@@ -152,6 +200,7 @@ nav {
   border: none;
   cursor: pointer;
   padding: 10px;
+  margin-right: auto;
 }
 
 /* Menu */
@@ -174,7 +223,7 @@ nav {
 
 #menu .fechar {
   position: absolute;
-  top: 27px;
+  top: 12px;
   left: 14rem;
   font-size: 15px;
   background: transparent;
@@ -271,61 +320,6 @@ nav {
   left: 7rem;
 }
 
-.hero-text {
-  background: rgb(124 152 181 / 34%);
-  padding: 0px 30px;
-  border-radius: 12px;
-  top: 24rem;
-  left: 2rem;
-  position: relative;
-}
-
-/* Perfil */
-.perfil {
-  text-align: center;
-  padding: 40px 20px;
-  background-image: url(img/Imagem-efeito-blur.png);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  height: 40rem;
-}
-
-.perfil h1 {
-  font-family: "Great Vibes", cursive;
-  font-weight: 400;
-  font-size: 50px;
-  color: #b3b529;
-
-  /* Sombra mais marcante */
-  text-shadow: 2px 2px 4px #00000080, 0 0 10px #af3838, 0 0 20px #fbff00;
-
-  /* Deixa o texto em destaque */
-  letter-spacing: 2px; /* espaço entre letras */
-  position: relative;
-}
-
-.perfil h3 {
-  font-size: 1.3rem;
-  color: #7c0019;
-  top: -0.5rem;
-  position: relative;
-}
-
-.perfil img.logo {
-  max-width: 370px;
-  height: 345px;
-  border-radius: 50%;
-  margin: 20px 0;
-  position: relative;
-}
-
-.perfil .info h2 {
-  font-family: "Arima", system-ui;
-  color: #7c0019;
-}
-
 form button {
   background-color: #a85d7b;
   color: white;
@@ -356,20 +350,18 @@ form button {
 
 #btn2 {
   width: 12rem;
-    font-size: 0.95rem;
-    display: inline-block;
-    background-color: #e91e63;
-    color: white;
-    border: none;
-    padding: 12px 10px;
-    border-radius: 8px;
-    text-decoration: none;
-    top: -0.1rem;
-    left: 0.7rem;
-    position: relative;
+  font-size: 0.95rem;
+  display: inline-block;
+  background-color: #e91e63;
+  color: white;
+  border: none;
+  padding: 12px 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  top: -0.1rem;
+  left: 0.7rem;
+  position: relative;
 }
-
-
 
 /* Carrossel Swiper */
 .sessao-carrossel {
@@ -623,11 +615,11 @@ form button {
 }
 
 #duvidas {
-  position: relative;              /* cria contexto para o ::before */
-  display: block;                  /* ocupa toda a largura */
-  padding: 40px 20px;              /* espaço interno */
+  position: relative; /* cria contexto para o ::before */
+  display: block; /* ocupa toda a largura */
+  padding: 40px 20px; /* espaço interno */
   border-radius: 8px;
-  overflow: hidden;                /* esconde o ::before */
+  overflow: hidden; /* esconde o ::before */
   color: white;
   font-size: 0.95rem;
   font-weight: 900;
@@ -640,7 +632,7 @@ form button {
   animation: aparecer 0.6s forwards;
   animation-delay: 2.3s;
 
-  top: 4.3rem;                     /* posição final */
+  top: 4.3rem; /* posição final */
 }
 
 #duvidas.btn1:hover {
@@ -673,17 +665,16 @@ form button {
 }
 
 #servicos2 p {
-    font-size: 1.3rem;
-    text-align: inherit;
-    color: #ffffff;
-    position: relative;
-    line-height: 1.4;
-    margin: 0 auto;
-    max-width: 90%;
-    backdrop-filter: blur(1px);
-    top: 1.5rem;
+  font-size: 1.3rem;
+  text-align: inherit;
+  color: #ffffff;
+  position: relative;
+  line-height: 1.4;
+  margin: 0 auto;
+  max-width: 90%;
+  backdrop-filter: blur(1px);
+  top: 1.5rem;
 }
-
 
 #servicos2 h2 {
   top: 1rem;
@@ -1076,307 +1067,287 @@ footer .redes-sociais p {
   transform: scale(1.05);
   box-shadow: 0 0 60px 20px rgba(255, 77, 109, 0.9); /* brilho mais forte */
 }
-/* ============================================================
-   📱 MOBILE (GERAL até 768px) — PORTRAIT
-============================================================ */
-@media (max-width: 768px) {
 
-  .four-sections {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .menu .categoria {
-    font-weight: bold;
-    margin-top: 10px;
-    margin-bottom: 5px;
-    color: #555;
-    border-bottom: 1px solid #ddd;
-    font-size: 15px;
-    left: 1rem;
-    position: relative;
-  }
-
-  .container {
-    max-width: 100%;
-    width: 100%;
-    padding: 15px;
-    margin: 0 auto;
-    position: relative;
-    left: 0;
-    top: 0;
-  }
-
-  .hero-text {
-    left: 0;
-    top: 23rem;
-    padding: 0px 0px;
-    text-align: center;
-  }
-}
-
-
-/* ============================================================
-   📱 MOBILE — MUITO PEQUENO (até 430px)
-============================================================ */
-@media (max-width: 430px) {
-
-  .four-sections {
-    flex-direction: column;
-  }
-
-  .sessao-carrossel {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    width: 100%;
-    padding: 1rem;
-    gap: 1.2rem;
-  }
-
-  .container-carrossel-custom {
-    width: 92%;
-    max-width: 400px;
-    border-radius: 14px;
-    overflow: hidden;
-    top: 1rem;
-  }
-
-  .container-carrossel-custom img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    display: block;
-    border-radius: 14px;
-    position: relative;
-    top: 2rem;
-  }
-
-  .descricao-carrossel {
-    width: 90%;
-    text-align: center;
-    color: #fff;
-    margin-top: 0.5rem;
-  }
-
-  .descricao-carrossel h2 {
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: #ffe6ec;
-    margin-bottom: 0.5rem;
-  }
-
-  .descricao-carrossel p {
-    font-size: 1.1rem;
-    line-height: 1.5;
-    color: #fbeff2;
-  }
-
-  .botoes-swiper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-
-  .swiper-button-prev,
-  .swiper-button-next {
-    background: rgba(255, 255, 255, 0.15);
-    color: #fff;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    border: none;
-    font-size: 18px;
-  }
-
-  .perfil img.logo {
-    width: 280px;
-  }
-
-  #menu {
-    position: fixed;
-    top: 70px;
-    right: -100%;
-    width: 100%;
-    height: 65%;
-    background: #fff;
-    transition: right .3s ease;
-    z-index: 2000;
-  }
-
-  #menu.ativo {
-    right: 0;
-  }
-
-  #menu .fechar {
-    position: fixed;
-    top: 89px;
-    right: 1.5rem;
-    font-size: 22px;
-  }
-
-  #servicos2 p {
-    font-size: 1.05rem;
-    max-width: 320px;
-    margin: 0 auto;
-  }
-
-  #servicos2 .btn1 {
-    left: 1rem;
-    top: -1.5rem;
-  }
-}
-
-
-
-
-/* ============================================================
-📱📖 TABLET — PORTRAIT (em vertical) (768px até 1024px)
-→ Ajustado para ocupar tela inteira nos tablets Android
-============================================================ */
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
-
-  /* Remove limites e faz o layout ocupar toda a tela */
-  body, html {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-  }
-
-  .container {
-    max-width: 100%;
-    width: 100%;
-    margin: 0 auto;
-    padding: 18px;
-    left: 0 !important;
-  }
-
-  .four-sections {
-    width: 92vw;
-    max-width: 92vw;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
-
-  #sobre, #servicos, #servicos1, #servicos2 {
-    width: 100%;
-    height: auto;
-    min-height: auto;
+/* =============================== */
+/* =========  CELULARES  ========= */
+/* ====== até 480px (muito pequenos) ====== */
+@media (max-width: 480px) {
+  /* Layout geral */
+  body {
+    font-size: 14px;
   }
 
   .perfil {
-    padding: 40px 20px;
-    background-size: cover;
     height: auto;
-    min-height: 70vh;
-  }
-
-  .perfil img.logo {
-    width: 240px;
-  }
-
-  .navbar {
-    padding: 12px 20px;
-  }
-
-  .search {
-    margin-left: auto;
-    padding: 8px;
-  }
-
-  .menu {
-    width: 50%;
-    top: 5rem;
-    height: calc(100% - 6rem);
+    padding: 20px 10px;
+    background-attachment: scroll;
   }
 
   .hero-text {
-    position: relative;
-    top: 2rem;
-    left: 0;
+    position: static;
+    margin: 0 auto;
+    transform: none;
+    width: 95%;
+    padding: 15px;
   }
 
-  .slides img {
-    width: 90%;
-    height: 25rem;
-    object-fit: cover;
-    border-radius: 14px;
-  }
-
-  .container-carrossel-custom {
-    width: 80%;
-    max-width: 620px;
-  }
-
-  .descricao-carrossel h2 {
-    font-size: 1.5rem;
-  }
-
-  .descricao-carrossel p {
-    font-size: 1.1rem;
-  }
-
-  .swiper-button-next,
-  .swiper-button-prev {
-    font-size: 34px !important;
-  }
-}
-
-
-
-
-/* ============================================================
-   💻 TABLET — LANDSCAPE (Horizontal) (900px até 1366px)
-============================================================ */
-@media (min-width: 900px) and (max-width: 1366px) and (orientation: landscape) {
-
-  .menu {
-    display: none;
+  .navbar {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 10px;
   }
 
   .search {
-    margin-left: 45rem;
+    width: 100%;
+    margin-top: 10px;
   }
 
+  .container {
+    left: 0;
+    padding: 10px;
+    margin-top: 20px;
+  }
+
+  /* Grids viram 1 coluna */
   .four-sections {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+    width: 100%;
+    gap: 20px;
+  }
+
+  .caixinha {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* Carrossel */
+  .sessao-carrossel {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
     gap: 20px;
   }
 
   .container-carrossel-custom {
     width: 100%;
-    height: 350px;
+    height: 260px;
+    left: 0;
   }
 
   .descricao-carrossel {
     max-width: 100%;
+    padding: 10px;
     text-align: center;
   }
 
-  .perfil img.logo {
-    max-width: 300px;
-    height: 300px;
+  .nav-carrossel {
+    justify-content: center;
+  }
+
+  /* Bloco sobre */
+  #sobre {
+    height: auto;
+    padding: 20px;
+  }
+
+  #servicos2,
+  #servicos1,
+  #servicos {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Health card */
+  .health-card {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .health-text h1 {
+    font-size: 40px;
+  }
+
+  .health-text p {
+    font-size: 2rem;
+    margin-top: 1rem;
+  }
+
+  footer {
+    padding: 20px;
   }
 }
 
-
-
-
-/* ============================================================
-   🖥️ DESKTOP (acima de 1366px)
-============================================================ */
-@media (min-width: 1366px) {
+/* ============================ */
+/* ========  CELULARES ======== */
+/* === até 576px (padrão Android e iPhone SE/Mini) === */
+@media (max-width: 576px) {
+  .hero-text {
+    margin: 0 auto;
+    position: static;
+  }
 
   .four-sections {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2.5rem;
+    grid-template-columns: 1fr;
+  }
+
+  .sessao-carrossel {
+    padding: 25px;
+  }
+}
+
+/* ==========================================================
+   ======== RESPONSIVIDADE UNIVERSAL (95% DOS DISPOSITIVOS) =
+   ========================================================== */
+
+/* ======= 1. CELULARES MUITO PEQUENOS — até 480px ======= */
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  .perfil {
+    height: auto;
+    padding: 20px 10px;
+    background-attachment: scroll;
+  }
+
+  .hero-text {
+    position: static;
+    margin: 0 auto;
+    width: 95%;
+    transform: none;
+    padding: 15px;
+  }
+
+  .navbar {
+    height: auto;
+    padding: 10px;
+    flex-wrap: wrap;
+  }
+
+  .search {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .four-sections {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .caixinha {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .sessao-carrossel {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .container-carrossel-custom {
+    width: 100%;
+    height: 260px;
+  }
+
+  .descricao-carrossel {
+    text-align: center;
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  #sobre {
+    height: auto;
+    padding: 20px;
+  }
+}
+
+/* ======= 2. CELULARES MÉDIOS — até 576px ======= */
+@media (max-width: 576px) {
+  .hero-text {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .perfil h1 {
+    font-size: 42px;
+  }
+  .perfil h3 {
+    font-size: 1.1rem;
+  }
+
+  .sessao-carrossel {
+    padding: 25px;
+    gap: 25px;
+  }
+}
+
+/* ======= 3. CELULARES GRANDES — até 768px ======= */
+@media (max-width: 768px) {
+  .menu {
+    width: 240px;
+  }
+
+  .container {
+    left: 0;
+    padding: 10px;
+    margin-top: 30px;
+  }
+
+  .four-sections {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .health-card {
+    flex-direction: column;
+    padding: 20px;
+    gap: 25px;
+  }
+
+  .health-image {
+    width: 100%;
+    height: 280px;
+  }
+}
+
+/* ======= 4. TABLETS VERTICAIS — até 992px ======= */
+@media (max-width: 992px) {
+  .four-sections {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sessao-carrossel {
+    gap: 40px;
+    padding: 35px;
+    height: auto;
+  }
+
+  .container-carrossel-custom {
+    width: 80%;
+    height: 330px;
+  }
+}
+
+/* ======= 5. TABLETS HORIZONTAIS / NOTEBOOKS PEQUENOS — até 1200px ======= */
+@media (max-width: 1200px) {
+  .perfil {
+    height: 80vh;
+  }
+
+  .hero-text {
+    max-width: 900px;
+  }
+
+  .sessao-carrossel {
+    max-width: 60rem;
+    height: auto;
+  }
+
+  .container-carrossel-custom {
+    width: 60%;
+    height: 380px;
   }
 }
