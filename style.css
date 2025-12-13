@@ -30,7 +30,7 @@ body {
   position: relative;
   text-align: center;
   padding: 40px 0;
-   padding-bottom: 10px;
+  padding-bottom: 10px;
   background-image: url(img/Imagem-efeito-blur.png);
   background-size: cover;
   background-position: center;
@@ -42,11 +42,11 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-end; /* DESCE O HERO */
-  align-items: center;       /* CENTRALIZA */
+  align-items: center; /* CENTRALIZA */
 }
 
 .hero-text {
-  background: rgba(124,152,181,0.34);
+  background: rgba(124, 152, 181, 0.34);
   padding: 20px 40px;
   border-radius: 12px;
   width: 100%;
@@ -54,10 +54,6 @@ body {
   margin: 0 auto;
   transform: translateX(-6rem); /* move para a esquerda */
 }
-
-
-
-
 
 /* Títulos */
 .perfil h1 {
@@ -89,6 +85,7 @@ body {
   z-index: 1000;
 }
 
+/* Campo de busca */
 .search {
   padding: 8px 10px;
   border-radius: 5px;
@@ -97,29 +94,6 @@ body {
   max-width: 60%;
   margin-left: 0; /* remove margens antigas */
 }
-
-.menu-btn svg rect {
-  fill: #ffffff; /* coloca a cor que você quiser */
-}
-
-.menu {
-  display: none;
-}
-.menu.ativo {
-  display: block;
-}
-
-/* Opcional: posicionar o X */
-.menu .fechar {
-  position: absolute;
-  top: 8px;
-  right: 22px;
-  background: transparent;
-  border: 0;
-  font-size: 20px;
-  cursor: pointer;
-}
-
 .resultados-busca {
   position: absolute;
   top: 70px; /* ajusta conforme sua navbar */
@@ -137,6 +111,12 @@ body {
   z-index: 9999;
 }
 
+.resultados-busca {
+  position: absolute;
+  top: 70px;
+  right: 100px;
+  background: #ffa0c0;
+}
 .resultados-busca p {
   margin: 5px 0;
   padding: 5px;
@@ -147,7 +127,7 @@ body {
   background: #f0f0f0;
 }
 
-/* redes-sociais*/
+/* ------------- redes-sociais ---------------*/
 .redes-sociais,
 .redes-icons {
   text-align: center;
@@ -184,6 +164,34 @@ body {
   color: #ffffff; /* fica branco no hover */
   transform: scale(1.2) rotate(5deg);
   text-shadow: 0 0 10px #ff4d6d, 0 0 20px #ff99aa; /* brilho suave */
+}
+
+/*-------------- Ícones do MENU ----------------*/
+.menu-btn svg rect {
+  fill: #ffffff; /* coloca a cor que você quiser */
+}
+
+.menu.ativo {
+  display: block;
+}
+
+/* garante que o X se posicione dentro do menu */
+.menu {
+  position: fixed; /* mantenha, se o menu for lateral */
+  box-sizing: border-box;
+}
+
+/* Botão X */
+.menu .fechar {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  z-index: 2001;
 }
 
 .menu-wrapper {
@@ -272,8 +280,6 @@ body {
   font-size: 15px;
 }
 
-/* Campo de busca */
-
 /* Keyframes */
 @keyframes aparecer {
   to {
@@ -301,13 +307,6 @@ body {
   100% {
     background-position: 0% 50%;
   }
-}
-
-.resultados-busca {
-  position: absolute;
-  top: 70px;
-  right: 100px;
-  background: #ffa0c0;
 }
 
 .container {
@@ -785,7 +784,6 @@ h2 {
   background-color: #ffe9f0;
   border-radius: 0px;
   border: none;
-  gap: 2.5rem;
 }
 #sobre {
   position: relative;
@@ -1116,7 +1114,8 @@ footer .redes-sociais p {
   }
 
   .perfil {
-    min-height: auto;
+    min-height: 93vh;
+    height: auto;
     padding: 20px 10px;
     background-attachment: scroll;
   }
@@ -1132,6 +1131,30 @@ footer .redes-sociais p {
     height: auto;
     padding: 10px;
     flex-wrap: wrap;
+  }
+
+  .menu {
+    position: fixed;
+    top: 76px;                  /* altura real da navbar */
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - 76px); /* ocupa TODO o resto da tela */
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 0;
+    overflow-y: auto;           /* evita corte de conteúdo */
+  }
+
+  .menu .fechar {
+    position: absolute;
+    top: 8px;
+    right: 0;
+    margin-right: -60px; /* compensa o padding */
+    font-size: 26px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 2001;
   }
 
   .search {
