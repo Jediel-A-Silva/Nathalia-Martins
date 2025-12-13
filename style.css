@@ -1126,30 +1126,34 @@ footer .redes-sociais p {
     margin: 0 auto;
     transform: none;
   }
-
+  
   .navbar {
     height: auto;
     padding: 10px;
     flex-wrap: wrap;
   }
+  
+  .search {
+    width: 100%;
+    margin-top: 0px;
+  }
 
-  .menu {
+    .menu {
     position: fixed;
-    top: 76px;                  /* altura real da navbar */
+    top: 75px;                     /* altura da navbar */
     left: 0;
     width: 100vw;
-    height: calc(100vh - 76px); /* ocupa TODO o resto da tela */
-    padding: 20px;
+     height: 85dvh;    /* 70% da tela visível */
+    padding-right: 40px;
     box-sizing: border-box;
     border-radius: 0;
-    overflow-y: auto;           /* evita corte de conteúdo */
+    overflow-y: auto;
   }
 
   .menu .fechar {
     position: absolute;
     top: 8px;
-    right: 0;
-    margin-right: -60px; /* compensa o padding */
+    right: 8px; /* compensa o padding */
     font-size: 26px;
     background: transparent;
     border: none;
@@ -1157,10 +1161,9 @@ footer .redes-sociais p {
     z-index: 2001;
   }
 
-  .search {
-    width: 100%;
-    margin-top: 10px;
-  }
+.menu a {
+    font-size: 26px;
+}
 
   .container {
     left: 0;
