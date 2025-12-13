@@ -49,12 +49,10 @@ body {
   background: rgba(124,152,181,0.34);
   padding: 20px 40px;
   border-radius: 12px;
-
   width: 100%;
   max-width: 52rem;
-
   margin: 0 auto;
-  
+  transform: translateX(-6rem); /* move para a esquerda */
 }
 
 
@@ -1068,34 +1066,72 @@ footer .redes-sociais p {
   box-shadow: 0 0 60px 20px rgba(255, 77, 109, 0.9); /* brilho mais forte */
 }
 
-/* ==============Responsividade================= */
+/* ==================================================
+   RESPONSIVIDADE PADRÃO — 95% DOS DISPOSITIVOS
+   ================================================== */
+/* ===== NOTEBOOKS PEQUENOS — até 1200px ===== */
+@media (max-width: 1200px) {
+  .perfil {
+    min-height: 80vh;
+  }
 
-/* =========  CELULARES  ========= */
-/* ====== até 480px (muito pequenos) ====== */
+  .hero-text {
+    max-width: 900px;
+  }
+}
+
+/* ===== TABLETS GRANDES — até 992px ===== */
+@media (max-width: 992px) {
+  .four-sections {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sessao-carrossel {
+    gap: 40px;
+    padding: 35px;
+  }
+}
+
+/* ===== TABLETS / MOBILE HORIZONTAL — até 768px ===== */
+@media (max-width: 768px) {
+  .menu {
+    width: 240px;
+  }
+
+  .container {
+    left: 0;
+    padding: 10px;
+    margin-top: 30px;
+  }
+
+  .four-sections {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ===== MOBILE PEQUENO — até 480px ===== */
 @media (max-width: 480px) {
-  /* Layout geral */
   body {
     font-size: 14px;
   }
 
   .perfil {
-    height: auto;
+    min-height: auto;
     padding: 20px 10px;
     background-attachment: scroll;
   }
 
   .hero-text {
-    position: static;
-    margin: 0 auto;
-    transform: none;
     width: 95%;
     padding: 15px;
+    margin: 0 auto;
+    transform: none;
   }
 
   .navbar {
-    flex-wrap: wrap;
     height: auto;
     padding: 10px;
+    flex-wrap: wrap;
   }
 
   .search {
@@ -1109,11 +1145,10 @@ footer .redes-sociais p {
     margin-top: 20px;
   }
 
-  /* Grids viram 1 coluna */
   .four-sections {
     grid-template-columns: 1fr;
-    width: 100%;
     gap: 20px;
+    width: 100%;
   }
 
   .caixinha {
@@ -1121,7 +1156,6 @@ footer .redes-sociais p {
     gap: 20px;
   }
 
-  /* Carrossel */
   .sessao-carrossel {
     flex-direction: column;
     height: auto;
@@ -1132,7 +1166,6 @@ footer .redes-sociais p {
   .container-carrossel-custom {
     width: 100%;
     height: 260px;
-    left: 0;
   }
 
   .descricao-carrossel {
@@ -1145,20 +1178,15 @@ footer .redes-sociais p {
     justify-content: center;
   }
 
-  /* Bloco sobre */
-  #sobre {
+  #sobre,
+  #servicos,
+  #servicos1,
+  #servicos2 {
+    width: 100%;
     height: auto;
     padding: 20px;
   }
 
-  #servicos2,
-  #servicos1,
-  #servicos {
-    width: 100%;
-    height: auto;
-  }
-
-  /* Health card */
   .health-card {
     flex-direction: column;
     padding: 20px;
@@ -1175,180 +1203,5 @@ footer .redes-sociais p {
 
   footer {
     padding: 20px;
-  }
-}
-
-/* ============================ */
-/* ========  CELULARES ======== */
-/* === até 576px (padrão Android e iPhone SE/Mini) === */
-@media (max-width: 576px) {
-  .hero-text {
-    margin: 0 auto;
-    position: static;
-  }
-
-  .four-sections {
-    grid-template-columns: 1fr;
-  }
-
-  .sessao-carrossel {
-    padding: 25px;
-  }
-}
-
-/* ==========================================================
-   ======== RESPONSIVIDADE UNIVERSAL (95% DOS DISPOSITIVOS) =
-   ========================================================== */
-
-/* ======= 1. CELULARES MUITO PEQUENOS — até 480px ======= */
-@media (max-width: 480px) {
-  body {
-    font-size: 14px;
-  }
-
-  .perfil {
-    height: auto;
-    padding: 20px 10px;
-    background-attachment: scroll;
-  }
-
-  .hero-text {
-    position: static;
-    margin: 0 auto;
-    width: 95%;
-    transform: none;
-    padding: 15px;
-  }
-
-  .navbar {
-    height: auto;
-    padding: 10px;
-    flex-wrap: wrap;
-  }
-
-  .search {
-    width: 100%;
-    margin-top: 10px;
-  }
-
-  .four-sections {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    width: 100%;
-  }
-
-  .caixinha {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .sessao-carrossel {
-    flex-direction: column;
-    height: auto;
-    padding: 20px;
-    gap: 20px;
-  }
-
-  .container-carrossel-custom {
-    width: 100%;
-    height: 260px;
-  }
-
-  .descricao-carrossel {
-    text-align: center;
-    max-width: 100%;
-    padding: 10px;
-  }
-
-  #sobre {
-    height: auto;
-    padding: 20px;
-  }
-}
-
-/* ======= 2. CELULARES MÉDIOS — até 576px ======= */
-@media (max-width: 576px) {
-  .hero-text {
-    width: 100%;
-    padding: 20px;
-  }
-
-  .perfil h1 {
-    font-size: 42px;
-  }
-  .perfil h3 {
-    font-size: 1.1rem;
-  }
-
-  .sessao-carrossel {
-    padding: 25px;
-    gap: 25px;
-  }
-}
-
-/* ======= 3. CELULARES GRANDES — até 768px ======= */
-@media (max-width: 768px) {
-  .menu {
-    width: 240px;
-  }
-
-  .container {
-    left: 0;
-    padding: 10px;
-    margin-top: 30px;
-  }
-
-  .four-sections {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .health-card {
-    flex-direction: column;
-    padding: 20px;
-    gap: 25px;
-  }
-
-  .health-image {
-    width: 100%;
-    height: 280px;
-  }
-}
-
-/* ======= 4. TABLETS VERTICAIS — até 992px ======= */
-@media (max-width: 992px) {
-  .four-sections {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .sessao-carrossel {
-    gap: 40px;
-    padding: 35px;
-    height: auto;
-  }
-
-  .container-carrossel-custom {
-    width: 80%;
-    height: 330px;
-  }
-}
-
-/* ======= 5. TABLETS HORIZONTAIS / NOTEBOOKS PEQUENOS — até 1200px ======= */
-@media (max-width: 1200px) {
-  .perfil {
-    height: 80vh;
-  }
-
-  .hero-text {
-    max-width: 900px;
-  }
-
-  .sessao-carrossel {
-    max-width: 60rem;
-    height: auto;
-  }
-
-  .container-carrossel-custom {
-    width: 60%;
-    height: 380px;
   }
 }
