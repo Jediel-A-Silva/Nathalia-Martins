@@ -1124,36 +1124,38 @@ footer .redes-sociais p {
     width: 95%;
     padding: 15px;
     margin: 0 auto;
-    transform: none;
+    transform: translate(0, 0);
   }
-  
+
   .navbar {
     height: auto;
     padding: 10px;
     flex-wrap: wrap;
   }
-  
+
   .search {
     width: 100%;
-    margin-top: 0px;
+    margin-top: 0;
   }
 
-    .menu {
+  .menu {
     position: fixed;
-    top: 75px;                     /* altura da navbar */
+    top: 75px; /* altura da navbar */
     left: 0;
     width: 100vw;
-     height: 85dvh;    /* 70% da tela visível */
-    padding-right: 40px;
+    height: 85vh; /* corrigido */
+    padding-right: 20px; /* reduzido para evitar overflow */
     box-sizing: border-box;
     border-radius: 0;
     overflow-y: auto;
+    background-color: #fff; /* garante visibilidade */
+    z-index: 1000;
   }
 
   .menu .fechar {
     position: absolute;
     top: 8px;
-    right: 8px; /* compensa o padding */
+    right: 8px;
     font-size: 26px;
     background: transparent;
     border: none;
@@ -1161,14 +1163,8 @@ footer .redes-sociais p {
     z-index: 2001;
   }
 
-.menu a {
-    font-size: 26px;
-}
-
-  .container {
-    left: 0;
-    padding: 10px;
-    margin-top: 20px;
+  .menu a {
+    font-size: 22px; /* ajustado para caber no mobile */
   }
 
   .four-sections {
@@ -1189,14 +1185,28 @@ footer .redes-sociais p {
     gap: 20px;
   }
 
-  .container-carrossel-custom {
+  .container {
+    padding: 0 10px;
+    margin: 20px auto 0 auto;
     width: 100%;
-    height: 260px;
+    box-sizing: border-box;
+  }
+
+  .container-carrossel-custom {
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .carousel {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
   }
 
   .descricao-carrossel {
     max-width: 100%;
-    padding: 10px;
+    padding: 0;
     text-align: center;
   }
 
@@ -1210,24 +1220,25 @@ footer .redes-sociais p {
   #servicos2 {
     width: 100%;
     height: auto;
-    padding: 20px;
+    padding: 20px 10px;
+    box-sizing: border-box;
   }
 
   .health-card {
     flex-direction: column;
-    padding: 20px;
+    padding: 15px;
   }
 
   .health-text h1 {
-    font-size: 40px;
+    font-size: 24px; /* ajustado para mobile */
   }
 
   .health-text p {
-    font-size: 2rem;
-    margin-top: 1rem;
+    font-size: 16px; /* ajustado para mobile */
+    margin-top: 0.5rem;
   }
 
   footer {
-    padding: 20px;
+    padding: 15px 10px;
   }
 }
