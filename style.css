@@ -1132,7 +1132,7 @@ footer .redes-sociais p {
 
   .navbar {
     height: auto;
-    padding: 10px;
+    padding: 12px;
     flex-wrap: wrap;
   }
 
@@ -1143,7 +1143,7 @@ footer .redes-sociais p {
 
   .menu {
     position: fixed;
-    top: 75px;
+    top: 78px;
     left: 0;
     width: 100vw;
     height: 85vh;
@@ -1224,18 +1224,17 @@ footer .redes-sociais p {
 
   .slides {
   display: flex;
+  height: 100%;
   gap: 16px;              /* espaço real entre as imagens */
   align-items: stretch;
 }
 
-.slides img {
-  flex: 0 0 100%;         /* cada slide ocupa 100% do carrossel */
-  max-width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-}
+ .slides img {
+    width: 100%;
+    height: 100%;
+     flex: 0 0 100%;   
+    object-fit: cover;   /* ocupa tudo */
+  }
 
 
   /* ============================== */
@@ -1266,11 +1265,11 @@ footer .redes-sociais p {
   }
 
   .health-text h1 {
-    font-size: 24px;
+    font-size: 31px;
   }
 
   .health-text p {
-    font-size: 16px;
+    font-size: 26px;
     margin-top: 0.5rem;
   }
 
