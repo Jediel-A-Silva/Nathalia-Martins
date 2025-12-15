@@ -363,29 +363,21 @@ form button {
   position: relative;
 }
 
-/* Carrossel Swiper */
 .sessao-carrossel {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   background: linear-gradient(135deg, #800000, #a52a4d, #4b001f);
   border-radius: 20px;
   padding: 46px;
   width: 100%;
   max-width: 80rem;
-
   margin: 40px auto;
-  gap: 161px;
+  gap: 40px;
   color: white;
   height: 583px;
 }
 
-.sessao-carrossel {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 40px; /* dá um respiro entre imagem e texto */
-}
 
 /* Caixa da imagem do carrossel */
 .container-carrossel-custom {
@@ -1178,15 +1170,22 @@ footer .redes-sociais p {
 
   .caixinha {
     flex-direction: column;
-    gap: 20px;
+    gap: 0px;
   }
 
   .sessao-carrossel {
     flex-direction: column;
-    height: auto;
+    height: 70vh;
     padding: 20px;
     gap: 20px;
   }
+
+  .descricao-carrossel h2 {
+    font-size: 26px;
+}
+.descricao-carrossel p {
+    font-size: 21px;
+}
 
   .container {
     padding: 0 10px;
@@ -1236,6 +1235,14 @@ footer .redes-sociais p {
     object-fit: cover;   /* ocupa tudo */
   }
 
+  .slide-item img {
+    width: 100%;
+    height: 28vh;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+}
+
 
   /* ============================== */
 
@@ -1265,7 +1272,7 @@ footer .redes-sociais p {
   }
 
   .health-text h1 {
-    font-size: 31px;
+    font-size: 28px;
   }
 
   .health-text p {

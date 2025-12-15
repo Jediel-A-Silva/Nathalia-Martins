@@ -642,6 +642,15 @@
         } else {
           initTryLoop(60, 300);
         }
+
+        if (window.innerWidth <= 480) {
+  overlay.style.width = "86px";
+  overlay.style.height = "86px";
+} else {
+  overlay.style.width = "70px";
+  overlay.style.height = "70px";
+}
+
       })();
     </script>
   </body>
