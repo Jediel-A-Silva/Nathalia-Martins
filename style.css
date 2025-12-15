@@ -1108,13 +1108,11 @@ footer .redes-sociais p {
     font-size: 14px;
   }
 
-  .perfil {
-    min-height: 93vh;
-    height: auto;
-    padding: 20px 10px;
+ .perfil {
+    min-height: 75vh;
+    padding: 20px 12px;
     background-attachment: scroll;
   }
-
   .hero-text {
     width: 95%;
     padding: 15px;
