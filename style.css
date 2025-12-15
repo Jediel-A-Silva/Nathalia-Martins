@@ -1198,6 +1198,7 @@ footer .redes-sociais p {
     box-sizing: border-box;
     width: 100%;
     overflow: hidden;
+    left: auto;
   }
 
   /* ==============================
@@ -1237,7 +1238,7 @@ footer .redes-sociais p {
 
   .slide-item img {
     width: 100%;
-    height: 28vh;
+    height: 30vh;
     object-fit: cover;
     border-radius: 12px;
     display: block;
@@ -1279,6 +1280,25 @@ footer .redes-sociais p {
     font-size: 26px;
     margin-top: 0.5rem;
   }
+
+  .perfil h1 {
+    font-family: "Great Vibes", cursive;
+    font-weight: 400;
+    font-size: 30px;
+    color: #b3b529;
+    text-shadow: 2px 2px 4px #00000080, 0 0 10px #af3838, 0 0 20px #fbff00;
+    letter-spacing: 2px;
+}
+
+.perfil h3 {
+    font-size: 1.3rem;
+    color: #7c0019;
+    margin-top: -5px;
+    letter-spacing: 1px;
+}
+#servicos p, h2 {
+    font-size: 21px;
+}
 
   footer {
     padding: 15px 10px;
