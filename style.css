@@ -7,9 +7,12 @@
 
 html.menu-aberto,
 body.menu-aberto {
-  height: 100%;
-  overflow: hidden;
+  height: auto;           /* libera cálculo correto */
+  overflow-x: hidden;     /* evita estouro lateral */
+  overflow-y: hidden;     /* trava apenas o scroll vertical */
 }
+
+
 
 html {
   scroll-behavior: smooth;
@@ -1140,15 +1143,15 @@ footer .redes-sociais p {
 
   .menu {
     position: fixed;
-    top: 75px; /* altura da navbar */
+    top: 75px;
     left: 0;
     width: 100vw;
-    height: 85vh; /* corrigido */
-    padding-right: 20px; /* reduzido para evitar overflow */
+    height: 85vh;
+    padding-right: 20px;
     box-sizing: border-box;
     border-radius: 0;
     overflow-y: auto;
-    background-color: #fff; /* garante visibilidade */
+    background-color: #fff;
     z-index: 1000;
   }
 
@@ -1164,7 +1167,7 @@ footer .redes-sociais p {
   }
 
   .menu a {
-    font-size: 22px; /* ajustado para caber no mobile */
+    font-size: 22px;
   }
 
   .four-sections {
@@ -1198,11 +1201,44 @@ footer .redes-sociais p {
     overflow: hidden;
   }
 
-  .carousel {
+  /* ==============================
+     CORREÇÃO DO CARROSSEL / HEALTH
+     ============================== */
+
+  .health-image {
     width: 100%;
     max-width: 100%;
-    overflow: hidden;
+    height: auto;
+    padding: 0 12px;
+    box-sizing: border-box;
+    justify-content: center;
   }
+
+  .carousel {
+    width: 100%;
+    height: 40vh;          /* altura proporcional à tela */
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+  }
+
+  .slides {
+  display: flex;
+  gap: 16px;              /* espaço real entre as imagens */
+  align-items: stretch;
+}
+
+.slides img {
+  flex: 0 0 100%;         /* cada slide ocupa 100% do carrossel */
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+  /* ============================== */
 
   .descricao-carrossel {
     max-width: 100%;
@@ -1230,11 +1266,11 @@ footer .redes-sociais p {
   }
 
   .health-text h1 {
-    font-size: 24px; /* ajustado para mobile */
+    font-size: 24px;
   }
 
   .health-text p {
-    font-size: 16px; /* ajustado para mobile */
+    font-size: 16px;
     margin-top: 0.5rem;
   }
 
