@@ -244,11 +244,6 @@ body {
   z-index: 2001;
 }
 
-/* menu aberto */
-.menu.ativo {
-  display: block;
-}
-
 .menu::-webkit-scrollbar {
   width: 10px;
 }
@@ -343,17 +338,16 @@ form button {
 
 /* Cards */
 .four-sections section {
-  position: relative;                 /* referência para o botão */
+  position: relative; /* referência para o botão */
   background: rgba(255, 255, 255, 0.1);
   padding: 25px;
-  padding-bottom: 4.5rem;              /* espaço reservado para o botão */
+  padding-bottom: 4.5rem; /* espaço reservado para o botão */
   border-radius: 14px;
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-
 
 #btn2 {
   width: 12rem;
@@ -1167,17 +1161,16 @@ footer .redes-sociais p {
     font-size: 40px;
   }
 
-  
   .hero-text {
     transform: translateX(0); /* centraliza */
     max-width: 90%;
   }
-  
+
   .container {
     left: 0;
     padding: 20px;
   }
-  
+
   #sobre,
   #servicos,
   #servicos1,
@@ -1187,9 +1180,8 @@ footer .redes-sociais p {
     padding: 1.5rem;
     padding-bottom: 5rem; /* espaço para o botão */
   }
-  
-  
- .four-sections {
+
+  .four-sections {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     width: 100%;
@@ -1206,7 +1198,6 @@ footer .redes-sociais p {
   .four-sections section a#relatos,
   .four-sections section a#duvidas,
   .four-sections section#sobre > a {
-
     position: absolute !important;
     bottom: 1.2rem;
     left: 1.2rem;
@@ -1218,7 +1209,6 @@ footer .redes-sociais p {
     width: auto;
     z-index: 5;
   }
-
 }
 
 /* =====================================================
@@ -1263,30 +1253,129 @@ footer .redes-sociais p {
    TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
    ===================================================== */
 @media (max-width: 768px) {
-  /* NAV / MENU */
+  /* MENU */
   .menu {
+    display: none;
+    position: fixed;
+    top: 70px;
+    left: 0;
     width: 100%;
-    height: calc(100vh - 70px);
+    height: 55%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 70px 20px 20px;
+    font-size: 17px;
+    overflow-y: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+  }
+
+  /* BOTÃO FECHAR (X) — CORRETO */
+  #menu .fechar {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 2001;
+  }
+
+  .icone-fechar {
+    width: 45px;
+    height: 45px;
+  }
+
+  .menu .categoria {
+    font-size: 36px;
+    color: #631919;
   }
 
   .menu a {
-    font-size: 20px;
+    font-size: 30px;
+  }
+
+  /* REDES */
+  .redes-sociais p {
+    font-size: 26px;
+  }
+
+  .redes-icons a {
+    font-size: 50px;
+  }
+  /* SEÇÕES PERSONALIZADAS */
+  .personalizada p,
+  .personalizada ul {
+    margin-bottom: 75px; /* ainda menor */
+    font-size: 1.05rem;
   }
 
   /* HERO */
   .perfil {
-    min-height: 75vh;
-    justify-content: center;
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 3rem;
   }
 
   .hero-text {
+    background: rgba(124, 152, 181, 0.34);
     padding: 20px;
-    width: 95%;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    transform: none;
   }
 
   /* GRID */
   .four-sections {
     grid-template-columns: 1fr;
+  }
+
+  /* SEÇÕES COM titulo */
+  #sobre h2,
+  #servicos h2,
+  #servicos1 h2 {
+    font-size: 2.5rem;
+  }
+  #servicos2 {
+    position: relative;
+  }
+
+  #servicos2 h2 {
+    position: absolute;
+    top: 1.2rem;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    font-size: 2.5rem;
+  }
+
+  /* botoes */
+  .four-sections section a.btn,
+  .four-sections section a.btn1,
+  .four-sections section a#btn2,
+  .four-sections section a#relatos,
+  .four-sections section a#duvidas,
+  .four-sections section#sobre > a {
+    bottom: 2.5rem;
+    left: 3rem;
+
+    height: 3rem;
+    width: auto;
+    z-index: 5;
+  }
+
+  /* textos */
+  #sobre p,
+  #servicos li,
+  #servicos1 p,
+  #servicos2 p {
+    font-size: 26px;;
   }
 
   /* CARROSSEL */
@@ -1311,6 +1400,21 @@ footer .redes-sociais p {
     align-items: center;
     width: 100%;
   }
+
+  .health-card {
+  display: flex;
+  flex-direction: column; /* texto em cima, carrossel embaixo */
+  align-items: center;    /* centraliza horizontalmente */
+  justify-content: flex-start;
+
+  background: #ffe9f0;
+  border-radius: 0;
+  padding: 50px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  gap: 40px;
+  margin-bottom: 0;
+}
+
 }
 
 /* ===== MOBILE PEQUENO — até 480px ===== */
