@@ -4,7 +4,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   // =====================
-  // Swiper
+  // SWIPER
   // =====================
   if (typeof Swiper !== "undefined") {
     new Swiper(".my-carousel", {
@@ -13,65 +13,113 @@ document.addEventListener("DOMContentLoaded", () => {
       slidesPerView: "auto",
       spaceBetween: 16,
       loop: true,
-      navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
     });
   }
 
   // =====================
-  // MENU HAMBÚRGUER
+  // MENU HAMBÚRGUER (ACESSÍVEL)
   // =====================
   const menuBtn = document.querySelector(".menu-btn");
   const menu = document.getElementById("menu");
-  const btnFechar = menu?.querySelector(".fechar");
+  const btnFechar = menu ? menu.querySelector(".fechar") : null;
 
-  if (menuBtn && menu) {
+  if (menu && menuBtn) {
+
+    // Estado inicial correto
+    menu.setAttribute("aria-hidden", "true");
+    menu.setAttribute("inert", "");
+
+    function abrirMenu() {
+      menu.classList.add("ativo");
+      menuBtn.classList.add("ativo");
+
+      menu.removeAttribute("inert");
+      menu.setAttribute("aria-hidden", "false");
+
+      // foco no primeiro link do menu
+      const primeiroLink = menu.querySelector("a");
+      if (primeiroLink) primeiroLink.focus();
+    }
+
+    function fecharMenu() {
+      // devolve foco para o botão do menu
+      if (menu.contains(document.activeElement)) {
+        document.activeElement.blur();
+        menuBtn.focus();
+      }
+
+      menu.classList.remove("ativo");
+      menuBtn.classList.remove("ativo");
+
+      menu.setAttribute("aria-hidden", "true");
+      menu.setAttribute("inert", "");
+    }
+
+    // Abrir / fechar no botão hambúrguer
     menuBtn.addEventListener("click", (e) => {
       e.stopPropagation();
-      menu.classList.toggle("ativo");
-      menuBtn.classList.toggle("ativo");
+      menu.classList.contains("ativo") ? fecharMenu() : abrirMenu();
     });
 
+    // Botão X
     if (btnFechar) {
-      btnFechar.addEventListener("click", () => {
-        menu.classList.remove("ativo");
-        menuBtn.classList.remove("ativo");
+      btnFechar.addEventListener("click", (e) => {
+        e.stopPropagation();
+        fecharMenu();
       });
     }
+
+    // Fechar ao clicar fora
+    document.addEventListener("click", (e) => {
+      if (
+        menu.classList.contains("ativo") &&
+        !menu.contains(e.target) &&
+        !menuBtn.contains(e.target)
+      ) {
+        fecharMenu();
+      }
+    });
+
+    // Fechar ao redimensionar (ex: girar celular)
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 1024) {
+        fecharMenu();
+      }
+    });
   }
 
   // =====================
-  // FECHAR AO CLICAR FORA (menu)
-  // =====================
-  document.addEventListener("click", (e) => {
-    const clicouForaMenu = menu && menu.classList.contains("ativo") &&
-      !menu.contains(e.target) && !menuBtn.contains(e.target);
-
-    if (clicouForaMenu) {
-      menu.classList.remove("ativo");
-      menuBtn.classList.remove("ativo");
-    }
-  });
-
-  // =====================
-  // FormSubmit
+  // FORM SUBMIT
   // =====================
   class FormSubmit {
     constructor(settings) {
       this.settings = settings;
       this.form = document.querySelector(settings.form);
       this.button = document.querySelector(settings.button);
+
       if (this.form && this.button) {
         this.url = this.form.getAttribute("action");
         this.button.addEventListener("click", this.sendForm.bind(this));
       }
     }
 
-    displaySuccess() { this.form.innerHTML = this.settings.success; }
-    displayError() { this.form.innerHTML = this.settings.error; }
+    displaySuccess() {
+      this.form.innerHTML = this.settings.success;
+    }
+
+    displayError() {
+      this.form.innerHTML = this.settings.error;
+    }
 
     getFormObject() {
       const obj = {};
-      this.form.querySelectorAll("[name]").forEach(f => obj[f.name] = f.value);
+      this.form.querySelectorAll("[name]").forEach((field) => {
+        obj[field.name] = field.value;
+      });
       return obj;
     }
 
@@ -86,8 +134,11 @@ document.addEventListener("DOMContentLoaded", () => {
         this.onSubmission(event);
         await fetch(this.url, {
           method: "POST",
-          headers: { "Content-Type": "application/json", Accept: "application/json" },
-          body: JSON.stringify(this.getFormObject())
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify(this.getFormObject()),
         });
         this.displaySuccess();
       } catch {
@@ -100,7 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
     form: "[data-form]",
     button: "[data-button]",
     success: "<h1 class='success'>Mensagem enviada com sucesso!</h1>",
-    error: "<h1 class='error'>Ops! Algo deu errado.</h1>"
+    error: "<h1 class='error'>Ops! Algo deu errado.</h1>",
   });
 
   // =====================
@@ -115,42 +166,34 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!slides.length || !prevBtn || !nextBtn || !textoBox) return;
 
     const textos = [
-  { 
-    titulo: "Parto Humanizado com Respeito", 
-    descricao: "Cada detalhe é pensado para garantir acolhimento, conforto e segurança em um momento tão especial." 
-  },
-  { 
-    titulo: "Gestante como Protagonista", 
-    descricao: "Você é o centro de todas as decisões. Vivencie o parto com autonomia, amor e apoio contínuo." 
-  },
-  { 
-    titulo: "Acolhimento e Confiança", 
-    descricao: "Uma jornada guiada pela empatia e pelo cuidado, onde cada gesto transmite tranquilidade." 
-  },
-  { 
-    titulo: "Cuidado Integral com a Gestante", 
-    descricao: "Acompanhamento físico e emocional em todas as fases da gestação, garantindo bem-estar completo." 
-  },
-  { 
-    titulo: "Experiência Única no Parto", 
-    descricao: "Transforme o nascimento em um momento inesquecível, cheio de significado e carinho." 
-  },
-  { 
-    titulo: "Amor e Segurança no Nascer", 
-    descricao: "Um ambiente preparado com dedicação para receber sua história com amor e serenidade." 
-  }
-];
-
+      { titulo: "Parto Humanizado com Respeito", descricao: "Cada detalhe é pensado para garantir acolhimento, conforto e segurança em um momento tão especial." },
+      { titulo: "Gestante como Protagonista", descricao: "Você é o centro de todas as decisões. Vivencie o parto com autonomia, amor e apoio contínuo." },
+      { titulo: "Acolhimento e Confiança", descricao: "Uma jornada guiada pela empatia e pelo cuidado, onde cada gesto transmite tranquilidade." },
+      { titulo: "Cuidado Integral com a Gestante", descricao: "Acompanhamento físico e emocional em todas as fases da gestação, garantindo bem-estar completo." },
+      { titulo: "Experiência Única no Parto", descricao: "Transforme o nascimento em um momento inesquecível, cheio de significado e carinho." },
+      { titulo: "Amor e Segurança no Nascer", descricao: "Um ambiente preparado com dedicação para receber sua história com amor e serenidade." },
+    ];
 
     let index = 0;
+
     function atualizar() {
-      slides.forEach((slide, i) => slide.classList.toggle("ativo-slide", i === index));
+      slides.forEach((slide, i) =>
+        slide.classList.toggle("ativo-slide", i === index)
+      );
       textoBox.querySelector("h2").innerText = textos[index].titulo;
       textoBox.querySelector("p").innerText = textos[index].descricao;
     }
 
-    nextBtn.addEventListener("click", () => { index = (index + 1) % slides.length; atualizar(); });
-    prevBtn.addEventListener("click", () => { index = (index - 1 + slides.length) % slides.length; atualizar(); });
+    nextBtn.addEventListener("click", () => {
+      index = (index + 1) % slides.length;
+      atualizar();
+    });
+
+    prevBtn.addEventListener("click", () => {
+      index = (index - 1 + slides.length) % slides.length;
+      atualizar();
+    });
+
     atualizar();
   })();
 
@@ -165,12 +208,23 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!slides.length || !prevBtn || !nextBtn) return;
 
     let index = 0;
+
     function atualizar() {
-      slides.forEach((slide, i) => slide.classList.toggle("ativo-slide-final", i === index));
+      slides.forEach((slide, i) =>
+        slide.classList.toggle("ativo-slide-final", i === index)
+      );
     }
 
-    nextBtn.addEventListener("click", () => { index = (index + 1) % slides.length; atualizar(); });
-    prevBtn.addEventListener("click", () => { index = (index - 1 + slides.length) % slides.length; atualizar(); });
+    nextBtn.addEventListener("click", () => {
+      index = (index + 1) % slides.length;
+      atualizar();
+    });
+
+    prevBtn.addEventListener("click", () => {
+      index = (index - 1 + slides.length) % slides.length;
+      atualizar();
+    });
+
     atualizar();
   })();
 });

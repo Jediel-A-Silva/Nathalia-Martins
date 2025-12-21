@@ -244,6 +244,11 @@ body {
   z-index: 2001;
 }
 
+/* menu aberto */
+.menu.ativo {
+  display: block;
+}
+
 .menu::-webkit-scrollbar {
   width: 10px;
 }
@@ -327,7 +332,7 @@ form button {
   cursor: pointer;
 }
 
-/* Grid principal */
+/* ================= CARDS DAS SEÇÕES ================= */
 .four-sections {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -336,33 +341,30 @@ form button {
   margin: 40px auto;
 }
 
-/* Cards */
+/* ================= BOTÃO SEMPRE EMBAIXO ================= */
 .four-sections section {
-  position: relative; /* referência para o botão */
-  background: rgba(255, 255, 255, 0.1);
-  padding: 25px;
-  padding-bottom: 4.5rem; /* espaço reservado para o botão */
-  border-radius: 14px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-#btn2 {
-  width: 12rem;
-  font-size: 0.95rem;
-  display: inline-block;
-  background-color: #e91e63;
-  color: white;
-  border: none;
-  padding: 12px 10px;
-  border-radius: 8px;
-  text-decoration: none;
-  top: -0.1rem;
-  left: 0.7rem;
   position: relative;
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 18px;
+  padding: 30px 25px;
+  display: flex;
+  flex-direction: column; /* CHAVE */
+  min-height: 420px; /* garante altura igual */
 }
+
+/* texto cresce normalmente */
+.four-sections h2,
+.four-sections p,
+.four-sections ul {
+  margin-bottom: 15px;
+}
+
+/* ================= BOTÃO SEMPRE EMBAIXO ================= */
+.four-sections .btn {
+  margin-top: auto; /* CHAVE PRINCIPAL */
+  align-self: center;
+}
+
 
 .sessao-carrossel {
   display: flex;
@@ -599,93 +601,10 @@ form button {
 }
 
 #servicos,
-#servicos1,
-#servicos2 {
+#servicos1 {
   position: relative; /* cria contexto para ::before */
   overflow: hidden; /* evita vazamento do blur para fora */
   border: none;
-}
-
-#duvidas {
-  position: relative; /* cria contexto para o ::before */
-  display: block; /* ocupa toda a largura */
-  padding: 40px 20px; /* espaço interno */
-  border-radius: 8px;
-  overflow: hidden; /* esconde o ::before */
-  color: white;
-  font-size: 0.95rem;
-  font-weight: 900;
-  margin: 6.98rem 0 0 0.7rem;
-  z-index: 0;
-
-  /* animação */
-  opacity: 0;
-  transform: translateY(20px);
-  animation: aparecer 0.6s forwards;
-  animation-delay: 2.3s;
-
-  top: 4.3rem; /* posição final */
-}
-
-#duvidas.btn1:hover {
-  background: rgb(240, 66, 159);
-  transform: scale(1.05);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-}
-
-#servicos2 {
-  width: 100%;
-  height: 29rem;
-  border-radius: 10px;
-  align-content: center;
-  align-items: center;
-  position: relative;
-  display: block;
-}
-#servicos2 .btn1 {
-  display: inline-block;
-  padding: 12px 10px;
-  background-color: #e91e63;
-  color: rgb(255, 255, 255);
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s, transform 0.3s;
-
-  /* animação diferenciada */
-  animation-delay: 2.5s;
-}
-
-#servicos2 p {
-  font-size: 1.3rem;
-  text-align: inherit;
-  color: #ffffff;
-  position: relative;
-  line-height: 1.4;
-  margin: 0 auto;
-  max-width: 90%;
-  backdrop-filter: blur(1px);
-  top: 1.5rem;
-}
-
-#servicos2 h2 {
-  top: 1rem;
-  position: relative;
-}
-
-#servicos2 .btn1 {
-  left: 1rem;
-  top: -0.1rem;
-}
-
-#servicos2::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url("/img/imagem7.jpg") center/cover no-repeat;
-  filter: blur(4px) brightness(0.6);
-  z-index: -1; /* fica atrás do conteúdo */
-  transition: transform 0.3s ease;
 }
 
 #servicos1::before {
@@ -788,7 +707,6 @@ h2 {
   border-radius: 16px;
   overflow: hidden;
   z-index: 1;
-  height: 29rem;
 }
 
 /* Fundo com imagem + blur */
@@ -823,86 +741,51 @@ h2 {
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-#sobre a {
-  width: 9rem;
-  animation-delay: 0.9s;
-  display: inline-block;
-  margin-top: 0.5rem;
-  padding: 12px 10px;
-  background: #e91e63;
-  color: rgb(255, 255, 255);
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 0.95rem;
-  transition: background 0.3s, transform 0.3s;
-}
-
-#sobre a:hover {
-  background: #ff1493;
-  transform: scale(1.05);
-}
-
-#relatos {
-  width: 9rem;
-  font-size: 0.95rem;
-  display: inline-block;
-  background-color: #e91e63;
-  color: white;
-  border: none;
-  padding: 12px 12px;
-  border-radius: 8px;
-  text-decoration: none;
-  top: -0.1rem;
-  left: 0.7rem;
-  position: relative;
-  transition: background 0.3s, transform 0.3s;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: aparecer 0.6s forwards;
-  animation-delay: 2.3s;
-}
-
-#relatos.btn:hover {
-  background: #ff1493;
-  transform: scale(1.05);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-}
-
-#servicos1 h2,
-#servicos2 h2 {
+#servicos1 h2 {
   opacity: 0;
   transform: translateY(20px);
   animation: aparecer 0.6s forwards;
   animation-delay: 1.3s;
 }
 
-#servicos1 p,
-#servicos2 p {
+#servicos1 p {
   opacity: 0;
   transform: translateY(20px);
   animation: aparecer 0.6s forwards;
   animation-delay: 1.8s;
 }
 
-/* Botão */
+/* ================= BOTÕES – PADRÃO GLOBAL ================= */
 .btn {
-  font-size: 0.95rem;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 12px 18px;
+  min-width: 9rem;
+
   background-color: #e91e63;
-  color: white;
-  border: none;
-  padding: 12px 10px;
-  border-radius: 8px;
+  color: #fff;
+
+  font-size: 0.95rem;
+  font-weight: 700;
   text-decoration: none;
-  top: 4.3rem;
-  left: 0.7rem;
-  position: relative;
+
+  border-radius: 8px;
+  border: none;
+
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .btn:hover {
   background-color: #ff1493;
+  transform: translateY(-2px);
 }
+
+.btn:active {
+  transform: translateY(0);
+}
+
 
 /* Container principal */
 .health-card {
@@ -1064,23 +947,93 @@ footer .redes-sociais p {
    ===================================================== */
 @media (max-width: 1200px) {
   .perfil {
-    min-height: 85vh; /* um pouco menor que desktop grande */
+    position: relative;
+    text-align: center;
+    padding: 40px 0;
+    padding-bottom: 30px;
+    background-image: url(img/Imagem-efeito-blur.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+
+    min-height: 90vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* DESCE O HERO */
+    align-items: center; /* CENTRALIZA */
   }
 
   .hero-text {
-    max-width: 900px;
-    transform: translateX(-3rem); /* menos deslocamento */
+    background: rgba(124, 152, 181, 0.34);
+    padding: 20px 40px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 52rem;
+    margin: 0 auto;
+    transform: none;
   }
 
+  /* ================= CONTAINER GERAL ================= */
   .container {
-    left: 3rem; /* reduz deslocamento lateral */
+    left: 0; /* remove deslocamento fixo */
+    padding: 0 2rem; /* respiro lateral */
   }
 
+  /* ================= GRID PRINCIPAL ================= */
+  .four-sections {
+    grid-template-columns: repeat(2, 1fr); /* 2x2 organizado */
+    gap: 24px;
+    width: 100%;
+    margin: 40px auto;
+  }
+
+  .four-sections section {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  /* ================= TEXTOS DOS CARDS ================= */
+  .personalizada p,
+  .personalizada ul {
+    font-size: 1.2rem;
+
+  }
+
+  /* ================= BOTÕES DOS CARDS ================= */
+  .four-sections section {
+    position: relative;
+  }
+
+  .four-sections section a.btn,
+  .four-sections section a.btn1,
+  .four-sections section a#btn2,
+  .four-sections section a#relatos,
+  .four-sections section a#duvidas,
+  .four-sections section#sobre > a {
+    bottom: 1.5rem;
+    left: 1.5rem;
+    width: auto;
+    height: 3rem;
+    z-index: 5;
+  }
+
+  /* ================= CARROSSEL ================= */
   .sessao-carrossel {
-    max-width: 72rem;
+    width: 100%;
+    max-width: 100%;
     height: 520px;
+    padding: 30px;
   }
 
+  .descricao-carrossel {
+    padding: 20px;
+    text-align: center;
+  }
+
+  /* ================= MENU / NAV ================= */
   .menu-wrapper {
     display: flex;
     justify-content: space-between;
@@ -1090,9 +1043,37 @@ footer .redes-sociais p {
 }
 
 /* ===============================
-   TABLET EM PÉ (iPad vertical)
-   =============================== */
+TABLET EM PÉ (iPad vertical)
+=============================== */
 @media (max-width: 1024px) {
+  .perfil {
+    position: relative;
+    text-align: center;
+    padding: 40px 0;
+    padding-bottom: 10px;
+    background-image: url(img/Imagem-efeito-blur.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+
+    min-height: 90vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* DESCE O HERO */
+    align-items: center; /* CENTRALIZA */
+  }
+
+  .hero-text {
+    background: rgba(124, 152, 181, 0.34);
+    padding: 20px 40px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 52rem;
+    margin: 0 auto;
+  }
+
   .menu-wrapper {
     display: flex;
     justify-content: space-between;
@@ -1118,7 +1099,6 @@ footer .redes-sociais p {
   }
 
   #menu .fechar {
-    position: absolute;
     top: 65px;
     right: 0;
 
@@ -1161,11 +1141,6 @@ footer .redes-sociais p {
     font-size: 40px;
   }
 
-  .hero-text {
-    transform: translateX(0); /* centraliza */
-    max-width: 90%;
-  }
-
   .container {
     left: 0;
     padding: 20px;
@@ -1173,10 +1148,8 @@ footer .redes-sociais p {
 
   #sobre,
   #servicos,
-  #servicos1,
-  #servicos2 {
+  #servicos1 {
     position: relative;
-    height: 29rem;
     padding: 1.5rem;
     padding-bottom: 5rem; /* espaço para o botão */
   }
@@ -1216,13 +1189,31 @@ footer .redes-sociais p {
    ===================================================== */
 @media (max-width: 992px) {
   .perfil {
-    min-height: 80vh;
-    padding: 30px 20px;
+    position: relative;
+    text-align: center;
+    padding: 40px 0;
+    padding-bottom: 10px;
+    background-image: url(img/Imagem-efeito-blur.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+
+    min-height: 90vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* DESCE O HERO */
+    align-items: center; /* CENTRALIZA */
   }
 
   .hero-text {
-    transform: translateX(0); /* centraliza */
-    max-width: 100%;
+    background: rgba(124, 152, 181, 0.34);
+    padding: 20px 40px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 52rem;
+    margin: 0 auto;
   }
 
   .four-sections {
@@ -1250,36 +1241,72 @@ footer .redes-sociais p {
 }
 
 /* =====================================================
-   TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
-   ===================================================== */
+TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
+===================================================== */
 @media (max-width: 768px) {
-  /* MENU */
+  .perfil {
+    position: relative;
+    text-align: center;
+    padding: 40px 0;
+    padding-bottom: 30px;
+    background-image: url(img/Imagem-efeito-blur.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* DESCE O HERO */
+    align-items: center; /* CENTRALIZA */
+  }
+
+  .hero-text {
+    background: rgba(124, 152, 181, 0.34);
+    padding: 20px 40px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 52rem;
+    margin: 0 auto;
+    transform: none;
+  }
+
+  /* NAV / MENU */
   .menu {
     display: none;
     position: fixed;
     top: 70px;
     left: 0;
-    width: 100%;
-    height: 55%;
+    width: 280px;
+    height: calc(100% - 70px);
     background-color: #fff;
     border: 1px solid #ddd;
-    padding: 70px 20px 20px;
+    padding: 19px;
     font-size: 17px;
     overflow-y: auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 999;
-  }
-
-  /* BOTÃO FECHAR (X) — CORRETO */
+}
+  
   #menu .fechar {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-
+    top: 60px;
+    right: 0;
+    
+    width: 65%;
+    display: flex;
+    justify-content: flex-end;
+    
+    padding-right: 20px;
+    
     background: transparent;
     border: none;
     cursor: pointer;
+
     z-index: 2001;
+  }
+
+  .menu a {
+    font-size: 20px;
   }
 
   .icone-fechar {
@@ -1287,102 +1314,16 @@ footer .redes-sociais p {
     height: 45px;
   }
 
-  .menu .categoria {
-    font-size: 36px;
-    color: #631919;
-  }
-
-  .menu a {
-    font-size: 30px;
-  }
-
-  /* REDES */
-  .redes-sociais p {
-    font-size: 26px;
-  }
-
-  .redes-icons a {
-    font-size: 50px;
-  }
-  /* SEÇÕES PERSONALIZADAS */
-  .personalizada p,
-  .personalizada ul {
-    margin-bottom: 75px; /* ainda menor */
-    font-size: 1.05rem;
-  }
-
   /* HERO */
   .perfil {
-    min-height: 90vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    padding-bottom: 3rem;
+    min-height: 75vh;
+    justify-content: center;
   }
 
-  .hero-text {
-    background: rgba(124, 152, 181, 0.34);
-    padding: 20px;
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
-    transform: none;
-  }
 
   /* GRID */
   .four-sections {
     grid-template-columns: 1fr;
-  }
-
-  /* SEÇÕES COM titulo */
-  #sobre h2,
-  #servicos h2,
-  #servicos1 h2 {
-    font-size: 2.5rem;
-  }
-  #servicos2 {
-    position: relative;
-  }
-
-  #servicos2 h2 {
-    position: absolute;
-    top: 1.2rem;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    margin: 0;
-    font-size: 2.5rem;
-  }
-
-  /* botoes */
-  .four-sections section a.btn,
-  .four-sections section a.btn1,
-  .four-sections section a#btn2,
-  .four-sections section a#relatos,
-  .four-sections section a#duvidas,
-  .four-sections section#sobre > a {
-    bottom: 2.5rem;
-    left: 3rem;
-
-    height: 3rem;
-    width: auto;
-    z-index: 5;
-  }
-
-  /* textos */
-  #sobre p,
-  #servicos li,
-  #servicos1 p,
-  #servicos2 p {
-    font-size: 26px;;
-  }
-
- /* ÁREA DO CARROSSEL */
-  .health-image {
-    width: 100%;
-    display: flex;
-    justify-content: center;
   }
 
   /* CARROSSEL */
@@ -1407,48 +1348,6 @@ footer .redes-sociais p {
     align-items: center;
     width: 100%;
   }
-
-  .health-card {
-  display: flex;
-  flex-direction: column; /* texto em cima, carrossel embaixo */
-  align-items: center;    /* centraliza horizontalmente */
-  justify-content: flex-start;
-
-  background: #ffe9f0;
-  border-radius: 0;
-  padding: 50px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  gap: 40px;
-  margin-bottom: 0;
-}
-
-  #contato .health-card {
-    display: flex;
-    flex-direction: column; /* empilha */
-    align-items: center;
-    justify-content: center;
-    padding: 30px 20px;
-    gap: 30px;
-  }
-
-  .carousel {
-    width: 100%;
-    max-width: 100%; /* remove trava */
-  }
-
-  .slides {
-    width: 100%;
-  }
-
-  /* IMAGENS CRESCEM PARA OS LADOS */
-  .slides img {
-    width: 100%;
-    height: 520px;       /* controla altura */
-    object-fit: cover;  /* corta lateralmente */
-    border-radius: 14px;
-  }
-
-
 }
 
 /* ===== MOBILE PEQUENO — até 480px ===== */
@@ -1458,15 +1357,32 @@ footer .redes-sociais p {
   }
 
   .perfil {
-    min-height: 75vh;
-    padding: 20px 12px;
+    position: relative;
+    text-align: center;
+    padding: 40px 0;
+    padding-bottom: 30px;
+    background-image: url(img/Imagem-efeito-blur.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     background-attachment: scroll;
+
+    min-height: 90vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* DESCE O HERO */
+    align-items: center; /* CENTRALIZA */
   }
+
   .hero-text {
-    width: 95%;
-    padding: 15px;
+    background: rgba(124, 152, 181, 0.34);
+    padding: 20px 40px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 52rem;
     margin: 0 auto;
-    transform: translate(0, 0);
+    transform: none;
   }
 
   .navbar {
@@ -1481,32 +1397,49 @@ footer .redes-sociais p {
   }
 
   .menu {
-    position: fixed;
-    top: 78px;
-    left: 0;
-    width: 100vw;
-    height: 85vh;
-    padding-right: 20px;
-    box-sizing: border-box;
-    border-radius: 0;
-    overflow-y: auto;
-    background-color: #fff;
-    z-index: 1000;
-  }
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.5rem 1.2rem 2rem;
+}
 
-  .menu .fechar {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    font-size: 26px;
+.menu .categoria {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #631919;
+  margin-top: 1.2rem;
+  margin-bottom: 0.4rem;
+}
+
+.menu a {
+  display: block;
+  font-size: 0.95rem;
+  color: #333;
+  text-decoration: none;
+  padding: 0.45rem 0;
+  line-height: 1.4;
+}
+
+.menu a:hover {
+  color: #e91e63;
+}
+
+.menu br {
+  display: none;
+}
+ #menu .fechar {
+    top: 20px;
+    right: 0;
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+
+    padding-right: 20px;
+
     background: transparent;
     border: none;
     cursor: pointer;
-    z-index: 2001;
-  }
 
-  .menu a {
-    font-size: 22px;
+    z-index: 2001;
   }
 
   .four-sections {
@@ -1548,6 +1481,20 @@ footer .redes-sociais p {
     left: auto;
   }
 
+  /* ==============================
+      Menu / REDES SOCIAIS
+     ============================== */
+      .redes-sociais p {
+        font-size: 18px;
+    }
+
+    .redes-sociais a {
+        font-size: 30px;
+        color: rgb(99, 25, 25);
+        display: inline-block;
+        transition: color 0.3s, transform 0.2s, text-shadow 0.3s;
+        margin: 1rem 8px;
+    }
   /* ==============================
      CORREÇÃO DO CARROSSEL / HEALTH
      ============================== */
@@ -1605,8 +1552,7 @@ footer .redes-sociais p {
 
   #sobre,
   #servicos,
-  #servicos1,
-  #servicos2 {
+  #servicos1 {
     width: 100%;
     height: auto;
     padding: 20px 10px;

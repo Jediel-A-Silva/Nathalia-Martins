@@ -37,7 +37,7 @@
     <header class="navbar">
       <nav>
         <div class="menu-wrapper">
-          <button class="menu-btn" aria-label="Abrir menu">
+          <button class="menu-btn" aria-label="Abrir menu" aria-controls="menu">
             <svg width="30" height="30" viewBox="0 0 100 80" aria-hidden="true">
               <rect width="100" height="10"></rect>
               <rect y="30" width="100" height="10"></rect>
@@ -47,12 +47,7 @@
 
           <!-- Menu Lateral -->
           <div class="menu" id="menu" role="menu" aria-hidden="true">
-            <button
-              type="button"
-              class="fechar"
-              onclick="fechar()"
-              aria-label="Fechar menu"
-            >
+            <button type="button" class="fechar" aria-label="Fechar menu">
               <img src="/img/letra-x.png" alt="Fechar" class="icone-fechar" />
             </button>
 
@@ -198,7 +193,7 @@
             garantindo acolhimento, segurança e cuidado contínuo para promover o
             bem-estar da mãe e do bebê.
           </p>
-          <a href="sobre-mim/sobre-mim.html">Clique Aqui</a>
+          <a href="sobre-mim/sobre-mim.html" class="btn">Clique Aqui</a>
         </section>
 
         <section id="servicos" class="personalizada" data-aos="fade-up">
@@ -211,11 +206,9 @@
             </li>
           </ul>
           <a
-            href="https://wa.me/5511954519637?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20consulta"
-            id="btn2"
+            href="https://wa.me/5511954519637?text=Ol%C3%A1..."
             class="btn"
             target="_blank"
-            rel="noopener noreferrer"
             >Consulta via WhatsApp</a
           >
         </section>
@@ -227,12 +220,12 @@
             honra de acompanhar, registrando histórias de amor, força e
             nascimento com muito carinho.
           </p>
-          <a href="depoimentos/depoimentos.html" id="relatos" class="btn"
-            >Ver Histórias 🌸</a
-          >
+          <a href="myths-truths/myths-truths.html" class="btn">
+            Quero Saber Mais
+          </a>
         </section>
 
-        <section id="servicos2" class="personalizada2" data-aos="fade-up">
+        <section id="servicos1" class="personalizada" data-aos="fade-up">
           <h2>Relatos Sobre Partos</h2>
           <p>
             Na gestação e no trabalho de parto surgem muitas informações —
@@ -240,7 +233,7 @@
             para entender o que realmente <strong>importa</strong>.
           </p>
 
-          <a href="myths-truths/myths-truths.html" id="duvidas" class="btn1"
+          <a href="myths-truths/myths-truths.html" class="btn"
             >Quero Saber Mais</a
           >
         </section>
