@@ -1238,6 +1238,11 @@ TABLET EM PÉ (iPad vertical)
     align-items: center;
     width: 100%;
   }
+  
+      .health-card {
+        flex-direction: column;
+        padding: 15px;
+    }
 }
 
 /* =====================================================
@@ -1245,21 +1250,13 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
 ===================================================== */
 @media (max-width: 768px) {
   .perfil {
-    position: relative;
-    text-align: center;
-    padding: 40px 0;
-    padding-bottom: 30px;
-    background-image: url(img/Imagem-efeito-blur.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    min-height: 90vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end; /* DESCE O HERO */
-    align-items: center; /* CENTRALIZA */
-  }
+  min-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* FICA NA PARTE INFERIOR */
+  align-items: center;       /* CENTRALIZADO */
+  padding-bottom: 30px;      /* respiro da borda inferior */
+}
 
   .hero-text {
     background: rgba(124, 152, 181, 0.34);
@@ -1277,7 +1274,7 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
     position: fixed;
     top: 70px;
     left: 0;
-    width: 280px;
+    width: 480px;
     height: calc(100% - 70px);
     background-color: #fff;
     border: 1px solid #ddd;
@@ -1289,35 +1286,37 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
 }
   
   #menu .fechar {
-    top: 60px;
-    right: 0;
-    
-    width: 65%;
-    display: flex;
-    justify-content: flex-end;
-    
-    padding-right: 20px;
-    
-    background: transparent;
-    border: none;
-    cursor: pointer;
-
-    z-index: 2001;
-  }
+        top: 10px;
+        right: 0;
+        width: 50%;
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 20px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 2001;
+    }
 
   .menu a {
     font-size: 20px;
+    color:#000000
   }
+
+  .menu a:hover {
+  color: #e91e63;
+}
+
+      .menu .categoria {
+        font-size: 26px;
+        color:#4b001f
+    }
+
+
 
   .icone-fechar {
     width: 45px;
     height: 45px;
-  }
-
-  /* HERO */
-  .perfil {
-    min-height: 75vh;
-    justify-content: center;
   }
 
 
@@ -1348,6 +1347,15 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
     align-items: center;
     width: 100%;
   }
+  /* ===== redes sociais======*/
+      .redes-sociais p {
+        font-size: 26px;
+    }
+
+        .health-card {
+        flex-direction: column;
+        padding: 15px;
+    }
 }
 
 /* ===== MOBILE PEQUENO — até 480px ===== */
@@ -1357,23 +1365,13 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
   }
 
   .perfil {
-    position: relative;
-    text-align: center;
-    padding: 40px 0;
-    padding-bottom: 30px;
-    background-image: url(img/Imagem-efeito-blur.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-
-    min-height: 90vh;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end; /* DESCE O HERO */
-    align-items: center; /* CENTRALIZA */
-  }
+  min-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* FICA NA PARTE INFERIOR */
+  align-items: center;       /* CENTRALIZADO */
+  padding-bottom: 30px;      /* respiro da borda inferior */
+}
 
   .hero-text {
     background: rgba(124, 152, 181, 0.34);
