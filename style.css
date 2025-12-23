@@ -365,7 +365,6 @@ form button {
   align-self: center;
 }
 
-
 .sessao-carrossel {
   display: flex;
   align-items: center;
@@ -786,7 +785,6 @@ h2 {
   transform: translateY(0);
 }
 
-
 /* Container principal */
 .health-card {
   display: flex;
@@ -999,7 +997,6 @@ footer .redes-sociais p {
   .personalizada p,
   .personalizada ul {
     font-size: 1.2rem;
-
   }
 
   /* ================= BOTÕES DOS CARDS ================= */
@@ -1238,11 +1235,11 @@ TABLET EM PÉ (iPad vertical)
     align-items: center;
     width: 100%;
   }
-  
-      .health-card {
-        flex-direction: column;
-        padding: 15px;
-    }
+
+  .health-card {
+    flex-direction: column;
+    padding: 15px;
+  }
 }
 
 /* =====================================================
@@ -1250,13 +1247,13 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
 ===================================================== */
 @media (max-width: 768px) {
   .perfil {
-  min-height: 75vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end; /* FICA NA PARTE INFERIOR */
-  align-items: center;       /* CENTRALIZADO */
-  padding-bottom: 30px;      /* respiro da borda inferior */
-}
+    min-height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* FICA NA PARTE INFERIOR */
+    align-items: center; /* CENTRALIZADO */
+    padding-bottom: 30px; /* respiro da borda inferior */
+  }
 
   .hero-text {
     background: rgba(124, 152, 181, 0.34);
@@ -1283,42 +1280,39 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
     overflow-y: auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 999;
-}
-  
+  }
+
   #menu .fechar {
-        top: 10px;
-        right: 0;
-        width: 50%;
-        display: flex;
-        justify-content: flex-end;
-        padding-right: 20px;
-        background: transparent;
-        border: none;
-        cursor: pointer;
-        z-index: 2001;
-    }
+    top: 10px;
+    right: 0;
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 2001;
+  }
 
   .menu a {
     font-size: 20px;
-    color:#000000
+    color: #000000;
   }
 
   .menu a:hover {
-  color: #e91e63;
-}
+    color: #e91e63;
+  }
 
-      .menu .categoria {
-        font-size: 26px;
-        color:#4b001f
-    }
-
-
+  .menu .categoria {
+    font-size: 26px;
+    color: #4b001f;
+  }
 
   .icone-fechar {
     width: 45px;
     height: 45px;
   }
-
 
   /* GRID */
   .four-sections {
@@ -1348,14 +1342,23 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
     width: 100%;
   }
   /* ===== redes sociais======*/
-      .redes-sociais p {
-        font-size: 26px;
-    }
+  .redes-sociais p {
+    font-size: 26px;
+  }
 
-        .health-card {
-        flex-direction: column;
-        padding: 15px;
-    }
+  .health-card {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .health-text h1 {
+     text-align: center;
+     margin: 1rem auto 0 auto;
+}
+  .health-text p {
+    text-align: center;
+    margin: 2rem auto 2rem auto;
+}
 }
 
 /* ===== MOBILE PEQUENO — até 480px ===== */
@@ -1365,13 +1368,13 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
   }
 
   .perfil {
-  min-height: 75vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end; /* FICA NA PARTE INFERIOR */
-  align-items: center;       /* CENTRALIZADO */
-  padding-bottom: 30px;      /* respiro da borda inferior */
-}
+    min-height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* FICA NA PARTE INFERIOR */
+    align-items: center; /* CENTRALIZADO */
+    padding-bottom: 30px; /* respiro da borda inferior */
+  }
 
   .hero-text {
     background: rgba(124, 152, 181, 0.34);
@@ -1394,51 +1397,7 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
     margin-top: 0;
   }
 
-  .menu {
-  flex-direction: column;
-  gap: 0.4rem;
-  padding: 1.5rem 1.2rem 2rem;
-}
 
-.menu .categoria {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: #631919;
-  margin-top: 1.2rem;
-  margin-bottom: 0.4rem;
-}
-
-.menu a {
-  display: block;
-  font-size: 0.95rem;
-  color: #333;
-  text-decoration: none;
-  padding: 0.45rem 0;
-  line-height: 1.4;
-}
-
-.menu a:hover {
-  color: #e91e63;
-}
-
-.menu br {
-  display: none;
-}
- #menu .fechar {
-    top: 20px;
-    right: 0;
-    width: 30%;
-    display: flex;
-    justify-content: flex-end;
-
-    padding-right: 20px;
-
-    background: transparent;
-    border: none;
-    cursor: pointer;
-
-    z-index: 2001;
-  }
 
   .four-sections {
     grid-template-columns: 1fr;
@@ -1479,20 +1438,92 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
     left: auto;
   }
 
+   /* ================= MENU ================= */
+  .menu {
+    display: none;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    height: 65%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 60px 20px 20px;
+    font-size: 16px;
+
+    overflow-y: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    z-index: 999;
+  }
+
+  #menu .fechar {
+    top: 24px;
+    right: 0;
+    width: 40%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 2001;
+  }
+  .icone-fechar {
+    width: 45px;
+    height: 45px;
+  }
+
+  .menu .categoria,
+  .menu a {
+    margin-top: -30px;
+    font-weight: bold;
+    margin-bottom: 45px;
+    color: #502a2a;
+    border-bottom: 1px solid #ddd;
+    font-size: 22px;
+    text-align: left;
+  }
+
   /* ==============================
       Menu / REDES SOCIAIS
      ============================== */
-      .redes-sociais p {
-        font-size: 18px;
-    }
-
-    .redes-sociais a {
-        font-size: 30px;
-        color: rgb(99, 25, 25);
+  .redes-sociais p {
+    font-size: 18px;
+  }
+      .redes-sociais a {
+        font-size: 40px;
+        color: rgb(255 255 255);
         display: inline-block;
         transition: color 0.3s, transform 0.2s, text-shadow 0.3s;
-        margin: 1rem 8px;
+        margin: 1rem 5px;
     }
+
+    #icons-menu a {
+        font-size: 40px;
+        color: rgb(138, 11, 11);
+        display: inline-block;
+        transition: color 0.3s, transform 0.2s, text-shadow 0.3s;
+        margin: 1rem 5px;
+    }
+
+
+  .redes-icons {
+    display: flex;                 /* FLEX SÓ AQUI */
+    justify-content: center;       /* CENTRALIZA */
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+  }
+
+   .redes-sociais {
+    text-align: center;
+    width: 100%;
+    margin-top: -10px;
+    padding: 13px 10px;
+  }
+
   /* ==============================
      CORREÇÃO DO CARROSSEL / HEALTH
      ============================== */
@@ -1505,6 +1536,7 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
     box-sizing: border-box;
     justify-content: center;
   }
+
 
   .carousel {
     width: 100%;
@@ -1564,11 +1596,13 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
 
   .health-text h1 {
     font-size: 28px;
+    text-align: center;
   }
 
   .health-text p {
     font-size: 26px;
     margin-top: 0.5rem;
+    text-align: center;
   }
 
   .perfil h1 {
@@ -1593,5 +1627,9 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
 
   footer {
     padding: 15px 10px;
+  }
+
+  .logo-footer{
+    margin: 1rem auto;
   }
 }
