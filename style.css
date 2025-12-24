@@ -368,7 +368,6 @@ form button {
 .sessao-carrossel {
   display: flex;
   align-items: center;
-  justify-content: center;
   background: linear-gradient(135deg, #800000, #a52a4d, #4b001f);
   border-radius: 20px;
   padding: 46px;
@@ -842,9 +841,11 @@ h2 {
   flex: 1;
   display: flex;
   justify-content: center;
-  width: 433px; /* largura do carrossel */
-  height: 400px; /* altura do carrossel */
+  width: 100%;        /* libera */
+  max-width: 100%;    /* garante */
+  height: 340px;
 }
+
 
 .carousel {
   width: 100%;
@@ -857,16 +858,20 @@ h2 {
 .slides {
   display: flex;
   gap: 10px;
+  height: 100%;
 }
 
 .slides img {
-  width: 70%; /* ocupa todo o container do carrossel */
-  height: auto; /* ocupa toda altura do carrossel */
-  object-fit: cover; /* mantém proporção e recorta se necessário */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* mantém proporção */
   border-radius: 14px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-  position: relative;
+  display: block;
 }
+
+
+
+
 
 form button {
   background-color: #ab5779;
@@ -917,7 +922,7 @@ footer .redes-sociais p {
 .redes-icons {
   margin-bottom: 0.5rem;
   margin-top: -0.5rem;
-  gap: 0.4rem;
+  gap: 1.4rem;
 }
 
 .redes-sociais-icons {
@@ -1314,6 +1319,19 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
     height: 45px;
   }
 
+  #icons-menu a {
+    font-size: 60px;
+    color: rgb(93, 23, 23);
+    display: inline-block;
+    transition: color 0.3s, transform 0.2s, text-shadow 0.3s;
+    margin: 1rem 5px;
+  }
+.redes-icons {
+    margin-bottom: 0.5rem;
+    margin-top: -0.5rem;
+    gap: 2.5rem;
+}
+
   /* GRID */
   .four-sections {
     grid-template-columns: 1fr;
@@ -1330,17 +1348,37 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
     text-align: center;
     padding: 20px;
   }
-
-  .nav-carrossel {
-    justify-content: center;
-  }
-
   .menu-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
   }
+
+     .carousel {
+    width: 90vw;
+    height: 40vh;
+
+    margin: 0 auto;
+    transform: none;
+
+    border-radius: 14px;
+    overflow: hidden;
+  }
+
+.slide-item {
+  flex: 0 0 100%;
+  max-width: 100%;
+  height: 100%;
+}
+
+.slide-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
   /* ===== redes sociais======*/
   .redes-sociais p {
     font-size: 26px;
@@ -1352,13 +1390,26 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
   }
 
   .health-text h1 {
-     text-align: center;
-     margin: 1rem auto 0 auto;
+    font-size: 50px;
+    line-height: 2.9rem;
+    text-align: center;
+    margin: 1rem auto;
+    
 }
   .health-text p {
     text-align: center;
     margin: 2rem auto 2rem auto;
 }
+
+    .redes-sociais a {
+        font-size: 65px;
+        color: #ffffff;
+    }
+    .redes-sociais a :hover {
+        color: #ff1493;
+        transform: scale(1.1);
+        text-shadow: 0 0 10px rgba(255, 20, 147, 0.7);
+    }
 }
 
 /* ===== MOBILE PEQUENO — até 480px ===== */
@@ -1537,7 +1588,7 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
     justify-content: center;
   }
 
-
+/* Carrossel ajustado para mobile */
   .carousel {
     width: 100%;
     height: 40vh; /* altura proporcional à tela */
@@ -1574,10 +1625,6 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
     max-width: 100%;
     padding: 0;
     text-align: center;
-  }
-
-  .nav-carrossel {
-    justify-content: center;
   }
 
   #sobre,
