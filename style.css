@@ -1222,18 +1222,22 @@ TABLET EM PÉ (iPad vertical)
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .sessao-carrossel {
-    gap: 30px;
-    padding: 35px;
-    height: auto;
-  }
+ /* CARROSSEL */
+.sessao-carrossel {
+  display: flex;
+  flex-direction: row;      /* 🔴 itens lado a lado */
+  align-items: center;      /* alinha verticalmente */
+  justify-content: space-between;
+  gap: 24px;                /* espaço entre texto e carrossel */
+  height: auto;
+  padding: 25px;
+}
 
-  .container-carrossel-custom {
-    width: 100%;
-    height: 380px;
-    left: 0;
-  }
 
+  .descricao-carrossel {
+    text-align: center;
+    padding: 20px;
+  }
   .menu-wrapper {
     display: flex;
     justify-content: space-between;
@@ -1241,10 +1245,45 @@ TABLET EM PÉ (iPad vertical)
     width: 100%;
   }
 
+     .carousel {
+    width: 90vw;
+    height: 40vh;
+
+    margin: 0 auto;
+    transform: none;
+
+    border-radius: 14px;
+    overflow: hidden;
+  }
+
+.slide-item {
+  flex: 0 0 100%;
+  max-width: 100%;
+  height: 100%;
+}
+
+.slide-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
   .health-card {
     flex-direction: column;
     padding: 15px;
   }
+    .health-text h1 {
+    font-size: 50px;
+    line-height: 2.9rem;
+    text-align: center;
+    margin: 1rem auto;
+    
+}
+  .health-text p {
+    text-align: center;
+    margin: 2rem auto 2rem auto;
+}
 }
 
 /* =====================================================
@@ -1474,6 +1513,13 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
   .descricao-carrossel p {
     font-size: 21px;
   }
+
+  .nav-carrossel {
+    display: flex;
+    margin-top: 25px;
+    justify-content: center;
+    gap: 130px;
+}
 
   .container {
     padding: 0 10px;
