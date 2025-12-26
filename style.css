@@ -162,7 +162,7 @@ body {
 }
 
 .redes-sociais a:hover {
-  color: #ffffff; /* fica branco no hover */
+  color: #4b1024; /* fica branco no hover */
   transform: scale(1.2) rotate(5deg);
   text-shadow: 0 0 10px #ff4d6d, 0 0 20px #ff99aa; /* brilho suave */
 }
@@ -824,13 +824,14 @@ h2 {
 
 .health-text .blue {
   color: #ff00d4;
+  font-size: 50px;
 }
 
 .health-text p {
   font-family: "Great Vibes", cursive;
-  font-size: 2.7rem;
+  font-size: 2rem;
   line-height: 1.6;
-  color: #000000;
+  color: #4b1024;
   margin-bottom: 25px;
   font-weight: 600;
   margin-top: 4rem;
@@ -922,7 +923,7 @@ footer .redes-sociais p {
 .redes-icons {
   margin-bottom: 0.5rem;
   margin-top: -0.5rem;
-  gap: 1.4rem;
+  gap: 0.5rem;
 }
 
 .redes-sociais-icons {
@@ -1139,6 +1140,12 @@ TABLET EM PÉ (iPad vertical)
     display: inline-block;
   }
 
+  .redes-sociais a:hover {
+  color: #4b1024; /* fica branco no hover */
+  transform: scale(1.2) rotate(5deg);
+  text-shadow: 0 0 10px #ff4d6d, 0 0 20px #ff99aa; /* brilho suave */
+}
+
   .redes-sociais p {
     font-size: 40px;
   }
@@ -1247,7 +1254,7 @@ TABLET EM PÉ (iPad vertical)
 
      .carousel {
     width: 90vw;
-    height: 40vh;
+    height: 45vh;
 
     margin: 0 auto;
     transform: none;
@@ -1277,8 +1284,7 @@ TABLET EM PÉ (iPad vertical)
     font-size: 50px;
     line-height: 2.9rem;
     text-align: center;
-    margin: 1rem auto;
-    
+    margin: 1rem auto;   
 }
   .health-text p {
     text-align: center;
@@ -1444,11 +1450,11 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
         font-size: 65px;
         color: #ffffff;
     }
-    .redes-sociais a :hover {
-        color: #ff1493;
-        transform: scale(1.1);
-        text-shadow: 0 0 10px rgba(255, 20, 147, 0.7);
-    }
+    .redes-sociais a:hover {
+  color: #4b1024; /* fica branco no hover */
+  transform: scale(1.2) rotate(5deg);
+  text-shadow: 0 0 10px #ff4d6d, 0 0 20px #ff99aa; /* brilho suave */
+}
 }
 
 /* ===== MOBILE PEQUENO — até 480px ===== */
@@ -1596,6 +1602,12 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
         transition: color 0.3s, transform 0.2s, text-shadow 0.3s;
         margin: 1rem 5px;
     }
+
+    .redes-sociais a:hover {
+  color: #4b1024; /* fica branco no hover */
+  transform: scale(1.2) rotate(5deg);
+  text-shadow: 0 0 10px #ff4d6d, 0 0 20px #ff99aa; /* brilho suave */
+}
 
     #icons-menu a {
         font-size: 40px;
