@@ -842,11 +842,10 @@ h2 {
   flex: 1;
   display: flex;
   justify-content: center;
-  width: 100%;        /* libera */
-  max-width: 100%;    /* garante */
+  width: 100%; /* libera */
+  max-width: 100%; /* garante */
   height: 340px;
 }
-
 
 .carousel {
   width: 100%;
@@ -865,14 +864,10 @@ h2 {
 .slides img {
   width: 100%;
   height: 100%;
-  object-fit: cover;   /* mantém proporção */
+  object-fit: cover; /* mantém proporção */
   border-radius: 14px;
   display: block;
 }
-
-
-
-
 
 form button {
   background-color: #ab5779;
@@ -1125,27 +1120,27 @@ TABLET EM PÉ (iPad vertical)
     border-bottom: 1px solid #ddd;
     font-size: 25px;
   }
-.menu a {
+  .menu a {
     display: block;
     text-decoration: none;
     color: #0c0327;
     transition: background 0.2s;
-}
-.menu a :hover {
+  }
+  .menu a :hover {
     background-color: #941111;
-}
+  }
   .icone-fechar {
     width: 70px;
     height: 70px;
   }
 
-   #icons-menu a {
-        font-size: 40px;
-        color: rgb(138, 11, 11);
-        display: inline-block;
-        transition: color 0.3s, transform 0.2s, text-shadow 0.3s;
-        margin: 1rem 5px;
-    }
+  #icons-menu a {
+    font-size: 40px;
+    color: rgb(138, 11, 11);
+    display: inline-block;
+    transition: color 0.3s, transform 0.2s, text-shadow 0.3s;
+    margin: 1rem 5px;
+  }
 
   .redes-sociais a {
     font-size: 65px; /* um pouco menor para caber melhor */
@@ -1156,10 +1151,10 @@ TABLET EM PÉ (iPad vertical)
   }
 
   .redes-sociais a:hover {
-  color: #4b1024; /* fica branco no hover */
-  transform: scale(1.2) rotate(5deg);
-  text-shadow: 0 0 10px #ff4d6d, 0 0 20px #ff99aa; /* brilho suave */
-}
+    color: #4b1024; /* fica branco no hover */
+    transform: scale(1.2) rotate(5deg);
+    text-shadow: 0 0 10px #ff4d6d, 0 0 20px #ff99aa; /* brilho suave */
+  }
 
   .redes-sociais p {
     font-size: 32px;
@@ -1244,17 +1239,16 @@ TABLET EM PÉ (iPad vertical)
     grid-template-columns: repeat(2, 1fr);
   }
 
- /* CARROSSEL */
-.sessao-carrossel {
-  display: flex;
-  flex-direction: row;      /* 🔴 itens lado a lado */
-  align-items: center;      /* alinha verticalmente */
-  justify-content: space-between;
-  gap: 24px;                /* espaço entre texto e carrossel */
-  height: auto;
-  padding: 25px;
-}
-
+  /* CARROSSEL */
+  .sessao-carrossel {
+    display: flex;
+    flex-direction: row; /* 🔴 itens lado a lado */
+    align-items: center; /* alinha verticalmente */
+    justify-content: space-between;
+    gap: 24px; /* espaço entre texto e carrossel */
+    height: auto;
+    padding: 25px;
+  }
 
   .descricao-carrossel {
     text-align: center;
@@ -1267,7 +1261,7 @@ TABLET EM PÉ (iPad vertical)
     width: 100%;
   }
 
-     .carousel {
+  .carousel {
     width: 90vw;
     height: 45vh;
 
@@ -1278,33 +1272,33 @@ TABLET EM PÉ (iPad vertical)
     overflow: hidden;
   }
 
-.slide-item {
-  flex: 0 0 100%;
-  max-width: 100%;
-  height: 100%;
-}
+  .slide-item {
+    flex: 0 0 100%;
+    max-width: 100%;
+    height: 100%;
+  }
 
-.slide-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
+  .slide-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
 
   .health-card {
     flex-direction: column;
     padding: 15px;
   }
-    .health-text h1 {
+  .health-text h1 {
     font-size: 50px;
     line-height: 2.9rem;
     text-align: center;
-    margin: 1rem auto;   
-}
+    margin: 1rem auto;
+  }
   .health-text p {
     text-align: center;
     margin: 2rem auto 2rem auto;
-}
+  }
 }
 
 /* =====================================================
@@ -1386,11 +1380,11 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
     transition: color 0.3s, transform 0.2s, text-shadow 0.3s;
     margin: 1rem 5px;
   }
-.redes-icons {
+  .redes-icons {
     margin-bottom: 0.5rem;
     margin-top: -0.5rem;
     gap: 2.5rem;
-}
+  }
 
   /* GRID */
   .four-sections {
@@ -1415,7 +1409,7 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
     width: 100%;
   }
 
-     .carousel {
+  .carousel {
     width: 90vw;
     height: 40vh;
 
@@ -1426,31 +1420,31 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
     overflow: hidden;
   }
 
-.slide-item {
-  flex: 0 0 100%;
-  max-width: 100%;
-  height: 100%;
-}
+  .slide-item {
+    flex: 0 0 100%;
+    max-width: 100%;
+    height: 100%;
+  }
 
-.slide-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
+  .slide-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
 
-.container-carrossel-custom{
-  width: 100%;
-  overflow: hidden;
-  left: auto;
-}
+  .container-carrossel-custom {
+    width: 100%;
+    overflow: hidden;
+    left: auto;
+  }
 
-.nav-carrossel {
+  .nav-carrossel {
     display: flex;
     gap: 12rem;
     margin-top: 40px;
     justify-content: center;
-}
+  }
 
   /* ===== redes sociais======*/
   .redes-sociais p {
@@ -1467,22 +1461,21 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
     line-height: 2.9rem;
     text-align: center;
     margin: 1rem auto;
-    
-}
+  }
   .health-text p {
     text-align: center;
     margin: 2rem auto 2rem auto;
-}
+  }
 
-    .redes-sociais a {
-        font-size: 65px;
-        color: #ffffff;
-    }
-    .redes-sociais a:hover {
-  color: #4b1024; /* fica branco no hover */
-  transform: scale(1.2) rotate(5deg);
-  text-shadow: 0 0 10px #ff4d6d, 0 0 20px #ff99aa; /* brilho suave */
-}
+  .redes-sociais a {
+    font-size: 65px;
+    color: #ffffff;
+  }
+  .redes-sociais a:hover {
+    color: #4b1024; /* fica branco no hover */
+    transform: scale(1.2) rotate(5deg);
+    text-shadow: 0 0 10px #ff4d6d, 0 0 20px #ff99aa; /* brilho suave */
+  }
 }
 
 /* ===== MOBILE PEQUENO — até 480px ===== */
@@ -1521,8 +1514,6 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
     margin-top: 0;
   }
 
-
-
   .four-sections {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -1547,13 +1538,13 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
   .descricao-carrossel p {
     font-size: 21px;
   }
-
+  
   .nav-carrossel {
     display: flex;
     margin-top: 25px;
     justify-content: center;
-    gap: 130px;
-}
+    gap: 40%;
+  }
 
   .container {
     padding: 0 10px;
@@ -1569,7 +1560,7 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
     left: auto;
   }
 
-   /* ================= MENU ================= */
+  /* ================= MENU ================= */
   .menu {
     display: none;
     position: fixed;
@@ -1623,38 +1614,37 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
   .redes-sociais p {
     font-size: 18px;
   }
-      .redes-sociais a {
-        font-size: 40px;
-        color: rgb(255 255 255);
-        display: inline-block;
-        transition: color 0.3s, transform 0.2s, text-shadow 0.3s;
-        margin: 1rem 5px;
-    }
+  .redes-sociais a {
+    font-size: 40px;
+    color: rgb(255 255 255);
+    display: inline-block;
+    transition: color 0.3s, transform 0.2s, text-shadow 0.3s;
+    margin: 1rem 5px;
+  }
 
-    .redes-sociais a:hover {
-  color: #4b1024; /* fica branco no hover */
-  transform: scale(1.2) rotate(5deg);
-  text-shadow: 0 0 10px #ff4d6d, 0 0 20px #ff99aa; /* brilho suave */
-}
+  .redes-sociais a:hover {
+    color: #4b1024; /* fica branco no hover */
+    transform: scale(1.2) rotate(5deg);
+    text-shadow: 0 0 10px #ff4d6d, 0 0 20px #ff99aa; /* brilho suave */
+  }
 
-    #icons-menu a {
-        font-size: 40px;
-        color: rgb(138, 11, 11);
-        display: inline-block;
-        transition: color 0.3s, transform 0.2s, text-shadow 0.3s;
-        margin: 1rem 5px;
-    }
-
+  #icons-menu a {
+    font-size: 40px;
+    color: rgb(138, 11, 11);
+    display: inline-block;
+    transition: color 0.3s, transform 0.2s, text-shadow 0.3s;
+    margin: 1rem 5px;
+  }
 
   .redes-icons {
-    display: flex;                 /* FLEX SÓ AQUI */
-    justify-content: center;       /* CENTRALIZA */
+    display: flex; /* FLEX SÓ AQUI */
+    justify-content: center; /* CENTRALIZA */
     align-items: center;
     gap: 16px;
     width: 100%;
   }
 
-   .redes-sociais {
+  .redes-sociais {
     text-align: center;
     width: 100%;
     margin-top: -10px;
@@ -1674,7 +1664,7 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
     justify-content: center;
   }
 
-/* Carrossel ajustado para mobile */
+  /* Carrossel ajustado para mobile */
   .carousel {
     width: 100%;
     height: 40vh; /* altura proporcional à tela */
@@ -1731,7 +1721,7 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
     color: #ff00d4;
     font-size: 32px;
     font-weight: 600;
-}
+  }
 
   .health-text p {
     font-size: 26px;
@@ -1763,7 +1753,7 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
     padding: 15px 10px;
   }
 
-  .logo-footer{
+  .logo-footer {
     margin: 1rem auto;
   }
 }
