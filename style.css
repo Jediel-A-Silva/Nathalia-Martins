@@ -1118,19 +1118,34 @@ TABLET EM PÉ (iPad vertical)
     z-index: 2001;
   }
 
-  .menu .categoria,
-  .menu a {
+  .menu .categoria {
     font-weight: bold;
     margin: 0px 0px 20px;
-    color: #555;
+    color: #4b1024;
     border-bottom: 1px solid #ddd;
-    font-size: 40px;
+    font-size: 25px;
   }
-
+.menu a {
+    display: block;
+    text-decoration: none;
+    color: #0c0327;
+    transition: background 0.2s;
+}
+.menu a :hover {
+    background-color: #941111;
+}
   .icone-fechar {
     width: 70px;
     height: 70px;
   }
+
+   #icons-menu a {
+        font-size: 40px;
+        color: rgb(138, 11, 11);
+        display: inline-block;
+        transition: color 0.3s, transform 0.2s, text-shadow 0.3s;
+        margin: 1rem 5px;
+    }
 
   .redes-sociais a {
     font-size: 65px; /* um pouco menor para caber melhor */
@@ -1147,7 +1162,7 @@ TABLET EM PÉ (iPad vertical)
 }
 
   .redes-sociais p {
-    font-size: 40px;
+    font-size: 32px;
   }
 
   .container {
@@ -1422,6 +1437,19 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+.container-carrossel-custom{
+  width: 100%;
+  overflow: hidden;
+  left: auto;
+}
+
+.nav-carrossel {
+    display: flex;
+    gap: 12rem;
+    margin-top: 40px;
+    justify-content: center;
 }
 
   /* ===== redes sociais======*/
@@ -1699,10 +1727,11 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
     padding: 15px;
   }
 
-  .health-text h1 {
-    font-size: 28px;
-    text-align: center;
-  }
+  .health-text .blue {
+    color: #ff00d4;
+    font-size: 32px;
+    font-weight: 600;
+}
 
   .health-text p {
     font-size: 26px;

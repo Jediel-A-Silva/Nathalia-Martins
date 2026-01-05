@@ -509,45 +509,45 @@
 
         // Posiciona o overlay sobre o botão original
         function posicionarOverlay(btn) {
-          if (!btn || !overlay) return;
+  criarOverlay(); // ⬅️ ESSENCIAL
 
-          const rect = btn.getBoundingClientRect();
+  if (!btn || !overlay) return;
 
-          // se o botão tiver display:none ou não visível, esconde o overlay também
-          const visible = rect.width > 0 && rect.height > 0;
-          if (!visible) {
-            overlay.style.display = "none";
-            return;
-          }
+  const rect = btn.getBoundingClientRect();
+  const visible = rect.width > 0 && rect.height > 0;
 
-          // fixa o overlay no canto inferior direito, independente do scroll
-          overlay.style.position = "fixed";
-          overlay.style.left = "auto";
-          overlay.style.right = "20px";
-          overlay.style.bottom = "20px";
-          overlay.style.top = "auto";
-          overlay.style.width = "70px";
-          overlay.style.height = "70px";
-          overlay.style.display = "block";
+ if (!visible) {
+  overlay.style.display = "none";
+  return;
+}
 
-          // Esconde visualmente elementos internos problemáticos (seta) do botão original, mas mantemos o botão funcional
-          try {
-            // torna original invisível (mantém interatividade oculta)
-            btn.style.opacity = "0";
-            btn.style.background = "transparent";
-            btn.style.border = "none";
-            btn.style.boxShadow = "none";
-            // remove svgs se estiverem acessíveis
-            const svgs =
-              btn.querySelectorAll && btn.querySelectorAll("svg, path");
-            if (svgs && svgs.length)
-              svgs.forEach((s) => {
-                s.style.display = "none";
-              });
-          } catch (err) {
-            // ignorar cross-origin ou erro de acesso
-          }
-        }
+
+  overlay.style.position = "fixed";
+  overlay.style.right = "20px";
+  overlay.style.bottom = "20px";
+  overlay.style.left = "auto";
+  overlay.style.top = "auto";
+
+  if (window.innerWidth <= 480) {
+    overlay.style.width = "86px";
+    overlay.style.height = "86px";
+  } else {
+    overlay.style.width = "70px";
+    overlay.style.height = "70px";
+  }
+
+  overlay.style.display = "block";
+
+  try {
+    btn.style.opacity = "0";
+    btn.style.background = "transparent";
+    btn.style.border = "none";
+    btn.style.boxShadow = "none";
+
+    const svgs = btn.querySelectorAll?.("svg, path");
+    svgs?.forEach((s) => (s.style.display = "none"));
+  } catch (err) {}
+}
 
         // Procura o botão do GPTMaker com vários seletores possíveis
         function encontrarBotao() {
@@ -626,14 +626,6 @@
           );
         } else {
           initTryLoop(60, 300);
-        }
-
-        if (window.innerWidth <= 480) {
-          overlay.style.width = "86px";
-          overlay.style.height = "86px";
-        } else {
-          overlay.style.width = "70px";
-          overlay.style.height = "70px";
         }
       })();
     </script>
