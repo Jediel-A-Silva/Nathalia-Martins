@@ -1538,14 +1538,16 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
   .descricao-carrossel p {
     font-size: 21px;
   }
-  
-  .nav-carrossel {
-    display: flex;
-    margin-top: 25px;
-    justify-content: center;
-    gap: 40%;
-  }
 
+  .nav-carrossel {
+  display: flex;
+  margin-top: 25px;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 280px;
+  margin-left: auto;
+  margin-right: auto;
+}
   .container {
     padding: 0 10px;
     margin: 20px auto 0 auto;

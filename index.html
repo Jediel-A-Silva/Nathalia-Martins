@@ -440,11 +440,20 @@
       });
     </script>
 
-    <!-- GPTMaker Widget (não remova) -->
-    <script
-      async
-      src="https://app.gptmaker.ai/widget/3EA3E187268B804434ADE2F67A1F05AC/float.js"
-    ></script>
+    <!-- GPTMaker Widget (carregamento protegido contra duplicação) -->
+<script>
+  if (!window.__GPTMAKER_WIDGET_LOADED__) {
+    window.__GPTMAKER_WIDGET_LOADED__ = true;
+
+    const gptScript = document.createElement("script");
+    gptScript.src =
+      "https://app.gptmaker.ai/widget/3EA3E187268B804434ADE2F67A1F05AC/float.js";
+    gptScript.async = true;
+    document.body.appendChild(gptScript);
+  } else {
+    console.warn("GPTMaker já carregado — evitando duplicação.");
+  }
+</script>
 
     <!-- Script que cria overlay com a sua imagem e esconde a seta -->
     <script>
