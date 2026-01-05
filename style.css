@@ -223,7 +223,7 @@ body {
   left: 0;
   width: 280px;
   height: calc(100% - 70px); /* ocupa o resto da tela abaixo da navbar */
-  background-color: #fff;
+  background-color: #ffffff;
   border: 1px solid #ddd;
   padding: 19px;
   font-size: 17px;
@@ -282,7 +282,7 @@ body {
   margin-top: 10px;
   margin-bottom: 5px;
   color: #555;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #e0d7d7;
   font-size: 15px;
 }
 
@@ -579,7 +579,7 @@ form button {
 /* Seções personalizadas */
 .personalizada {
   padding: 40px 20px;
-  background-color: #f9f9f9;
+  background-color: #ededed;
   border: 2px solid #000; /* borda preta */
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
