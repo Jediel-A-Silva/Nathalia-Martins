@@ -223,7 +223,7 @@ body {
   left: 0;
   width: 280px;
   height: calc(100% - 70px); /* ocupa o resto da tela abaixo da navbar */
-  background-color: #eee9e9;
+  background-color: #fff;
   border: 1px solid #ddd;
   padding: 19px;
   font-size: 17px;
@@ -1433,19 +1433,6 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
     display: block;
   }
 
-  .container-carrossel-custom {
-    width: 100%;
-    overflow: hidden;
-    left: auto;
-  }
-
-  .nav-carrossel {
-    display: flex;
-    gap: 12rem;
-    margin-top: 40px;
-    justify-content: center;
-  }
-
   /* ===== redes sociais======*/
   .redes-sociais p {
     font-size: 26px;
@@ -1480,109 +1467,232 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
 
 /* ===== MOBILE PEQUENO — até 480px ===== */
 @media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
 
-      .hero-text {
-        width: 100%;
-        height: 13rem;
-    }
-
-    .perfil h1 {
-      font-size: 30px;
-      font-weight: 600;
-      margin-bottom: 15px;
-    }
-
-    .perfil h3{
-      font-size: 22px;
-      margin-bottom: 20px;
-    }
-
-    .info h2{
-      font-size: 20px;
-    }
-
-
-
-
-  /* ===== ESTRUTURA ===== */
-  .sessao-carrossel {
-    padding: 14px;
+  .perfil {
+    min-height: 75vh;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    justify-content: flex-end; /* FICA NA PARTE INFERIOR */
+    align-items: center; /* CENTRALIZADO */
+    padding-bottom: 30px; /* respiro da borda inferior */
+  }
+
+  .hero-text {
+    background: rgba(124, 152, 181, 0.34);
+    padding: 20px 40px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 52rem;
+    margin: 0 auto;
+    transform: none;
+  }
+
+  .navbar {
+    height: auto;
+    padding: 12px;
+    flex-wrap: wrap;
+  }
+
+  .search {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .four-sections {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .caixinha {
+    flex-direction: column;
+    gap: 0px;
+  }
+
+  .sessao-carrossel {
+    position: relative;
+    overflow: visible;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .descricao-carrossel h2 {
+    font-size: 26px;
+  }
+  .descricao-carrossel p {
+    font-size: 21px;
+  }
+
+  .descricao-carrossel {
+    max-width: 100%;
+    padding: 0;
+    text-align: center;
+    overflow: visible;
+  }
+  .nav-carrossel {
+    display: flex;
+    margin-top: 25px;
+    justify-content: center;
+    gap: 30%;
+    position: relative;
+    z-index: 5; /* garante que fique acima */
+  }
+
+  .container {
+    padding: 0 10px;
+    margin: 20px auto 0 auto;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .container-carrossel-custom {
+        box-sizing: border-box;
+        width: 100%;
+        overflow: hidden;
+        left: auto;
+        height: 16rem;
+    }
+
+  /* ================= MENU ================= */
+  .menu {
+    display: none;
+    position: fixed;
+    top: 70px;
+    left: 0;
     width: 100%;
+    max-width: 100%;
     overflow: hidden;
+    height: 65%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 60px 20px 20px;
+    font-size: 16px;
+
+    overflow-y: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    z-index: 999;
   }
 
-  .slides-carrossel {
+  #menu .fechar {
+    top: 24px;
+    right: 0;
+    width: 40%;
     display: flex;
+    justify-content: flex-end;
+    padding-right: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 2001;
+  }
+  .icone-fechar {
+    width: 45px;
+    height: 45px;
+  }
+
+  .menu .categoria,
+  .menu a {
+    margin-top: -30px;
+    font-weight: bold;
+    margin-bottom: 45px;
+    color: #502a2a;
+    border-bottom: 1px solid #ddd;
+    font-size: 22px;
+    text-align: left;
+  }
+
+  /* ==============================
+      Menu / REDES SOCIAIS
+     ============================== */
+  .redes-sociais p {
+    font-size: 18px;
+  }
+  .redes-sociais a {
+    font-size: 40px;
+    color: rgb(255 255 255);
+    display: inline-block;
+    transition: color 0.3s, transform 0.2s, text-shadow 0.3s;
+    margin: 1rem 5px;
+  }
+
+  .redes-sociais a:hover {
+    color: #4b1024; /* fica branco no hover */
+    transform: scale(1.2) rotate(5deg);
+    text-shadow: 0 0 10px #ff4d6d, 0 0 20px #ff99aa; /* brilho suave */
+  }
+
+  #icons-menu a {
+    font-size: 40px;
+    color: rgb(138, 11, 11);
+    display: inline-block;
+    transition: color 0.3s, transform 0.2s, text-shadow 0.3s;
+    margin: 1rem 5px;
+  }
+
+  .redes-icons {
+    display: flex; /* FLEX SÓ AQUI */
+    justify-content: center; /* CENTRALIZA */
+    align-items: center;
+    gap: 16px;
     width: 100%;
-    height: auto !important;
   }
 
-  /* ===== SLIDE ===== */
-  .slide-item {
-    flex: 0 0 100%;
-    height: auto !important;
-    min-height: unset !important;
-    padding: 0 !important;
-    background: none !important;
+  .redes-sociais {
+    text-align: center;
+    width: 100%;
+    margin-top: -10px;
+    padding: 13px 10px;
+  }
+
+  /* ==============================
+     CORREÇÃO DO CARROSSEL / HEALTH
+     ============================== */
+
+  .health-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    padding: 0 12px;
+    box-sizing: border-box;
+    justify-content: center;
+  }
+
+  /* Carrossel ajustado para mobile */
+  .carousel {
+    width: 100%;
+    height: 40vh; /* altura proporcional à tela */
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+  }
+
+  .slides {
     display: flex;
-    align-items: flex-start;
+    height: 100%;
+    gap: 16px; /* espaço real entre as imagens */
+    align-items: stretch;
   }
 
-  /* ===== IMAGEM ===== */
+  .slides img {
+    width: 100%;
+    height: 100%;
+    flex: 0 0 100%;
+    object-fit: cover; /* ocupa tudo */
+  }
+
   .slide-item img {
     width: 100%;
-    height: 34vh;
-    max-height: 34vh;
+    height: 30vh;
     object-fit: cover;
+    border-radius: 12px;
     display: block;
-    border-radius: 14px;
-    margin: 0;
   }
 
-  /* ===== TEXTO ===== */
-  .descricao-carrossel {
-  margin-top: -126px;      /* sobe tudo em direção à imagem */
-  padding-top: 0;
-}
+  /* ============================== */
 
-.descricao-carrossel h2 {
-  margin-top: 0;        /* cola no topo da descrição */
-  margin-bottom: 44px;  /* DESGRUDA do parágrafo */
-  font-size: 27px;
-  line-height: 1.15;
-}
-
-.descricao-carrossel p {
-  margin-top: 0;
-  margin-bottom: 8px;   /* aproxima dos botões */
-  font-size: 22px;
-  line-height: 1.4;
-}
-
-  /* ===== SETAS ===== */
-  .nav-carrossel {
-    display: flex;
-    justify-content: center;
-    gap: 55px;
-    margin-top: 76px;
-  }
-
-  .btn-nav {
-    width: 42px;
-    height: 42px;
-    font-size: 18px;
-    border-radius: 50%;
-  }
-}
-
-
-  /* ===== SEÇÕES ===== */
   #sobre,
   #servicos,
   #servicos1 {
@@ -1598,17 +1708,37 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
   }
 
   .health-text .blue {
-    font-size: 28px;
+    color: #ff00d4;
+    font-size: 32px;
     font-weight: 600;
   }
 
   .health-text p {
-    font-size: 22px;
+    font-size: 26px;
     margin-top: 0.5rem;
     text-align: center;
   }
 
-  /* ===== FOOTER ===== */
+  .perfil h1 {
+    font-family: "Great Vibes", cursive;
+    font-weight: 400;
+    font-size: 30px;
+    color: #b3b529;
+    text-shadow: 2px 2px 4px #00000080, 0 0 10px #af3838, 0 0 20px #fbff00;
+    letter-spacing: 2px;
+  }
+
+  .perfil h3 {
+    font-size: 1.3rem;
+    color: #7c0019;
+    margin-top: -5px;
+    letter-spacing: 1px;
+  }
+  #servicos p,
+  h2 {
+    font-size: 21px;
+  }
+
   footer {
     padding: 15px 10px;
   }
@@ -1616,3 +1746,4 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
   .logo-footer {
     margin: 1rem auto;
   }
+}
