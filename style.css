@@ -1472,7 +1472,7 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
   }
 
   .perfil {
-    min-height: 75vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-end; /* FICA NA PARTE INFERIOR */
@@ -1491,6 +1491,8 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
   }
 
   .navbar {
+    position: fixed;
+    width: 100%;
     height: auto;
     padding: 12px;
     flex-wrap: wrap;
