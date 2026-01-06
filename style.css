@@ -1522,7 +1522,7 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
   }
 
   .descricao-carrossel h2 {
-    font-size: 26px;
+    font-size: 24px;
   }
   .descricao-carrossel p {
     font-size: 21px;
@@ -1538,7 +1538,7 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
     display: flex;
     margin-top: 25px;
     justify-content: center;
-    gap: 30%;
+    gap: 90px;
     position: relative;
     z-index: 5; /* garante que fique acima */
   }
@@ -1553,7 +1553,7 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
   .container-carrossel-custom {
         box-sizing: border-box;
         width: 100%;
-        overflow: hidden;
+        overflow: visible;
         left: auto;
         height: 16rem;
     }
@@ -1724,7 +1724,7 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
   .perfil h1 {
     font-family: "Great Vibes", cursive;
     font-weight: 400;
-    font-size: 30px;
+    font-size: 26px;
     color: #b3b529;
     text-shadow: 2px 2px 4px #00000080, 0 0 10px #af3838, 0 0 20px #fbff00;
     letter-spacing: 2px;
