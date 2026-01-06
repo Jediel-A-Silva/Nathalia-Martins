@@ -1538,7 +1538,7 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
     display: flex;
     margin-top: 25px;
     justify-content: center;
-    gap: 90px;
+    gap: 30px;
     position: relative;
     z-index: 5; /* garante que fique acima */
   }
