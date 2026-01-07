@@ -1725,6 +1725,7 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
     font-family: "Great Vibes", cursive;
     font-weight: 400;
     font-size: 25px;
+    margin-bottom: 10px;
     color: #b3b529;
     text-shadow: 2px 2px 4px #00000080, 0 0 10px #af3838, 0 0 20px #fbff00;
     letter-spacing: 2px;
@@ -1748,5 +1749,11 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
 
   .logo-footer {
     margin: 1rem auto;
+  }
+
+  /*avatar gptmaker*/
+   #nathalia-gptmaker-overlay {
+    width: 60px !important;
+    height: 60px !important;
   }
 }
