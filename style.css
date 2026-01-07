@@ -1481,14 +1481,14 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
   }
 
   .hero-text {
-    background: rgba(124, 152, 181, 0.34);
-    padding: 20px 40px;
-    border-radius: 12px;
-    width: 100%;
-    max-width: 52rem;
-    margin: 0 auto;
-    transform: none;
-  }
+        background: rgba(124, 152, 181, 0.34);
+        padding: 18px 26px;
+        border-radius: 15px;
+        width: 90%;
+        max-width: 52rem;
+        margin: 20px auto;
+        transform: none;
+    }
 
   .navbar {
     position: fixed;
@@ -1724,21 +1724,22 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
   .perfil h1 {
     font-family: "Great Vibes", cursive;
     font-weight: 400;
-    font-size: 26px;
+    font-size: 25px;
     color: #b3b529;
     text-shadow: 2px 2px 4px #00000080, 0 0 10px #af3838, 0 0 20px #fbff00;
     letter-spacing: 2px;
   }
 
   .perfil h3 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     color: #7c0019;
     margin-top: -5px;
+    margin-bottom: 10px;
     letter-spacing: 1px;
   }
   #servicos p,
   h2 {
-    font-size: 21px;
+    font-size: 19px;
   }
 
   footer {
