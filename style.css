@@ -1394,7 +1394,6 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
   gap: 15px;
   flex-wrap: nowrap; /* IMPORTANTE */
 }
