@@ -1315,10 +1315,9 @@ TABLET EM PÉ (iPad vertical)
 TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
 ===================================================== */
 @media (max-width: 768px) {
- body {
+  body {
     font-size: 15px;
   }
-
   .perfil {
     min-height: 94vh;
     display: flex;
@@ -1327,7 +1326,6 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
     align-items: center;
     padding-bottom: 30px;
   }
-
   .hero-text {
     background: rgba(124, 152, 181, 0.34);
     padding: 20px 40px;
@@ -1336,50 +1334,40 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
     max-width: 52rem;
     margin: 0 auto;
     transform: none;
-  }
-
-  /* NAV / MENU */
-.menu {
+  } /* NAV / MENU */
+  .menu {
     width: 100%;
     max-width: 100%;
   }
-
- #menu .fechar {
+  #menu .fechar {
     top: 20px;
     right: 0;
-    width: 40%;
+    width: 69%;
     display: flex;
     justify-content: flex-end;
     padding-right: 20px;
   }
-
   .menu a {
     font-size: 22px;
   }
-
   .menu .categoria {
     font-size: 26px;
   }
-
   .menu a {
     font-size: 20px;
     color: #000000;
   }
-
   .menu a:hover {
     color: #e91e63;
   }
-
   .menu .categoria {
     font-size: 26px;
     color: #4b001f;
   }
-
   .icone-fechar {
     width: 45px;
     height: 45px;
   }
-
   #icons-menu a {
     font-size: 60px;
     color: rgb(93, 23, 23);
@@ -1391,60 +1379,63 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
     margin-bottom: 0.5rem;
     margin-top: -0.5rem;
     gap: 2.5rem;
-  }
-
-  /* GRID */
+  } /* GRID */
   .four-sections {
     grid-template-columns: 1fr;
-  }
-/* CARROSSEL */
- .sessao-carrossel {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 15px;
-  flex-wrap: nowrap; /* IMPORTANTE */
-}
-
-
-  .nav-carrossel {
-    max-width: 260px;
-  }
-
-  .descricao-carrossel {
-    text-align: center;
-    padding: 20px;
-  }
-  .menu-wrapper {
+  } /* CARROSSEL */ /* ================= CARROSSEL ================= */
+  .sessao-carrossel {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+    flex-direction: column; /* IGUAL AO 480 */
+    height: auto;
+    padding: 28px;
+    min-height: auto;
+    gap: 28px;
   }
-
+  .descricao-carrossel {
+    max-width: 100%;
+    padding: 0;
+    text-align: center;
+  }
+  .descricao-carrossel h2 {
+    font-size: 28px;
+  }
+  .descricao-carrossel p {
+    font-size: 22px;
+  }
+  .nav-carrossel {
+    max-width: 240px;
+    margin: 40px auto;
+    justify-content: space-between;
+  }
   .container-carrossel-custom {
     width: 100%;
+    height: 18rem;
     margin: 0;
-    left: 0;
+    left: auto;
+    box-sizing: border-box;
   }
-
   .carousel {
     width: 100%;
-    max-width: 100%;
-    margin: 0;
-  }
-
-  .slide-item {
-    width: 100%;
-    aspect-ratio: 16 / 9; /* FORÇA FORMATO HORIZONTAL */
+    height: 42vh;
     overflow: hidden;
     border-radius: 14px;
   }
-
+  .slides {
+    display: flex;
+    height: 100%;
+    gap: 16px;
+    align-items: stretch;
+  }
+  .slide-item {
+    width: 100%;
+    flex: 0 0 100%;
+    border-radius: 14px;
+    overflow: hidden;
+  }
   .slide-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* corta em cima/baixo, não nas laterais */
+    object-fit: cover;
     display: block;
   }
 
@@ -1550,7 +1541,6 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
     overflow: visible;
   }
 
-  
   .nav-carrossel {
     max-width: 220px;
   }
@@ -1675,7 +1665,7 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
   }
 
   /* Carrossel ajustado para mobile */
-   .carousel {
+  .carousel {
     width: 100%;
     max-width: 100%;
     height: 40vh; /* altura proporcional à tela */
