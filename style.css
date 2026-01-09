@@ -1411,12 +1411,8 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
     }
 
 .nav-carrossel {
-  max-width: 260px;
-    display: flex;
-    margin-top: 67px;
-    justify-content: space-around;
-}
-
+    max-width: 260px;
+  }
 
   .descricao-carrossel {
     text-align: center;
@@ -1559,10 +1555,7 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
     overflow: visible;
   }
  .nav-carrossel {
-    max-width: 220px
-    display: flex;
-    margin-top: 67px;
-    justify-content: space-around;
+    max-width: 220px;
 }
 
   .container {
