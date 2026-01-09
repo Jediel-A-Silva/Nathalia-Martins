@@ -1425,17 +1425,16 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
     width: 100%;
   }
 
+  .container-carrossel-custom {
+    width: 100%;
+    margin: 0;
+    left: 0;
+  }
+
   .carousel {
-  width: 100vw;              /* ocupa toda a largura da tela */
-  height: 40vh;              /* mantém a altura */
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
-  border-radius: 14px;
-  overflow: hidden;
-}
-
-
-
+    width: 100%;
+    margin: 0;
+  }
 
 .slide-item {
   width: 100%;
