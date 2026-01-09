@@ -478,9 +478,13 @@ form button {
 /* Navegação */
 .nav-carrossel {
   display: flex;
-  margin-top: 25px;
-  justify-content: space-between; /* mantém no canto esquerdo */
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 320px; /* controla distância entre setas */
+  margin: 25px auto 0;
 }
+
 
 .btn-nav {
   width: 45px;
@@ -1407,6 +1411,7 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
     }
 
 .nav-carrossel {
+  max-width: 260px;
     display: flex;
     margin-top: 67px;
     justify-content: space-around;
@@ -1554,6 +1559,7 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
     overflow: visible;
   }
  .nav-carrossel {
+    max-width: 220px
     display: flex;
     margin-top: 67px;
     justify-content: space-around;
