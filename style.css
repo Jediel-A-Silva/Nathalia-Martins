@@ -1315,151 +1315,162 @@ TABLET EM PÉ (iPad vertical)
 TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
 ===================================================== */
 @media (max-width: 768px) {
-
-  body {
-    font-size: 15px;
-  }
-
   .perfil {
-    min-height: 100vh;
+    min-height: 94vh;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    padding-bottom: 30px;
+    justify-content: flex-end; /* FICA NA PARTE INFERIOR */
+    align-items: center; /* CENTRALIZADO */
+    padding-bottom: 30px; /* respiro da borda inferior */
   }
 
   .hero-text {
     background: rgba(124, 152, 181, 0.34);
-    padding: 22px 32px;
-    border-radius: 14px;
-    width: 92%;
-    margin: 32px auto;
+    padding: 20px 40px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 52rem;
+    margin: 0 auto;
     transform: none;
   }
 
-  /* ================= MENU ================= */
+  /* NAV / MENU */
   .menu {
     width: 100%;
-    max-width: 100%;
+    max-width: 360px;
   }
 
   #menu .fechar {
-    top: 20px;
+    top: 10px;
     right: 0;
-    width: 40%;
+    width: 50%;
     display: flex;
     justify-content: flex-end;
     padding-right: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 2001;
   }
 
   .menu a {
-    font-size: 22px;
+    font-size: 20px;
+    color: #000000;
+  }
+
+  .menu a:hover {
+    color: #e91e63;
   }
 
   .menu .categoria {
     font-size: 26px;
+    color: #4b001f;
   }
 
-  /* ================= GRID ================= */
+  .icone-fechar {
+    width: 45px;
+    height: 45px;
+  }
+
+  #icons-menu a {
+    font-size: 60px;
+    color: rgb(93, 23, 23);
+    display: inline-block;
+    transition: color 0.3s, transform 0.2s, text-shadow 0.3s;
+    margin: 1rem 5px;
+  }
+  .redes-icons {
+    margin-bottom: 0.5rem;
+    margin-top: -0.5rem;
+    gap: 2.5rem;
+  }
+
+  /* GRID */
   .four-sections {
     grid-template-columns: 1fr;
-    gap: 24px;
   }
 
-  /* ================= CARROSSEL ================= */
-  .sessao-carrossel {
-    display: flex;
-    flex-direction: column; /* IGUAL AO 480 */
-    height: auto;
-    padding: 28px;
-    min-height: auto;
-    gap: 28px;
+ .sessao-carrossel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: nowrap; /* IMPORTANTE */
+}
+
+
+  .nav-carrossel {
+    max-width: 260px;
   }
 
   .descricao-carrossel {
-    max-width: 100%;
-    padding: 0;
     text-align: center;
+    padding: 20px;
   }
-
-  .descricao-carrossel h2 {
-    font-size: 28px;
-  }
-
-  .descricao-carrossel p {
-    font-size: 22px;
-  }
-
-  .nav-carrossel {
-    max-width: 240px;
-    margin: 0 auto;
+  .menu-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
   }
 
   .container-carrossel-custom {
     width: 100%;
-    height: 18rem;
     margin: 0;
-    left: auto;
-    box-sizing: border-box;
+    left: 0;
   }
 
   .carousel {
     width: 100%;
-    height: 42vh;
-    overflow: hidden;
-    border-radius: 14px;
-  }
-
-  .slides {
-    display: flex;
-    height: 100%;
-    gap: 16px;
-    align-items: stretch;
+    max-width: 100%;
+    margin: 0;
   }
 
   .slide-item {
     width: 100%;
-    flex: 0 0 100%;
-    border-radius: 14px;
+    aspect-ratio: 16 / 9; /* FORÇA FORMATO HORIZONTAL */
     overflow: hidden;
+    border-radius: 14px;
   }
 
   .slide-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* corta em cima/baixo, não nas laterais */
     display: block;
   }
 
-  /* ================= REDES ================= */
+  /* ===== redes sociais======*/
   .redes-sociais p {
-    font-size: 22px;
+    font-size: 26px;
   }
 
-  .redes-sociais a {
-    font-size: 52px;
-  }
-
-  /* ================= HEALTH ================= */
   .health-card {
     flex-direction: column;
-    padding: 18px;
+    padding: 15px;
   }
 
   .health-text h1 {
-    font-size: 42px;
-    line-height: 2.6rem;
+    font-size: 50px;
+    line-height: 2.9rem;
     text-align: center;
+    margin: 1rem auto;
+  }
+  .health-text p {
+    text-align: center;
+    margin: 2rem auto 2rem auto;
   }
 
-  .health-text p {
-    font-size: 24px;
-    text-align: center;
-    margin: 1.5rem auto;
+  .redes-sociais a {
+    font-size: 65px;
+    color: #ffffff;
+  }
+  .redes-sociais a:hover {
+    color: #4b1024; /* fica branco no hover */
+    transform: scale(1.2) rotate(5deg);
+    text-shadow: 0 0 10px #ff4d6d, 0 0 20px #ff99aa; /* brilho suave */
   }
 }
-
 
 /* ===== MOBILE PEQUENO — até 480px ===== */
 @media (max-width: 480px) {
@@ -1531,7 +1542,7 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
     overflow: visible;
   }
 
-
+  
   .nav-carrossel {
     max-width: 220px;
   }
