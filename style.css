@@ -431,23 +431,31 @@ form button {
 }
 
 .descricao-carrossel h2 {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #ffb3c6; /* rosa suave, combina com o tom vinho do fundo */
-  margin-bottom: 15px;
-  line-height: 1.3;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  font-size: clamp(1rem, 4vw, 2rem);
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 22px;
+  line-height: 1.15;
+  letter-spacing: 0.8px;
+  text-transform: capitalize;
+  text-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.6),
+    0 0 22px rgba(255, 120, 160, 0.7);
 }
 
+/* PARÁGRAFO */
 .descricao-carrossel p {
-  font-size: 1.1rem;
-  color: #f1f1f1; /* texto claro */
-  opacity: 0.9;
-  line-height: 1.6;
-  margin-bottom: 30px;
-  max-width: 380px;
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  font-weight: 400;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.92);
+  max-width: 440px;
+  margin: 0;
+  letter-spacing: 0.3px;
+  text-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.45);
 }
+
 
 .descricao-carrossel .btn {
   display: inline-block;
@@ -472,7 +480,7 @@ form button {
   display: flex;
   gap: 15px;
   margin-top: 25px;
-  justify-content: flex-start; /* mantém no canto esquerdo */
+  justify-content: space-between; /* mantém no canto esquerdo */
 }
 
 .btn-nav {
@@ -1306,7 +1314,7 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
 ===================================================== */
 @media (max-width: 768px) {
   .perfil {
-    min-height: 75vh;
+    min-height: 94vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-end; /* FICA NA PARTE INFERIOR */
@@ -1393,10 +1401,19 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
 
   /* CARROSSEL */
   .sessao-carrossel {
-    flex-direction: column;
-    height: auto;
-    padding: 25px;
-  }
+        flex-direction: row;
+        height: auto;
+        padding: 25px;
+        min-height: 60vh;
+    }
+
+.nav-carrossel {
+    display: flex;
+    gap: 70px;
+    margin-top: 67px;
+    justify-content: center;
+}
+
 
   .descricao-carrossel {
     text-align: center;
@@ -1410,28 +1427,32 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
   }
 
   .carousel {
-    width: 90vw;
-    height: 40vh;
+  width: 100vw;              /* ocupa toda a largura da tela */
+  height: 40vh;              /* mantém a altura */
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  border-radius: 14px;
+  overflow: hidden;
+}
 
-    margin: 0 auto;
-    transform: none;
 
-    border-radius: 14px;
-    overflow: hidden;
-  }
 
-  .slide-item {
-    flex: 0 0 100%;
-    max-width: 100%;
-    height: 100%;
-  }
 
-  .slide-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
+.slide-item {
+  width: 100%;
+  aspect-ratio: 16 / 9;   /* FORÇA FORMATO HORIZONTAL */
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+.slide-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     /* corta em cima/baixo, não nas laterais */
+  display: block;
+}
+
+
 
   /* ===== redes sociais======*/
   .redes-sociais p {
