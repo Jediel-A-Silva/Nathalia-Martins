@@ -566,7 +566,7 @@ form button {
 
   .caixinha-carrossel-box {
     width: 100%;
-    height: 250px; /* menor altura no mobile */
+    height: 251px; /* menor altura no mobile */
     margin-bottom: 20px;
   }
 
