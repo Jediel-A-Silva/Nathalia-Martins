@@ -1421,10 +1421,10 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
   .descricao-carrossel p {
     font-size: 22px;
   }
-
+ 
   .nav-carrossel {
     max-width: 240px;
-    margin: 0 auto;
+    margin: 40px auto;
     justify-content: space-between;
   }
 
