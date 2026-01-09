@@ -478,7 +478,6 @@ form button {
 /* Navegação */
 .nav-carrossel {
   display: flex;
-  gap: 15px;
   margin-top: 25px;
   justify-content: space-between; /* mantém no canto esquerdo */
 }
