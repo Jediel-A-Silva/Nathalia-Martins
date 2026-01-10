@@ -168,124 +168,119 @@ body {
   text-shadow: 0 0 10px #ff4d6d, 0 0 20px #ff99aa; /* brilho suave */
 }
 
-/*-------------- Ícones do MENU ----------------*/
-.menu-btn svg rect {
-  fill: #ffffff; /* coloca a cor que você quiser */
+/* ================= MENU LATERAL ================= */
+
+.menu {
+  display: none;
+  position: fixed;
+  top: 70px; /* abaixo da navbar */
+  left: 0;
+  width: 280px;
+  height: calc(100% - 70px);
+  background-color: #ffffff;
+  padding: 16px;
+  overflow-y: auto;
+  z-index: 999;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
 }
 
 .menu.ativo {
   display: block;
 }
 
-/* garante que o X se posicione dentro do menu */
-.menu {
-  position: fixed; /* mantenha, se o menu for lateral */
-  box-sizing: border-box;
+/* TOPO DO MENU (Início + X) */
+.menu-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Início à esquerda | X à direita */
+  margin-bottom: 20px;
 }
 
-/* Botão X */
-.menu .fechar {
-  position: absolute;
-  top: 8px;
-  right: 8px;
+/* Link Início */
+.menu-inicio {
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #812828;
+}
 
-  background: transparent;
+.menu-inicio:hover {
+  color: #e91e63;
+}
+
+/* Botão fechar */
+.fechar {
+  background: none;
   border: none;
-  font-size: 22px;
   cursor: pointer;
-  z-index: 2001;
+  padding: 0;
 }
 
 .icone-fechar {
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
 }
 
-.menu-wrapper {
+/* Links do menu */
+.menu a {
+  display: block;
+  padding: 8px 0;
+  text-decoration: none;
+  font-size: 17px;
+  color: #812828;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.menu a:hover {
+  background-color: #f5f5f5;
+  color: #e91e63;
+}
+
+/* Categorias */
+.menu .categoria {
+  margin-top: 16px;
+  margin-bottom: 6px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #4b001f;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 4px;
+}
+
+.menu-wrapper{
   display: flex;
-  justify-content: space-between; /* afasta o menu do search */
+  justify-content: space-between;
   align-items: center;
   width: 100%;
 }
 
-.menu-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 10px;
-  margin-right: auto;
-}
-
-/* Menu */
-.menu {
-  display: none;
-  position: fixed; /* melhor que absolute pra menu lateral */
-  top: 70px;
-  left: 0;
-  width: 280px;
-  height: calc(100% - 70px); /* ocupa o resto da tela abaixo da navbar */
-  background-color: #fff;
-  border: 1px solid #ddd;
-  padding: 19px;
-  font-size: 17px;
-
-  overflow-y: auto; /* ativa rolagem se o conteúdo for maior */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  z-index: 999;
-}
-
-#menu .fechar {
-  position: absolute;
-  top: 12px;
-  left: 14rem;
-  font-size: 15px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  z-index: 2001;
-}
-
-/* menu aberto */
-.menu.ativo {
-  display: block;
-}
-
+/* Scroll do menu */
 .menu::-webkit-scrollbar {
-  width: 10px;
-}
-
-.menu::-webkit-scrollbar-track {
-  background: transparent;
+  width: 8px;
 }
 
 .menu::-webkit-scrollbar-thumb {
   background-color: #4b1024;
-  border-radius: 1px;
+  border-radius: 4px;
 }
 
 .menu::-webkit-scrollbar-thumb:hover {
   background-color: #622f40;
 }
-
-.menu a {
-  display: block;
-  text-decoration: none;
-  color: #812828;
-  transition: background 0.2s;
+/* ===============================
+   ÍCONE HAMBÚRGUER (SVG)
+   =============================== */
+.menu-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
 }
 
-.menu a:hover {
-  background-color: #f0f0f0;
+.menu-btn svg rect {
+  fill: #ffffff; /* branco igual ao print */
 }
 
-.menu .categoria {
-  font-weight: bold;
-  margin-top: 10px;
-  margin-bottom: 5px;
-  color: #555;
-  border-bottom: 1px solid #ddd;
-  font-size: 15px;
-}
 
 /* Keyframes */
 @keyframes aparecer {
@@ -1053,23 +1048,16 @@ footer .redes-sociais p {
 TABLET EM PÉ (iPad vertical)
 =============================== */
 @media (max-width: 1024px) {
+
+  /* ================= HERO ================= */
   .perfil {
-    position: relative;
-    text-align: center;
-    padding: 40px 0;
-    padding-bottom: 10px;
-    background-image: url(img/Imagem-efeito-blur.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-
     min-height: 90vh;
-
     display: flex;
     flex-direction: column;
-    justify-content: flex-end; /* DESCE O HERO */
-    align-items: center; /* CENTRALIZA */
+    justify-content: flex-end;
+    align-items: center;
+    padding: 40px 0 10px;
+    background: url(img/Imagem-efeito-blur.png) center / cover no-repeat;
   }
 
   .hero-text {
@@ -1081,13 +1069,15 @@ TABLET EM PÉ (iPad vertical)
     margin: 0 auto;
   }
 
+  /* ================= NAV ================= */
   .menu-wrapper {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     width: 100%;
   }
 
+  /* ================= MENU LATERAL ================= */
   .menu {
     display: none;
     position: fixed;
@@ -1097,91 +1087,89 @@ TABLET EM PÉ (iPad vertical)
     height: 55%;
     background-color: #fff;
     border: 1px solid #ddd;
-    padding: 70px 20px 20px; /* espaço para o X */
+    padding: 20px;
     font-size: 17px;
-
     overflow-y: auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 999;
   }
 
-  #menu .fechar {
-    top: 65px;
-    right: 0;
-
-    width: 70%;
+  /* ===== TOPO DO MENU ===== */
+  .menu-topo {
     display: flex;
-    justify-content: flex-end;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+  }
 
-    padding-right: 20px;
+  .menu-inicio {
+    font-size: 20px;
+    font-weight: 600;
+    color: #4b1024;
+    text-decoration: none;
+  }
 
+  .menu-inicio:hover {
+    color: #e91e63;
+  }
+
+  .menu .fechar {
     background: transparent;
     border: none;
     cursor: pointer;
-
-    z-index: 2001;
+    padding: 0;
   }
 
+  .icone-fechar {
+    width: 42px;
+    height: 42px;
+  }
+
+  /* ===== LINKS DO MENU ===== */
   .menu .categoria {
-    font-weight: bold;
-    margin: 0px 0px 20px;
+    font-weight: 700;
+    margin: 20px 0 10px;
     color: #4b1024;
     border-bottom: 1px solid #ddd;
-    font-size: 25px;
+    font-size: 22px;
   }
+
   .menu a {
     display: block;
     text-decoration: none;
     color: #0c0327;
-    transition: background 0.2s;
-  }
-  .menu a :hover {
-    background-color: #941111;
-  }
-  .icone-fechar {
-    width: 70px;
-    height: 70px;
+    padding: 6px 0;
+    transition: color 0.2s ease;
   }
 
+  .menu a:hover {
+    color: #e91e63;
+  }
+
+  /* ===== REDES SOCIAIS ===== */
   #icons-menu a {
     font-size: 40px;
     color: rgb(138, 11, 11);
-    display: inline-block;
-    transition: color 0.3s, transform 0.2s, text-shadow 0.3s;
     margin: 1rem 5px;
-  }
-
-  .redes-sociais a {
-    font-size: 65px; /* um pouco menor para caber melhor */
-    color: #631919; /* tom vibrante que contrasta com marsala */
-    transition: color 0.3s ease, transform 0.2s ease, text-shadow 0.3s ease;
-    margin: 1rem 8px;
-    display: inline-block;
-  }
-
-  .redes-sociais a:hover {
-    color: #4b1024; /* fica branco no hover */
-    transform: scale(1.2) rotate(5deg);
-    text-shadow: 0 0 10px #ff4d6d, 0 0 20px #ff99aa; /* brilho suave */
+    transition: transform 0.2s ease, color 0.3s ease;
   }
 
   .redes-sociais p {
-    font-size: 32px;
+    font-size: 28px;
   }
 
-  .container {
-    left: 0;
-    padding: 20px;
+  .redes-sociais a {
+    font-size: 55px;
+    color: #631919;
   }
 
-  #sobre,
-  #servicos,
-  #servicos1 {
-    position: relative;
-    padding: 1.5rem;
-    padding-bottom: 5rem; /* espaço para o botão */
+  .redes-sociais a:hover {
+    color: #4b1024;
+    transform: scale(1.15) rotate(5deg);
+    text-shadow: 0 0 10px #ff4d6d, 0 0 20px #ff99aa;
   }
 
+  /* ================= GRID ================= */
   .four-sections {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
@@ -1199,40 +1187,29 @@ TABLET EM PÉ (iPad vertical)
   .four-sections section a#relatos,
   .four-sections section a#duvidas,
   .four-sections section#sobre > a {
-    position: absolute !important;
+    position: absolute;
     bottom: 1.2rem;
     left: 1.2rem;
-
-    top: auto !important;
-    margin: 0 !important;
-
     height: 3rem;
-    width: auto;
     z-index: 5;
   }
 }
 
+
 /* =====================================================
    TABLETS GRANDES — HORIZONTAL (até 992px)
-   ===================================================== */
+===================================================== */
 @media (max-width: 992px) {
+
+  /* ================= HERO ================= */
   .perfil {
-    position: relative;
-    text-align: center;
-    padding: 40px 0;
-    padding-bottom: 10px;
-    background-image: url(img/Imagem-efeito-blur.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-
     min-height: 90vh;
-
     display: flex;
     flex-direction: column;
-    justify-content: flex-end; /* DESCE O HERO */
-    align-items: center; /* CENTRALIZA */
+    justify-content: flex-end;
+    align-items: center;
+    padding: 40px 0 10px;
+    background: url(img/Imagem-efeito-blur.png) center / cover no-repeat;
   }
 
   .hero-text {
@@ -1244,40 +1221,31 @@ TABLET EM PÉ (iPad vertical)
     margin: 0 auto;
   }
 
+  /* ================= GRID ================= */
   .four-sections {
     grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
 
-  /* CARROSSEL */
+  /* ================= CARROSSEL ================= */
   .sessao-carrossel {
     display: flex;
-    flex-direction: row; /* 🔴 itens lado a lado */
-    align-items: center; /* alinha verticalmente */
+    flex-direction: row;
+    align-items: center;
     justify-content: space-between;
-    gap: 24px; /* espaço entre texto e carrossel */
-    height: auto;
+    gap: 24px;
     padding: 25px;
+    height: auto;
   }
 
   .descricao-carrossel {
     text-align: center;
     padding: 20px;
   }
-  .menu-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-  }
 
   .carousel {
     width: 100%;
-    max-width: 100%;
     height: 45vh;
-
-    margin: 0 auto;
-    transform: none;
-
     border-radius: 14px;
     overflow: hidden;
   }
@@ -1295,29 +1263,46 @@ TABLET EM PÉ (iPad vertical)
     display: block;
   }
 
+  /* ================= NAV ================= */
+  .menu-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  /* ================= CARDS ================= */
   .health-card {
     flex-direction: column;
     padding: 15px;
   }
+
   .health-text h1 {
-    font-size: 50px;
-    line-height: 2.9rem;
+    font-size: 46px;
+    line-height: 2.8rem;
     text-align: center;
     margin: 1rem auto;
   }
+
   .health-text p {
     text-align: center;
-    margin: 2rem auto 2rem auto;
+    margin: 1.5rem auto 2rem;
   }
+
 }
 
+
+
 /* =====================================================
-TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
+   TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
 ===================================================== */
 @media (max-width: 768px) {
+
+  /* ================= BASE ================= */
   body {
     font-size: 15px;
   }
+
   .perfil {
     min-height: 94vh;
     display: flex;
@@ -1326,6 +1311,7 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
     align-items: center;
     padding-bottom: 30px;
   }
+
   .hero-text {
     background: rgba(124, 152, 181, 0.34);
     padding: 20px 40px;
@@ -1334,12 +1320,16 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
     max-width: 52rem;
     margin: 0 auto;
     transform: none;
-  } /* NAV / MENU */
+  }
+
+  /* ================= MENU LATERAL ================= */
   .menu {
     width: 100%;
     max-width: 100%;
   }
+
   #menu .fechar {
+    position: absolute;
     top: 20px;
     right: 0;
     width: 69%;
@@ -1347,27 +1337,35 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
     justify-content: flex-end;
     padding-right: 20px;
   }
-  .menu a {
-    font-size: 22px;
-  }
-  .menu .categoria {
-    font-size: 26px;
-  }
-  .menu a {
-    font-size: 20px;
-    color: #000000;
-  }
-  .menu a:hover {
-    color: #e91e63;
-  }
-  .menu .categoria {
-    font-size: 26px;
-    color: #4b001f;
-  }
+
   .icone-fechar {
     width: 45px;
     height: 45px;
   }
+
+  /* Links do menu (corrigido para subir o texto) */
+  .menu a {
+    display: flex;
+    align-items: flex-start;
+    line-height: 1.2;
+    padding: 6px 0 10px;
+    font-size: 20px;
+    color: #000000;
+    text-decoration: none;
+  }
+
+  .menu a:hover {
+    color: #e91e63;
+  }
+
+  .menu .categoria {
+    font-size: 26px;
+    color: #4b001f;
+    margin-top: 24px;
+    margin-bottom: 10px;
+  }
+
+  /* Redes no menu */
   #icons-menu a {
     font-size: 60px;
     color: rgb(93, 23, 23);
@@ -1375,38 +1373,48 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
     transition: color 0.3s, transform 0.2s, text-shadow 0.3s;
     margin: 1rem 5px;
   }
+
   .redes-icons {
-    margin-bottom: 0.5rem;
     margin-top: -0.5rem;
+    margin-bottom: 0.5rem;
     gap: 2.5rem;
-  } /* GRID */
+  }
+
+  /* ================= GRID ================= */
   .four-sections {
     grid-template-columns: 1fr;
-  } /* CARROSSEL */ /* ================= CARROSSEL ================= */
+  }
+
+  /* ================= CARROSSEL ================= */
   .sessao-carrossel {
     display: flex;
-    flex-direction: column; /* IGUAL AO 480 */
+    flex-direction: column;
     height: auto;
     padding: 28px;
-    min-height: auto;
     gap: 28px;
   }
+
   .descricao-carrossel {
     max-width: 100%;
     padding: 0;
     text-align: center;
   }
+
   .descricao-carrossel h2 {
     font-size: 28px;
   }
+
   .descricao-carrossel p {
     font-size: 22px;
   }
+
   .nav-carrossel {
     max-width: 240px;
-    margin: 40px auto;
+    margin: 15px auto;
+    display: flex;
     justify-content: space-between;
   }
+
   .container-carrossel-custom {
     width: 100%;
     height: 18rem;
@@ -1414,24 +1422,28 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
     left: auto;
     box-sizing: border-box;
   }
+
   .carousel {
     width: 100%;
     height: 42vh;
     overflow: hidden;
     border-radius: 14px;
   }
+
   .slides {
     display: flex;
     height: 100%;
     gap: 16px;
     align-items: stretch;
   }
+
   .slide-item {
     width: 100%;
     flex: 0 0 100%;
     border-radius: 14px;
     overflow: hidden;
   }
+
   .slide-item img {
     width: 100%;
     height: 100%;
@@ -1439,9 +1451,21 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
     display: block;
   }
 
-  /* ===== redes sociais======*/
+  /* ================= SAÚDE / REDES ================= */
   .redes-sociais p {
     font-size: 26px;
+  }
+
+  .redes-sociais a {
+    font-size: 65px;
+    color: #ffffff;
+    transition: transform 0.3s, color 0.3s, text-shadow 0.3s;
+  }
+
+  .redes-sociais a:hover {
+    color: #4b1024;
+    transform: scale(1.2) rotate(5deg);
+    text-shadow: 0 0 10px #ff4d6d, 0 0 20px #ff99aa;
   }
 
   .health-card {
@@ -1455,21 +1479,13 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
     text-align: center;
     margin: 1rem auto;
   }
+
   .health-text p {
     text-align: center;
-    margin: 2rem auto 2rem auto;
-  }
-
-  .redes-sociais a {
-    font-size: 65px;
-    color: #ffffff;
-  }
-  .redes-sociais a:hover {
-    color: #4b1024; /* fica branco no hover */
-    transform: scale(1.2) rotate(5deg);
-    text-shadow: 0 0 10px #ff4d6d, 0 0 20px #ff99aa; /* brilho suave */
+    margin: 2rem auto;
   }
 }
+
 
 /* ===== MOBILE PEQUENO — até 480px ===== */
 @media (max-width: 480px) {
@@ -1580,18 +1596,22 @@ TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
     z-index: 999;
   }
 
-  #menu .fechar {
-    top: 24px;
-    right: 0;
-    width: 40%;
+   .menu-topo {
     display: flex;
-    justify-content: flex-end;
-    padding-right: 20px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    z-index: 2001;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
   }
+  .menu-inicio {
+    font-size: 20px;
+    font-weight: 600;
+    color: #4b1024;
+    text-decoration: none;
+  }
+  .menu-inicio:hover {
+    color: #e91e63;
+  }
+  
   .icone-fechar {
     width: 45px;
     height: 45px;
