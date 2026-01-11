@@ -473,7 +473,7 @@ form button {
 .nav-carrossel {
   display: flex;
   align-items: center;
-  gap: 15px;
+  justify-content: space-between;
   width: 100%;
   max-width: 320px; /* controla distância entre setas */
   margin: 25px auto 0;
@@ -1560,9 +1560,6 @@ TABLET EM PÉ (iPad vertical)
 
   .nav-carrossel {
     max-width: 240px;
-    margin: 15px auto;
-    display: flex;
-    justify-content: space-between;
   }
 
 
