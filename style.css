@@ -476,7 +476,7 @@ form button {
   justify-content: space-between;
   width: 100%;
   max-width: 320px; /* controla distância entre setas */
-  margin: 25px auto 0;
+  margin: 75px auto 0;
 }
 
 .btn-nav {
