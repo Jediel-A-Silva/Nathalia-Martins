@@ -1322,6 +1322,8 @@ TABLET EM PÉ (iPad vertical)
     transform: none;
   }
 
+
+
     .btn-nav {
     background-color: rgba(255, 255, 255, 0.35); /* VISÍVEL */
     color: #ffffff;
@@ -1571,8 +1573,18 @@ TABLET EM PÉ (iPad vertical)
     position: relative;
   }
 
-  .nav-carrossel {
+    .nav-carrossel {
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
     max-width: 240px;
+
+    display: flex;
+    justify-content: space-between;
+
+    z-index: 50;
   }
 
 
