@@ -1568,7 +1568,7 @@ TABLET EM PÉ (iPad vertical)
     max-width: 100%;
     display: flex;
     justify-content: center;
-    gap: 116px;
+    gap: 16px;
     z-index: 20;
   }
 
