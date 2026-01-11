@@ -1322,7 +1322,7 @@ TABLET EM PÉ (iPad vertical)
     transform: none;
   }
 
-
+  
 
     .btn-nav {
     background-color: rgba(255, 255, 255, 0.35); /* VISÍVEL */
@@ -1498,19 +1498,17 @@ TABLET EM PÉ (iPad vertical)
 
 /* ===== MOBILE PEQUENO — até 480px ===== */
 @media (max-width: 480px) {
-
   body {
     font-size: 14px;
   }
 
-  /* ================= HERO ================= */
   .perfil {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    padding-bottom: 30px;
+    justify-content: flex-end; /* FICA NA PARTE INFERIOR */
+    align-items: center; /* CENTRALIZADO */
+    padding-bottom: 30px; /* respiro da borda inferior */
   }
 
   .hero-text {
@@ -1518,22 +1516,24 @@ TABLET EM PÉ (iPad vertical)
     padding: 18px 26px;
     border-radius: 15px;
     width: 90%;
+    max-width: 52rem;
     margin: 40px auto;
+    transform: none;
   }
 
-  /* ================= NAVBAR ================= */
   .navbar {
     position: fixed;
     width: 100%;
+    height: auto;
     padding: 12px;
     flex-wrap: wrap;
   }
 
   .search {
     width: 100%;
+    margin-top: 0;
   }
 
-  /* ================= GRID ================= */
   .four-sections {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -1542,117 +1542,105 @@ TABLET EM PÉ (iPad vertical)
 
   .caixinha {
     flex-direction: column;
-    gap: 0;
+    gap: 0px;
   }
 
-  /* ================= CARROSSEL ================= */
   .sessao-carrossel {
-    position: relative;
-    display: flex;
     flex-direction: column;
+    height: auto;
     padding: 25px;
-    min-height: auto;
-    overflow: visible;
+    min-height: 60vh;
+  }
+
+  .descricao-carrossel h2 {
+    font-size: 24px;
+  }
+  .descricao-carrossel p {
+    font-size: 21px;
   }
 
   .descricao-carrossel {
     max-width: 100%;
     padding: 0;
     text-align: center;
-    position: relative;
-    z-index: 10;
+    overflow: visible;
   }
 
-  .descricao-carrossel h2 {
-    font-size: 24px;
-  }
-
-  .descricao-carrossel p {
-    font-size: 21px;
-  }
-
-  /* >>> BOTÕES DO CARROSSEL (CORREÇÃO DEFINITIVA) <<< */
+   /* ===== BOTÕES ===== */
   .nav-carrossel {
-    position: relative; /* 🔑 NÃO absolute no mobile */
-    margin: 16px auto 12px;
+    margin: 16px auto 0;
     width: 100%;
     max-width: 240px;
-
     display: flex;
     justify-content: space-between;
-
-    z-index: 30;
+    position: relative;
+    z-index: 20;
   }
 
   .btn-nav {
     width: 48px;
     height: 48px;
-
-    background-color: rgba(255, 255, 255, 0.9);
-    color: #4b001f;
-
     border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    color: #4b001f;
     font-size: 22px;
-
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 6px 16px rgba(0,0,0,.25);
+    cursor: pointer;
+  }
 
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+
+  .container {
+    padding: 0 10px;
+    margin: 20px auto 0 auto;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .container-carrossel-custom {
+    box-sizing: border-box;
     width: 100%;
+    overflow: visible;
+    left: auto;
     height: 16rem;
-    margin-top: 10px;
-  }
-
-  .carousel {
-    width: 100%;
-    height: 40vh;
-    overflow: hidden;
-    border-radius: 12px;
-    position: relative;
-    z-index: 5;
-  }
-
-  .slides {
-    display: flex;
-    height: 100%;
-    gap: 16px;
-  }
-
-  .slide-item img {
-    width: 100%;
-    height: 30vh;
-    object-fit: cover;
-    border-radius: 12px;
   }
 
   /* ================= MENU ================= */
   .menu {
+    display: none;
     position: fixed;
     top: 70px;
     left: 0;
     width: 100%;
+    max-width: 100%;
+    overflow: hidden;
     height: 65%;
+    background-color: #fff;
+    border: 1px solid #ddd;
     padding: 60px 20px 20px;
-    background: #fff;
+    font-size: 16px;
+
     overflow-y: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     z-index: 999;
   }
 
-  .menu-topo {
+   .menu-topo {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     margin-bottom: 20px;
   }
-
   .menu-inicio {
     font-size: 20px;
     font-weight: 600;
     color: #4b1024;
     text-decoration: none;
+  }
+  .menu-inicio:hover {
+    color: #e91e63;
   }
 
   .icone-fechar {
@@ -1662,51 +1650,153 @@ TABLET EM PÉ (iPad vertical)
 
   .menu .categoria,
   .menu a {
-    font-size: 22px;
+    margin-top: -30px;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 45px;
     color: #502a2a;
     border-bottom: 1px solid #ddd;
+    font-size: 22px;
+    text-align: left;
   }
 
-  /* ================= REDES ================= */
-  .redes-sociais {
-    text-align: center;
-    padding: 13px 10px;
-  }
-
+  /* ==============================
+      Menu / REDES SOCIAIS
+     ============================== */
   .redes-sociais p {
     font-size: 18px;
   }
-
-  .redes-icons {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-  }
-
-  #icons-menu a,
   .redes-sociais a {
     font-size: 40px;
-    transition: transform 0.2s;
+    color: rgb(255 255 255);
+    display: inline-block;
+    transition: color 0.3s, transform 0.2s, text-shadow 0.3s;
+    margin: 1rem 5px;
   }
 
-  /* ================= HEALTH ================= */
+  .redes-sociais a:hover {
+    color: #4b1024; /* fica branco no hover */
+    transform: scale(1.2) rotate(5deg);
+    text-shadow: 0 0 10px #ff4d6d, 0 0 20px #ff99aa; /* brilho suave */
+  }
+
+  #icons-menu a {
+    font-size: 40px;
+    color: rgb(138, 11, 11);
+    display: inline-block;
+    transition: color 0.3s, transform 0.2s, text-shadow 0.3s;
+    margin: 1rem 5px;
+  }
+
+  .redes-icons {
+    display: flex; /* FLEX SÓ AQUI */
+    justify-content: center; /* CENTRALIZA */
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .redes-sociais {
+    text-align: center;
+    width: 100%;
+    margin-top: -10px;
+    padding: 13px 10px;
+  }
+
+  /* ==============================
+     CORREÇÃO DO CARROSSEL / HEALTH
+     ============================== */
+
+  .health-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    padding: 0 12px;
+    box-sizing: border-box;
+    justify-content: center;
+  }
+
+  /* Carrossel ajustado para mobile */
+  .carousel {
+    width: 100%;
+    max-width: 100%;
+    height: 40vh; /* altura proporcional à tela */
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+  }
+
+  .slides {
+    display: flex;
+    height: 100%;
+    gap: 16px; /* espaço real entre as imagens */
+    align-items: stretch;
+  }
+
+  .slides img {
+    width: 100%;
+    height: 100%;
+    flex: 0 0 100%;
+    object-fit: cover; /* ocupa tudo */
+  }
+
+  .slide-item img {
+    width: 100%;
+    height: 30vh;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+  }
+
+  /* ============================== */
+
+  #sobre,
+  #servicos,
+  #servicos1 {
+    width: 100%;
+    height: auto;
+    padding: 20px 10px;
+    box-sizing: border-box;
+  }
+
   .health-card {
     flex-direction: column;
     padding: 15px;
   }
 
   .health-text .blue {
+    color: #ff00d4;
     font-size: 32px;
+    font-weight: 600;
   }
 
   .health-text p {
     font-size: 26px;
+    margin-top: 0.5rem;
     text-align: center;
   }
 
-  /* ================= FOOTER ================= */
+  .perfil h1 {
+    font-family: "Great Vibes", cursive;
+    font-weight: 400;
+    font-size: 25px;
+    margin-bottom: 10px;
+    color: #b3b529;
+    text-shadow: 2px 2px 4px #00000080, 0 0 10px #af3838, 0 0 20px #fbff00;
+    letter-spacing: 2px;
+  }
+
+  .perfil h3 {
+    font-size: 1.2rem;
+    color: #7c0019;
+    margin-top: -5px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+  }
+  #servicos p,
+  h2 {
+    font-size: 19px;
+  }
+
   footer {
     padding: 15px 10px;
   }
@@ -1715,7 +1805,7 @@ TABLET EM PÉ (iPad vertical)
     margin: 1rem auto;
   }
 
-  /* Avatar */
+  /*avatar gptmaker*/
   #nathalia-gptmaker-overlay {
     width: 60px !important;
     height: 60px !important;
