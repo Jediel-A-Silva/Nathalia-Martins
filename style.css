@@ -1322,6 +1322,13 @@ TABLET EM PÉ (iPad vertical)
     transform: none;
   }
 
+    .btn-nav {
+    background-color: rgba(255, 255, 255, 0.35); /* VISÍVEL */
+    color: #ffffff;
+    z-index: 20;
+    position: relative;
+  }
+
   /* ================= MENU LATERAL ================= */
   .menu {
     width: 100%;
@@ -1557,6 +1564,12 @@ TABLET EM PÉ (iPad vertical)
     overflow: visible;
   }
 
+  .btn-nav {
+    background-color: rgba(255, 255, 255, 0.35); /* VISÍVEL */
+    color: #ffffff;
+    z-index: 20;
+    position: relative;
+  }
 
   .nav-carrossel {
     max-width: 240px;
