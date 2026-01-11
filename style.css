@@ -1552,6 +1552,7 @@ TABLET EM PÉ (iPad vertical)
     position: relative;
     text-align: center;
     z-index: 10;
+    overflow: visible;
   }
   
   .descricao-carrossel h2 {
@@ -1594,11 +1595,17 @@ TABLET EM PÉ (iPad vertical)
   
 
   .sessao-carrossel {
-    flex-direction: column;
-    height: auto;
-    padding: 25px;
-    min-height: 60vh;
-  }
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+
+  min-height: auto; /* REMOVE vh */
+  height: auto;
+
+  overflow: visible; /* 🔴 ESSENCIAL */
+}
+
+
   .container-carrossel-custom {
     box-sizing: border-box;
     width: 100%;
