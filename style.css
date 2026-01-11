@@ -1563,14 +1563,16 @@ TABLET EM PÉ (iPad vertical)
   }
   /* ===== BOTÕES ===== */
   .nav-carrossel {
-    width: 100%;
-    max-width: 240px;
-    display: flex;
-    gap: 10px;
-    position: relative;
-    z-index: 20;
-  }
-  
+  margin-top: 16px;
+  width: 100%;
+  max-width: 240px;
+
+  display: flex;
+  justify-content: space-between;
+
+  z-index: 20;
+}
+
   .btn-nav {
     width: 48px;
     height: 48px;
