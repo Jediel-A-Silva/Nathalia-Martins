@@ -1562,11 +1562,10 @@ TABLET EM PÉ (iPad vertical)
   }
   /* ===== BOTÕES ===== */
   .nav-carrossel {
-    margin: 16px auto 0;
     width: 100%;
     max-width: 240px;
     display: flex;
-    justify-content: space-between;
+    gap: 10px;
     position: relative;
     z-index: 20;
   }
@@ -1593,7 +1592,7 @@ TABLET EM PÉ (iPad vertical)
     box-sizing: border-box;
   }
   
-  
+
   .sessao-carrossel {
     flex-direction: column;
     height: auto;
