@@ -1557,9 +1557,14 @@ TABLET EM PÉ (iPad vertical)
     overflow: visible;
   }
 
+
   .nav-carrossel {
-    max-width: 220px;
+    max-width: 240px;
+    margin: 15px auto;
+    display: flex;
+    justify-content: space-between;
   }
+
 
   .container {
     padding: 0 10px;
@@ -1611,7 +1616,7 @@ TABLET EM PÉ (iPad vertical)
   .menu-inicio:hover {
     color: #e91e63;
   }
-  
+
   .icone-fechar {
     width: 45px;
     height: 45px;
