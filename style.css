@@ -1511,7 +1511,7 @@ TABLET EM PÉ (iPad vertical)
   }
 
   .sessao-carrossel {
-    flex-direction: column;
+    flex-direction: column-reverse;
     height: auto;
     padding: 20px;
     gap: 18px;
