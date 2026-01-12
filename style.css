@@ -20,10 +20,8 @@ html {
 body {
   font-family: "Arial", sans-serif;
   line-height: 1.6;
-  background-image: #0026ff;
-  background-size: cover;
-  background-position: center;
-  color: #ffffff;
+  background: #ffe9f0;      /* ALTERADO */
+  color: #ffffff;           /* Texto escuro para contraste */
 }
 
 /* Container principal */
@@ -378,7 +376,7 @@ form button {
 
 /* Caixa da imagem do carrossel */
 .container-carrossel-custom {
-  width: 59%; /* imagem ocupa mais espaço */
+  width: 60%; /* imagem ocupa mais espaço */
   height: 460px;
   position: relative;
   overflow: hidden;
@@ -471,12 +469,16 @@ form button {
 
 /* Navegação */
 .nav-carrossel {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  left: 0;
   width: 100%;
-  max-width: 320px; /* controla distância entre setas */
-  margin: 75px auto 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  z-index: 100;
 }
 
 .btn-nav {
@@ -495,46 +497,6 @@ form button {
   background: rgba(255, 255, 255, 0.3);
 }
 
-/* Texto lateral */
-.bloco3 .texto {
-  flex: 1;
-  max-width: 400px;
-}
-
-.bloco3 .texto h2 {
-  font-size: 22px;
-  margin-bottom: 15px;
-}
-
-.bloco3 .texto p {
-  margin-bottom: 20px;
-  font-size: 16px;
-  color: #ddd;
-}
-
-.bloco3 .texto .btn {
-  display: inline-block;
-  padding: 12px 20px;
-  background: #00ff99;
-  color: #000;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 10px;
-  transition: 0.3s;
-}
-
-.bloco3 .texto .btn:hover {
-  background: #00cc77;
-}
-
-/* Navegação */
-.navigation {
-  display: flex;
-  gap: 15px;
-  margin-top: 25px;
-  justify-content: flex-start; /* mantém no canto esquerdo */
-}
-
 .nav-btn {
   width: 45px;
   height: 45px;
@@ -551,40 +513,22 @@ form button {
   background: rgba(255, 255, 255, 0.3);
 }
 
-/* ===== RESPONSIVO ===== */
-@media (max-width: 768px) {
-  .bloco3 {
-    flex-direction: column;
-    padding: 20px;
-    text-align: center;
-  }
-
-  .caixinha-carrossel-box {
-    width: 100%;
-    height: 251px; /* menor altura no mobile */
-    margin-bottom: 20px;
-  }
-
-  .slideBox img {
-    object-fit: cover;
-  }
-
-  .navigation {
-    justify-content: center;
-  }
 
   .nav-btn {
     width: 40px;
     height: 40px;
     font-size: 1.3rem;
   }
+
+  .nav-carrossel .btn-nav {
+  pointer-events: auto;
 }
 
 /* Seções personalizadas */
 .personalizada {
   padding: 40px 20px;
   background-color: #f9f9f9;
-  border: 2px solid #000; /* borda preta */
+  border: 9px solid #000; /* borda preta */
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
   flex: 1 1 250px;
@@ -871,19 +815,6 @@ h2 {
   object-fit: cover; /* mantém proporção */
   border-radius: 14px;
   display: block;
-}
-
-form button {
-  background-color: #ab5779;
-  color: white;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-form button:hover {
-  background-color: #8c4a64;
 }
 
 /* Footer */
@@ -1537,7 +1468,7 @@ TABLET EM PÉ (iPad vertical)
   .four-sections {
     grid-template-columns: 1fr;
     gap: 20px;
-    width: 100%;
+    width: 90%;
   }
 
   .caixinha {
@@ -1563,27 +1494,30 @@ TABLET EM PÉ (iPad vertical)
   }
   /* ===== BOTÕES ===== */
 .nav-carrossel {
-    margin-top: 26px;
     width: 100%;
     max-width: 100%;
     display: flex;
     justify-content: center;
-    gap: 45px;
+    justify-content: space-between;
     z-index: 20;
   }
 
   .btn-nav {
-    width: 48px;
-    height: 48px;
+    width: 38px;
+    height: 38px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.9);
-    color: #4b001f;
+    background: rgba(255, 255, 255, 0.079);
+    color: #ffffff;
     font-size: 22px;
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: 0 6px 16px rgba(0,0,0,.25);
     cursor: pointer;
+  }
+
+  horver .btn-nav {
+    background: rgba(255, 14, 14, 0.25);
   }
   
   
