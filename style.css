@@ -1664,7 +1664,7 @@ TABLET EM PÉ (iPad vertical)
     align-items: center;
     padding: 0 10px;
     pointer-events: none;
-    z-index: 30;
+    z-index: 600;
   }
 
   .btn-nav {
@@ -1675,7 +1675,7 @@ TABLET EM PÉ (iPad vertical)
     background: rgba(255,255,255,0.15);
     border-radius: 50%;
     color: #ffe9f0;
-    z-index: 31;
+    z-index: 600;
   }
 
   /* ============================== */
