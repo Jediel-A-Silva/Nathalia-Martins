@@ -1373,7 +1373,7 @@ TABLET EM PÉ (iPad vertical)
     color: #ffe9f0;
     border: none;
   }
-  
+
   .carousel {
     width: 100%;
     height: 42vh;
@@ -1652,6 +1652,7 @@ TABLET EM PÉ (iPad vertical)
   /* ==============================
      BOTÕES DO CARROSSEL (CORRIGIDO)
      ============================== */
+ 
   .nav-carrossel {
     position: absolute;
     top: 50%;
@@ -1659,18 +1660,21 @@ TABLET EM PÉ (iPad vertical)
     width: 100%;
     transform: translateY(-50%);
     display: flex;
-    justify-content: space-between; /* um em cada canto */
+    justify-content: space-between;
     align-items: center;
-    padding: 0 12px;
+    padding: 0 10px;
     pointer-events: none;
-    z-index: 20;
+    z-index: 30;
   }
 
   .btn-nav {
     pointer-events: all;
-    width: 38px;
-    height: 38px;
-    font-size: 1.1rem;
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 50%;
+    color: #ffe9f0;
   }
 
   /* ============================== */
