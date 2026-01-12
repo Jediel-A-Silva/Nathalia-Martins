@@ -1662,7 +1662,6 @@ TABLET EM PÉ (iPad vertical)
     width: 100%;
     transform: translateY(-50%);
     display: flex;
-    justify-content: space-around;
     padding: 0 10px;
     pointer-events: none;  /* click só no botão */
     z-index: 999;
