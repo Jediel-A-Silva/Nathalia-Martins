@@ -1251,14 +1251,6 @@ TABLET EM PÉ (iPad vertical)
     transform: none;
   }
 
-  
-
-    .btn-nav {
-    background-color: rgba(255, 255, 255, 0.35); /* VISÍVEL */
-    color: #ffffff;
-    z-index: 20;
-    position: relative;
-  }
 
   /* ================= MENU LATERAL ================= */
   .menu {
@@ -1346,21 +1338,42 @@ TABLET EM PÉ (iPad vertical)
     font-size: 22px;
   }
 
-  .nav-carrossel {
-    max-width: 240px;
-    margin: 15px auto;
+  
+  .container-carrossel-custom {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+   .nav-carrossel {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+    pointer-events: none;
+    z-index: 30;
   }
 
-  .container-carrossel-custom {
-    width: 100%;
-    height: 18rem;
-    margin: 0;
-    left: auto;
-    box-sizing: border-box;
+ .btn-nav {
+    pointer-events: all;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.12);
+    font-size: 22px;
+    color: #ffe9f0;
+    border: none;
   }
-
+  
   .carousel {
     width: 100%;
     height: 42vh;
@@ -1653,24 +1666,13 @@ TABLET EM PÉ (iPad vertical)
     z-index: 20;
   }
 
- .btn-nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  border: none;
-  background: rgba(255,255,255,.85);
-  font-size: 22px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 20;
-}
+  .btn-nav {
+    pointer-events: all;
+    width: 38px;
+    height: 38px;
+    font-size: 1.1rem;
+  }
 
-.prev-custom { left: 10px; }
-.next-custom { right: -35%; }
   /* ============================== */
 
   #sobre,
