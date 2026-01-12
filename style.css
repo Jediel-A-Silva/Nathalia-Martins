@@ -1656,15 +1656,8 @@ TABLET EM PÉ (iPad vertical)
      ============================== */
  
   .nav-carrossel {
-    position: absolute;
-    top: 85%;
-    left: 0;
     width: 100%;
-    transform: translateY(-50%);
-    display: flex;
-    padding: 0 10px;
-    pointer-events: none;  /* click só no botão */
-    z-index: 999;
+    gap: 16px;
   }
 
  .btn-nav {
@@ -1678,7 +1671,6 @@ TABLET EM PÉ (iPad vertical)
     border: none;
     display: flex;
     align-items: center;
-    justify-content: center;
   }
 
   /* ============================== */
