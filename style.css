@@ -1670,7 +1670,7 @@ TABLET EM PÉ (iPad vertical)
   }
 
   /* ===== BOTÕES DO CARROSSEL (CORRIGIDO) ===== */
- .nav-carrossel {
+.nav-carrossel {
   position: absolute;
   top: 50%;
   left: 0;
@@ -1700,6 +1700,7 @@ TABLET EM PÉ (iPad vertical)
 .next-custom {
   right: 10px;
 }
+
 
 
   /* ===== SEÇÕES ===== */
