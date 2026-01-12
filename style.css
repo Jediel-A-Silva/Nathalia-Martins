@@ -376,22 +376,20 @@ form button {
 
 /* Caixa da imagem do carrossel */
 .container-carrossel-custom {
-  width: 60%; /* imagem ocupa mais espaço */
-  height: 460px;
-  position: relative;
-  overflow: hidden;
+  position: relative; 
+  width: 60%;
+  max-width: 900px;
   margin: 0 auto;
-  text-align: center;
-
-  border-radius: 12px;
 }
+
 
 /* Contêiner dos slides */
 .slides-carrossel {
-  position: relative;
-  width: 100%;
-  height: 100%;
+  height: 55vw;
+  max-height: 480px;
 }
+
+
 
 /* Cada slide */
 .slide-item {
@@ -1437,9 +1435,9 @@ TABLET EM PÉ (iPad vertical)
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end; /* FICA NA PARTE INFERIOR */
-    align-items: center; /* CENTRALIZADO */
-    padding-bottom: 30px; /* respiro da borda inferior */
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 30px;
   }
 
   .hero-text {
@@ -1476,77 +1474,39 @@ TABLET EM PÉ (iPad vertical)
     gap: 0px;
   }
 
-  
-  
   /* ===== TEXTO ===== */
   .descricao-carrossel {
-    position: relative;
-    text-align: center;
-    z-index: 10;
-    overflow: visible;
-  }
-  
-  .descricao-carrossel h2 {
-    font-size: 24px;
-  }
-  .descricao-carrossel p {
-    font-size: 21px;
-  }
-  /* ===== BOTÕES ===== */
-.nav-carrossel {
-    width: 100%;
     max-width: 100%;
-    display: flex;
-    justify-content: center;
-    justify-content: space-between;
-    z-index: 20;
+    padding: 10px 15px;
+    text-align: center;
   }
 
-  .btn-nav {
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.079);
-    color: #ffffff;
-    font-size: 22px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 6px 16px rgba(0,0,0,.25);
-    cursor: pointer;
+  .descricao-carrossel h2 {
+    font-size: 1.25rem;
   }
 
-  horver .btn-nav {
-    background: rgba(255, 14, 14, 0.25);
+  .descricao-carrossel p {
+    font-size: 0.95rem;
   }
-  
-  
+
+  /* ===== SESSÃO ===== */
   .container {
     padding: 0 10px;
     margin: 20px auto 0 auto;
     width: 100%;
     box-sizing: border-box;
   }
-  
 
   .sessao-carrossel {
-  display: flex;
-  flex-direction: column;
-  padding: 25px;
-
-  min-height: auto; /* REMOVE vh */
-  height: auto;
-
-  overflow: visible; /* 🔴 ESSENCIAL */
-}
-
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+    gap: 18px;
+  }
 
   .container-carrossel-custom {
-    box-sizing: border-box;
     width: 100%;
-    overflow: visible;
-    left: auto;
-    height: 16rem;
+    position: relative; /* aqui é a referência p/ botões */
   }
 
   /* ================= MENU ================= */
@@ -1556,31 +1516,30 @@ TABLET EM PÉ (iPad vertical)
     top: 70px;
     left: 0;
     width: 100%;
-    max-width: 100%;
-    overflow: hidden;
     height: 65%;
     background-color: #fff;
     border: 1px solid #ddd;
     padding: 60px 20px 20px;
     font-size: 16px;
-
     overflow-y: auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     z-index: 999;
   }
 
-   .menu-topo {
+  .menu-topo {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 20px;
   }
+
   .menu-inicio {
     font-size: 20px;
     font-weight: 600;
     color: #4b1024;
     text-decoration: none;
   }
+
   .menu-inicio:hover {
     color: #e91e63;
   }
@@ -1601,12 +1560,11 @@ TABLET EM PÉ (iPad vertical)
     text-align: left;
   }
 
-  /* ==============================
-      Menu / REDES SOCIAIS
-     ============================== */
+  /* REDES */
   .redes-sociais p {
     font-size: 18px;
   }
+
   .redes-sociais a {
     font-size: 40px;
     color: rgb(255 255 255);
@@ -1616,22 +1574,20 @@ TABLET EM PÉ (iPad vertical)
   }
 
   .redes-sociais a:hover {
-    color: #4b1024; /* fica branco no hover */
+    color: #4b1024;
     transform: scale(1.2) rotate(5deg);
-    text-shadow: 0 0 10px #ff4d6d, 0 0 20px #ff99aa; /* brilho suave */
+    text-shadow: 0 0 10px #ff4d6d, 0 0 20px #ff99aa;
   }
 
   #icons-menu a {
     font-size: 40px;
     color: rgb(138, 11, 11);
     display: inline-block;
-    transition: color 0.3s, transform 0.2s, text-shadow 0.3s;
-    margin: 1rem 5px;
   }
 
   .redes-icons {
-    display: flex; /* FLEX SÓ AQUI */
-    justify-content: center; /* CENTRALIZA */
+    display: flex;
+    justify-content: center;
     align-items: center;
     gap: 16px;
     width: 100%;
@@ -1645,34 +1601,27 @@ TABLET EM PÉ (iPad vertical)
   }
 
   /* ==============================
-     CORREÇÃO DO CARROSSEL / HEALTH
+      CARROSSEL / HEALTH
      ============================== */
 
   .health-image {
     width: 100%;
-    max-width: 100%;
     height: auto;
     padding: 0 12px;
     box-sizing: border-box;
     justify-content: center;
   }
 
-  /* Carrossel ajustado para mobile */
   .carousel {
     width: 100%;
-    max-width: 100%;
-    height: 40vh; /* altura proporcional à tela */
-    max-width: 100%;
+    height: 40vh;
     overflow: hidden;
     border-radius: 12px;
   }
 
-  /* CARROSSEL PERSONALIZADO */
   .slides-carrossel {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.4s ease;
+    height: 48vw;
+    max-height: 240px;
   }
 
   .slide-item {
@@ -1687,6 +1636,41 @@ TABLET EM PÉ (iPad vertical)
     display: block;
   }
 
+  /* ==============================
+     BOTÕES DO CARROSSEL (CORRIGIDO)
+     ============================== */
+  .nav-carrossel {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between; /* um em cada canto */
+    align-items: center;
+    padding: 0 12px;
+    pointer-events: none;
+    z-index: 20;
+  }
+
+ .btn-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,.85);
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+}
+
+.prev-custom { left: 10px; }
+.next-custom { right: -35%; }
   /* ============================== */
 
   #sobre,
@@ -1717,11 +1701,10 @@ TABLET EM PÉ (iPad vertical)
 
   .perfil h1 {
     font-family: "Great Vibes", cursive;
-    font-weight: 400;
     font-size: 25px;
     margin-bottom: 10px;
     color: #b3b529;
-    text-shadow: 2px 2px 4px #00000080, 0 0 10px #af3838, 0 0 20px #fbff00;
+    text-shadow: 2px 2px 4px #00000080;
     letter-spacing: 2px;
   }
 
@@ -1732,6 +1715,7 @@ TABLET EM PÉ (iPad vertical)
     margin-bottom: 10px;
     letter-spacing: 1px;
   }
+
   #servicos p,
   h2 {
     font-size: 19px;
@@ -1745,7 +1729,6 @@ TABLET EM PÉ (iPad vertical)
     margin: 1rem auto;
   }
 
-  /*avatar gptmaker*/
   #nathalia-gptmaker-overlay {
     width: 60px !important;
     height: 60px !important;
