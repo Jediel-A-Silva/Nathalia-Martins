@@ -376,45 +376,42 @@ form button {
 
 /* Caixa da imagem do carrossel */
 .container-carrossel-custom {
-  position: relative; 
-  width: 60%;
-  max-width: 900px;
-  margin: 0 auto;
+  position: relative;
+  width: 100%;
+  max-width: 550px;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 15px;
+  z-index: 1;
 }
 
-
-/* Contêiner dos slides */
 .slides-carrossel {
-  height: 55vw;
-  max-height: 480px;
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
-
 
 
 /* Cada slide */
 .slide-item {
-  position: absolute; /* todos ocupam o mesmo lugar */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0; /* invisível por padrão */
-  transition: opacity 0.5s ease-in-out;
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity .4s ease;
+  display: flex;
+}
+
+.slide-item.ativo-slide {
+  opacity: 1;
+  z-index: 2;
 }
 
 .slide-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 12px;
-  display: block;
 }
 
-/* Slide ativo */
-.slide-item.ativo-slide {
-  opacity: 1;
-  z-index: 1;
-}
 
 /* ✨ Texto lateral com contraste ajustado para fundo escuro */
 .descricao-carrossel {
@@ -471,41 +468,28 @@ form button {
   top: 50%;
   left: 0;
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 15px;
   transform: translateY(-50%);
   pointer-events: none;
-  z-index: 10;
+  z-index: 9999;
 }
 
 .btn-nav {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
+  pointer-events: all;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,.35);
+  backdrop-filter: blur(6px);
   border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  background: rgba(255, 255, 255, 0.1);
   color: white;
-  transition: 0.3s;
+  font-size: 26px;
+  padding: 10px 14px;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
-.btn-nav:hover {
-  background: rgba(255, 255, 255, 0.3);
-}
-
-.nav-btn {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
-  transition: 0.3s;
-}
+.prev-custom { left: 10px; }
+.next-custom { right: 10px; }
 
 .nav-btn:hover {
   background: rgba(255, 255, 255, 0.3);
@@ -1510,7 +1494,6 @@ TABLET EM PÉ (iPad vertical)
 
   /* ===== DESCRIÇÃO ===== */
   .descricao-carrossel {
-    max-width: 100%;
     padding: 10px 15px;
     text-align: center;
   }
@@ -1539,12 +1522,13 @@ TABLET EM PÉ (iPad vertical)
     gap: 18px;
   }
 
-  .container-carrossel-custom {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 16/9;
-    overflow: hidden;
-  }
+.container-carrossel-custom {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
 
   /* ===== MENU ===== */
   .menu {
@@ -1670,16 +1654,6 @@ TABLET EM PÉ (iPad vertical)
     object-fit: cover;
   }
 
-  /* ===== BOTÕES DO CARROSSEL (CORRIGIDO) ===== */
-.nav-carrossel {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  transform: translateY(-50%);
-  pointer-events: none;
-  z-index: 9999;
-}
 
 .btn-nav {
   pointer-events: all;
@@ -1688,17 +1662,26 @@ TABLET EM PÉ (iPad vertical)
   transform: translateY(-50%);
 }
 
-.prev-custom { left: 10px; }
-.next-custom { right: 10px; }
+ .sessao-carrossel,
+  .container-carrossel-custom,
+  .caixinha {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: visible !important;
+    position: relative !important;
+  }
 
-/* corrige pais estreitando o carrossel */
-.sessao-carrossel,
-.container-carrossel-custom,
-.caixinha {
-  width: 100% !important;
-  max-width: 100% !important;
-  overflow: visible !important;
-  position: relative !important;
+  .descricao-carrossel {
+    padding: 10px 15px;
+    text-align: center;
+  }
+
+  .nav-carrossel {
+    top: 50%;
+  }
+
+  .prev-custom { left: 5px; }
+  .next-custom { right: 5px; }
 }
 
 
