@@ -1520,8 +1520,8 @@ TABLET EM PÉ (iPad vertical)
  .container-carrossel-custom {
     position: relative;
     width: 100%;
-    aspect-ratio: 16/9;   /* mantém altura ideal */
-    overflow: hidden;
+    overflow: visible; /* <-- ESSENCIAL */
+    z-index: 10;
   }
 
   /* ================= MENU ================= */
@@ -1636,7 +1636,9 @@ TABLET EM PÉ (iPad vertical)
 
  .slides-carrossel {
     width: 100%;
-    height: 100%;
+    height: auto;
+    position: relative;
+    z-index: 5;
   }
 
   .slide-item {
@@ -1658,30 +1660,24 @@ TABLET EM PÉ (iPad vertical)
   .nav-carrossel {
     position: absolute;
     top: 50%;
-    left: 0;
-    width: 100%;
-    transform: translateY(-50%);
+    left: 50%;
+    width: calc(100% - 20px);
+    transform: translate(-50%, -50%);
     display: flex;
-    justify-content: space-between;
-    padding: 0 10px;
-    pointer-events: none;  /* click só no botão */
-    z-index: 40;
+    justify-content: space-between; /* <-- volta */
+    pointer-events: none;
+    z-index: 50; /* <-- garante que fica na frente */
   }
 
- .btn-nav {
+  .btn-nav {
     pointer-events: all;
-    width: 38px;
-    height: 38px;
-    font-size: 20px;
-    background: rgba(0,0,0,0.35);
+    width: 36px;
+    height: 36px;
+    background: rgba(0,0,0,0.4);
     border-radius: 50%;
     color: white;
     border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
-
   /* ============================== */
 
   #sobre,
