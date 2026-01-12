@@ -1665,7 +1665,7 @@ TABLET EM PÉ (iPad vertical)
     justify-content: space-around;
     padding: 0 10px;
     pointer-events: none;  /* click só no botão */
-    z-index: 40;
+    z-index: 999;
   }
 
  .btn-nav {
