@@ -1517,9 +1517,11 @@ TABLET EM PÉ (iPad vertical)
     gap: 18px;
   }
 
-  .container-carrossel-custom {
+ .container-carrossel-custom {
+    position: relative;
     width: 100%;
-    position: relative; /* aqui é a referência p/ botões */
+    aspect-ratio: 16/9;   /* mantém altura ideal */
+    overflow: hidden;
   }
 
   /* ================= MENU ================= */
@@ -1632,13 +1634,13 @@ TABLET EM PÉ (iPad vertical)
     border-radius: 12px;
   }
 
-  .slides-carrossel {
-    height: 48vw;
-    max-height: 240px;
+ .slides-carrossel {
+    width: 100%;
+    height: 100%;
   }
 
   .slide-item {
-    min-width: 100%;
+    width: 100%;
     height: 100%;
   }
 
@@ -1646,8 +1648,8 @@ TABLET EM PÉ (iPad vertical)
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
   }
+
 
   /* ==============================
      BOTÕES DO CARROSSEL (CORRIGIDO)
@@ -1661,21 +1663,23 @@ TABLET EM PÉ (iPad vertical)
     transform: translateY(-50%);
     display: flex;
     justify-content: space-between;
-    align-items: center;
     padding: 0 10px;
-    pointer-events: none;
-    z-index: 600;
+    pointer-events: none;  /* click só no botão */
+    z-index: 40;
   }
 
-  .btn-nav {
+ .btn-nav {
     pointer-events: all;
-    width: 35px;
-    height: 35px;
-    font-size: 18px;
-    background: rgba(255,255,255,0.15);
+    width: 38px;
+    height: 38px;
+    font-size: 20px;
+    background: rgba(0,0,0,0.35);
     border-radius: 50%;
-    color: #ffe9f0;
-    z-index: 600;
+    color: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   /* ============================== */
