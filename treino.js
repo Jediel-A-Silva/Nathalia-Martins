@@ -195,8 +195,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const prevBtn = document.querySelector(".gp-carousel-prev");
   const nextBtn = document.querySelector(".gp-carousel-next");
+  const dotsContainer = document.querySelector(".gp-carousel-dots");
 
-  if (!img || !title || !description || !prevBtn || !nextBtn) return;
+  if (!img || !title || !description || !prevBtn || !nextBtn || !dotsContainer) return;
 
   const slides = [
     {
@@ -233,10 +234,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let index = 0;
 
+  // cria bolinhas
+  slides.forEach((_, i) => {
+    const dot = document.createElement("span");
+    dot.classList.add("gp-carousel-dot");
+    if (i === 0) dot.classList.add("active");
+
+    dot.addEventListener("click", () => {
+      index = i;
+      atualizarCarousel();
+    });
+
+    dotsContainer.appendChild(dot);
+  });
+
   function atualizarCarousel() {
     img.src = slides[index].image;
     title.textContent = slides[index].titulo;
     description.textContent = slides[index].descricao;
+
+    document.querySelectorAll(".gp-carousel-dot").forEach((dot, i) => {
+      dot.classList.toggle("active", i === index);
+    });
   }
 
   nextBtn.addEventListener("click", () => {
@@ -250,38 +269,5 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   atualizarCarousel();
-
-})();
-(function () {
-
-  const carouselArea = document.querySelector(".gp-carousel-image");
-  if (!carouselArea) return;
-
-  let startX = 0;
-  let endX = 0;
-  const swipeThreshold = 50; // distância mínima do swipe
-
-  carouselArea.addEventListener("touchstart", (e) => {
-    startX = e.touches[0].clientX;
-  });
-
-  carouselArea.addEventListener("touchmove", (e) => {
-    endX = e.touches[0].clientX;
-  });
-
-  carouselArea.addEventListener("touchend", () => {
-    const diff = startX - endX;
-
-    if (Math.abs(diff) > swipeThreshold) {
-      if (diff > 0) {
-        document.querySelector(".gp-carousel-next")?.click();
-      } else {
-        document.querySelector(".gp-carousel-prev")?.click();
-      }
-    }
-
-    startX = 0;
-    endX = 0;
-  });
 
 })();
