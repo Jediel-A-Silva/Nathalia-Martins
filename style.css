@@ -1498,10 +1498,12 @@ TABLET EM PÉ (iPad vertical)
     }
 
     /* ================= four-sections ================= */
-    .four-sections {
-      width: 90%;
-      grid-template-columns: 1fr;
-      gap: 20px;
+        #sobre, #servicos, #servicos1 {
+        width: 100%;
+        height: auto;
+        padding: 20px 10px;
+        box-sizing: border-box;
+        margin-bottom: 30px;
     }
   }
 
