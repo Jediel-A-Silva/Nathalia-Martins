@@ -420,12 +420,7 @@ form button {
 
 /* bolinhas */
 .gp-carousel-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(2px);
-  transition: all 0.3s ease;
+display: none;
 }
 
 .gp-carousel-dot.active {
@@ -1234,6 +1229,95 @@ TABLET EM PÉ (iPad vertical)
     gap: 2.5rem;
   }
 
+  /* ================= GP-Carousel ================= */
+    .gp-carousel-section {
+      width: 90%;
+    }
+
+    .gp-carousel-wrapper {
+      padding: 16px;
+    }
+
+    .gp-carousel-container {
+      flex-direction: column;
+      padding: 18px;
+      gap: 18px;
+      border-radius: 18px;
+    }
+
+    /* IMAGEM */
+    .gp-carousel-image {
+      width: 100%;
+      border-radius: 14px;
+      position: relative;
+      overflow: visible;
+    }
+
+    .gp-carousel-dots {
+    margin-top: 12px;
+  }
+
+    .gp-carousel-image img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 14px;
+    }
+
+  .gp-carousel-dot {
+    display: flex;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(2px);
+  transition: all 0.3s ease;
+}
+
+.gp-carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.gp-carousel-dot.active {
+  background: #4b1024;
+  transform: scale(1.3);
+}
+
+
+    /* SETAS */
+    .gp-carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+  }
+
+    .gp-carousel-prev, .gp-carousel-next {
+      display: none;
+    }
+
+    /* TEXTO */
+    .gp-carousel-text {
+      width: 100%;
+      text-align: center;
+    }
+
+    .gp-carousel-text h2 {
+      font-size: 24px;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .gp-carousel-text p {
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
   /* ================= GRID ================= */
   .four-sections {
     grid-template-columns: 1fr;
@@ -1359,11 +1443,14 @@ TABLET EM PÉ (iPad vertical)
       border-radius: 14px;
     }
 
-    .gp-carousel-dots {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 16px;
+  .gp-carousel-dot {
+    display: flex;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(2px);
+  transition: all 0.3s ease;
 }
 
 .gp-carousel-dot {
@@ -1412,9 +1499,9 @@ TABLET EM PÉ (iPad vertical)
 
     /* ================= four-sections ================= */
     .four-sections {
+      width: 90%;
       grid-template-columns: 1fr;
       gap: 20px;
-      width: 90%;
     }
   }
 
@@ -1425,6 +1512,14 @@ TABLET EM PÉ (iPad vertical)
     width: 100%;
     box-sizing: border-box;
   }
+
+   .four-sections section {
+    display: flex;
+    width: 100%;
+    min-height: 420px;
+    padding: 22px 18px;
+    border-radius: 18px;
+   }
 
   /* ================= MENU ================= */
   .menu {
@@ -1533,7 +1628,7 @@ TABLET EM PÉ (iPad vertical)
   #sobre,
   #servicos,
   #servicos1 {
-    width: 100%;
+    width: 90%;
     height: auto;
     padding: 20px 10px;
     box-sizing: border-box;
