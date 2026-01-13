@@ -1678,6 +1678,7 @@ TABLET EM PÉ (iPad vertical)
 
   .nav-carrossel {
     top: 50%;
+     z-index: 999999;
   }
 
   .prev-custom { left: 5px; }
