@@ -228,3 +228,65 @@ document.addEventListener("DOMContentLoaded", () => {
     atualizar();
   })();
 });
+const slides = [
+  {
+    image: "img/imagem8.jpg",
+    title: "Gestante Como Protagonista",
+    description:
+      "Você é o centro de todas as decisões. Vivencie o parto com autonomia, amor e apoio contínuo."
+  },
+  {
+    image: "img/imagem7.jpg",
+    title: "Parto Humanizado",
+    description:
+      "O parto respeita o tempo do seu corpo, suas escolhas e o protagonismo da mulher."
+  },
+  {
+    image: "img/imagem10.jpg",
+    title: "Acolhimento e Respeito",
+    description:
+      "Cada gestante é única. O cuidado é baseado em escuta ativa, empatia e segurança."
+  },
+  {
+    image: "img/imagem10.jpg",
+    title: "Apoio Contínuo",
+    description:
+      "Presença constante durante todo o trabalho de parto, oferecendo conforto e confiança."
+  },
+  {
+    image: "img/imagem7.jpg",
+    title: "Ambiente Seguro",
+    description:
+      "Um espaço preparado para oferecer tranquilidade, privacidade e bem-estar."
+  },
+  {
+    image: "img/imagem8.jpg",
+    title: "Nascimento com Amor",
+    description:
+      "O início da vida cercado de cuidado, respeito e conexão."
+  }
+];
+
+let currentIndex = 0;
+
+const img = document.getElementById("gpCarouselImg");
+const title = document.getElementById("gpCarouselTitle");
+const description = document.getElementById("gpCarouselDescription");
+
+function updateCarousel() {
+  img.src = slides[currentIndex].image;
+  title.textContent = slides[currentIndex].title;
+  description.textContent = slides[currentIndex].description;
+}
+
+document.querySelector(".gp-carousel-next").addEventListener("click", () => {
+  currentIndex = (currentIndex + 1) % slides.length;
+  updateCarousel();
+});
+
+document.querySelector(".gp-carousel-prev").addEventListener("click", () => {
+  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+  updateCarousel();
+});
+
+updateCarousel();

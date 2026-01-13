@@ -327,6 +327,76 @@ form button {
   cursor: pointer;
 }
 
+/* ================= GP-Carousel ================= */ 
+.gp-carousel-wrapper {
+  padding: 40px;
+}
+
+.gp-carousel-container {
+  background: linear-gradient(90deg, #8b0000, #a8325e);
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  padding: 40px;
+  gap: 40px;
+}
+
+/* IMAGEM */
+.gp-carousel-image {
+  position: relative;
+  width: 55%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.gp-carousel-image img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+/* SETAS */
+.gp-carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.4);
+  color: #fff;
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 22px;
+}
+
+.gp-carousel-prev {
+  left: 15px;
+}
+
+.gp-carousel-next {
+  right: 15px;
+}
+
+/* TEXTO */
+.gp-carousel-text {
+  width: 45%;
+  color: #fff;
+}
+
+.gp-carousel-text h2 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.gp-carousel-text p {
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+
 /* ================= CARDS DAS SEÇÕES ================= */
 .four-sections {
   display: grid;
@@ -360,7 +430,6 @@ form button {
   align-self: center;
 }
 
-/* Sessão carrossel */
 .sessao-carrossel {
   display: flex;
   align-items: center;
@@ -377,46 +446,52 @@ form button {
 
 /* Caixa da imagem do carrossel */
 .container-carrossel-custom {
-  position: relative;
-  width: 100%;
-  max-width: 550px;
-  aspect-ratio: 1 / 1;
-  overflow: hidden;
-  border-radius: 15px;
-  z-index: 1;
+  position: relative; 
+  width: 60%;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
+
+/* Contêiner dos slides */
 .slides-carrossel {
+  height: 55vw;
+  max-height: 480px;
+}
+
+
+
+/* Cada slide */
+.slide-item {
+  position: absolute; /* todos ocupam o mesmo lugar */
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  position: relative;
-}
-
-.slide-item {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  transition: opacity .4s ease;
-  display: flex;
-}
-
-.slide-item.ativo-slide {
-  opacity: 1;
-  z-index: 2;
+  opacity: 0; /* invisível por padrão */
+  transition: opacity 0.5s ease-in-out;
 }
 
 .slide-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 12px;
+  display: block;
 }
 
-/* Texto lateral */
+/* Slide ativo */
+.slide-item.ativo-slide {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* ✨ Texto lateral com contraste ajustado para fundo escuro */
 .descricao-carrossel {
   flex: 1;
   max-width: 480px;
   padding: 20px 40px;
-  color: #f5f5f5;
+  color: #f5f5f5; /* texto principal claro */
 }
 
 .descricao-carrossel h2 {
@@ -425,50 +500,97 @@ form button {
   color: #ffffff;
   margin-bottom: 22px;
   line-height: 1.15;
-  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  letter-spacing: 0.8px;
+  text-transform: capitalize;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6), 0 0 22px rgba(255, 120, 160, 0.7);
 }
 
+/* PARÁGRAFO */
 .descricao-carrossel p {
   font-size: clamp(1rem, 1.8vw, 1.15rem);
+  font-weight: 400;
   line-height: 1.7;
   color: rgba(255, 255, 255, 0.92);
+  max-width: 440px;
+  margin: 0;
+  letter-spacing: 0.3px;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
 }
 
-/* Navegação corrigida */
+.descricao-carrossel .btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: linear-gradient(90deg, #ff4081, #ff79b0);
+  color: #fff;
+  font-weight: 700;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(255, 64, 129, 0.4);
+}
+
+.descricao-carrossel .btn:hover {
+  background: linear-gradient(90deg, #ff79b0, #ff4081);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(255, 64, 129, 0.6);
+}
+
+/* Navegação */
 .nav-carrossel {
   position: absolute;
   top: 50%;
   left: 0;
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px;
   transform: translateY(-50%);
   pointer-events: none;
-  z-index: 9999;
+  z-index: 100;
 }
 
 .btn-nav {
-  pointer-events: all;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,.35);
-  backdrop-filter: blur(6px);
-  border: none;
-  color: white;
-  font-size: 26px;
-  padding: 10px 14px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
+  border: none;
+  font-size: 1.5rem;
   cursor: pointer;
-  width: 40px;       /* estava no .nav-btn */
-  height: 40px;      /* estava no .nav-btn */
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  transition: 0.3s;
 }
-
-.prev-custom { left: 10px; }
-.next-custom { right: 10px; }
 
 .btn-nav:hover {
   background: rgba(255, 255, 255, 0.3);
 }
 
+.nav-btn {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  transition: 0.3s;
+}
+
+.nav-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+
+  .nav-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.3rem;
+  }
+
+  .nav-carrossel .btn-nav {
+  pointer-events: auto;
+}
 
 /* Seções personalizadas */
 .personalizada {
@@ -1199,6 +1321,14 @@ TABLET EM PÉ (iPad vertical)
     transform: none;
   }
 
+  
+
+    .btn-nav {
+    background-color: rgba(255, 255, 255, 0.35); /* VISÍVEL */
+    color: #ffffff;
+    z-index: 20;
+    position: relative;
+  }
 
   /* ================= MENU LATERAL ================= */
   .menu {
@@ -1292,34 +1422,12 @@ TABLET EM PÉ (iPad vertical)
     width: 100%;
     max-width: 900px;
     margin: 0 auto;
-  }
-
-   .nav-carrossel {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    transform: translateY(-50%);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 16px;
-    pointer-events: none;
-    z-index: 30;
-  }
-
- .btn-nav {
-    pointer-events: all;
-    width: 42px;
-    height: 42px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.12);
-    font-size: 22px;
-    color: #ffe9f0;
-    border: none;
+    .nav-carrossel {
+      max-width: 240px;
+      margin: 15px auto;
+      display: flex;
+      justify-content: space-between;
+    }
   }
 
   .carousel {
@@ -1385,15 +1493,13 @@ TABLET EM PÉ (iPad vertical)
   }
 }
 
+
 /* ===== MOBILE PEQUENO — até 480px ===== */
 @media (max-width: 480px) {
-
-  /* ===== BASE ===== */
   body {
     font-size: 14px;
   }
 
-  /* ===== PERFIL & HERO ===== */
   .perfil {
     min-height: 100vh;
     display: flex;
@@ -1401,23 +1507,6 @@ TABLET EM PÉ (iPad vertical)
     justify-content: flex-end;
     align-items: center;
     padding-bottom: 30px;
-  }
-
-  .perfil h1 {
-    font-family: "Great Vibes", cursive;
-    font-size: 25px;
-    margin-bottom: 10px;
-    color: #b3b529;
-    text-shadow: 2px 2px 4px #00000080;
-    letter-spacing: 2px;
-  }
-
-  .perfil h3 {
-    font-size: 1.2rem;
-    color: #7c0019;
-    margin-top: -5px;
-    margin-bottom: 10px;
-    letter-spacing: 1px;
   }
 
   .hero-text {
@@ -1430,7 +1519,6 @@ TABLET EM PÉ (iPad vertical)
     transform: none;
   }
 
-  /* ===== NAVBAR ===== */
   .navbar {
     position: fixed;
     width: 100%;
@@ -1444,7 +1532,66 @@ TABLET EM PÉ (iPad vertical)
     margin-top: 0;
   }
 
-  /* ===== GRID ===== */
+
+
+  /* ================= GP-Carousel ================= */
+  .gp-carousel-wrapper {
+    padding: 16px 10px;
+  }
+
+  .gp-carousel-container {
+    flex-direction: column;
+    padding: 18px;
+    gap: 18px;
+    border-radius: 18px;
+  }
+
+  /* IMAGEM */
+  .gp-carousel-image {
+    width: 100%;
+    border-radius: 14px;
+  }
+
+  .gp-carousel-image img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 14px;
+  }
+
+  /* SETAS */
+  .gp-carousel-nav {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+
+  .gp-carousel-prev {
+    left: 8px;
+  }
+
+  .gp-carousel-next {
+    right: 8px;
+  }
+
+  /* TEXTO */
+  .gp-carousel-text {
+    width: 100%;
+    text-align: center;
+  }
+
+  .gp-carousel-text h2 {
+    font-size: 24px;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+
+  .gp-carousel-text p {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  
+  /* ================= four-sections ================= */
   .four-sections {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -1453,11 +1600,12 @@ TABLET EM PÉ (iPad vertical)
 
   .caixinha {
     flex-direction: column;
-    gap: 0;
+    gap: 0px;
   }
 
-  /* ===== DESCRIÇÃO ===== */
+  /* ===== TEXTO ===== */
   .descricao-carrossel {
+    max-width: 100%;
     padding: 10px 15px;
     text-align: center;
   }
@@ -1470,7 +1618,7 @@ TABLET EM PÉ (iPad vertical)
     font-size: 0.95rem;
   }
 
-  /* ===== CONTAINER ===== */
+  /* ===== SESSÃO ===== */
   .container {
     padding: 0 10px;
     margin: 20px auto 0 auto;
@@ -1478,7 +1626,6 @@ TABLET EM PÉ (iPad vertical)
     box-sizing: border-box;
   }
 
-  /* ===== SESSÃO ===== */
   .sessao-carrossel {
     flex-direction: column;
     height: auto;
@@ -1486,15 +1633,12 @@ TABLET EM PÉ (iPad vertical)
     gap: 18px;
   }
 
-.container-carrossel-custom {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  z-index: 1;
-}
+  .container-carrossel-custom {
+    width: 100%;
+    position: relative; /* aqui é a referência p/ botões */
+  }
 
-
-  /* ===== MENU ===== */
+  /* ================= MENU ================= */
   .menu {
     display: none;
     position: fixed;
@@ -1545,24 +1689,9 @@ TABLET EM PÉ (iPad vertical)
     text-align: left;
   }
 
-  /* ===== REDES ===== */
-  .redes-sociais {
-    text-align: center;
-    width: 100%;
-    margin-top: -10px;
-    padding: 13px 10px;
-  }
-
+  /* REDES */
   .redes-sociais p {
     font-size: 18px;
-  }
-
-  .redes-icons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
-    width: 100%;
   }
 
   .redes-sociais a {
@@ -1585,7 +1714,25 @@ TABLET EM PÉ (iPad vertical)
     display: inline-block;
   }
 
-  /* ===== CARROSSEL / HEALTH ===== */
+  .redes-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .redes-sociais {
+    text-align: center;
+    width: 100%;
+    margin-top: -10px;
+    padding: 13px 10px;
+  }
+
+  /* ==============================
+      CARROSSEL / HEALTH
+     ============================== */
+
   .health-image {
     width: 100%;
     height: auto;
@@ -1602,13 +1749,12 @@ TABLET EM PÉ (iPad vertical)
   }
 
   .slides-carrossel {
-    width: 100%;
-    height: 100%;
-    z-index: 1;
+    height: 48vw;
+    max-height: 240px;
   }
 
   .slide-item {
-    width: 100%;
+    min-width: 100%;
     height: 100%;
   }
 
@@ -1616,42 +1762,35 @@ TABLET EM PÉ (iPad vertical)
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
   }
 
-
-.btn-nav {
-  pointer-events: all;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
- .sessao-carrossel,
-  .container-carrossel-custom,
-  .caixinha {
-    width: 100% !important;
-    max-width: 100% !important;
-    overflow: visible !important;
-    position: relative !important;
-  }
-
-  .descricao-carrossel {
-    padding: 10px 15px;
-    text-align: center;
-  }
-
+  /* ==============================
+     BOTÕES DO CARROSSEL (CORRIGIDO)
+     ============================== */
   .nav-carrossel {
+    position: absolute;
     top: 50%;
-     z-index: 999999;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between; /* um em cada canto */
+    align-items: center;
+    padding: 0 12px;
+    pointer-events: none;
+    z-index: 20;
   }
 
-  .prev-custom { left: 5px; }
-  .next-custom { right: 5px; }
-}
+  .btn-nav {
+    pointer-events: all;
+    width: 38px;
+    height: 38px;
+    font-size: 1.1rem;
+  }
 
+  /* ============================== */
 
-
-  /* ===== SEÇÕES ===== */
   #sobre,
   #servicos,
   #servicos1 {
@@ -1678,12 +1817,28 @@ TABLET EM PÉ (iPad vertical)
     text-align: center;
   }
 
+  .perfil h1 {
+    font-family: "Great Vibes", cursive;
+    font-size: 25px;
+    margin-bottom: 10px;
+    color: #b3b529;
+    text-shadow: 2px 2px 4px #00000080;
+    letter-spacing: 2px;
+  }
+
+  .perfil h3 {
+    font-size: 1.2rem;
+    color: #7c0019;
+    margin-top: -5px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+  }
+
   #servicos p,
   h2 {
     font-size: 19px;
   }
 
-  /* ===== FOOTER ===== */
   footer {
     padding: 15px 10px;
   }
@@ -1696,3 +1851,4 @@ TABLET EM PÉ (iPad vertical)
     width: 60px !important;
     height: 60px !important;
   }
+}
