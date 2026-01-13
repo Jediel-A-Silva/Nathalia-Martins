@@ -20,8 +20,8 @@ html {
 body {
   font-family: "Arial", sans-serif;
   line-height: 1.6;
-  background: #ffe9f0;      /* ALTERADO */
-  color: #ffffff;           /* Texto escuro para contraste */
+  background: #ffe9f0; /* ALTERADO */
+  color: #ffffff; /* Texto escuro para contraste */
 }
 
 /* Container principal */
@@ -245,7 +245,7 @@ body {
   padding-bottom: 4px;
 }
 
-.menu-wrapper{
+.menu-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -278,7 +278,6 @@ body {
 .menu-btn svg rect {
   fill: #ffffff; /* branco igual ao print */
 }
-
 
 /* Keyframes */
 @keyframes aparecer {
@@ -370,7 +369,7 @@ form button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0,0,0,0.4);
+  background: rgba(0, 0, 0, 0.4);
   color: #fff;
   border: none;
   width: 45px;
@@ -380,8 +379,12 @@ form button {
   font-size: 22px;
 }
 
-.gp-carousel-prev { left: 15px; }
-.gp-carousel-next { right: 15px; }
+.gp-carousel-prev {
+  left: 15px;
+}
+.gp-carousel-next {
+  right: 15px;
+}
 
 /* TEXTO */
 .gp-carousel-text {
@@ -402,7 +405,6 @@ form button {
 
 /* ================= RESPONSIVO 480px ================= */
 @media (max-width: 480px) {
-
   .gp-carousel-section {
     padding: 20px;
   }
@@ -440,8 +442,6 @@ form button {
   }
 }
 
-
-
 /* ================= CARDS DAS SEÇÕES ================= */
 .four-sections {
   display: grid;
@@ -474,169 +474,6 @@ form button {
   margin-top: auto; /* CHAVE PRINCIPAL */
   align-self: center;
 }
-
-.sessao-carrossel {
-  display: flex;
-  align-items: center;
-  background: linear-gradient(135deg, #800000, #a52a4d, #4b001f);
-  border-radius: 20px;
-  padding: 46px;
-  width: 100%;
-  max-width: 80rem;
-  margin: 40px auto;
-  gap: 40px;
-  color: white;
-  height: 583px;
-}
-
-/* Caixa da imagem do carrossel */
-.container-carrossel-custom {
-  position: relative; 
-  width: 60%;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-
-/* Contêiner dos slides */
-.slides-carrossel {
-  height: 55vw;
-  max-height: 480px;
-}
-
-
-
-/* Cada slide */
-.slide-item {
-  position: absolute; /* todos ocupam o mesmo lugar */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0; /* invisível por padrão */
-  transition: opacity 0.5s ease-in-out;
-}
-
-.slide-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 12px;
-  display: block;
-}
-
-/* Slide ativo */
-.slide-item.ativo-slide {
-  opacity: 1;
-  z-index: 1;
-}
-
-/* ✨ Texto lateral com contraste ajustado para fundo escuro */
-.descricao-carrossel {
-  flex: 1;
-  max-width: 480px;
-  padding: 20px 40px;
-  color: #f5f5f5; /* texto principal claro */
-}
-
-.descricao-carrossel h2 {
-  font-size: clamp(1rem, 4vw, 2rem);
-  font-weight: 900;
-  color: #ffffff;
-  margin-bottom: 22px;
-  line-height: 1.15;
-  letter-spacing: 0.8px;
-  text-transform: capitalize;
-  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6), 0 0 22px rgba(255, 120, 160, 0.7);
-}
-
-/* PARÁGRAFO */
-.descricao-carrossel p {
-  font-size: clamp(1rem, 1.8vw, 1.15rem);
-  font-weight: 400;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.92);
-  max-width: 440px;
-  margin: 0;
-  letter-spacing: 0.3px;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
-}
-
-.descricao-carrossel .btn {
-  display: inline-block;
-  padding: 12px 24px;
-  background: linear-gradient(90deg, #ff4081, #ff79b0);
-  color: #fff;
-  font-weight: 700;
-  border-radius: 10px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(255, 64, 129, 0.4);
-}
-
-.descricao-carrossel .btn:hover {
-  background: linear-gradient(90deg, #ff79b0, #ff4081);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(255, 64, 129, 0.6);
-}
-
-/* Navegação */
-.nav-carrossel {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 15px;
-  transform: translateY(-50%);
-  pointer-events: none;
-  z-index: 100;
-}
-
-.btn-nav {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
-  transition: 0.3s;
-}
-
-.btn-nav:hover {
-  background: rgba(255, 255, 255, 0.3);
-}
-
-.nav-btn {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
-  transition: 0.3s;
-}
-
-.nav-btn:hover {
-  background: rgba(255, 255, 255, 0.3);
-}
-
-
-  .nav-btn {
-    width: 40px;
-    height: 40px;
-    font-size: 1.3rem;
-  }
-
-  .nav-carrossel .btn-nav {
-  pointer-events: auto;
-}
-
 /* Seções personalizadas */
 .personalizada {
   padding: 40px 20px;
@@ -747,17 +584,6 @@ h2 {
   }
 }
 
-.caixinha {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  margin: 0px auto;
-  padding: 20px;
-  background-color: #ffe9f0;
-  border-radius: 0px;
-  border: none;
-}
 #sobre {
   position: relative;
   flex: 1 1 100%;
@@ -1066,19 +892,6 @@ footer .redes-sociais p {
     z-index: 5;
   }
 
-  /* ================= CARROSSEL ================= */
-  .sessao-carrossel {
-    width: 100%;
-    max-width: 100%;
-    height: 520px;
-    padding: 30px;
-  }
-
-  .descricao-carrossel {
-    padding: 20px;
-    text-align: center;
-  }
-
   /* ================= MENU / NAV ================= */
   .menu-wrapper {
     display: flex;
@@ -1092,7 +905,6 @@ footer .redes-sociais p {
 TABLET EM PÉ (iPad vertical)
 =============================== */
 @media (max-width: 1024px) {
-
   /* ================= HERO ================= */
   .perfil {
     min-height: 90vh;
@@ -1239,12 +1051,10 @@ TABLET EM PÉ (iPad vertical)
   }
 }
 
-
 /* =====================================================
    TABLETS GRANDES — HORIZONTAL (até 992px)
 ===================================================== */
 @media (max-width: 992px) {
-
   /* ================= HERO ================= */
   .perfil {
     min-height: 90vh;
@@ -1271,40 +1081,11 @@ TABLET EM PÉ (iPad vertical)
     gap: 20px;
   }
 
-  /* ================= CARROSSEL ================= */
-  .sessao-carrossel {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-    padding: 25px;
-    height: auto;
-  }
-
-  .descricao-carrossel {
-    text-align: center;
-    padding: 20px;
-  }
-
   .carousel {
     width: 100%;
     height: 45vh;
     border-radius: 14px;
     overflow: hidden;
-  }
-
-  .slide-item {
-    flex: 0 0 100%;
-    max-width: 100%;
-    height: 100%;
-  }
-
-  .slide-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
   }
 
   /* ================= NAV ================= */
@@ -1332,16 +1113,12 @@ TABLET EM PÉ (iPad vertical)
     text-align: center;
     margin: 1.5rem auto 2rem;
   }
-
 }
-
-
 
 /* =====================================================
    TABLETS EM PÉ / MOBILE HORIZONTAL (até 768px)
 ===================================================== */
 @media (max-width: 768px) {
-
   /* ================= BASE ================= */
   body {
     font-size: 15px;
@@ -1366,14 +1143,7 @@ TABLET EM PÉ (iPad vertical)
     transform: none;
   }
 
-  
 
-    .btn-nav {
-    background-color: rgba(255, 255, 255, 0.35); /* VISÍVEL */
-    color: #ffffff;
-    z-index: 20;
-    position: relative;
-  }
 
   /* ================= MENU LATERAL ================= */
   .menu {
@@ -1437,44 +1207,6 @@ TABLET EM PÉ (iPad vertical)
   .four-sections {
     grid-template-columns: 1fr;
   }
-
-  /* ================= CARROSSEL ================= */
-  .sessao-carrossel {
-    display: flex;
-    flex-direction: column;
-    height: auto;
-    padding: 28px;
-    gap: 28px;
-  }
-
-  .descricao-carrossel {
-    max-width: 100%;
-    padding: 0;
-    text-align: center;
-  }
-
-  .descricao-carrossel h2 {
-    font-size: 28px;
-  }
-
-  .descricao-carrossel p {
-    font-size: 22px;
-  }
-
-  
-  .container-carrossel-custom {
-    position: relative;
-    width: 100%;
-    max-width: 900px;
-    margin: 0 auto;
-    .nav-carrossel {
-      max-width: 240px;
-      margin: 15px auto;
-      display: flex;
-      justify-content: space-between;
-    }
-  }
-
   .carousel {
     width: 100%;
     height: 42vh;
@@ -1487,20 +1219,6 @@ TABLET EM PÉ (iPad vertical)
     height: 100%;
     gap: 16px;
     align-items: stretch;
-  }
-
-  .slide-item {
-    width: 100%;
-    flex: 0 0 100%;
-    border-radius: 14px;
-    overflow: hidden;
-  }
-
-  .slide-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
   }
 
   /* ================= SAÚDE / REDES ================= */
@@ -1536,135 +1254,112 @@ TABLET EM PÉ (iPad vertical)
     text-align: center;
     margin: 2rem auto;
   }
-}
 
+  /* ===== MOBILE PEQUENO — até 480px ===== */
+  @media (max-width: 480px) {
+    body {
+      font-size: 14px;
+    }
 
-/* ===== MOBILE PEQUENO — até 480px ===== */
-@media (max-width: 480px) {
-  body {
-    font-size: 14px;
-  }
+    .perfil {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      padding-bottom: 30px;
+    }
 
-  .perfil {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    padding-bottom: 30px;
-  }
+    .hero-text {
+      background: rgba(124, 152, 181, 0.34);
+      padding: 18px 26px;
+      border-radius: 15px;
+      width: 90%;
+      max-width: 52rem;
+      margin: 40px auto;
+      transform: none;
+    }
 
-  .hero-text {
-    background: rgba(124, 152, 181, 0.34);
-    padding: 18px 26px;
-    border-radius: 15px;
-    width: 90%;
-    max-width: 52rem;
-    margin: 40px auto;
-    transform: none;
-  }
+    .navbar {
+      position: fixed;
+      width: 100%;
+      height: auto;
+      padding: 12px;
+      flex-wrap: wrap;
+    }
 
-  .navbar {
-    position: fixed;
-    width: 100%;
-    height: auto;
-    padding: 12px;
-    flex-wrap: wrap;
-  }
+    .search {
+      width: 100%;
+      margin-top: 0;
+    }
 
-  .search {
-    width: 100%;
-    margin-top: 0;
-  }
+    /* ================= GP-Carousel ================= */
+    .gp-carousel-section {
+      width: 90%;
+    }
 
+    .gp-carousel-wrapper {
+      padding: 16px;
+    }
 
+    .gp-carousel-container {
+      flex-direction: column;
+      padding: 18px;
+      gap: 18px;
+      border-radius: 18px;
+    }
 
-  /* ================= GP-Carousel ================= */
-  .gp-carousel-section{
-    width: 90%;
-  }
+    /* IMAGEM */
+    .gp-carousel-image {
+      width: 100%;
+      border-radius: 14px;
+    }
 
-  .gp-carousel-wrapper {
-    padding: 16px;
-  }
+    .gp-carousel-image img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 14px;
+    }
 
-  .gp-carousel-container {
-    flex-direction: column;
-    padding: 18px;
-    gap: 18px;
-    border-radius: 18px;
-  }
+    /* SETAS */
+    .gp-carousel-nav {
+      width: 36px;
+      height: 36px;
+      font-size: 18px;
+    }
 
-  /* IMAGEM */
-  .gp-carousel-image {
-    width: 100%;
-    border-radius: 14px;
-  }
+    .gp-carousel-prev {
+      left: 8px;
+    }
 
-  .gp-carousel-image img {
-    width: 100%;
-    height: 240px;
-    object-fit: cover;
-    border-radius: 14px;
-  }
+    .gp-carousel-next {
+      right: 8px;
+    }
 
-  /* SETAS */
-  .gp-carousel-nav {
-    width: 36px;
-    height: 36px;
-    font-size: 18px;
-  }
+    /* TEXTO */
+    .gp-carousel-text {
+      width: 100%;
+      text-align: center;
+    }
 
-  .gp-carousel-prev {
-    left: 8px;
-  }
+    .gp-carousel-text h2 {
+      font-size: 24px;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
 
-  .gp-carousel-next {
-    right: 8px;
-  }
+    .gp-carousel-text p {
+      font-size: 15px;
+      line-height: 1.5;
+    }
 
-  /* TEXTO */
-  .gp-carousel-text {
-    width: 100%;
-    text-align: center;
-  }
-
-  .gp-carousel-text h2 {
-    font-size: 24px;
-    line-height: 1.2;
-    margin-bottom: 12px;
-  }
-
-  .gp-carousel-text p {
-    font-size: 15px;
-    line-height: 1.5;
-  }
-
-  /* ================= four-sections ================= */
-  .four-sections {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    width: 90%;
-  }
-
-  .caixinha {
-    flex-direction: column;
-    gap: 0px;
-  }
-
-  /* ===== TEXTO ===== */
-  .descricao-carrossel {
-    max-width: 100%;
-    padding: 10px 15px;
-    text-align: center;
-  }
-
-  .descricao-carrossel h2 {
-    font-size: 1.25rem;
-  }
-
-  .descricao-carrossel p {
-    font-size: 0.95rem;
+    /* ================= four-sections ================= */
+    .four-sections {
+      grid-template-columns: 1fr;
+      gap: 20px;
+      width: 90%;
+    }
   }
 
   /* ===== SESSÃO ===== */
@@ -1673,18 +1368,6 @@ TABLET EM PÉ (iPad vertical)
     margin: 20px auto 0 auto;
     width: 100%;
     box-sizing: border-box;
-  }
-
-  .sessao-carrossel {
-    flex-direction: column;
-    height: auto;
-    padding: 20px;
-    gap: 18px;
-  }
-
-  .container-carrossel-custom {
-    width: 100%;
-    position: relative; /* aqui é a referência p/ botões */
   }
 
   /* ================= MENU ================= */
@@ -1797,46 +1480,9 @@ TABLET EM PÉ (iPad vertical)
     border-radius: 12px;
   }
 
-  .slides-carrossel {
-    height: 48vw;
-    max-height: 240px;
-  }
+  
 
-  .slide-item {
-    min-width: 100%;
-    height: 100%;
-  }
 
-  .slide-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
-  /* ==============================
-     BOTÕES DO CARROSSEL (CORRIGIDO)
-     ============================== */
-  .nav-carrossel {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    transform: translateY(-50%);
-    display: flex;
-    justify-content: space-between; /* um em cada canto */
-    align-items: center;
-    padding: 0 12px;
-    pointer-events: none;
-    z-index: 20;
-  }
-
-  .btn-nav {
-    pointer-events: all;
-    width: 38px;
-    height: 38px;
-    font-size: 1.1rem;
-  }
 
   /* ============================== */
 
