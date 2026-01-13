@@ -327,17 +327,28 @@ form button {
   cursor: pointer;
 }
 
-/* ================= GP-Carousel ================= */ 
-.gp-carousel-wrapper {
+/* =====================================================
+   ================= GP CAROUSEL NOVO ==================
+   ===================================================== */
+
+.gp-carousel-box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.gp-carousel-section {
+  width: 100%;
+  max-width: 80rem;
+  margin: 40px auto;
   padding: 40px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #800000, #a52a4d, #4b001f);
 }
 
 .gp-carousel-container {
-  background: linear-gradient(90deg, #8b0000, #a8325e);
-  border-radius: 25px;
   display: flex;
   align-items: center;
-  padding: 40px;
   gap: 40px;
 }
 
@@ -345,8 +356,6 @@ form button {
 .gp-carousel-image {
   position: relative;
   width: 55%;
-  border-radius: 20px;
-  overflow: hidden;
 }
 
 .gp-carousel-image img {
@@ -371,13 +380,8 @@ form button {
   font-size: 22px;
 }
 
-.gp-carousel-prev {
-  left: 15px;
-}
-
-.gp-carousel-next {
-  right: 15px;
-}
+.gp-carousel-prev { left: 15px; }
+.gp-carousel-next { right: 15px; }
 
 /* TEXTO */
 .gp-carousel-text {
@@ -388,13 +392,54 @@ form button {
 .gp-carousel-text h2 {
   font-size: 42px;
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .gp-carousel-text p {
   font-size: 20px;
   line-height: 1.6;
 }
+
+/* ================= RESPONSIVO 480px ================= */
+@media (max-width: 480px) {
+
+  .gp-carousel-section {
+    padding: 20px;
+  }
+
+  .gp-carousel-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .gp-carousel-image,
+  .gp-carousel-text {
+    width: 100%;
+  }
+
+  .gp-carousel-image img {
+    height: 240px;
+  }
+
+  .gp-carousel-text {
+    text-align: center;
+  }
+
+  .gp-carousel-text h2 {
+    font-size: 24px;
+  }
+
+  .gp-carousel-text p {
+    font-size: 15px;
+  }
+
+  .gp-carousel-nav {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+}
+
 
 
 /* ================= CARDS DAS SEÇÕES ================= */
@@ -1536,20 +1581,20 @@ TABLET EM PÉ (iPad vertical)
 
   /* ================= GP-Carousel ================= */
   .gp-carousel-wrapper {
-    padding: 16px 10px;
+    padding: 16px;
   }
 
+  
   .gp-carousel-container {
-    flex-direction: column;
-    padding: 18px;
-    gap: 18px;
+    width: 100%;
+    max-width: 100%;
     border-radius: 18px;
   }
 
   /* IMAGEM */
-  .gp-carousel-image {
-    width: 100%;
+   .gp-carousel-image {
     border-radius: 14px;
+    overflow: hidden;
   }
 
   .gp-carousel-image img {
@@ -1575,8 +1620,8 @@ TABLET EM PÉ (iPad vertical)
   }
 
   /* TEXTO */
-  .gp-carousel-text {
-    width: 100%;
+   .gp-carousel-text {
+    padding: 20px 16px 24px;
     text-align: center;
   }
 
@@ -1590,7 +1635,7 @@ TABLET EM PÉ (iPad vertical)
     font-size: 15px;
     line-height: 1.5;
   }
-  
+
   /* ================= four-sections ================= */
   .four-sections {
     grid-template-columns: 1fr;

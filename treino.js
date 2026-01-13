@@ -155,49 +155,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // =====================
-  // CARROSSEL PRINCIPAL
-  // =====================
-  (function () {
-    const slides = document.querySelectorAll(".slide-item");
-    const prevBtn = document.querySelector(".prev-custom");
-    const nextBtn = document.querySelector(".next-custom");
-    const textoBox = document.querySelector(".descricao-carrossel");
-
-    if (!slides.length || !prevBtn || !nextBtn || !textoBox) return;
-
-    const textos = [
-      { titulo: "Parto Humanizado com Respeito", descricao: "Cada detalhe é pensado para garantir acolhimento, conforto e segurança em um momento tão especial." },
-      { titulo: "Gestante como Protagonista", descricao: "Você é o centro de todas as decisões. Vivencie o parto com autonomia, amor e apoio contínuo." },
-      { titulo: "Acolhimento e Confiança", descricao: "Uma jornada guiada pela empatia e pelo cuidado, onde cada gesto transmite tranquilidade." },
-      { titulo: "Cuidado Integral com a Gestante", descricao: "Acompanhamento físico e emocional em todas as fases da gestação, garantindo bem-estar completo." },
-      { titulo: "Experiência Única no Parto", descricao: "Transforme o nascimento em um momento inesquecível, cheio de significado e carinho." },
-      { titulo: "Amor e Segurança no Nascer", descricao: "Um ambiente preparado com dedicação para receber sua história com amor e serenidade." },
-    ];
-
-    let index = 0;
-
-    function atualizar() {
-      slides.forEach((slide, i) =>
-        slide.classList.toggle("ativo-slide", i === index)
-      );
-      textoBox.querySelector("h2").innerText = textos[index].titulo;
-      textoBox.querySelector("p").innerText = textos[index].descricao;
-    }
-
-    nextBtn.addEventListener("click", () => {
-      index = (index + 1) % slides.length;
-      atualizar();
-    });
-
-    prevBtn.addEventListener("click", () => {
-      index = (index - 1 + slides.length) % slides.length;
-      atualizar();
-    });
-
-    atualizar();
-  })();
-
-  // =====================
   // CARROSSEL FINAL
   // =====================
   (function () {
@@ -228,65 +185,70 @@ document.addEventListener("DOMContentLoaded", () => {
     atualizar();
   })();
 });
-const slides = [
-  {
-    image: "img/imagem8.jpg",
-    title: "Gestante Como Protagonista",
-    description:
-      "Você é o centro de todas as decisões. Vivencie o parto com autonomia, amor e apoio contínuo."
-  },
-  {
-    image: "img/imagem7.jpg",
-    title: "Parto Humanizado",
-    description:
-      "O parto respeita o tempo do seu corpo, suas escolhas e o protagonismo da mulher."
-  },
-  {
-    image: "img/imagem10.jpg",
-    title: "Acolhimento e Respeito",
-    description:
-      "Cada gestante é única. O cuidado é baseado em escuta ativa, empatia e segurança."
-  },
-  {
-    image: "img/imagem10.jpg",
-    title: "Apoio Contínuo",
-    description:
-      "Presença constante durante todo o trabalho de parto, oferecendo conforto e confiança."
-  },
-  {
-    image: "img/imagem7.jpg",
-    title: "Ambiente Seguro",
-    description:
-      "Um espaço preparado para oferecer tranquilidade, privacidade e bem-estar."
-  },
-  {
-    image: "img/imagem8.jpg",
-    title: "Nascimento com Amor",
-    description:
-      "O início da vida cercado de cuidado, respeito e conexão."
+
+
+(function () {
+
+  const img = document.getElementById("gpCarouselImg");
+  const title = document.getElementById("gpCarouselTitle");
+  const description = document.getElementById("gpCarouselDescription");
+
+  const prevBtn = document.querySelector(".gp-carousel-prev");
+  const nextBtn = document.querySelector(".gp-carousel-next");
+
+  if (!img || !title || !description || !prevBtn || !nextBtn) return;
+
+  const slides = [
+    {
+      image: "/img/imagem1.jpg",
+      titulo: "Parto Humanizado com Respeito",
+      descricao: "Cada detalhe é pensado para garantir acolhimento, conforto e segurança em um momento tão especial."
+    },
+    {
+      image: "/img/Imagem-efeito-blur.png",
+      titulo: "Gestante como Protagonista",
+      descricao: "Você é o centro de todas as decisões. Vivencie o parto com autonomia, amor e apoio contínuo."
+    },
+    {
+      image: "/img/imagem6.jpg",
+      titulo: "Acolhimento e Confiança",
+      descricao: "Uma jornada guiada pela empatia e pelo cuidado, onde cada gesto transmite tranquilidade."
+    },
+    {
+      image: "/img/a01.jpg",
+      titulo: "Cuidado Integral com a Gestante",
+      descricao: "Acompanhamento físico e emocional em todas as fases da gestação, garantindo bem-estar completo."
+    },
+    {
+      image: "/img/imagem4.jpg",
+      titulo: "Experiência Única no Parto",
+      descricao: "Transforme o nascimento em um momento inesquecível, cheio de significado e carinho."
+    },
+    {
+      image: "/img/imagem5.jpg",
+      titulo: "Amor e Segurança no Nascer",
+      descricao: "Um ambiente preparado com dedicação para receber sua história com amor e serenidade."
+    }
+  ];
+
+  let index = 0;
+
+  function atualizarCarousel() {
+    img.src = slides[index].image;
+    title.textContent = slides[index].titulo;
+    description.textContent = slides[index].descricao;
   }
-];
 
-let currentIndex = 0;
+  nextBtn.addEventListener("click", () => {
+    index = (index + 1) % slides.length;
+    atualizarCarousel();
+  });
 
-const img = document.getElementById("gpCarouselImg");
-const title = document.getElementById("gpCarouselTitle");
-const description = document.getElementById("gpCarouselDescription");
+  prevBtn.addEventListener("click", () => {
+    index = (index - 1 + slides.length) % slides.length;
+    atualizarCarousel();
+  });
 
-function updateCarousel() {
-  img.src = slides[currentIndex].image;
-  title.textContent = slides[currentIndex].title;
-  description.textContent = slides[currentIndex].description;
-}
+  atualizarCarousel();
 
-document.querySelector(".gp-carousel-next").addEventListener("click", () => {
-  currentIndex = (currentIndex + 1) % slides.length;
-  updateCarousel();
-});
-
-document.querySelector(".gp-carousel-prev").addEventListener("click", () => {
-  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-  updateCarousel();
-});
-
-updateCarousel();
+})();
