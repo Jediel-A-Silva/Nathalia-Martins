@@ -1313,6 +1313,8 @@ TABLET EM PÉ (iPad vertical)
     .gp-carousel-image {
       width: 100%;
       border-radius: 14px;
+      position: relative;
+      overflow: visible;
     }
 
     .gp-carousel-image img {
@@ -1324,17 +1326,18 @@ TABLET EM PÉ (iPad vertical)
 
     /* SETAS */
     .gp-carousel-nav {
-      width: 36px;
-      height: 36px;
-      font-size: 18px;
-    }
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+  }
 
     .gp-carousel-prev {
-      left: 8px;
+      left: 12px;
     }
 
     .gp-carousel-next {
-      right: 8px;
+      right: 12px;
     }
 
     /* TEXTO */
@@ -1472,18 +1475,6 @@ TABLET EM PÉ (iPad vertical)
     box-sizing: border-box;
     justify-content: center;
   }
-
-  .carousel {
-    width: 100%;
-    height: 40vh;
-    overflow: hidden;
-    border-radius: 12px;
-  }
-
-  
-
-
-
   /* ============================== */
 
   #sobre,
