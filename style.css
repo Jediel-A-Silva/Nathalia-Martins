@@ -1580,21 +1580,25 @@ TABLET EM PÉ (iPad vertical)
 
 
   /* ================= GP-Carousel ================= */
+  .gp-carousel-section{
+    width: 90%;
+  }
+
   .gp-carousel-wrapper {
     padding: 16px;
   }
 
-  
   .gp-carousel-container {
-    width: 100%;
-    max-width: 100%;
+    flex-direction: column;
+    padding: 18px;
+    gap: 18px;
     border-radius: 18px;
   }
 
   /* IMAGEM */
-   .gp-carousel-image {
+  .gp-carousel-image {
+    width: 100%;
     border-radius: 14px;
-    overflow: hidden;
   }
 
   .gp-carousel-image img {
@@ -1620,8 +1624,8 @@ TABLET EM PÉ (iPad vertical)
   }
 
   /* TEXTO */
-   .gp-carousel-text {
-    padding: 20px 16px 24px;
+  .gp-carousel-text {
+    width: 100%;
     text-align: center;
   }
 
