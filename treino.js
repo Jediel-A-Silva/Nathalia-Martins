@@ -186,7 +186,6 @@ document.addEventListener("DOMContentLoaded", () => {
   })();
 });
 
-
 (function () {
 
   const img = document.getElementById("gpCarouselImg");
@@ -196,8 +195,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const prevBtn = document.querySelector(".gp-carousel-prev");
   const nextBtn = document.querySelector(".gp-carousel-next");
   const dotsContainer = document.querySelector(".gp-carousel-dots");
+  const swipeArea = document.querySelector(".gp-carousel-image");
 
-  if (!img || !title || !description || !prevBtn || !nextBtn || !dotsContainer) return;
+  if (!img || !title || !description || !prevBtn || !nextBtn || !dotsContainer || !swipeArea) return;
 
   const slides = [
     {
@@ -234,17 +234,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let index = 0;
 
-  // cria bolinhas
+  // cria bolinhas (somente indicador)
   slides.forEach((_, i) => {
     const dot = document.createElement("span");
     dot.classList.add("gp-carousel-dot");
     if (i === 0) dot.classList.add("active");
-
-    dot.addEventListener("click", () => {
-      index = i;
-      atualizarCarousel();
-    });
-
     dotsContainer.appendChild(dot);
   });
 
@@ -266,6 +260,37 @@ document.addEventListener("DOMContentLoaded", () => {
   prevBtn.addEventListener("click", () => {
     index = (index - 1 + slides.length) % slides.length;
     atualizarCarousel();
+  });
+
+  /* ======================
+     SWIPE (TOQUE NO MOBILE)
+  ====================== */
+  let startX = 0;
+  let endX = 0;
+  const swipeLimit = 50;
+
+  swipeArea.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+  });
+
+  swipeArea.addEventListener("touchmove", (e) => {
+    endX = e.touches[0].clientX;
+  });
+
+  swipeArea.addEventListener("touchend", () => {
+    const diff = startX - endX;
+
+    if (Math.abs(diff) > swipeLimit) {
+      if (diff > 0) {
+        index = (index + 1) % slides.length;
+      } else {
+        index = (index - 1 + slides.length) % slides.length;
+      }
+      atualizarCarousel();
+    }
+
+    startX = 0;
+    endX = 0;
   });
 
   atualizarCarousel();
