@@ -892,7 +892,10 @@ footer .redes-sociais p {
     width: 100%;
     max-width: 100%;
     margin: 0 auto;
+    display: flex;
   }
+
+  
 
   /* ================= TEXTOS DOS CARDS ================= */
   .personalizada p,
@@ -1105,6 +1108,11 @@ TABLET EM PÉ (iPad vertical)
   .four-sections {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+  }
+
+  .four-sections section {
+    display: flex;
+    position: relative;
   }
 
   .carousel {
