@@ -4,6 +4,20 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   // =====================
+  // HERO TEXT (ANIMAÇÃO)
+  // =====================
+ window.addEventListener("load", () => {
+  const heroText = document.querySelector(".hero-text");
+  if (!heroText) return;
+
+  // força repaint antes da animação
+  requestAnimationFrame(() => {
+    heroText.classList.add("show");
+  });
+});
+
+
+  // =====================
   // SWIPER
   // =====================
   if (typeof Swiper !== "undefined") {
@@ -21,32 +35,27 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // =====================
-  // MENU HAMBÚRGUER (ACESSÍVEL)
+  // MENU HAMBÚRGUER
   // =====================
   const menuBtn = document.querySelector(".menu-btn");
   const menu = document.getElementById("menu");
   const btnFechar = menu ? menu.querySelector(".fechar") : null;
 
   if (menu && menuBtn) {
-
-    // Estado inicial correto
     menu.setAttribute("aria-hidden", "true");
     menu.setAttribute("inert", "");
 
     function abrirMenu() {
       menu.classList.add("ativo");
       menuBtn.classList.add("ativo");
-
       menu.removeAttribute("inert");
       menu.setAttribute("aria-hidden", "false");
 
-      // foco no primeiro link do menu
       const primeiroLink = menu.querySelector("a");
       if (primeiroLink) primeiroLink.focus();
     }
 
     function fecharMenu() {
-      // devolve foco para o botão do menu
       if (menu.contains(document.activeElement)) {
         document.activeElement.blur();
         menuBtn.focus();
@@ -54,18 +63,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
       menu.classList.remove("ativo");
       menuBtn.classList.remove("ativo");
-
       menu.setAttribute("aria-hidden", "true");
       menu.setAttribute("inert", "");
     }
 
-    // Abrir / fechar no botão hambúrguer
     menuBtn.addEventListener("click", (e) => {
       e.stopPropagation();
       menu.classList.contains("ativo") ? fecharMenu() : abrirMenu();
     });
 
-    // Botão X
     if (btnFechar) {
       btnFechar.addEventListener("click", (e) => {
         e.stopPropagation();
@@ -73,7 +79,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
-    // Fechar ao clicar fora
     document.addEventListener("click", (e) => {
       if (
         menu.classList.contains("ativo") &&
@@ -84,7 +89,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // Fechar ao redimensionar (ex: girar celular)
     window.addEventListener("resize", () => {
       if (window.innerWidth > 1024) {
         fecharMenu();
@@ -184,115 +188,97 @@ document.addEventListener("DOMContentLoaded", () => {
 
     atualizar();
   })();
-});
 
-(function () {
+  // =====================
+  // GP CAROUSEL (SWIPE)
+  // =====================
+  (function () {
+    const img = document.getElementById("gpCarouselImg");
+    const title = document.getElementById("gpCarouselTitle");
+    const description = document.getElementById("gpCarouselDescription");
+    const prevBtn = document.querySelector(".gp-carousel-prev");
+    const nextBtn = document.querySelector(".gp-carousel-next");
+    const dotsContainer = document.querySelector(".gp-carousel-dots");
+    const swipeArea = document.querySelector(".gp-carousel-image");
 
-  const img = document.getElementById("gpCarouselImg");
-  const title = document.getElementById("gpCarouselTitle");
-  const description = document.getElementById("gpCarouselDescription");
+    if (!img || !title || !description || !dotsContainer || !swipeArea) return;
 
-  const prevBtn = document.querySelector(".gp-carousel-prev");
-  const nextBtn = document.querySelector(".gp-carousel-next");
-  const dotsContainer = document.querySelector(".gp-carousel-dots");
-  const swipeArea = document.querySelector(".gp-carousel-image");
-
-  if (!img || !title || !description || !prevBtn || !nextBtn || !dotsContainer || !swipeArea) return;
-
-  const slides = [
-    {
-      image: "/img/imagem1.jpg",
-      titulo: "Parto Humanizado com Respeito",
-      descricao: "Cada detalhe é pensado para garantir acolhimento, conforto e segurança em um momento tão especial."
-    },
-    {
-      image: "/img/Imagem-efeito-blur.png",
-      titulo: "Gestante como Protagonista",
-      descricao: "Você é o centro de todas as decisões. Vivencie o parto com autonomia, amor e apoio contínuo."
-    },
-    {
-      image: "/img/imagem6.jpg",
-      titulo: "Acolhimento e Confiança",
-      descricao: "Uma jornada guiada pela empatia e pelo cuidado, onde cada gesto transmite tranquilidade."
-    },
-    {
-      image: "/img/a01.jpg",
-      titulo: "Cuidado Integral com a Gestante",
-      descricao: "Acompanhamento físico e emocional em todas as fases da gestação, garantindo bem-estar completo."
-    },
-    {
-      image: "/img/imagem4.jpg",
-      titulo: "Experiência Única no Parto",
-      descricao: "Transforme o nascimento em um momento inesquecível, cheio de significado e carinho."
-    },
-    {
-      image: "/img/imagem5.jpg",
-      titulo: "Amor e Segurança no Nascer",
-      descricao: "Um ambiente preparado com dedicação para receber sua história com amor e serenidade."
-    }
-  ];
-
-  let index = 0;
-
-  // cria bolinhas (somente indicador)
-  slides.forEach((_, i) => {
-    const dot = document.createElement("span");
-    dot.classList.add("gp-carousel-dot");
-    if (i === 0) dot.classList.add("active");
-    dotsContainer.appendChild(dot);
-  });
-
-  function atualizarCarousel() {
-    img.src = slides[index].image;
-    title.textContent = slides[index].titulo;
-    description.textContent = slides[index].descricao;
-
-    document.querySelectorAll(".gp-carousel-dot").forEach((dot, i) => {
-      dot.classList.toggle("active", i === index);
-    });
-  }
-
-  nextBtn.addEventListener("click", () => {
-    index = (index + 1) % slides.length;
-    atualizarCarousel();
-  });
-
-  prevBtn.addEventListener("click", () => {
-    index = (index - 1 + slides.length) % slides.length;
-    atualizarCarousel();
-  });
-
-  /* ======================
-     SWIPE (TOQUE NO MOBILE)
-  ====================== */
-  let startX = 0;
-  let endX = 0;
-  const swipeLimit = 50;
-
-  swipeArea.addEventListener("touchstart", (e) => {
-    startX = e.touches[0].clientX;
-  });
-
-  swipeArea.addEventListener("touchmove", (e) => {
-    endX = e.touches[0].clientX;
-  });
-
-  swipeArea.addEventListener("touchend", () => {
-    const diff = startX - endX;
-
-    if (Math.abs(diff) > swipeLimit) {
-      if (diff > 0) {
-        index = (index + 1) % slides.length;
-      } else {
-        index = (index - 1 + slides.length) % slides.length;
+    const slides = [
+      {
+        image: "/img/imagem1.jpg",
+        titulo: "Parto Humanizado com Respeito",
+        descricao: "Cada detalhe é pensado para garantir acolhimento, conforto e segurança em um momento tão especial."
+      },
+      {
+        image: "/img/Imagem-efeito-blur.png",
+        titulo: "Gestante como Protagonista",
+        descricao: "Você é o centro de todas as decisões. Vivencie o parto com autonomia, amor e apoio contínuo."
+      },
+      {
+        image: "/img/imagem6.jpg",
+        titulo: "Acolhimento e Confiança",
+        descricao: "Uma jornada guiada pela empatia e pelo cuidado, onde cada gesto transmite tranquilidade."
+      },
+      {
+        image: "/img/a01.jpg",
+        titulo: "Cuidado Integral com a Gestante",
+        descricao: "Acompanhamento físico e emocional em todas as fases da gestação."
+      },
+      {
+        image: "/img/imagem4.jpg",
+        titulo: "Experiência Única no Parto",
+        descricao: "Transforme o nascimento em um momento inesquecível."
+      },
+      {
+        image: "/img/imagem5.jpg",
+        titulo: "Amor e Segurança no Nascer",
+        descricao: "Um ambiente preparado com dedicação e carinho."
       }
-      atualizarCarousel();
+    ];
+
+    let index = 0;
+
+    slides.forEach((_, i) => {
+      const dot = document.createElement("span");
+      dot.className = "gp-carousel-dot";
+      if (i === 0) dot.classList.add("active");
+      dotsContainer.appendChild(dot);
+    });
+
+    function atualizarCarousel() {
+      img.src = slides[index].image;
+      title.textContent = slides[index].titulo;
+      description.textContent = slides[index].descricao;
+
+      dotsContainer.querySelectorAll(".gp-carousel-dot").forEach((dot, i) => {
+        dot.classList.toggle("active", i === index);
+      });
     }
 
-    startX = 0;
-    endX = 0;
-  });
+    let startX = 0;
+    let endX = 0;
+    const swipeLimit = 50;
 
-  atualizarCarousel();
+    swipeArea.addEventListener("touchstart", (e) => {
+      startX = e.touches[0].clientX;
+    });
 
-})();
+    swipeArea.addEventListener("touchmove", (e) => {
+      endX = e.touches[0].clientX;
+    });
+
+    swipeArea.addEventListener("touchend", () => {
+      const diff = startX - endX;
+      if (Math.abs(diff) > swipeLimit) {
+        index = diff > 0
+          ? (index + 1) % slides.length
+          : (index - 1 + slides.length) % slides.length;
+        atualizarCarousel();
+      }
+      startX = endX = 0;
+    });
+
+    atualizarCarousel();
+  })();
+
+});

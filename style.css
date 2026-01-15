@@ -28,8 +28,7 @@ body {
 .perfil {
   position: relative;
   text-align: center;
-  padding: 40px 0;
-  padding-bottom: 10px;
+  padding: 40px 0 10px;
   background-image: url(img/Imagem-efeito-blur.png);
   background-size: cover;
   background-position: center;
@@ -40,10 +39,11 @@ body {
 
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* DESCE O HERO */
-  align-items: center; /* CENTRALIZA */
+  justify-content: flex-end;
+  align-items: center;
 }
 
+/* HERO TEXT */
 .hero-text {
   background: rgba(124, 152, 181, 0.34);
   padding: 20px 40px;
@@ -51,9 +51,30 @@ body {
   width: 100%;
   max-width: 52rem;
   margin: 0 auto;
-  margin: 0 auto;
   text-align: center;
+
+  /* estado inicial */
+  opacity: 0;
+  transform: translateY(30px);
+
+  /* efeito premium */
+  transition:
+    opacity 1.6s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 1.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0.9s;
+
+  position: relative;
+  z-index: 2;
 }
+
+.hero-text.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+
 
 /* Títulos */
 .perfil h1 {
@@ -94,29 +115,17 @@ body {
   max-width: 60%;
   margin-left: 0; /* remove margens antigas */
 }
-.resultados-busca {
-  position: absolute;
-  top: 70px; /* ajusta conforme sua navbar */
-  right: 20px;
-  background: transparent;
-  color: #000;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  padding: 10px;
-  width: 250px;
-  max-height: 300px;
-  overflow-y: auto;
-  display: none; /* escondido por padrão */
-  z-index: 9999;
-}
+
 
 .resultados-busca {
-  position: absolute;
-  top: 70px;
-  right: 100px;
-  background: #ffa0c0;
+    position: absolute;
+    top: 70px;
+    right: 1px;
+    border: 1px solid #ccc;
+    background: #4b1024;
+    border-radius: 0px 0px 12px 12px;
 }
+
 .resultados-busca p {
   margin: 5px 0;
   padding: 5px;
@@ -124,7 +133,7 @@ body {
 }
 
 .resultados-busca p:hover {
-  background: #f0f0f0;
+  background: #8c3b3b;
 }
 
 /* ------------- redes-sociais ---------------*/
@@ -153,7 +162,7 @@ body {
 }
 
 .redes-sociais a {
-  font-size: 40px; /* um pouco maior para destacar */
+  font-size: 30px !important; /* um pouco maior para destacar */
   color: #ffffff; /* tom vibrante que contrasta com marsala */
   transition: color 0.3s ease, transform 0.2s ease, text-shadow 0.3s ease;
   margin: 1rem 10px;
@@ -341,7 +350,7 @@ form button {
   max-width: 80rem;
   margin: 40px auto;
   padding: 40px;
-  border-radius: 24px;
+  border-radius: 14px;
   background: linear-gradient(135deg, #800000, #a52a4d, #4b001f);
 }
 
@@ -377,6 +386,10 @@ form button {
   border-radius: 50%;
   cursor: pointer;
   font-size: 22px;
+}
+
+.gp-carousel-nav:hover {
+  background: rgba(135, 51, 51, 0.6);
 }
 
 .gp-carousel-prev {
@@ -1166,15 +1179,25 @@ TABLET EM PÉ (iPad vertical)
     align-items: center;
     padding-bottom: 30px;
   }
+.perfil h1 {
+  font-family: "Great Vibes", cursive;
+  font-size: 40px;
+  margin-bottom: 10px;
+  color: #d4af37; /* dourado clássico */
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  letter-spacing: 2px;
+}
+
 
   .hero-text {
     background: rgba(124, 152, 181, 0.34);
     padding: 20px 40px;
     border-radius: 12px;
     width: 100%;
-    max-width: 52rem;
+    max-width: 40rem;
     margin: 0 auto;
     transform: none;
+     margin-bottom: 85px;
   }
 
 
