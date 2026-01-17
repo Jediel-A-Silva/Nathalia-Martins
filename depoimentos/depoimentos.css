@@ -85,7 +85,6 @@ body {
   align-items: center;
 }
 
-
 /* =======================
    CONTEÚDO
 ======================= */
@@ -151,7 +150,7 @@ body {
 
 /* SETAS (DESKTOP) */
 .nav {
-  background: rgba(255,255,255,0.25);
+  background: rgba(255, 255, 255, 0.25);
   border: none;
   width: 36px;
   height: 36px;
@@ -163,7 +162,6 @@ body {
   justify-content: center;
 }
 
-
 /* BOLINHAS */
 .dots {
   display: none;
@@ -173,7 +171,7 @@ body {
 .dots span {
   width: 8px;
   height: 8px;
-  background: rgba(255,255,255,0.45);
+  background: rgba(255, 255, 255, 0.45);
   border-radius: 50%;
   transition: 0.3s;
 }
@@ -187,7 +185,6 @@ body {
    RESPONSIVO 1200px
 ======================= */
 @media (max-width: 1200px) {
-
   /* Esconde setas */
   .nav {
     display: none;
@@ -243,13 +240,10 @@ body {
   }
 }
 
-
-
 /* =======================
    RESPONSIVO 1024px
 ======================= */
 @media (max-width: 1024px) {
-
   /* Esconde setas */
   .nav {
     display: none;
@@ -276,8 +270,8 @@ body {
   }
 
   .card {
-    max-width: 430px;
-    min-height: 520px;
+    max-width: 700px;
+    min-height: 450px;
     padding: 26px 24px 65px;
   }
 
@@ -303,13 +297,10 @@ body {
   }
 }
 
-
-
 /* =======================
    RESPONSIVO 992px
 ======================= */
 @media (max-width: 992px) {
-
   /* Esconde setas e deixa só os dots */
   .nav {
     display: none;
@@ -360,12 +351,10 @@ body {
   }
 }
 
-
 /* =======================
    RESPONSIVO 768px
 ======================= */
 @media (max-width: 768px) {
-
   /* Mostra dots / esconde setas */
   .nav {
     display: none;
@@ -410,12 +399,10 @@ body {
   }
 }
 
-
 /* =======================
    RESPONSIVO 480px
 ======================= */
 @media (max-width: 480px) {
-
   .testimonials {
     padding-top: 100px;
   }
