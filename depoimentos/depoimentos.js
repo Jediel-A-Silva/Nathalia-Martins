@@ -38,57 +38,45 @@ const data = [
 ];
 
 
-const track = document.querySelector(".carousel-track");
+/* ===== ELEMENTOS FIXOS ===== */
+const imgEl = document.querySelector(".card-content img");
+const textEl = document.querySelector(".text-area p");
+const nameEl = document.querySelector(".client-name");
 const dotsContainer = document.querySelector(".dots");
-const prev = document.querySelector(".prev");
-const next = document.querySelector(".next");
+const prevBtn = document.querySelector(".prev");
+const nextBtn = document.querySelector(".next");
 
 let index = 0;
 
-/* ===== Criar slides e bolinhas ===== */
+/* ===== CRIAR DOTS ===== */
 data.forEach(() => {
   const dot = document.createElement("span");
   dotsContainer.appendChild(dot);
 });
 
-data.forEach(item => {
-  const slide = document.createElement("div");
-  slide.className = "slide";
-  slide.innerHTML = `
-    <div class="card">
-      <div class="card-content">
-        <img src="${item.img}">
-        <div class="text-area">
-          <p>${item.text}</p>
-          <div class="stars">★★★★★</div>
-          <h3 class="client-name">${item.name}</h3>
-        </div>
-      </div>
-    </div>
-  `;
-  track.appendChild(slide);
-});
+const dots = dotsContainer.querySelectorAll("span");
 
-const dots = document.querySelectorAll(".dots span");
+/* ===== FUNÇÃO DE ATUALIZAÇÃO ===== */
+function update() {
+  const item = data[index];
 
-/* ===== Atualização ===== */
-function updateCarousel() {
-  track.style.transition = "transform 0.4s ease";
-  track.style.transform = `translateX(-${index * 100}%)`;
+  imgEl.src = item.img;
+  textEl.textContent = item.text;
+  nameEl.textContent = item.name;
 
   dots.forEach(d => d.classList.remove("active"));
   dots[index].classList.add("active");
 }
 
-/* ===== Setas (desktop) ===== */
-prev.addEventListener("click", () => {
+/* ===== SETAS ===== */
+prevBtn.addEventListener("click", () => {
   index = (index - 1 + data.length) % data.length;
-  updateCarousel();
+  update();
 });
 
-next.addEventListener("click", () => {
+nextBtn.addEventListener("click", () => {
   index = (index + 1) % data.length;
-  updateCarousel();
+  update();
 });
 
 /* ===== SWIPE MOBILE ===== */
@@ -96,31 +84,27 @@ let startX = 0;
 let currentX = 0;
 let isDragging = false;
 
-track.addEventListener("touchstart", e => {
+const card = document.querySelector(".card");
+
+card.addEventListener("touchstart", e => {
   startX = e.touches[0].clientX;
   isDragging = true;
-  track.style.transition = "none";
 });
 
-track.addEventListener("touchmove", e => {
+card.addEventListener("touchmove", e => {
   if (!isDragging) return;
   currentX = e.touches[0].clientX;
-  const diff = currentX - startX;
-  track.style.transform = `translateX(calc(-${index * 100}% + ${diff}px))`;
 });
 
-track.addEventListener("touchend", () => {
+card.addEventListener("touchend", () => {
   isDragging = false;
   const diff = currentX - startX;
 
-  if (diff < -50 && index < data.length - 1) {
-    index++;
-  } else if (diff > 50 && index > 0) {
-    index--;
-  }
+  if (diff < -40) index = (index + 1) % data.length;
+  if (diff > 40) index = (index - 1 + data.length) % data.length;
 
-  updateCarousel();
+  update();
 });
 
-/* Inicial */
-updateCarousel();
+/* ===== INICIAL ===== */
+update();
