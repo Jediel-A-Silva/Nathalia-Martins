@@ -947,7 +947,13 @@ footer .redes-sociais p {
 TABLET EM PÉ (iPad vertical)
 =============================== */
 @media (max-width: 1024px) {
-  /* ================= HERO ================= */
+.navbar {
+  position: fixed;
+  width: 100%;
+    padding: 10px 12px;
+    top: 0;
+}
+
   .perfil {
     min-height: 90vh;
     display: flex;
@@ -1068,12 +1074,12 @@ TABLET EM PÉ (iPad vertical)
   }
 
   /* ================= GRID ================= */
-  .four-sections {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    width: 100%;
-    margin: 30px auto;
-  }
+.four-sections {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        width: 90%;
+        margin: 30px auto;
+    }
 
   .four-sections section {
     position: relative;
@@ -1091,6 +1097,11 @@ TABLET EM PÉ (iPad vertical)
     height: 3rem;
     z-index: 5;
   }
+
+  .gp-carousel-section {
+    width: 95%;
+}
+
 }
 
 /* =====================================================
