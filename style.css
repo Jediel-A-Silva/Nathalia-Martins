@@ -432,53 +432,10 @@ form button {
 }
 
 /* bolinhas */
-.gp-carousel-dot {
-display: none;
-}
 
 .gp-carousel-dot.active {
   background: #ff8fb1;
   transform: scale(1.4);
-}
-
-
-/* ================= APAGAR ISSO DEPOIS ================= */
-@media (max-width: 480px) {
-  .gp-carousel-section {
-    padding: 20px;
-  }
-
-  .gp-carousel-container {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .gp-carousel-image,
-  .gp-carousel-text {
-    width: 100%;
-  }
-
-  .gp-carousel-image img {
-    height: 240px;
-  }
-
-  .gp-carousel-text {
-    text-align: center;
-  }
-
-  .gp-carousel-text h2 {
-    font-size: 24px;
-  }
-
-  .gp-carousel-text p {
-    font-size: 15px;
-  }
-
-  .gp-carousel-nav {
-    width: 36px;
-    height: 36px;
-    font-size: 18px;
-  }
 }
 
 /* ================= CARDS DAS SEÇÕES ================= */
@@ -970,7 +927,7 @@ TABLET EM PÉ (iPad vertical)
     border-radius: 12px;
     width: 100%;
     max-width: 52rem;
-    margin: 0 auto;
+    bottom: 40px;
   }
 
   /* ================= NAV ================= */
@@ -1101,6 +1058,36 @@ TABLET EM PÉ (iPad vertical)
   .gp-carousel-section {
     width: 95%;
 }
+
+/* Esconde as setas do GP Carousel */
+.gp-carousel-prev,
+.gp-carousel-next {
+    display: none !important;
+}
+
+/* Exibe as bolinhas */
+.gp-carousel-dots {
+    display: flex !important;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+/* Estilo das bolinhas */
+.gp-carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.4);
+    cursor: pointer;
+    transition: transform .3s ease, background .3s ease;
+}
+
+.gp-carousel-dot.active {
+    background: #4b1024;
+    transform: scale(1.3);
+}
+
 
 }
 
@@ -1672,7 +1659,7 @@ TABLET EM PÉ (iPad vertical)
   #sobre,
   #servicos,
   #servicos1 {
-    width: 90%;
+    width: 100%;
     height: auto;
     padding: 20px 10px;
     box-sizing: border-box;
