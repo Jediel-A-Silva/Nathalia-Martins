@@ -203,32 +203,32 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       image: "/img/imagem1.jpg",
       titulo: "Parto Humanizado com Respeito",
-      descricao: "Cada detalhe é pensado para garantir acolhimento, conforto e segurança em um momento tão especial."
+      descricao: "Cada detalhe é pensado para que você viva esse momento tão especial com acolhimento, conforto e segurança. Tudo é preparado para que você se sinta cuidada e confiante durante toda a experiência."
     },
     {
       image: "/img/Imagem-efeito-blur.png",
       titulo: "Gestante como Protagonista",
-      descricao: "Você é o centro de todas as decisões. Vivencie o parto com autonomia, amor e apoio contínuo."
+      descricao: "Você é o centro das decisões e vive cada etapa do seu jeito. Aqui, o parto é conduzido com autonomia, cuidado e apoio contínuo para que você se sinta segura, informada e protagonista da sua própria experiência."
     },
     {
       image: "/img/imagem6.jpg",
       titulo: "Acolhimento e Confiança",
-      descricao: "Uma jornada guiada pela empatia e pelo cuidado, onde cada gesto transmite tranquilidade."
+      descricao: "Uma jornada construída com carinho, empatia e atenção em cada detalhe. O cuidado vai além da técnica, acolhendo medos, dúvidas e sentimentos para que você se sinta confiante do início ao fim."
     },
     {
       image: "/img/a01.jpg",
       titulo: "Cuidado Integral com a Gestante",
-      descricao: "Acompanhamento físico e emocional em todas as fases da gestação, garantindo bem-estar completo."
+      descricao: "Acompanhamento completo durante toda a gestação, envolvendo aspectos físicos, emocionais e informativos. Tudo para promover bem-estar, segurança e uma experiência mais leve e tranquila."
     },
     {
       image: "/img/imagem4.jpg",
       titulo: "Experiência Única no Parto",
-      descricao: "Transforme o nascimento em um momento inesquecível, cheio de significado e carinho."
+      descricao: "O nascimento é mais do que um evento — é um momento único, cheio de significado. Aqui, cada escolha é respeitada para tornar o parto inesquecível, sensível e repleto de carinho e presença."
     },
     {
       image: "/img/imagem5.jpg",
       titulo: "Amor e Segurança no Nascer",
-      descricao: "Um ambiente preparado com dedicação para receber sua história com amor e serenidade."
+      descricao: "Um ambiente preparado com atenção, acolhimento e respeito, onde cada detalhe é pensado para receber sua história com amor, tranquilidade e segurança desde os primeiros instantes de vida."
     }
   ];
 
