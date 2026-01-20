@@ -101,17 +101,44 @@ header {
 .lado-texto h2 {
   margin-bottom: 20px;
   font-size: 2.5rem;
+  color: #4b1024;
 }
 
 .texto-topo {
   margin-bottom: 20px;
 }
 
-.sobre-mim p{
+.sobre-mim p, .lado-texto p, .conteudo-lateral p, .conteudo-trabalho p {
     margin-bottom: 1rem;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     font-weight: 500;
-    color: #541f1f;
+    color: #070707;
+}
+
+/* =====================================================
+   ALTERNÂNCIA DE CONTAINERS
+===================================================== */
+.box-2 .conteudo-lateral,
+.trabalho-parto1 .conteudo-trabalho,
+.trabalho-parto2 .conteudo-trabalho {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Alternar automaticamente */
+.box-2 .conteudo-lateral:nth-child(odd),
+.trabalho-parto1 .conteudo-trabalho:nth-child(odd),
+.trabalho-parto2 .conteudo-trabalho:nth-child(odd) {
+  flex-direction: row-reverse;
+}
+
+.box-2 .conteudo-lateral img,
+.trabalho-parto1 img,
+.trabalho-parto2 img {
+  width: 360px;
+  border-radius: 12px;
 }
 
 /* =====================================================
@@ -132,6 +159,7 @@ header {
   gap: 2rem;
   align-items: center;
   flex-wrap: wrap;
+  flex-direction: row-reverse; /* <-- INVERTE: imagem esquerda / texto direita */
 }
 
 .conteudo-lateral img {
@@ -140,7 +168,7 @@ header {
 }
 
 /* =====================================================
-   TRABALHOS DE PARTO (1 a 4)
+   TRABALHOS DE PARTO (1 E 2)
 ===================================================== */
 .trabalho-parto1,
 .trabalho-parto2 {
@@ -254,7 +282,7 @@ header {
   width: 9px;
   height: 9px;
   border-radius: 50%;
-  background: rgba(0,0,0,0.3);
+  background: rgb(255, 255, 255);
 }
 
 .dot.active {
