@@ -419,7 +419,7 @@ body {
 ======================= */
 @media (max-width: 480px) {
   .testimonials {
-    padding-top: 100px;
+    padding-top: 10px;
   }
 
   .card {
