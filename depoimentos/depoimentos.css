@@ -36,13 +36,19 @@ body {
   text-decoration: none;
   font-weight: bold;
 }
+.back-link:hover {
+  background: #a54b4b;
+}
 
 /* =======================
    SEÇÃO
 ======================= */
 .testimonials {
   padding: 90px 16px 40px;
+  display: flex;
+  justify-content: center;
 }
+
 
 /* =======================
    CARROSSEL
@@ -75,8 +81,8 @@ body {
 .card {
   position: relative; /* 🔥 MUITO IMPORTANTE */
   width: 100%;
-  max-width: 680px;
-  min-height: 420px;
+  max-width: 980px;
+  min-height: 520px;
   background: rgba(124, 152, 181, 0.34);
   backdrop-filter: blur(6px);
   border-radius: 18px;
@@ -97,8 +103,8 @@ body {
 
 /* FOTO */
 .card-content img {
-  width: 110px;
-  height: 110px;
+  width: 170px;
+  height: 170px;
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
@@ -114,11 +120,6 @@ body {
   font-size: 15px;
   line-height: 1.6;
   color: #fff;
-  background: linear-gradient(
-    180deg,
-    rgba(128, 32, 54, 0.35),
-    rgba(90, 20, 38, 0.92)
-  );
   padding: 14px 16px;
   border-radius: 14px;
 }
@@ -126,13 +127,17 @@ body {
 /* ESTRELAS */
 .stars {
   color: #ffcc33;
+  font-size: 20px;
   margin: 10px 0 6px;
 }
 
 /* NOME */
 .client-name {
+  font-family: "Great Vibes", cursive;
+  font-size: 24px;
   font-weight: 700;
   color: #501414;
+  margin-top: 24px;
 }
 
 /* =======================
@@ -140,13 +145,15 @@ body {
 ======================= */
 .carousel-nav {
   position: absolute;
-  bottom: 18px; /* dentro do card */
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: 18px;
+  left: 12%;
+  width: 100%;
+  padding: 0 24px; /* distância dos cantos */
   display: flex;
+  justify-content: space-around;
   align-items: center;
-  gap: 14px;
 }
+
 
 /* SETAS (DESKTOP) */
 .nav {
@@ -159,7 +166,10 @@ body {
   color: #651d35;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
+}
+.nav:hover {
+  background: rgba(255, 255, 255, 0.45);
 }
 
 /* BOLINHAS */
