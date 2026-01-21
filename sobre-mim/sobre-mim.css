@@ -507,6 +507,7 @@ footer {
 
   .sobre-mim p {
     font-size: 0.9rem;
+    line-height: 1.6;
     font-weight: 700;
     text-align: justify;
   }
@@ -524,7 +525,7 @@ footer {
   .box-2 .conteudo-lateral img, 
   .trabalho-parto1 img, .trabalho-parto2 img {
     width: 250px;
-    height: 180px;
+    height: 200px;
     border-radius: 12px;
   }
 
@@ -533,6 +534,7 @@ footer {
   .trabalho-parto2 p,
   .conteudo-lateral p {
     font-size: 0.95rem;
+    line-height: 1.4;
     font-weight: 800;
     text-align: justify;
   }
