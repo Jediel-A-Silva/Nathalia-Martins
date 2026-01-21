@@ -58,8 +58,7 @@ body {
   transform: translateY(30px);
 
   /* efeito premium */
-  transition:
-    opacity 1.6s cubic-bezier(0.4, 0, 0.2, 1),
+  transition: opacity 1.6s cubic-bezier(0.4, 0, 0.2, 1),
     transform 1.6s cubic-bezier(0.4, 0, 0.2, 1);
   transition-delay: 0.9s;
 
@@ -71,10 +70,6 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
-
-
-
-
 
 /* Títulos */
 .perfil h1 {
@@ -116,14 +111,13 @@ body {
   margin-left: 0; /* remove margens antigas */
 }
 
-
 .resultados-busca {
-    position: absolute;
-    top: 70px;
-    right: 1px;
-    border: 1px solid #ccc;
-    background: #4b1024;
-    border-radius: 0px 0px 12px 12px;
+  position: absolute;
+  top: 70px;
+  right: 1px;
+  border: 1px solid #ccc;
+  background: #4b1024;
+  border-radius: 0px 0px 12px 12px;
 }
 
 .resultados-busca p {
@@ -865,8 +859,6 @@ footer .redes-sociais p {
     display: flex;
   }
 
-  
-
   /* ================= TEXTOS DOS CARDS ================= */
   .personalizada p,
   .personalizada ul {
@@ -904,12 +896,12 @@ footer .redes-sociais p {
 TABLET EM PÉ (iPad vertical)
 =============================== */
 @media (max-width: 1024px) {
-.navbar {
-  position: fixed;
-  width: 100%;
+  .navbar {
+    position: fixed;
+    width: 100%;
     padding: 10px 12px;
     top: 0;
-}
+  }
 
   .perfil {
     min-height: 90vh;
@@ -1031,12 +1023,12 @@ TABLET EM PÉ (iPad vertical)
   }
 
   /* ================= GRID ================= */
-.four-sections {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-        width: 90%;
-        margin: 30px auto;
-    }
+  .four-sections {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 90%;
+    margin: 30px auto;
+  }
 
   .four-sections section {
     position: relative;
@@ -1057,38 +1049,36 @@ TABLET EM PÉ (iPad vertical)
 
   .gp-carousel-section {
     width: 95%;
-}
+  }
 
-/* Esconde as setas do GP Carousel */
-.gp-carousel-prev,
-.gp-carousel-next {
+  /* Esconde as setas do GP Carousel */
+  .gp-carousel-prev,
+  .gp-carousel-next {
     display: none !important;
-}
+  }
 
-/* Exibe as bolinhas */
-.gp-carousel-dots {
+  /* Exibe as bolinhas */
+  .gp-carousel-dots {
     display: flex !important;
     justify-content: center;
     gap: 8px;
     margin-top: 12px;
-}
+  }
 
-/* Estilo das bolinhas */
-.gp-carousel-dot {
+  /* Estilo das bolinhas */
+  .gp-carousel-dot {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: rgba(255,255,255,0.4);
+    background: rgba(255, 255, 255, 0.4);
     cursor: pointer;
-    transition: transform .3s ease, background .3s ease;
-}
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
 
-.gp-carousel-dot.active {
+  .gp-carousel-dot.active {
     background: #4b1024;
     transform: scale(1.3);
-}
-
-
+  }
 }
 
 /* =====================================================
@@ -1177,15 +1167,14 @@ TABLET EM PÉ (iPad vertical)
     align-items: center;
     padding-bottom: 30px;
   }
-.perfil h1 {
-  font-family: "Great Vibes", cursive;
-  font-size: 40px;
-  margin-bottom: 10px;
-  color: #d4af37; /* dourado clássico */
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-  letter-spacing: 2px;
-}
-
+  .perfil h1 {
+    font-family: "Great Vibes", cursive;
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: #d4af37; /* dourado clássico */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 2px;
+  }
 
   .hero-text {
     background: rgba(124, 152, 181, 0.34);
@@ -1195,10 +1184,8 @@ TABLET EM PÉ (iPad vertical)
     max-width: 40rem;
     margin: 0 auto;
     transform: none;
-     margin-bottom: 40px;
+    margin-bottom: 40px;
   }
-
-
 
   /* ================= MENU LATERAL ================= */
   .menu {
@@ -1259,93 +1246,93 @@ TABLET EM PÉ (iPad vertical)
   }
 
   /* ================= GP-Carousel ================= */
-    .gp-carousel-section {
-      width: 90%;
-    }
+  .gp-carousel-section {
+    width: 90%;
+  }
 
-    .gp-carousel-wrapper {
-      padding: 16px;
-    }
+  .gp-carousel-wrapper {
+    padding: 16px;
+  }
 
-    .gp-carousel-container {
-      flex-direction: column;
-      padding: 18px;
-      gap: 18px;
-      border-radius: 18px;
-    }
+  .gp-carousel-container {
+    flex-direction: column;
+    padding: 18px;
+    gap: 18px;
+    border-radius: 18px;
+  }
 
-    /* IMAGEM */
-    .gp-carousel-image {
-      width: 100%;
-      border-radius: 14px;
-      position: relative;
-      overflow: visible;
-    }
+  /* IMAGEM */
+  .gp-carousel-image {
+    width: 100%;
+    border-radius: 14px;
+    position: relative;
+    overflow: visible;
+  }
 
-    .gp-carousel-dots {
+  .gp-carousel-dots {
     margin-top: 12px;
   }
 
-    .gp-carousel-image img {
-      width: 100%;
-      height: 400px;
-      object-fit: cover;
-      border-radius: 14px;
-    }
+  .gp-carousel-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 14px;
+  }
 
   .gp-carousel-dot {
     display: flex;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(2px);
-  transition: all 0.3s ease;
-}
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(2px);
+    transition: all 0.3s ease;
+  }
 
-.gp-carousel-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.4);
-  cursor: pointer;
-  transition: transform 0.3s ease, background 0.3s ease;
-}
+  .gp-carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
 
-.gp-carousel-dot.active {
-  background: #4b1024;
-  transform: scale(1.3);
-}
+  .gp-carousel-dot.active {
+    background: #4b1024;
+    transform: scale(1.3);
+  }
 
-
-    /* SETAS */
-    .gp-carousel-nav {
+  /* SETAS */
+  .gp-carousel-nav {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     z-index: 10;
   }
 
-    .gp-carousel-prev, .gp-carousel-next {
-      display: none;
-    }
+  .gp-carousel-prev,
+  .gp-carousel-next {
+    display: none;
+  }
 
-    /* TEXTO */
-    .gp-carousel-text {
-      width: 100%;
-      text-align: center;
-    }
+  /* TEXTO */
+  .gp-carousel-text {
+    width: 100%;
+    text-align: center;
+  }
 
-    .gp-carousel-text h2 {
-      font-size: 24px;
-      line-height: 1.2;
-      margin-bottom: 12px;
-    }
+  .gp-carousel-text h2 {
+    font-size: 24px;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
 
-    .gp-carousel-text p {
-      font-size: 15px;
-      line-height: 1.5;
-    }
+  .gp-carousel-text p {
+    font-size: 15px;
+    line-height: 1.5;
+  }
 
   /* ================= GRID ================= */
   .four-sections {
@@ -1462,8 +1449,8 @@ TABLET EM PÉ (iPad vertical)
     }
 
     .gp-carousel-dots {
-    margin-top: 12px;
-  }
+      margin-top: 12px;
+    }
 
     .gp-carousel-image img {
       width: 100%;
@@ -1472,40 +1459,40 @@ TABLET EM PÉ (iPad vertical)
       border-radius: 14px;
     }
 
-  .gp-carousel-dot {
-    display: flex;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(2px);
-  transition: all 0.3s ease;
-}
+    .gp-carousel-dot {
+      display: flex;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(2px);
+      transition: all 0.3s ease;
+    }
 
-.gp-carousel-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.4);
-  cursor: pointer;
-  transition: transform 0.3s ease, background 0.3s ease;
-}
+    .gp-carousel-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.4);
+      cursor: pointer;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
 
-.gp-carousel-dot.active {
-  background: #4b1024;
-  transform: scale(1.3);
-}
-
+    .gp-carousel-dot.active {
+      background: #4b1024;
+      transform: scale(1.3);
+    }
 
     /* SETAS */
     .gp-carousel-nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
-  }
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+    }
 
-    .gp-carousel-prev, .gp-carousel-next {
+    .gp-carousel-prev,
+    .gp-carousel-next {
       display: none;
     }
 
@@ -1527,12 +1514,14 @@ TABLET EM PÉ (iPad vertical)
     }
 
     /* ================= four-sections ================= */
-        #sobre, #servicos, #servicos1 {
-        width: 100%;
-        height: auto;
-        padding: 20px 10px;
-        box-sizing: border-box;
-        margin-bottom: 30px;
+    #sobre,
+    #servicos,
+    #servicos1 {
+      width: 100%;
+      height: auto;
+      padding: 20px 10px;
+      box-sizing: border-box;
+      margin-bottom: 30px;
     }
   }
 
@@ -1544,13 +1533,13 @@ TABLET EM PÉ (iPad vertical)
     box-sizing: border-box;
   }
 
-   .four-sections section {
+  .four-sections section {
     display: flex;
     width: 100%;
     min-height: 420px;
     padding: 22px 18px;
     border-radius: 18px;
-   }
+  }
 
   /* ================= MENU ================= */
   .menu {
@@ -1654,6 +1643,13 @@ TABLET EM PÉ (iPad vertical)
     box-sizing: border-box;
     justify-content: center;
   }
+  .carousel {
+    width: 100%;
+    height: 35vh;
+    overflow: hidden;
+    border-radius: 14px;
+  }
+
   /* ============================== */
 
   #sobre,
