@@ -280,9 +280,10 @@ body {
   }
 
   .card {
-    max-width: 800px;
-    min-height: 550px;
+    max-width: 650px;
+    min-height: 400px;
     padding: 26px 24px 65px;
+    margin-top: 6rem;
   }
 
   .card-content {
