@@ -465,29 +465,40 @@ footer {
    ATÉ 480px (RESPONSIVO MOBILE)
 ===================================================== */
 @media (max-width: 480px) {
+
+  /* RESET APENAS DE TEXTO (NÃO MUDA LAYOUT) */
+  .bloco-nathalia p,
+  .box-2 p,
+  .trabalho-parto1 p,
+  .trabalho-parto2 p,
+  .conteudo-lateral p {
+    margin: 0;
+    padding: 0;
+  }
+
   /* espaçamento geral */
   main {
+    margin: 0;
     padding: 5rem 0;
   }
-  
 
-  /* containers principal */
-  .bloco-nathalia{
+  /* container principal */
+  .bloco-nathalia {
     width: 100%;
     padding: 1rem;
-     margin: 0.1rem auto -0.9rem; 
+    margin: 0.1rem auto -0.9rem;
     border-radius: 14px;
   }
 
-  /* containers secundario */
- .box-2,
-.trabalho-parto1,
-.trabalho-parto2 {
-  width: 90%;
-  padding: 1rem;
-  margin: 2.5rem auto 1.2rem;
-  border-radius: 14px;
-}
+  /* containers secundários */
+  .box-2,
+  .trabalho-parto1,
+  .trabalho-parto2 {
+    width: 90%;
+    padding: 1rem;
+    margin: 2.5rem auto 1.2rem;
+    border-radius: 14px;
+  }
 
   /* sobre mim */
   .lado-imagem {
@@ -521,21 +532,22 @@ footer {
     align-items: center;
   }
 
-  /* imagens internas dos containers */
-  .box-2 .conteudo-lateral img, 
-  .trabalho-parto1 img, .trabalho-parto2 img {
+  /* imagens internas */
+  .box-2 .conteudo-lateral img,
+  .trabalho-parto1 img,
+  .trabalho-parto2 img {
     width: 250px;
     height: 200px;
     border-radius: 12px;
   }
 
-  /* textos */
+  /* textos internos */
   .trabalho-parto1 p,
   .trabalho-parto2 p,
   .conteudo-lateral p {
-    font-size: 0.95rem;
-    line-height: 1.4;
-    font-weight: 800;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    font-weight: 700;
     text-align: justify;
   }
 
@@ -548,15 +560,14 @@ footer {
   }
 
   .carousel-3d {
-    height: 220px; /* menor */
+    height: 220px;
   }
 
   .card {
-    width: 220px; /* diminui largura */
-    height: 200px; /* diminui altura */
+    width: 220px;
+    height: 200px;
   }
 
-  /* laterais somem no 480 p/ não cortar */
   .card.left,
   .card.right {
     opacity: 0;
