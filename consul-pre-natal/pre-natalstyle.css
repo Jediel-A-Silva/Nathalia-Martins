@@ -1,0 +1,262 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Corpo */
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #fff5f8;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Link voltar */
+a.back-link {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: #4d0909;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 0.7rem 1.3rem;
+  border-radius: 30px;
+  border: none;
+  text-decoration: none;
+  font-family: "Segoe UI", sans-serif;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+a.back-link:hover {
+  background-color: #875a5a;
+  text-decoration: none;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 30px 20px;
+  background-color: #f8c4d4;
+  color: #8e325f;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+header h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 18px;
+}
+
+/* Main */
+main {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+/* Sections */
+section {
+  background-color: #ffe5ec;
+  padding: 20px 25px;
+  margin-bottom: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+  color: #8e325f;
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+
+section p {
+  font-size: 16px;
+  margin-bottom: 10px;
+  white-space: pre-line;
+}
+
+
+/* Listas */
+ul {
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+ul li {
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #f8c4d4;
+  color: #8e325f;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  margin-top: 40px;
+}
+
+/* ================= RESPONSIVIDADE ================= */
+
+/* Até 1200px – notebooks menores e tablets grandes */
+@media (max-width: 1200px) {
+  main {
+    max-width: 92%;
+  }
+
+  header {
+    padding: 35px 25px;
+  }
+
+  header h1 {
+    font-size: 32px;
+  }
+
+  header p {
+    font-size: 19px;
+  }
+
+  section {
+    padding: 26px 28px;
+  }
+
+  section h2 {
+    font-size: 24px;
+  }
+
+  section p,
+  ul li {
+    font-size: 17px;
+    line-height: 1.7;
+  }
+}
+
+/* Tablets grandes e notebooks */
+@media (max-width: 1024px) {
+  main {
+    max-width: 95%;
+  }
+
+  header h1 {
+    font-size: 30px;
+  }
+
+  header p {
+    font-size: 18px;
+  }
+}
+
+/* Tablets médios */
+@media (max-width: 768px) {
+  header {
+    padding: 35px 20px;
+  }
+
+  header h1 {
+    font-size: 28px;
+  }
+
+  header p {
+    font-size: 18px;
+  }
+
+  section {
+    padding: 25px;
+  }
+
+  section h2 {
+    font-size: 22px;
+  }
+
+  section p,
+  ul li {
+    font-size: 17px;
+    line-height: 1.7;
+  }
+
+  a.back-link {
+    font-size: 15px;
+    padding: 0.7rem 1.3rem;
+  }
+}
+
+/* Celular em pé (principal) */
+@media (max-width: 480px) {
+  body {
+    font-size: 17px;
+  }
+
+  header {
+    padding: 30px 15px;
+  }
+
+  header h1 {
+    font-size: 24px;
+  }
+
+  header p {
+    font-size: 17px;
+  }
+
+  main {
+    margin: 20px auto;
+    padding: 0 10px;
+  }
+
+  section {
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  section h2 {
+    font-size: 20px;
+  }
+
+  section p,
+  ul li {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  ul {
+    margin-left: 18px;
+  }
+
+  a.back-link {
+    top: 12px;
+    left: 12px;
+    font-size: 14px;
+    padding: 0.6rem 1.2rem;
+  }
+
+  footer {
+    font-size: 14px;
+    padding: 18px;
+  }
+}
+
+/* Celular deitado (landscape) */
+@media (max-width: 740px) and (orientation: landscape) {
+  header h1 {
+    font-size: 26px;
+  }
+
+  section {
+    padding: 22px;
+  }
+
+  section p,
+  ul li {
+    font-size: 16px;
+  }
+}
