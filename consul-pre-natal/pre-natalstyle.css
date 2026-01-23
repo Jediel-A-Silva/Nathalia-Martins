@@ -18,8 +18,8 @@ a.back-link {
   position: fixed;
   top: 20px;
   left: 20px;
-  background-color: #4d0909;
-  color: #ffffff;
+  background-color: #f4a9b9;
+  color: #4e1111;
   font-weight: bold;
   padding: 0.7rem 1.3rem;
   border-radius: 30px;
@@ -31,7 +31,7 @@ a.back-link {
 }
 
 a.back-link:hover {
-  background-color: #875a5a;
+  background-color: #b78383;
 }
 
 /* ================= HEADER ================= */
