@@ -5,47 +5,44 @@
   box-sizing: border-box;
 }
 
-/* ================= BASE ================= */
+/* ================= BASE (DESKTOP PADRÃO) ================= */
 body {
-  font-family: "Arial", sans-serif;
+  font-family: Arial, sans-serif;
   background-color: #fff5f8;
   color: #333;
   line-height: 1.6;
+  font-size: 17px;
 }
 
 /* ================= BOTÃO VOLTAR ================= */
 a.back-link {
   position: fixed;
-  top: 20px;
-  left: 20px;
+  top: 12px;
+  left: 12px;
   background-color: #f4a9b9;
   color: #4e1111;
   font-weight: bold;
-  padding: 0.7rem 1.3rem;
+  padding: 0.7rem 1.4rem;
   border-radius: 30px;
   text-decoration: none;
   font-family: "Segoe UI", sans-serif;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  transition: background 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,.2);
   z-index: 999;
-}
-
-a.back-link:hover {
-  background-color: #b78383;
+  font-size: 15px;
 }
 
 /* ================= HEADER ================= */
 header {
   text-align: center;
-  padding: 32px 20px;
+  padding: 40px 28px;
   background-color: #f8c4d4;
   color: #8e325f;
-  border-radius: 0 0 20px 20px;
+  border-radius: 0 0 24px 24px;
 }
 
 header h1 {
   font-size: 32px;
-  margin-bottom: 10px;
+  margin-top: 3.5rem;
 }
 
 header p {
@@ -54,88 +51,55 @@ header p {
 
 /* ================= MAIN ================= */
 main {
-  max-width: 900px;
-  margin: 30px auto;
-  padding: 0 20px;
+  max-width: 1100px;
+  margin: 32px auto;
+  padding: 0 24px;
 }
 
 /* ================= SECTIONS ================= */
 section {
   background-color: #ffe5ec;
-  padding: 22px 26px;
-  margin-bottom: 25px;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 26px;
+  margin-bottom: 28px;
+  border-radius: 18px;
+  box-shadow: 0 6px 14px rgba(0,0,0,.12);
 }
 
 section h2 {
-  color: #8e325f;
-  margin-bottom: 15px;
   font-size: 24px;
+  color: #8e325f;
+  margin-bottom: 14px;
 }
 
 section p {
-  font-size: 16px;
+  font-size: 17px;
   line-height: 1.7;
-  text-align: justify;
 }
 
 /* ================= LISTAS ================= */
 ul {
-  margin-left: 20px;
+  margin-left: 22px;
 }
 
 ul li {
-  margin-bottom: 8px;
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 17px;
+  margin-bottom: 10px;
 }
 
 /* ================= FOOTER ================= */
 footer {
   text-align: center;
-  padding: 20px;
+  padding: 22px;
   background-color: #f8c4d4;
   color: #8e325f;
-  border-radius: 20px 20px 0 0;
-  margin-top: 40px;
+  border-radius: 24px 24px 0 0;
+  font-size: 15px;
 }
 
-/* ====== até 1200px (notebooks menores) ====== */
+/* =====================================================
+   ATÉ 1200px (DESKTOP MENOR)
+===================================================== */
 @media (max-width: 1200px) {
-  main {
-    max-width: 92%;
-  }
-
-  header {
-    padding: 34px 24px;
-  }
-
-  header h1 {
-    font-size: 31px;
-  }
-
-  header p {
-    font-size: 18px;
-  }
-
-  section {
-    padding: 24px 26px;
-  }
-
-  section h2 {
-    font-size: 23px;
-  }
-
-  section p,
-  ul li {
-    font-size: 17px;
-    line-height: 1.7;
-  }
-}
-
-/* ====== até 1024px (notebooks / tablets grandes) ====== */
-@media (max-width: 1024px) {
   main {
     max-width: 95%;
   }
@@ -143,40 +107,39 @@ footer {
   header h1 {
     font-size: 30px;
   }
-
-  header p {
-    font-size: 17px;
-  }
-
-  section h2 {
-    font-size: 22px;
-  }
 }
 
-/* ====== até 992px (zona de transição real) ====== */
-@media (max-width: 992px) {
-  main {
-    padding: 0 18px;
+/* =====================================================
+   ATÉ 1024px (NOTEBOOK / TABLET GRANDE)
+===================================================== */
+@media (max-width: 1024px) {
+  body {
+    font-size: 16px;
+  }
+
+  header {
+    padding: 34px 22px;
+  }
+
+  header h1 {
+    font-size: 28px;
   }
 
   section {
-    margin-bottom: 22px;
-  }
-
-  a.back-link {
-    padding: 0.65rem 1.25rem;
-    font-size: 15px;
+    padding: 22px;
   }
 }
 
-/* ====== até 768px (TABLET) ====== */
+/* =====================================================
+   ATÉ 768px (TABLET)
+===================================================== */
 @media (max-width: 768px) {
   header {
     padding: 30px 18px;
   }
 
   header h1 {
-    font-size: 27px;
+    font-size: 26px;
   }
 
   header p {
@@ -185,53 +148,48 @@ footer {
 
   main {
     margin: 24px auto;
+    padding: 0 18px;
   }
 
   section {
-    padding: 22px;
-    border-radius: 14px;
+    padding: 20px;
+    border-radius: 16px;
   }
 
   section h2 {
-    font-size: 21px;
+    font-size: 22px;
   }
 
   section p,
   ul li {
     font-size: 16px;
-    line-height: 1.65;
-  }
-
-  ul {
-    margin-left: 18px;
   }
 
   a.back-link {
     font-size: 14px;
     padding: 0.6rem 1.2rem;
   }
-
-  footer {
-    padding: 18px;
-    font-size: 14px;
-  }
 }
 
-
-/* ====== até 480px (CELULAR REAL) ====== */
+/* =====================================================
+   ATÉ 480px (MOBILE – EXPLÍCITO)
+===================================================== */
 @media (max-width: 480px) {
+  body {
+    font-size: 15px;
+  }
+
   header {
-    padding: 26px 14px;
+    padding: 22px 12px;
   }
 
   header h1 {
-    margin-top: 2.5rem;
     font-size: 22px;
-    color: #4d0909;
+    margin-top: 3rem;
   }
 
   header p {
-    font-size: 15px;
+    font-size: 14px;
   }
 
   main {
@@ -240,7 +198,8 @@ footer {
   }
 
   section {
-    padding: 18px;
+    padding: 14px;
+    margin-bottom: 18px;
     border-radius: 14px;
   }
 
@@ -250,11 +209,8 @@ footer {
 
   section p,
   ul li {
-    font-size: 28px;
+    font-size: 15px;
     line-height: 1.6;
-    text-align: left; /* elimina espaçamento estranho */
-    letter-spacing: normal;
-    word-spacing: normal;
   }
 
   ul {
@@ -262,14 +218,12 @@ footer {
   }
 
   a.back-link {
-    top: 10px;
-    left: 10px;
-    font-size: 18px;
-    padding: 0.55rem 1.1rem;
+    font-size: 13px;
+    padding: 0.5rem 1rem;
   }
 
   footer {
-    font-size: 18px;
     padding: 16px;
+    font-size: 14px;
   }
 }
