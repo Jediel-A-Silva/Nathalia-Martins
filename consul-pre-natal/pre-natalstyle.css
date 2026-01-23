@@ -250,7 +250,7 @@ footer {
 
   section p,
   ul li {
-    font-size: 14px;
+    font-size: 28px;
     line-height: 1.6;
     text-align: left; /* elimina espaçamento estranho */
     letter-spacing: normal;
@@ -264,12 +264,12 @@ footer {
   a.back-link {
     top: 10px;
     left: 10px;
-    font-size: 13px;
+    font-size: 18px;
     padding: 0.55rem 1.1rem;
   }
 
   footer {
-    font-size: 13px;
+    font-size: 18px;
     padding: 16px;
   }
 }
