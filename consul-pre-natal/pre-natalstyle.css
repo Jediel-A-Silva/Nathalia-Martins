@@ -134,6 +134,7 @@ footer {
   }
 
   section {
+    width: 100%;
     padding: 20px;
     border-radius: 16px;
   }
@@ -144,6 +145,12 @@ footer {
 
   section p {
     max-width: 100%;
+  }
+
+    section p,
+  ul li {
+    font-size: 15px;
+    line-height: 1.8;
   }
 
   .back-link {
