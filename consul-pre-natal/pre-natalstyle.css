@@ -5,151 +5,132 @@
   box-sizing: border-box;
 }
 
-/* ================= BASE (DESKTOP PADRÃO) ================= */
+/* ================= BASE ================= */
 body {
   font-family: Arial, sans-serif;
   background-color: #fff5f8;
   color: #333;
-  line-height: 1.6;
+  line-height: 1.7;
   font-size: 17px;
 }
 
 /* ================= BOTÃO VOLTAR ================= */
-a.back-link {
+.back-link {
   position: fixed;
   top: 12px;
   left: 12px;
   background-color: #f4a9b9;
   color: #4e1111;
   font-weight: bold;
-  padding: 0.7rem 1.4rem;
+  padding: 0.6rem 1.3rem;
   border-radius: 30px;
   text-decoration: none;
-  font-family: "Segoe UI", sans-serif;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  z-index: 999;
-  font-size: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.2);
+  z-index: 1000;
+  font-size: 14px;
 }
 
 /* ================= HEADER ================= */
 header {
   text-align: center;
-  padding: 40px 28px;
+  padding: 36px 24px;
   background-color: #f8c4d4;
   color: #8e325f;
   border-radius: 0 0 24px 24px;
 }
 
 header h1 {
-  font-size: 32px;
-  margin-top: 3.5rem;
+  font-size: 30px;
+  margin-top: 3rem;
 }
 
 header p {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 /* ================= MAIN ================= */
 main {
-  max-width: 1100px;
+  max-width: 960px;
   margin: 32px auto;
-  padding: 0 24px;
+  padding: 0 20px;
 }
 
 /* ================= SECTIONS ================= */
 section {
   background-color: #ffe5ec;
-  padding: 26px;
-  margin-bottom: 28px;
+  padding: 24px;
+  margin-bottom: 24px;
   border-radius: 18px;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 6px 14px rgba(0,0,0,.1);
 }
 
 section h2 {
-  font-size: 24px;
+  font-size: 22px;
   color: #8e325f;
   margin-bottom: 14px;
+  scroll-margin-top: 100px;
 }
 
 section p {
-  font-size: 17px;
-  line-height: 1.7;
+  max-width: 65ch;
+  margin-bottom: 14px;
+}
+
+/* ================= INTRO ================= */
+.intro {
+  font-size: 16px;
 }
 
 /* ================= LISTAS ================= */
 ul {
-  margin-left: 22px;
+  margin-left: 20px;
 }
 
 ul li {
-  font-size: 17px;
   margin-bottom: 10px;
+}
+
+/* ================= INFO BOX ================= */
+.info-box {
+  background-color: #ffd9e5;
+  padding: 16px;
+  border-radius: 12px;
+  margin-top: 16px;
+  font-size: 15px;
 }
 
 /* ================= FOOTER ================= */
 footer {
   text-align: center;
-  padding: 22px;
+  padding: 20px;
   background-color: #f8c4d4;
   color: #8e325f;
   border-radius: 24px 24px 0 0;
-  font-size: 15px;
+  font-size: 14px;
 }
 
-/* =====================================================
-   ATÉ 1200px (DESKTOP MENOR)
-===================================================== */
-@media (max-width: 1200px) {
-  main {
-    max-width: 95%;
-  }
+/* ================= MOBILE ================= */
+@media (max-width: 480px) {
 
-  header h1 {
-    font-size: 30px;
-  }
-}
-
-/* =====================================================
-   ATÉ 1024px (NOTEBOOK / TABLET GRANDE)
-===================================================== */
-@media (max-width: 1024px) {
   body {
     font-size: 16px;
   }
 
   header {
-    padding: 34px 22px;
+    padding: 26px 16px;
   }
 
   header h1 {
-    font-size: 28px;
-  }
-
-  section {
-    padding: 22px;
-  }
-}
-
-/* =====================================================
-   ATÉ 768px (TABLET)
-===================================================== */
-@media (max-width: 768px) {
-  header {
-    padding: 30px 18px;
-  }
-
-  header h1 {
-    font-size: 26px;
-    color: aqua;
+    font-size: 22px;
   }
 
   header p {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   main {
-    margin: 24px auto;
-    padding: 0 18px;
+    margin: 20px auto;
+    padding: 0 16px;
   }
 
   section {
@@ -158,73 +139,15 @@ footer {
   }
 
   section h2 {
-    font-size: 22px;
-    color: aqua;
+    font-size: 20px;
   }
 
-  section p,
-  ul li {
-    font-size: 16px;
-  }
-
-  a.back-link {
-    font-size: 14px;
-    padding: 0.6rem 1.2rem;
-  }
-}
-
-/* =====================================================
-   ATÉ 480px (MOBILE – EXPLÍCITO)
-===================================================== */
-@media (max-width: 480px) {
-  body {
-    font-size: 15px;
-  }
-
-  header {
-    padding: 20px 14px;
-  }
-
-  header h1 {
-    font-size: 22px;
-    margin-top: 2.2rem;
-  }
-
-  header p {
-    font-size: 14px;
-  }
-
-  main {
+  section p {
     max-width: 100%;
   }
 
-  section {
-    max-width: 100%;
-  }
-
-  section h2 {
-    font-size: 29px;
-  }
-
-  section p,
-  ul li {
-    font-size: 15px;
-    line-height: 1.8;
-    max-width: 100%;
-    word-break: break-word;
-  }
-
-  ul {
-    margin-left: 16px;
-  }
-
-  a.back-link {
-    font-size: 16px;
-    padding: 0.5rem 1rem;
-  }
-
-  footer {
-    padding: 16px;
-    font-size: 14px;
+  .back-link {
+    font-size: 13px;
+    padding: 0.5rem 1.1rem;
   }
 }
