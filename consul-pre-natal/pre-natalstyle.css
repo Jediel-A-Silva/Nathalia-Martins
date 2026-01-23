@@ -26,7 +26,7 @@ a.back-link {
   border-radius: 30px;
   text-decoration: none;
   font-family: "Segoe UI", sans-serif;
-  box-shadow: 0 4px 12px rgba(0,0,0,.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   z-index: 999;
   font-size: 15px;
 }
@@ -62,7 +62,7 @@ section {
   padding: 26px;
   margin-bottom: 28px;
   border-radius: 18px;
-  box-shadow: 0 6px 14px rgba(0,0,0,.12);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
 }
 
 section h2 {
@@ -180,27 +180,24 @@ footer {
   }
 
   header {
-    padding: 22px 12px;
+    padding: 20px 14px;
   }
 
   header h1 {
-    font-size: 28px;
-    margin-top: 3rem;
+    font-size: 22px;
+    margin-top: 2.2rem;
   }
 
   header p {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   main {
-    margin: 18px auto;
-    padding: 0 12px;
+    max-width: 100%;
   }
 
   section {
-    padding: 14px;
-    margin-bottom: 18px;
-    border-radius: 14px;
+    max-width: 100%;
   }
 
   section h2 {
@@ -209,8 +206,10 @@ footer {
 
   section p,
   ul li {
-    font-size: 24px;
-    line-height: 1.6;
+    font-size: 15px;
+    line-height: 1.8;
+    max-width: 100%;
+    word-break: break-word;
   }
 
   ul {
