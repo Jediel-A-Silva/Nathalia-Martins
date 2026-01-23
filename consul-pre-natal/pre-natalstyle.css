@@ -5,13 +5,18 @@
   box-sizing: border-box;
 }
 
+/* trava escala automática do Android */
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
 /* ================= BASE ================= */
 body {
   font-family: Arial, sans-serif;
   background-color: #fff5f8;
   color: #333;
-  line-height: 1.7;
   font-size: 17px;
+  line-height: 1.7;
 }
 
 /* ================= BOTÃO VOLTAR ================= */
@@ -77,6 +82,10 @@ section p {
 }
 
 /* ================= INTRO ================= */
+.intro-section {
+  background-color: #ffd9e5;
+}
+
 .intro {
   font-size: 16px;
 }
@@ -92,7 +101,7 @@ ul li {
 
 /* ================= INFO BOX ================= */
 .info-box {
-  background-color: #ffd9e5;
+  background-color: #ffd1df;
   padding: 16px;
   border-radius: 12px;
   margin-top: 16px;
@@ -109,7 +118,7 @@ footer {
   font-size: 14px;
 }
 
-/* ================= MOBILE ================= */
+/* ================= MOBILE REAL ================= */
 @media (max-width: 480px) {
 
   body {
@@ -134,7 +143,6 @@ footer {
   }
 
   section {
-    width: 100%;
     padding: 20px;
     border-radius: 16px;
   }
@@ -147,7 +155,7 @@ footer {
     max-width: 100%;
   }
 
-    section p,
+  section p,
   ul li {
     font-size: 15px;
     line-height: 1.8;
