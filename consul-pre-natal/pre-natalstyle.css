@@ -1,11 +1,11 @@
-/* Reset básico */
+/* ================= RESET ================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Corpo */
+/* ================= BASE ================= */
 body {
   font-family: "Arial", sans-serif;
   background-color: #fff5f8;
@@ -13,7 +13,7 @@ body {
   line-height: 1.6;
 }
 
-/* Link voltar */
+/* ================= BOTÃO VOLTAR ================= */
 a.back-link {
   position: fixed;
   top: 20px;
@@ -23,27 +23,24 @@ a.back-link {
   font-weight: bold;
   padding: 0.7rem 1.3rem;
   border-radius: 30px;
-  border: none;
   text-decoration: none;
   font-family: "Segoe UI", sans-serif;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
+  transition: background 0.3s ease;
   z-index: 999;
 }
 
 a.back-link:hover {
   background-color: #875a5a;
-  text-decoration: none;
 }
 
-/* Header */
+/* ================= HEADER ================= */
 header {
   text-align: center;
-  padding: 30px 20px;
+  padding: 32px 20px;
   background-color: #f8c4d4;
   color: #8e325f;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  border-radius: 0 0 20px 20px;
 }
 
 header h1 {
@@ -55,17 +52,17 @@ header p {
   font-size: 18px;
 }
 
-/* Main */
+/* ================= MAIN ================= */
 main {
   max-width: 900px;
   margin: 30px auto;
   padding: 0 20px;
 }
 
-/* Sections */
+/* ================= SECTIONS ================= */
 section {
   background-color: #ffe5ec;
-  padding: 20px 25px;
+  padding: 22px 26px;
   margin-bottom: 25px;
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -79,60 +76,55 @@ section h2 {
 
 section p {
   font-size: 16px;
-  margin-bottom: 10px;
-  text-align: justify;
   line-height: 1.7;
+  text-align: justify;
 }
 
-
-/* Listas */
+/* ================= LISTAS ================= */
 ul {
   margin-left: 20px;
-  margin-bottom: 10px;
 }
 
 ul li {
   margin-bottom: 8px;
   font-size: 16px;
+  line-height: 1.6;
 }
 
-/* Footer */
+/* ================= FOOTER ================= */
 footer {
   text-align: center;
   padding: 20px;
   background-color: #f8c4d4;
   color: #8e325f;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
+  border-radius: 20px 20px 0 0;
   margin-top: 40px;
 }
 
-/* ================= RESPONSIVIDADE ================= */
-
-/* Até 1200px – notebooks menores e tablets grandes */
+/* ====== até 1200px (notebooks menores) ====== */
 @media (max-width: 1200px) {
   main {
     max-width: 92%;
   }
 
   header {
-    padding: 35px 25px;
+    padding: 34px 24px;
   }
 
   header h1 {
-    font-size: 32px;
+    font-size: 31px;
   }
 
   header p {
-    font-size: 19px;
+    font-size: 18px;
   }
 
   section {
-    padding: 26px 28px;
+    padding: 24px 26px;
   }
 
   section h2 {
-    font-size: 24px;
+    font-size: 23px;
   }
 
   section p,
@@ -142,7 +134,7 @@ footer {
   }
 }
 
-/* Tablets grandes e notebooks */
+/* ====== até 1024px (notebooks / tablets grandes) ====== */
 @media (max-width: 1024px) {
   main {
     max-width: 95%;
@@ -153,51 +145,81 @@ footer {
   }
 
   header p {
-    font-size: 18px;
-  }
-}
-
-/* Tablets médios */
-@media (max-width: 768px) {
-  header {
-    padding: 35px 20px;
-  }
-
-  header h1 {
-    font-size: 28px;
-  }
-
-  header p {
-    font-size: 18px;
-  }
-
-  section {
-    padding: 25px;
+    font-size: 17px;
   }
 
   section h2 {
     font-size: 22px;
   }
+}
 
-  section p,
-  ul li {
-    font-size: 17px;
-    line-height: 1.7;
+/* ====== até 992px (zona de transição real) ====== */
+@media (max-width: 992px) {
+  main {
+    padding: 0 18px;
+  }
+
+  section {
+    margin-bottom: 22px;
   }
 
   a.back-link {
+    padding: 0.65rem 1.25rem;
     font-size: 15px;
-    padding: 0.7rem 1.3rem;
   }
 }
 
-/* Celular em pé (principal) */
-/* Celular em pé (principal) */
-@media (max-width: 480px) {
-  body {
-    font-size: 16px; /* padrão mobile */
+/* ====== até 768px (TABLET) ====== */
+@media (max-width: 768px) {
+  header {
+    padding: 30px 18px;
   }
 
+  header h1 {
+    font-size: 27px;
+  }
+
+  header p {
+    font-size: 16px;
+  }
+
+  main {
+    margin: 24px auto;
+  }
+
+  section {
+    padding: 22px;
+    border-radius: 14px;
+  }
+
+  section h2 {
+    font-size: 21px;
+  }
+
+  section p,
+  ul li {
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  ul {
+    margin-left: 18px;
+  }
+
+  a.back-link {
+    font-size: 14px;
+    padding: 0.6rem 1.2rem;
+  }
+
+  footer {
+    padding: 18px;
+    font-size: 14px;
+  }
+}
+
+
+/* ====== até 480px (CELULAR REAL) ====== */
+@media (max-width: 480px) {
   header {
     padding: 26px 14px;
   }
@@ -205,6 +227,7 @@ footer {
   header h1 {
     margin-top: 2.5rem;
     font-size: 22px;
+    color: #4d0909;
   }
 
   header p {
@@ -225,17 +248,11 @@ footer {
     font-size: 19px;
   }
 
- section p {
-  text-align: left;   /* remove o efeito de espaçamento estranho */
-  letter-spacing: normal;
-  word-spacing: normal;
-}
-
-
   section p,
   ul li {
     font-size: 14px;
     line-height: 1.6;
+    text-align: left; /* elimina espaçamento estranho */
     letter-spacing: normal;
     word-spacing: normal;
   }
