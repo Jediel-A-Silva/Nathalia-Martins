@@ -1,168 +1,1791 @@
-/* ================= RESET ================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* trava escala automática do Android */
+:root {
+  --marsala: #8B4453;
+  --marsala-dark: #6B3243;
+  --marsala-light: #A85566;
+  --rose-soft: #E8D4D8;
+  --rose-lighter: #F5E8EB;
+  --white: #FFFFFF;
+  --text-dark: #3D3D3D;
+  --text-light: #6B6B6B;
+  --accent: #D4A5A5;
+  --border-color: #DCC8CC;
+}
+
 html {
-  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
 }
 
-/* ================= BASE ================= */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #fff5f8;
-  color: #333;
-  font-size: 17px;
-  line-height: 1.7;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+  background-color: var(--white);
+  overflow-x: hidden;
 }
 
-/* ================= BOTÃO VOLTAR ================= */
-.back-link {
-  position: fixed;
-  top: 12px;
-  left: 12px;
-  background-color: #f4a9b9;
-  color: #4e1111;
-  font-weight: bold;
-  padding: 0.6rem 1.3rem;
-  border-radius: 30px;
-  text-decoration: none;
-  box-shadow: 0 4px 12px rgba(0,0,0,.2);
+/* ANIMAÇÕES */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* NAVBAR */
+.navbar {
+  background: linear-gradient(135deg, var(--marsala) 0%, var(--marsala-light) 100%);
+  color: var(--white);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
   z-index: 1000;
-  font-size: 14px;
+  box-shadow: 0 2px 15px rgba(139, 68, 83, 0.15);
+  animation: slideDown 0.5s ease;
 }
 
-/* ================= HEADER ================= */
-header {
-  text-align: center;
-  padding: 36px 24px;
-  background-color: #f8c4d4;
-  color: #8e325f;
-  border-radius: 0 0 24px 24px;
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-header h1 {
-  font-size: 30px;
-  margin-top: 3rem;
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-header p {
-  font-size: 16px;
+.logo:hover {
+  transform: scale(1.05);
 }
 
-/* ================= MAIN ================= */
+.logo-icon {
+  font-size: 2rem;
+}
+
+.logo-text {
+  color: var(--white);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-links a {
+  color: var(--white);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--rose-soft);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.btn-contact {
+  background-color: var(--rose-soft) !important;
+  color: var(--marsala) !important;
+  padding: 0.7rem 1.5rem !important;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-contact:hover {
+  background-color: var(--white) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(139, 68, 83, 0.3);
+}
+
+.btn-contact::after {
+  display: none !important;
+}
+
+/* HERO SECTION */
+.hero {
+  background: linear-gradient(135deg, var(--rose-lighter) 0%, var(--rose-soft) 100%);
+  padding: 80px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  min-height: 600px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(212, 165, 165, 0.3) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 600px;
+  position: relative;
+  z-index: 1;
+  animation: fadeInUp 0.8s ease;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  color: var(--marsala-dark);
+  margin-bottom: 20px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  color: var(--text-light);
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.circle-decoration {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--marsala) 0%, var(--marsala-light) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 150px;
+  opacity: 0.9;
+  box-shadow: 0 10px 40px rgba(139, 68, 83, 0.2);
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.circle-decoration::before {
+  content: '🤰';
+  font-size: 6rem;
+}
+
+/* CTA BUTTON */
+.cta-button {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--marsala) 0%, var(--marsala-dark) 100%);
+  color: var(--white);
+  padding: 15px 40px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px rgba(139, 68, 83, 0.3);
+  border: none;
+  cursor: pointer;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(139, 68, 83, 0.4);
+  background: linear-gradient(135deg, var(--marsala-light) 0%, var(--marsala) 100%);
+}
+
+.cta-button-large {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--marsala) 0%, var(--marsala-dark) 100%);
+  color: var(--white);
+  padding: 18px 50px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px rgba(139, 68, 83, 0.3);
+  border: none;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+.cta-button-large:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(139, 68, 83, 0.4);
+  background: linear-gradient(135deg, var(--marsala-light) 0%, var(--marsala) 100%);
+}
+
+/* MAIN */
 main {
-  max-width: 960px;
-  margin: 32px auto;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 0 20px;
 }
 
-/* ================= SECTIONS ================= */
-section {
-  background-color: #ffe5ec;
-  padding: 24px;
-  margin-bottom: 24px;
-  border-radius: 18px;
-  box-shadow: 0 6px 14px rgba(0,0,0,.1);
-}
-
-section h2 {
-  font-size: 22px;
-  color: #8e325f;
-  margin-bottom: 14px;
-  scroll-margin-top: 100px;
-}
-
-section p {
-  max-width: 65ch;
-  margin-bottom: 14px;
-}
-
-/* ================= INTRO ================= */
+/* SEÇÃO INTRO */
 .intro-section {
-  background-color: #ffd9e5;
+  background: linear-gradient(135deg, var(--rose-lighter) 0%, var(--white) 100%);
+  padding: 60px 40px;
+  border-radius: 15px;
+  margin: 60px 0;
+  border-left: 6px solid var(--marsala);
+  animation: fadeInUp 0.8s ease;
+  box-shadow: 0 5px 20px rgba(139, 68, 83, 0.08);
 }
 
-.intro {
-  font-size: 16px;
+.intro-content {
+  max-width: 800px;
 }
 
-/* ================= LISTAS ================= */
-ul {
-  margin-left: 20px;
+.intro-section h2 {
+  color: var(--marsala-dark);
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  font-weight: 700;
 }
 
-ul li {
+.intro-text {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  line-height: 1.8;
+}
+
+.intro-text strong {
+  color: var(--marsala);
+  font-weight: 600;
+}
+
+/* BENEFITS SECTION */
+.benefits-section {
+  padding: 80px 0;
+}
+
+.benefits-section h2 {
+  text-align: center;
+  color: var(--marsala-dark);
+  font-size: 2.5rem;
+  margin-bottom: 60px;
+  font-weight: 700;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.benefit-card {
+  background: var(--white);
+  padding: 40px 30px;
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px rgba(139, 68, 83, 0.1);
+  border-top: 4px solid var(--marsala);
+  animation: fadeInUp 0.8s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(139, 68, 83, 0.2);
+  background: var(--rose-lighter);
+}
+
+.benefit-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  display: inline-block;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.benefit-card h3 {
+  color: var(--marsala);
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.benefit-card p {
+  color: var(--text-light);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* PRENATAL INFO */
+.prenatal-info {
+  background: var(--rose-lighter);
+  padding: 80px 40px;
+  border-radius: 15px;
+  margin: 80px 0;
+}
+
+.prenatal-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.prenatal-text h2 {
+  color: var(--marsala-dark);
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.prenatal-text p {
+  color: var(--text-light);
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  line-height: 1.8;
+}
+
+.prenatal-list {
+  list-style: none;
+}
+
+.prenatal-list li {
+  padding: 12px 0;
+  padding-left: 30px;
+  position: relative;
+  color: var(--text-light);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.prenatal-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--marsala);
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.prenatal-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-placeholder {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(135deg, var(--marsala) 0%, var(--marsala-light) 100%);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 120px;
+  box-shadow: 0 10px 40px rgba(139, 68, 83, 0.2);
+  animation: pulse 3s ease-in-out infinite;
+}
+
+/* STAGES SECTION */
+.stages-section {
+  padding: 80px 0;
+}
+
+.stages-section h2 {
+  text-align: center;
+  color: var(--marsala-dark);
+  font-size: 2.5rem;
+  margin-bottom: 60px;
+  font-weight: 700;
+}
+
+.stages-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.stage-card {
+  background: linear-gradient(135deg, var(--rose-lighter) 0%, var(--white) 100%);
+  padding: 40px 30px;
+  border-radius: 12px;
+  border: 2px solid var(--border-color);
+  transition: all 0.3s ease;
+  position: relative;
+  animation: fadeInUp 0.8s ease;
+}
+
+.stage-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--marsala);
+  box-shadow: 0 15px 40px rgba(139, 68, 83, 0.2);
+}
+
+.stage-number {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--marsala) 0%, var(--marsala-light) 100%);
+  color: var(--white);
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+.stage-card h3 {
+  color: var(--marsala-dark);
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.stage-card ul {
+  list-style: none;
+}
+
+.stage-card li {
+  padding: 10px 0;
+  padding-left: 25px;
+  position: relative;
+  color: var(--text-light);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.stage-card li::before {
+  content: '•';
+  position: absolute;
+  left: 5px;
+  color: var(--marsala);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* CARE SECTION */
+.care-section {
+  background: var(--rose-lighter);
+  padding: 80px 40px;
+  border-radius: 15px;
+  margin: 80px 0;
+}
+
+.care-section h2 {
+  text-align: center;
+  color: var(--marsala-dark);
+  font-size: 2.5rem;
+  margin-bottom: 60px;
+  font-weight: 700;
+}
+
+.care-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.care-item {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  border-top: 4px solid var(--marsala);
+}
+
+.care-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(139, 68, 83, 0.15);
+}
+
+.care-item h3 {
+  color: var(--marsala);
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.care-item p {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* ALERT SECTION */
+.alert-section {
+  padding: 80px 40px;
+  background: linear-gradient(135deg, var(--marsala-dark) 0%, var(--marsala) 100%);
+  border-radius: 15px;
+  margin: 80px 0;
+  color: var(--white);
+}
+
+.alert-section h2 {
+  text-align: center;
+  color: var(--white);
+  font-size: 2.2rem;
+  margin-bottom: 50px;
+  font-weight: 700;
+}
+
+.alert-box {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 40px;
+  border-radius: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.alert-items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.alert-item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.alert-icon {
+  font-size: 1.8rem;
+  min-width: 30px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.alert-item p {
+  color: var(--white);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* TESTIMONIALS SECTION */
+.testimonials-section {
+  padding: 80px 0;
+}
+
+.testimonials-section h2 {
+  text-align: center;
+  color: var(--marsala-dark);
+  font-size: 2.5rem;
+  margin-bottom: 60px;
+  font-weight: 700;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.testimonial-card {
+  background: var(--rose-lighter);
+  padding: 40px;
+  border-radius: 12px;
+  border-left: 5px solid var(--marsala);
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.8s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(139, 68, 83, 0.2);
+}
+
+.testimonial-text {
+  color: var(--text-dark);
+  font-size: 1.05rem;
+  font-style: italic;
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+.testimonial-text::before {
+  content: '"';
+  font-size: 3rem;
+  color: var(--marsala);
+  margin-right: 5px;
+}
+
+.testimonial-author {
+  color: var(--marsala);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* CONTACT SECTION */
+.contact-section {
+  background: linear-gradient(135deg, var(--rose-lighter) 0%, var(--rose-soft) 100%);
+  padding: 80px 40px;
+  border-radius: 15px;
+  margin: 80px 0;
+  text-align: center;
+}
+
+.contact-content h2 {
+  color: var(--marsala-dark);
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.contact-content > p {
+  color: var(--text-light);
+  font-size: 1.2rem;
+  margin-bottom: 50px;
+  line-height: 1.8;
+}
+
+.contact-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin: 50px 0;
+}
+
+.contact-item {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(139, 68, 83, 0.15);
+}
+
+.contact-icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.contact-item p {
+  color: var(--text-dark);
+  font-size: 1rem;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* FOOTER */
+.footer {
+  background: linear-gradient(135deg, var(--marsala-dark) 0%, var(--marsala) 100%);
+  color: var(--white);
+  padding: 60px 20px 20px;
+  margin-top: 80px;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-section h4 {
+  color: var(--rose-soft);
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.footer-section p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.footer-section ul {
+  list-style: none;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+}
+
+.footer-section ul li {
   margin-bottom: 10px;
 }
 
-/* ================= INFO BOX ================= */
-.info-box {
-  background-color: #ffd1df;
-  padding: 16px;
-  border-radius: 12px;
-  margin-top: 16px;
-  font-size: 15px;
+.footer-section a {
+  color: var(--rose-soft);
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
-/* ================= FOOTER ================= */
-footer {
+.footer-section a:hover {
+  color: var(--white);
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
   text-align: center;
-  padding: 20px;
-  background-color: #f8c4d4;
-  color: #8e325f;
-  border-radius: 24px 24px 0 0;
-  font-size: 14px;
+  padding: 20px 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
 }
 
-/* ================= MOBILE REAL ================= */
-@media (max-width: 480px) {
+/* ====================================
+   RESPONSIVIDADE 1200px
+   ==================================== */
 
-  body {
-    font-size: 16px;
+@media (max-width: 1200px) {
+  .nav-links {
+    gap: 1.5rem;
   }
 
-  header {
-    padding: 26px 16px;
+  .hero {
+    gap: 30px;
+    padding: 60px 20px;
+    min-height: 500px;
   }
 
-  header h1 {
-    font-size: 22px;
+  .hero h1 {
+    font-size: 3rem;
   }
 
-  header p {
-    font-size: 14px;
+  .circle-decoration {
+    width: 250px;
+    height: 250px;
+  }
+
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .prenatal-container {
+    gap: 40px;
+  }
+
+  .image-placeholder {
+    width: 250px;
+    height: 250px;
+    font-size: 100px;
+  }
+
+  .stages-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .care-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .alert-items {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-info {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   main {
-    margin: 20px auto;
-    padding: 0 16px;
+    padding: 0 15px;
   }
 
-  section {
-    padding: 20px;
-    border-radius: 16px;
+  .intro-section {
+    padding: 50px 30px;
+    margin: 50px 0;
   }
 
-  section h2 {
-    font-size: 20px;
+  .benefits-section {
+    padding: 60px 0;
   }
 
-  section p {
+  .prenatal-info {
+    padding: 60px 30px;
+    margin: 60px 0;
+  }
+
+  .stages-section {
+    padding: 60px 0;
+  }
+
+  .care-section {
+    padding: 60px 30px;
+    margin: 60px 0;
+  }
+
+  .alert-section {
+    padding: 60px 30px;
+    margin: 60px 0;
+  }
+
+  .testimonials-section {
+    padding: 60px 0;
+  }
+
+  .contact-section {
+    padding: 60px 30px;
+    margin: 60px 0;
+  }
+
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+
+/* ====================================
+   RESPONSIVIDADE 1024px
+   ==================================== */
+
+@media (max-width: 1024px) {
+  .nav-links {
+    gap: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .btn-contact {
+    padding: 0.6rem 1.2rem !important;
+    font-size: 0.9rem;
+  }
+
+  .hero {
+    flex-direction: column;
+    gap: 40px;
+    padding: 50px 20px;
+    min-height: auto;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .hero p {
+    text-align: center;
+    font-size: 1.1rem;
+  }
+
+  .hero-content {
     max-width: 100%;
   }
 
-  section p,
-  ul li {
-    font-size: 15px;
-    line-height: 1.8;
+  .hero-image {
+    flex: none;
   }
 
-  .back-link {
-    font-size: 13px;
-    padding: 0.5rem 1.1rem;
+  .circle-decoration {
+    width: 220px;
+    height: 220px;
+    font-size: 110px;
+  }
+
+  .circle-decoration::before {
+    font-size: 5rem;
+  }
+
+  .benefits-section h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+
+  .benefit-card {
+    padding: 30px 20px;
+  }
+
+  .benefit-icon {
+    font-size: 2.5rem;
+  }
+
+  .benefit-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .prenatal-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .prenatal-text h2 {
+    font-size: 1.8rem;
+  }
+
+  .image-placeholder {
+    width: 200px;
+    height: 200px;
+    font-size: 80px;
+  }
+
+  .stages-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stage-card {
+    padding: 30px 20px;
+  }
+
+  .care-content {
+    grid-template-columns: 1fr;
+  }
+
+  .care-item {
+    padding: 25px 20px;
+  }
+
+  .alert-section {
+    padding: 50px 30px;
+  }
+
+  .alert-items {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-info {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+/* ====================================
+   RESPONSIVIDADE 992px
+   ==================================== */
+
+@media (max-width: 992px) {
+  .nav-container {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .logo {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero {
+    padding: 40px 15px;
+    min-height: auto;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .intro-section {
+    padding: 40px 20px;
+    margin: 40px 0;
+  }
+
+  .intro-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .benefits-section {
+    padding: 50px 0;
+  }
+
+  .benefits-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .benefit-card {
+    padding: 25px 20px;
+  }
+
+  .prenatal-info {
+    padding: 40px 20px;
+    margin: 50px 0;
+  }
+
+  .prenatal-text h2 {
+    font-size: 1.6rem;
+  }
+
+  .image-placeholder {
+    width: 180px;
+    height: 180px;
+    font-size: 70px;
+  }
+
+  .stage-card {
+    padding: 25px 20px;
+  }
+
+  .care-section {
+    padding: 40px 20px;
+    margin: 50px 0;
+  }
+
+  .care-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+
+  .alert-section {
+    padding: 40px 20px;
+    margin: 50px 0;
+  }
+
+  .alert-section h2 {
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+  }
+
+  .alert-box {
+    padding: 30px;
+  }
+
+  .alert-item {
+    gap: 15px;
+  }
+
+  .testimonials-section {
+    padding: 50px 0;
+  }
+
+  .testimonials-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+
+  .contact-section {
+    padding: 40px 20px;
+    margin: 50px 0;
+  }
+
+  .contact-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .contact-content > p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+
+  .contact-item {
+    padding: 20px;
+  }
+
+  .contact-icon {
+    font-size: 2rem;
+  }
+
+  main {
+    padding: 0 10px;
+  }
+}
+
+/* ====================================
+   RESPONSIVIDADE 768px
+   ==================================== */
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.8rem 0;
+  }
+
+  .nav-container {
+    padding: 0 15px;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .logo-icon {
+    font-size: 1.5rem;
+  }
+
+  .nav-links {
+    gap: 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .nav-links a {
+    padding: 5px 10px;
+  }
+
+  .btn-contact {
+    padding: 0.5rem 1rem !important;
+    font-size: 0.8rem;
+  }
+
+  .hero {
+    padding: 30px 15px;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+  }
+
+  .cta-button {
+    padding: 12px 30px;
+    font-size: 0.95rem;
+  }
+
+  .circle-decoration {
+    width: 180px;
+    height: 180px;
+    font-size: 90px;
+  }
+
+  .circle-decoration::before {
+    font-size: 4rem;
+  }
+
+  .intro-section {
+    padding: 30px 20px;
+    margin: 30px 0;
+  }
+
+  .intro-section h2 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+  }
+
+  .intro-text {
+    font-size: 1rem;
+  }
+
+  .benefits-section {
+    padding: 40px 0;
+  }
+
+  .benefits-section h2 {
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+  }
+
+  .benefit-card {
+    padding: 20px 15px;
+  }
+
+  .benefit-icon {
+    font-size: 2rem;
+  }
+
+  .benefit-card h3 {
+    font-size: 1rem;
+  }
+
+  .benefit-card p {
+    font-size: 0.9rem;
+  }
+
+  .prenatal-info {
+    padding: 30px 20px;
+    margin: 40px 0;
+  }
+
+  .prenatal-text h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
+  .prenatal-text p {
+    font-size: 0.95rem;
+  }
+
+  .prenatal-list li {
+    padding: 10px 0 10px 25px;
+    font-size: 0.9rem;
+  }
+
+  .image-placeholder {
+    width: 150px;
+    height: 150px;
+    font-size: 60px;
+  }
+
+  .stages-section {
+    padding: 40px 0;
+  }
+
+  .stages-section h2 {
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+  }
+
+  .stage-card {
+    padding: 20px 15px;
+  }
+
+  .stage-card h3 {
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
+
+  .stage-card li {
+    padding: 8px 0 8px 20px;
+    font-size: 0.85rem;
+  }
+
+  .care-section {
+    padding: 30px 20px;
+    margin: 40px 0;
+  }
+
+  .care-section h2 {
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+  }
+
+  .care-item {
+    padding: 20px 15px;
+  }
+
+  .care-item h3 {
+    font-size: 1rem;
+  }
+
+  .care-item p {
+    font-size: 0.85rem;
+  }
+
+  .alert-section {
+    padding: 30px 20px;
+    margin: 40px 0;
+  }
+
+  .alert-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+  }
+
+  .alert-box {
+    padding: 20px;
+  }
+
+  .alert-item {
+    gap: 10px;
+  }
+
+  .alert-icon {
+    font-size: 1.5rem;
+  }
+
+  .alert-item p {
+    font-size: 0.9rem;
+  }
+
+  .testimonials-section {
+    padding: 40px 0;
+  }
+
+  .testimonials-section h2 {
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+  }
+
+  .testimonial-card {
+    padding: 25px 20px;
+  }
+
+  .testimonial-text {
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+  }
+
+  .testimonial-author {
+    font-size: 0.85rem;
+  }
+
+  .contact-section {
+    padding: 30px 20px;
+    margin: 40px 0;
+  }
+
+  .contact-content h2 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+  }
+
+  .contact-content > p {
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+  }
+
+  .contact-info {
+    gap: 15px;
+    margin: 30px 0;
+  }
+
+  .contact-item {
+    padding: 15px;
+  }
+
+  .contact-icon {
+    font-size: 2rem;
+  }
+
+  .cta-button-large {
+    padding: 15px 40px;
+    font-size: 1rem;
+    margin-top: 20px;
+  }
+
+  .footer-content {
+    gap: 25px;
+    padding-bottom: 30px;
+  }
+
+  .footer-section h4 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+
+  .footer-section p,
+  .footer-section ul {
+    font-size: 0.85rem;
+  }
+
+  .footer-bottom {
+    font-size: 0.85rem;
+    padding: 15px 0;
+  }
+
+  main {
+    padding: 0 10px;
+  }
+}
+
+/* ====================================
+   RESPONSIVIDADE 480px
+   ==================================== */
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  .navbar {
+    padding: 0.6rem 0;
+  }
+
+  .nav-container {
+    padding: 0 10px;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .logo {
+    font-size: 1rem;
+    gap: 5px;
+  }
+
+  .logo-icon {
+    font-size: 1.3rem;
+  }
+
+  .logo-text {
+    font-size: 0.9rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 8px;
+    text-align: center;
+    font-size: 0.8rem;
+  }
+
+  .btn-contact {
+    width: 100%;
+    padding: 0.5rem 0.8rem !important;
+    font-size: 0.75rem;
+  }
+
+  .hero {
+    padding: 20px 10px;
+  }
+
+  .hero h1 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+
+  .hero p {
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+  }
+
+  .cta-button {
+    padding: 10px 25px;
+    font-size: 0.85rem;
+  }
+
+  .circle-decoration {
+    width: 140px;
+    height: 140px;
+    font-size: 70px;
+  }
+
+  .circle-decoration::before {
+    font-size: 3rem;
+  }
+
+  .intro-section {
+    padding: 20px 15px;
+    margin: 20px 0;
+    border-left: 4px solid var(--marsala);
+  }
+
+  .intro-section h2 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+
+  .intro-text {
+    font-size: 0.9rem;
+  }
+
+  .benefits-section {
+    padding: 30px 0;
+  }
+
+  .benefits-section h2 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+  }
+
+  .benefits-grid {
+    gap: 15px;
+  }
+
+  .benefit-card {
+    padding: 15px 12px;
+  }
+
+  .benefit-icon {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+
+  .benefit-card h3 {
+    font-size: 0.9rem;
+  }
+
+  .benefit-card p {
+    font-size: 0.8rem;
+  }
+
+  .prenatal-info {
+    padding: 20px 15px;
+    margin: 30px 0;
+  }
+
+  .prenatal-text h2 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+
+  .prenatal-text p {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+  }
+
+  .prenatal-list li {
+    padding: 8px 0 8px 20px;
+    font-size: 0.8rem;
+  }
+
+  .image-placeholder {
+    width: 120px;
+    height: 120px;
+    font-size: 50px;
+  }
+
+  .stages-section {
+    padding: 30px 0;
+  }
+
+  .stages-section h2 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+  }
+
+  .stages-grid {
+    gap: 15px;
+  }
+
+  .stage-number {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+    margin-bottom: 10px;
+  }
+
+  .stage-card {
+    padding: 15px 12px;
+  }
+
+  .stage-card h3 {
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+  }
+
+  .stage-card li {
+    padding: 6px 0 6px 18px;
+    font-size: 0.8rem;
+  }
+
+  .care-section {
+    padding: 20px 15px;
+    margin: 30px 0;
+  }
+
+  .care-section h2 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+  }
+
+  .care-content {
+    gap: 15px;
+  }
+
+  .care-item {
+    padding: 15px 12px;
+  }
+
+  .care-item h3 {
+    font-size: 0.95rem;
+  }
+
+  .care-item p {
+    font-size: 0.8rem;
+  }
+
+  .alert-section {
+    padding: 20px 15px;
+    margin: 30px 0;
+  }
+
+  .alert-section h2 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+
+  .alert-box {
+    padding: 15px;
+  }
+
+  .alert-items {
+    gap: 10px;
+  }
+
+  .alert-item {
+    gap: 8px;
+  }
+
+  .alert-icon {
+    font-size: 1.2rem;
+  }
+
+  .alert-item p {
+    font-size: 0.8rem;
+  }
+
+  .testimonials-section {
+    padding: 30px 0;
+  }
+
+  .testimonials-section h2 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+  }
+
+  .testimonials-grid {
+    gap: 15px;
+  }
+
+  .testimonial-card {
+    padding: 15px;
+  }
+
+  .testimonial-text {
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+  }
+
+  .testimonial-text::before {
+    font-size: 2rem;
+  }
+
+  .testimonial-author {
+    font-size: 0.75rem;
+  }
+
+  .contact-section {
+    padding: 20px 15px;
+    margin: 30px 0;
+  }
+
+  .contact-content h2 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+
+  .contact-content > p {
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+  }
+
+  .contact-info {
+    gap: 10px;
+    margin: 20px 0;
+  }
+
+  .contact-item {
+    padding: 12px;
+  }
+
+  .contact-icon {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  .contact-item p {
+    font-size: 0.8rem;
+  }
+
+  .cta-button-large {
+    padding: 12px 30px;
+    font-size: 0.9rem;
+    margin-top: 15px;
+  }
+
+  .footer {
+    padding: 40px 10px 10px;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding-bottom: 20px;
+  }
+
+  .footer-section h4 {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+  }
+
+  .footer-section p,
+  .footer-section ul {
+    font-size: 0.75rem;
+  }
+
+  .footer-section ul li {
+    margin-bottom: 5px;
+  }
+
+  .footer-bottom {
+    font-size: 0.7rem;
+    padding: 10px 0;
+  }
+
+  main {
+    padding: 0 5px;
   }
 }
