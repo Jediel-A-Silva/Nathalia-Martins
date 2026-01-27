@@ -1361,8 +1361,8 @@ main {
   }
 
   .image-placeholder {
-    width: 150px;
-    height: 150px;
+    width: 180px;
+    height: 160px;
     font-size: 60px;
   }
 
@@ -1690,8 +1690,8 @@ main {
 }
 
   .image-placeholder {
-    width: 120px;
-    height: 120px;
+    width: 180px;
+    height: 160px;
     font-size: 50px;
   }
 
