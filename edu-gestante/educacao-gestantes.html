@@ -4,64 +4,239 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Educação para Gestantes</title>
-  <link rel="stylesheet" href="/edu-gestante/edustyle.css" />
+  <link rel="stylesheet" href="edustyle.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 </head>
 
-
 <body>
-<a href="/index.html" class="back-link">🏠Inicio</a>
-  <header>
-    <h1>📚 Educação para Gestantes</h1>
-    <p>Informações e orientações para uma gestação mais tranquila e saudável.</p>
+  <div id="particles-js"></div>
+  
+  <header class="hero">
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="nav-logo">
+          <span class="logo-icon">👩‍⚕️</span>
+          <span class="logo-text">EduGestante</span>
+        </a>
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="#home" class="nav-link">Início</a></li>
+          <li class="nav-item"><a href="#education" class="nav-link">Educação</a></li>
+          <li class="nav-item"><a href="#themes" class="nav-link">Temas</a></li>
+          <li class="nav-item"><a href="#benefits" class="nav-link">Benefícios</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link">Contato</a></li>
+        </ul>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
+    </nav>
+    
+    <div class="hero-content">
+      <h1 class="hero-title">Educação para <span class="highlight">Gestantes</span></h1>
+      <p class="hero-subtitle">Informações e orientações para uma gestação mais tranquila e saudável</p>
+      <div class="hero-buttons">
+        <a href="#education" class="btn btn-primary">Começar Agora</a>
+        <a href="#contact" class="btn btn-secondary">Fale Conosco</a>
+      </div>
+    </div>
   </header>
 
   <main>
-    <section>
-      <h2>Importância da Educação</h2>
-      <p>
-        A educação para gestantes é essencial durante o período da gravidez.
-        Ela ajuda a preparar a mãe e a família para a chegada do bebê.
-        Por meio da educação, a gestante recebe informações seguras e confiáveis.
-        Esses conhecimentos auxiliam nos cuidados com a saúde da mãe.
-        Também contribuem para o desenvolvimento saudável do bebê.
-        A educação orienta sobre alimentação adequada e hábitos saudáveis.
-        Ajuda a esclarecer dúvidas comuns sobre a gestação.
-        Reduz medos e inseguranças da futura mãe.
-        Contribui para decisões mais conscientes durante a gravidez.
-        Promove mais confiança e tranquilidade nesse momento especial.
-      </p>
+    <section id="education" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Importância da <span class="highlight">Educação</span></h2>
+          <div class="divider"></div>
+        </div>
+        <div class="content-grid">
+          <div class="content-text">
+            <p>
+              A educação para gestantes é essencial durante o período da gravidez.
+              Ela ajuda a preparar a mãe e a família para a chegada do bebê.
+              Por meio da educação, a gestante recebe informações seguras e confiáveis.
+              Esses conhecimentos auxiliam nos cuidados com a saúde da mãe.
+              Também contribuem para o desenvolvimento saudável do bebê.
+            </p>
+            <p>
+              A educação orienta sobre alimentação adequada e hábitos saudáveis.
+              Ajuda a esclarecer dúvidas comuns sobre a gestação.
+              Reduz medos e inseguranças da futura mãe.
+              Contribui para decisões mais conscientes durante a gravidez.
+              Promove mais confiança e tranquilidade nesse momento especial.
+            </p>
+          </div>
+          <div class="content-image">
+            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Gestante feliz">
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section>
-      <h2>Principais Temas Abordados</h2>
-      <ul>
-        <li>Cuidados com a saúde da gestante.</li>
-        <li>Exames e consultas do pré-natal.</li>
-        <li>Alimentação saudável e exercícios.</li>
-        <li>Preparação para o trabalho de parto.</li>
-        <li>Amamentação e cuidados com o recém-nascido.</li>
-      </ul>
+    <section id="themes" class="section bg-light">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Principais <span class="highlight">Temas</span></h2>
+          <div class="divider"></div>
+        </div>
+        <div class="themes-grid">
+          <div class="theme-card">
+            <div class="theme-icon">🩺</div>
+            <h3>Cuidados com a Saúde</h3>
+            <p>Orientações sobre cuidados médicos e bem-estar durante a gestação</p>
+          </div>
+          <div class="theme-card">
+            <div class="theme-icon">📋</div>
+            <h3>Exames e Consultas</h3>
+            <p>Informações sobre exames importantes e cronograma de consultas</p>
+          </div>
+          <div class="theme-card">
+            <div class="theme-icon">🥗</div>
+            <h3>Alimentação Saudável</h3>
+            <p>Dicas nutricionais e práticas de exercícios seguros</p>
+          </div>
+          <div class="theme-card">
+            <div class="theme-icon">👶</div>
+            <h3>Preparação para o Parto</h3>
+            <p>Técnicas e métodos para o trabalho de parto e nascimento</p>
+          </div>
+          <div class="theme-card">
+            <div class="theme-icon">🍼</div>
+            <h3>Amamentação</h3>
+            <p>Orientações sobre aleitamento materno e cuidados com o bebê</p>
+          </div>
+          <div class="theme-card">
+            <div class="theme-icon">❤️</div>
+            <h3>Vínculo Afetivo</h3>
+            <p>Fortalecimento do vínculo mãe-bebê desde a gestação</p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section>
-      <h2>Benefícios</h2>
-      <p>
-        Participar de encontros e orientações traz mais segurança para a gestante.
-        Esses momentos ajudam a esclarecer dúvidas sobre a gravidez.
-        O conhecimento adquirido reduz medos e inseguranças.
-        A gestante se sente mais preparada para as mudanças do corpo.
-        As orientações contribuem para escolhas mais saudáveis.
-        O vínculo entre a mãe e o bebê é fortalecido desde a gestação.
-        A troca de experiências com outras gestantes é positiva.
-        Esses encontros ajudam a reduzir a ansiedade típica da gravidez.
-        O acompanhamento promove mais confiança para o parto.
-        Assim, a gestação se torna um período mais tranquilo e seguro.
-      </p>
+    <section id="benefits" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Benefícios da <span class="highlight">Educação</span></h2>
+          <div class="divider"></div>
+        </div>
+        <div class="benefits-list">
+          <div class="benefit-item">
+            <div class="benefit-number">01</div>
+            <div class="benefit-content">
+              <h3>Mais Segurança</h3>
+              <p>Participar de encontros e orientações traz mais segurança para a gestante</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-number">02</div>
+            <div class="benefit-content">
+              <h3>Redução de Medos</h3>
+              <p>O conhecimento adquirido reduz medos e inseguranças</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-number">03</div>
+            <div class="benefit-content">
+              <h3>Preparação Completa</h3>
+              <p>A gestante se sente mais preparada para as mudanças do corpo</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-number">04</div>
+            <div class="benefit-content">
+              <h3>Escolhas Saudáveis</h3>
+              <p>As orientações contribuem para escolhas mais saudáveis</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-number">05</div>
+            <div class="benefit-content">
+              <h3>Conexão com Outras Gestantes</h3>
+              <p>A troca de experiências com outras gestantes é positiva</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-number">06</div>
+            <div class="benefit-content">
+              <h3>Confiança para o Parto</h3>
+              <p>O acompanhamento promove mais confiança para o parto</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section bg-gradient">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Entre em <span class="highlight">Contato</span></h2>
+          <div class="divider"></div>
+          <p class="section-subtitle">Tire suas dúvidas e agende sua consulta</p>
+        </div>
+        <div class="contact-content">
+          <div class="contact-info">
+            <div class="contact-item">
+              <div class="contact-icon">📞</div>
+              <div>
+                <h3>Telefone</h3>
+                <p>(11) 99999-9999</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">✉️</div>
+              <div>
+                <h3>Email</h3>
+                <p>contato@edugestante.com.br</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">🏥</div>
+              <div>
+                <h3>Endereço</h3>
+                <p>Rua Exemplo, 123 - Centro</p>
+              </div>
+            </div>
+          </div>
+          <form class="contact-form">
+            <input type="text" placeholder="Seu nome" required>
+            <input type="email" placeholder="Seu email" required>
+            <textarea placeholder="Sua mensagem" rows="5" required></textarea>
+            <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+          </form>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer>
-    &copy; 2025 Educação para Gestantes - Todos os direitos reservados
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <span class="logo-icon">👩‍⚕️</span>
+          <span class="logo-text">EduGestante</span>
+        </div>
+        <div class="footer-links">
+          <a href="#home">Início</a>
+          <a href="#education">Educação</a>
+          <a href="#themes">Temas</a>
+          <a href="#benefits">Benefícios</a>
+          <a href="#contact">Contato</a>
+        </div>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="Instagram">📸</a>
+          <a href="#" aria-label="WhatsApp">💬</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Educação para Gestantes - Todos os direitos reservados</p>
+      </div>
+    </div>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
