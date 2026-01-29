@@ -228,32 +228,61 @@
                 <div class="contact-icon">📞</div>
                 <div>
                   <h3>Telefone</h3>
-                  <p>(11) 99999-9999</p>
+                  <p>(11) 954519637</p>
                 </div>
               </div>
               <div class="contact-item">
                 <div class="contact-icon">✉️</div>
                 <div>
                   <h3>Email</h3>
-                  <p>contato@edugestante.com.br</p>
+                  <p>dra.nathalia.enfobstetra2605@gmail.com</p>
                 </div>
               </div>
               <div class="contact-item">
                 <div class="contact-icon">🏥</div>
                 <div>
                   <h3>Endereço</h3>
-                  <p>Rua Exemplo, 123 - Centro</p>
+                  <p>Rua Pedro Rabelo, 117 - Sp</p>
                 </div>
               </div>
             </div>
-            <form class="contact-form">
-              <input type="text" placeholder="Seu nome" required />
-              <input type="email" placeholder="Seu email" required />
-              <textarea placeholder="Sua mensagem" rows="5" required></textarea>
-              <button type="submit" class="btn btn-primary">
-                Enviar Mensagem
-              </button>
-            </form>
+           <form
+  class="contact-form"
+  name="contato"
+  method="POST"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+>
+  <!-- Obrigatórios para o Netlify -->
+  <input type="hidden" name="form-name" value="contato" />
+  <input type="hidden" name="bot-field" />
+
+  <input
+    type="text"
+    name="nome"
+    placeholder="Seu nome"
+    required
+  />
+
+  <input
+    type="email"
+    name="email"
+    placeholder="Seu email"
+    required
+  />
+
+  <textarea
+    name="mensagem"
+    placeholder="Sua mensagem"
+    rows="5"
+    required
+  ></textarea>
+
+  <button type="submit" class="btn btn-primary">
+    Enviar Mensagem
+  </button>
+</form>
+
           </div>
         </div>
       </section>

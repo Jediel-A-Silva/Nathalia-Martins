@@ -130,26 +130,6 @@ if (typeof particlesJS !== 'undefined') {
   });
 }
 
-// Form submission handling
-const contactForm = document.querySelector('.contact-form');
-if (contactForm) {
-  contactForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // Get form values
-    const name = this.querySelector('input[type="text"]').value;
-    const email = this.querySelector('input[type="email"]').value;
-    const message = this.querySelector('textarea').value;
-    
-    // In a real application, you would send this data to a server
-    // For now, we'll just show a success message
-    alert(`Obrigado, ${name}! Sua mensagem foi enviada com sucesso. Entraremos em contato em breve.`);
-    
-    // Reset form
-    this.reset();
-  });
-}
-
 // Animation on scroll
 const observerOptions = {
   root: null,
