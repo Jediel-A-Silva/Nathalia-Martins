@@ -11,7 +11,7 @@
   --marsala-light: #A85566;
   --rose-soft: #E8D4D8;
   --rose-lighter: #F5E8EB;
-  --white: #FFFFFF;
+  --white: #ffffff;
   --text-dark: #3D3D3D;
   --text-light: #6B6B6B;
   --accent: #D4A5A5;
@@ -393,8 +393,8 @@ body {
 
 /* Footer */
 footer {
-  background: var(--dark);
-  color: white;
+  background: color(srgb red green blue);
+  color: rgb(255, 255, 255);
   padding: 50px 0 20px;
 }
 
@@ -408,11 +408,32 @@ footer {
 .footer-logo {
   display: flex;
   align-items: center;
-  font-weight: 700;
-  font-size: 1.5rem;
-  color: white;
-  text-decoration: none;
+  justify-content: center; /* centraliza no footer */
 }
+
+.logo-img {
+  width: 280px;
+  height: auto;
+  object-fit: contain;
+  opacity: 0.95;
+  border-radius: 14px;
+
+  /* sombra elegante sem fundo */
+  filter: drop-shadow(0 10px 20px rgba(57, 18, 18, 0.25))
+          drop-shadow(0 4px 8px rgba(57, 18, 18, 0.15));
+
+  transition: all 0.35s ease;
+}
+
+/* hover sutil */
+.footer-logo:hover .logo-img {
+  transform: translateY(-4px) scale(1.015);
+  filter: drop-shadow(0 18px 35px rgba(57, 18, 18, 0.35))
+          drop-shadow(0 8px 14px rgba(57, 18, 18, 0.2));
+}
+
+
+
 
 .footer-links {
   display: flex;
@@ -421,7 +442,7 @@ footer {
 }
 
 .footer-links a {
-  color: #bdc3c7;
+  color: #6B3243;
   text-decoration: none;
   transition: var(--transition);
 }
