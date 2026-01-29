@@ -1,35 +1,47 @@
-// Mobile Navigation Toggle
+/* =====================================================
+   MOBILE NAVIGATION TOGGLE
+===================================================== */
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('active');
-  navMenu.classList.toggle('active');
-});
+if (hamburger && navMenu) {
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+  });
 
-// Close mobile menu when clicking on a link
-document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
-  hamburger.classList.remove('active');
-  navMenu.classList.remove('active');
-}));
+  // Close menu when clicking a link
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      navMenu.classList.remove('active');
+    });
+  });
+}
 
-// Navbar background change on scroll
+/* =====================================================
+   NAVBAR BACKGROUND ON SCROLL
+===================================================== */
 window.addEventListener('scroll', () => {
   const navbar = document.querySelector('.navbar');
-  if (window.scrollY > 50) {
-    navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
-  } else {
-    navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
-  }
+  if (!navbar) return;
+
+  navbar.style.backgroundColor =
+    window.scrollY > 50
+      ? 'rgba(255, 255, 255, 0.98)'
+      : 'rgba(255, 255, 255, 0.95)';
 });
 
-// Smooth scrolling for anchor links
+/* =====================================================
+   SMOOTH SCROLLING
+===================================================== */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    
-    const target = document.querySelector(this.getAttribute('href'));
+  anchor.addEventListener('click', function (e) {
+    const targetId = this.getAttribute('href');
+    const target = document.querySelector(targetId);
+
     if (target) {
+      e.preventDefault();
       window.scrollTo({
         top: target.offsetTop - 80,
         behavior: 'smooth'
@@ -38,106 +50,74 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Initialize particles.js for background effect
+/* =====================================================
+   PARTICLES.JS BACKGROUND
+===================================================== */
 if (typeof particlesJS !== 'undefined') {
   particlesJS('particles-js', {
-    "particles": {
-      "number": {
-        "value": 80,
-        "density": {
-          "enable": true,
-          "value_area": 800
-        }
+    particles: {
+      number: { value: 80, density: { enable: true, value_area: 800 } },
+      color: { value: '#ffffff' },
+      shape: { type: 'circle' },
+      opacity: { value: 0.1 },
+      size: { value: 3, random: true },
+      line_linked: {
+        enable: true,
+        distance: 150,
+        color: '#ffffff',
+        opacity: 0.1,
+        width: 1
       },
-      "color": {
-        "value": "#ffffff"
+      move: { enable: true, speed: 1 }
+    },
+    interactivity: {
+      events: {
+        onhover: { enable: true, mode: 'grab' },
+        onclick: { enable: true, mode: 'push' }
       },
-      "shape": {
-        "type": "circle",
-        "stroke": {
-          "width": 0,
-          "color": "#000000"
-        }
-      },
-      "opacity": {
-        "value": 0.1,
-        "random": false,
-        "anim": {
-          "enable": false,
-          "speed": 1,
-          "opacity_min": 0.1,
-          "sync": false
-        }
-      },
-      "size": {
-        "value": 3,
-        "random": true,
-        "anim": {
-          "enable": false,
-          "speed": 40,
-          "size_min": 0.1,
-          "sync": false
-        }
-      },
-      "line_linked": {
-        "enable": true,
-        "distance": 150,
-        "color": "#ffffff",
-        "opacity": 0.1,
-        "width": 1
-      },
-      "move": {
-        "enable": true,
-        "speed": 1,
-        "direction": "none",
-        "random": false,
-        "straight": false,
-        "out_mode": "out",
-        "bounce": false,
-        "attract": {
-          "enable": false,
-          "rotateX": 600,
-          "rotateY": 1200
-        }
+      modes: {
+        grab: { distance: 140, line_linked: { opacity: 0.2 } },
+        push: { particles_nb: 4 }
       }
     },
-    "interactivity": {
-      "detect_on": "canvas",
-      "events": {
-        "onhover": {
-          "enable": true,
-          "mode": "grab"
-        },
-        "onclick": {
-          "enable": true,
-          "mode": "push"
-        },
-        "resize": true
-      },
-      "modes": {
-        "grab": {
-          "distance": 140,
-          "line_linked": {
-            "opacity": 0.2
-          }
-        },
-        "push": {
-          "particles_nb": 4
-        }
-      }
-    },
-    "retina_detect": true
+    retina_detect: true
   });
 }
 
-// Animation on scroll
+/* =====================================================
+   NETLIFY FORM SUBMISSION (SEM NOVA ABA)
+===================================================== */
+const contactForm = document.querySelector('.contact-form');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(this);
+
+    fetch(this.getAttribute('action') || '/', {
+      method: 'POST',
+      body: formData
+    })
+      .then(() => {
+        alert('Mensagem enviada com sucesso!');
+        this.reset();
+      })
+      .catch(() => {
+        alert('Erro ao enviar. Tente novamente.');
+      });
+  });
+}
+
+/* =====================================================
+   SCROLL ANIMATIONS (INTERSECTION OBSERVER)
+===================================================== */
 const observerOptions = {
   root: null,
-  rootMargin: '0px',
   threshold: 0.1
 };
 
-const observer = new IntersectionObserver((entries) => {
+const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('animated');
@@ -145,14 +125,14 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, observerOptions);
 
-// Observe sections for animation
 document.querySelectorAll('.section').forEach(section => {
   observer.observe(section);
 });
 
-// Add animation classes to elements that should animate on load
-document.addEventListener('DOMContentLoaded', function() {
-  // Add fade-in animation to hero content
+/* =====================================================
+   HERO LOAD ANIMATION
+===================================================== */
+document.addEventListener('DOMContentLoaded', () => {
   const heroContent = document.querySelector('.hero-content');
   if (heroContent) {
     setTimeout(() => {
