@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vídeos da Enfermeira Obstetra</title>
+  <link rel="stylesheet" href="../css/pages/myths-truths.css">
+  <style>
+    /* ✅ Evita tela branca no Edge */
+    video {
+      background-color: #000;
+      display: block;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <a href="/index.html" class="btn-voltar-fixo">🤰🏽 Início</a>
+    <h1>Bem-vinda ao meu espaço</h1>
+    <nav></nav>
+  </header>
+
+  <!-- Seção principal -->
+  <section class="hero">
+    <!-- Container do vídeo principal -->
+    <div class="main-video">
+      <video id="videoPrincipal" controls preload="metadata" playsinline poster="/assets/img/mitos-ou-verdades/logomarsala.png">
+        <source src="/assets/videos/nath-videos/1video.mp4" type="video/mp4">
+        Seu navegador não suporta vídeos.
+      </video>
+    </div>
+  </section>
+
+  <!-- Carrossel de vídeos -->
+  <section class="carrossel">
+    <h2>Vídeos Educativos</h2>
+    <div class="carrossel-container">
+      
+      <div class="carrossel-item" >
+        <video preload="metadata" muted playsinline poster="">
+          <source src="/assets/videos/nath-videos/6video.mp4" type="video/mp4">
+        </video>
+        <span>Pré-natal</span>
+      </div>
+
+      <div class="carrossel-item" >
+        <video preload="metadata" muted playsinline poster="">
+          <source src="/assets/videos/nath-videos/2video.mp4" type="video/mp4">
+        </video>
+        <span>Humanização</span>
+      </div>
+      
+      <div class="carrossel-item">
+        <video preload="metadata" muted playsinline poster="">
+          <source src="/assets/videos/nath-videos/7video.mp4" type="video/mp4">
+        </video>
+        <span>5 dicas importantes</span>
+      </div>
+
+      <div class="carrossel-item">
+        <video preload="metadata" muted playsinline poster="">
+          <source src="/assets/videos/nath-videos/8video.mp4" type="video/mp4">
+        </video>
+        <span>Direito da Mulher</span>
+      </div>
+
+      <div class="carrossel-item">
+        <video preload="metadata" muted playsinline poster="">
+          <source src="/assets/videos/nath-videos/3video.mp4" type="video/mp4">
+        </video>
+        <span>verdade sobre o parto</span>
+      </div>
+
+      <div class="carrossel-item">
+        <video preload="metadata" muted playsinline poster="">
+          <source src="/assets/videos/nath-videos/4video.mp4" type="video/mp4">
+        </video>
+        <span>Relatos da Enfermeira</span>
+      </div>
+
+      <div class="carrossel-item">
+        <video preload="metadata" muted playsinline poster="">
+          <source src="/assets/videos/nath-videos/5video.mp4" type="video/mp4">
+        </video>
+        <span>Reflexão</span>
+      </div>
+
+
+
+
+      <div class="carrossel-item">
+        <video preload="metadata" muted playsinline poster="">
+          <source src="/assets/videos/nath-videos/9video.mp4" type="video/mp4">
+        </video>
+        <span>Sobre Parir em Casa</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ✅ Corrige o bug visual no Edge -->
+  <script>
+    document.querySelectorAll('video').forEach(video => {
+      video.addEventListener('loadeddata', () => {
+        video.style.opacity = '1';
+      });
+    });
+  </script>
+
+  <script src="../js/pages/myths-truths.js"></script>
+</body>
+</html>

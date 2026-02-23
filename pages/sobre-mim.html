@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plano Enf. Obstetra 2025</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="/css/pages/sobre-mim.css" />
+  </head>
+
+  <body>
+    <a href="/index.html" class="btn-voltar-fixo">🤰 Início</a>
+
+    <main>
+      <!-- ================= SOBRE ================= -->
+      <section class="sobre-mim animate-section">
+        <div class="bloco-nathalia">
+          <div class="lado-imagem animate fade-left">
+            <img
+              src="/assets/img/sobre-mim/perfilnath.jpg"
+              alt="Nathalia em atendimento"
+              class="imagem-redonda"
+            />
+          </div>
+
+          <div class="lado-texto">
+            <h2 class="animate fade-up">Olá, sou Nathalia</h2>
+
+            <p class="texto-baixo animate fade-up">
+              Enfermeira Obstetra especialista pelo Albert Einstein. Atua em
+              parto domiciliar e hospitalar.
+            </p>
+
+            <p class="texto-topo animate fade-up">
+              Sou enfermeira obstetra, formada e legalmente habilitada para
+              acompanhar toda a gestação, o parto e o pós-parto, oferecendo um
+              cuidado técnico, seguro e humanizado.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= BOX 2 ================= -->
+      <section class="box-2 animate-section">
+  <div class="conteudo-lateral">
+      
+      <img src="/assets/img/sobre-mim/a01.jpg" class="animate fade-left" alt="" />
+
+      <div class="lado-texto">
+        <h2 class="animate fade-up">Por que ter uma Enfermeira Obstetra?</h2>
+        <p class="animate fade-left">
+            Para garantir uma gestação mais segura, tranquila e bem orientada,
+            com suporte técnico e informativo. Uma profissional disponível 24h
+            no WhatsApp para avaliar exames, responder dúvidas e acompanhar sua
+            gestação de perto, com olhar clínico especializado.
+          </p>
+      </div>
+  </div>
+</section>
+
+
+      <!-- ================= PARTO 1 ================= -->
+     <section class="trabalho-parto1 animate-section">
+  <div class="conteudo-trabalho">
+
+    <div class="lado-texto">
+      <h2 class="animate fade-up">E durante o trabalho de parto?</h2>
+       <p class="animate fade-up">
+            Quando o trabalho de parto começa, a enfermeira obstetra presta
+            assistência em casa e acompanha a transferência ao hospital
+            escolhido, garantindo segurança e evitando intervenções
+            desnecessárias. Em casa, ela ausculta os batimentos do bebê, avalia
+            a dilatação, acompanha a evolução do parto e monitora a saúde da mãe
+            e do bebê.
+          </p>
+    </div>
+
+    <img
+      src="../../assets/img/sobre-mim/a02.jpg"
+      alt="Assistência durante o parto"
+      class="animate fade-up"
+    />
+  </div>
+</section>
+
+
+      <!-- ================= PARTO 2 ================= -->
+<section class="trabalho-parto2 animate-section">
+  <div class="conteudo-trabalho">
+
+    <img
+      src="/assets/img/sobre-mim/a03.jpg"
+      alt="Avaliação obstétrica"
+      class="animate fade-left"
+    />
+
+    <div class="lado-texto">
+      <h2 class="animate fade-up">E durante o trabalho de parto?</h2>
+      <p class="animate fade-up">
+        Com a equipe, conduzo o trabalho de parto compartilhando condutas
+        obstétricas com a médica parceira. Realizamos exercícios que respeitam
+        a biomecânica pélvica e garantem a segurança do processo. As decisões são
+        sempre embasadas, alinhadas no pré-natal e tomadas em equipe, com
+        consentimento da gestante e respeito à sua autonomia.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+
+      <!-- ================= CAROUSEL (PRESERVADO) ================= -->
+      <section class="hero-carousel">
+        <div class="carousel-wrapper">
+          <div class="carousel-3d">
+            <div class="card"><img src="/assets/img/sobre-mim/a01.jpg" /></div>
+            <div class="card"><img src="/assets/img/sobre-mim/a02.jpg" /></div>
+            <div class="card"><img src="/assets/img/sobre-mim/a03.jpg" /></div>
+          </div>
+
+          <div class="carousel-dots">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= footer ================= -->
+
+    </main>
+      <footer>
+        <p>&copy; 2025 Nathália Martins - Enfermeira Obstetra</p>
+      </footer>
+
+    <script src="/js/pages/sobre-mim.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+      const cards = document.querySelectorAll(".carousel-3d .card");
+      const dots = document.querySelectorAll(".carousel-dots .dot");
+      let current = 0;
+      const total = cards.length;
+
+      function renderCarousel() {
+        cards.forEach((card) => {
+          card.classList.remove("center", "left", "right");
+          card.classList.add("hidden");
+        });
+
+        dots.forEach((dot) => dot.classList.remove("active"));
+
+        const center = current;
+        const right = (current + 1) % total;
+        const left = (current - 1 + total) % total;
+
+        cards[center].classList.remove("hidden");
+        cards[center].classList.add("center");
+
+        cards[right].classList.remove("hidden");
+        cards[right].classList.add("right");
+
+        cards[left].classList.remove("hidden");
+        cards[left].classList.add("left");
+
+        dots[center].classList.add("active");
+      }
+
+      function next() {
+        current = (current + 1) % total;
+        renderCarousel();
+      }
+
+      renderCarousel();
+      setInterval(next, 4000);
+
+      dots.forEach((dot, index) => {
+        dot.addEventListener("click", () => {
+          current = index;
+          renderCarousel();
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -29,7 +29,7 @@
     />
 
     <!-- ==================== SEU CSS ==================== -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
 
   <body>
@@ -54,14 +54,14 @@
     <a href="index.html" class="menu-inicio">🏠 Início</a>
 
     <button type="button" class="fechar" aria-label="Fechar menu">
-      <img src="/img/letra-x.png" alt="Fechar" class="icone-fechar" />
+      <img src="/assets/img/img-principal/letra-x.png" alt="Fechar" class="icone-fechar" />
     </button>
   </div>
 
   <!-- CONTEÚDO DO MENU -->
   <div class="categoria">🤰 Pré-natal</div>
-  <a href="./consul-pre-natal/consulta-pre-natal.html">🩺 Consulta de Pré-natal</a>
-  <a href="./edu-gestante/educacao-gestantes.html">📚 Educação perinatal</a>
+  <a href="pages/consulta-pre-natal.html">🩺 Consulta de Pré-natal</a>
+  <a href="pages/educacao-gestantes.html">📚 Educação perinatal</a>
 
   <div class="categoria">💼 Parcerias</div>
   <a href="https://www.instagram.com/alemdoamparo" target="_blank">Além do Amparo</a>
@@ -164,7 +164,7 @@
             garantindo acolhimento, segurança e cuidado contínuo para promover o
             bem-estar da mãe e do bebê.
           </p>
-          <a href="sobre-mim/sobre-mim.html" class="btn">Clique Aqui</a>
+          <a href="pages/sobre-mim.html" class="btn">Clique Aqui</a>
         </section>
 
         <section id="servicos" class="personalizada" data-aos="fade-up">
@@ -191,7 +191,7 @@
             algumas corretas e outras não. Aqui você encontra orientação clara
             para entender o que realmente <strong>importa</strong>.
           </p>
-          <a href="myths-truths/myths-truths.html" class="btn">
+          <a href="pages/myths-truths.html" class="btn">
             Quero Saber Mais
           </a>
         </section>
@@ -204,7 +204,7 @@
             nascimento com muito carinho.
           </p>
 
-          <a href="depoimentos/depoimentos.html" class="btn"
+          <a href="pages/depoimentos.html" class="btn"
             >Quero Saber Mais</a
           >
         </section>
@@ -230,14 +230,14 @@
         <div class="health-image">
           <div class="carousel">
             <div class="slides">
-              <img src="img/a01.jpg" alt="Foto 3" />
-              <img src="img/a02.jpg" alt="Foto 4" />
-              <img src="img/a03.jpg" alt="Foto 5" />
-              <img src="img/a04.jpg" alt="Foto 6" />
-              <img src="img/a05.jpg" alt="Foto 7" />
-              <img src="img/a06.jpg" alt="Foto 1" />
-              <img src="img/a07.jpg" alt="Foto 8" />
-              <img src="img/a09.jpg" alt="Foto 2" />
+              <img src="/assets/img/img-principal/a01.jpg" alt="Foto 3" />
+              <img src="/assets/img/img-principal/a02.jpg" alt="Foto 4" />
+              <img src="/assets/img/img-principal/a03.jpg" alt="Foto 5" />
+              <img src="/assets/img/img-principal/a04.jpg" alt="Foto 6" />
+              <img src="/assets/img/img-principal/a05.jpg" alt="Foto 7" />
+              <img src="/assets/img/img-principal/a06.jpg" alt="Foto 1" />
+              <img src="/assets/img/img-principal/a07.jpg" alt="Foto 8" />
+              <img src="/assets/img/img-principal/a09.jpg" alt="Foto 2" />
             </div>
           </div>
         </div>
@@ -247,7 +247,7 @@
     <!-- ==================== FOOTER ==================== -->
     <footer class="footer">
       <img
-        src="img/seramparo.jpg"
+        src="assets/img/img-principal/seramparo.jpg"
         alt="Logo"
         id="logordp"
         class="logo-footer"
@@ -293,16 +293,15 @@
 
     <!-- Seu script principal (mantenha separado) -->
     <!-- COLE AQUI O ARQUIVO 'nathalia_v7_9.js' (versão da IA que te enviei) -->
-    <script src="treino.js" defer></script>
-
+    
     <!-- Script de inicialização (AOS + funções de busca e carrossel) -->
     <script>
       AOS.init();
-
+      
       // ===== Busca simples =====
       const searchInput = document.querySelector("#campoBusca");
       const resultadosBox = document.querySelector("#resultadosBusca");
-
+      
       const conteudos = [
         { nome: "🏠 Início", link: "index.html" },
         { nome: "🤰 Pré-natal", link: "consulta-pre-natal.html" },
@@ -360,7 +359,7 @@
           link: "https://br.linkedin.com/in/nathalia-martins-de-faria-9263b51a1",
         },
       ];
-
+      
       if (searchInput) {
         searchInput.addEventListener("input", function () {
           const termo = this.value.toLowerCase();
@@ -370,8 +369,8 @@
             return;
           }
           const filtrados = conteudos.filter((item) =>
-            item.nome.toLowerCase().includes(termo)
-          );
+          item.nome.toLowerCase().includes(termo)
+        );
           if (filtrados.length > 0) {
             filtrados.forEach((item) => {
               const p = document.createElement("p");
@@ -409,9 +408,9 @@
           autoScroll();
         }
       });
-    </script>
+      </script>
 
-    <!-- GPTMaker Widget (carregamento protegido contra duplicação) -->
+<!-- GPTMaker Widget (carregamento protegido contra duplicação) -->
 <script>
   if (!window.__GPTMAKER_WIDGET_LOADED__) {
     window.__GPTMAKER_WIDGET_LOADED__ = true;
@@ -426,36 +425,36 @@
   }
 </script>
 
-    <!-- Script que cria overlay com a sua imagem e esconde a seta -->
-    <script>
-      (function () {
-        const IMAGE_URL = "img/img-IA.png"; // <- coloque aqui o caminho da sua imagem
-        const OVERLAY_ID = "nathalia-gptmaker-overlay";
-        let originalButton = null;
-        let overlay = null;
-        let observer = null;
-
-        // Cria o overlay (botão visual) se não existir
-        function criarOverlay() {
-          if (overlay) return;
-          overlay = document.createElement("div");
-          overlay.id = OVERLAY_ID;
-          Object.assign(overlay.style, {
-            position: "fixed",
-            width: "70px",
-            height: "70px",
-            borderRadius: "50%",
-            backgroundImage: `url("${IMAGE_URL}")`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            boxShadow: "0 6px 18px rgba(0,0,0,0.25)",
-            cursor: "pointer",
-            zIndex: 999999, // acima de quase tudo
-            transition: "transform .18s ease, filter .18s ease",
-            transform: "scale(1)",
+<!-- Script que cria overlay com a sua imagem e esconde a seta -->
+<script>
+  (function () {
+    const IMAGE_URL = "/assets/img/img-principal/img-IA.png"; // <- coloque aqui o caminho da sua imagem
+    const OVERLAY_ID = "nathalia-gptmaker-overlay";
+    let originalButton = null;
+    let overlay = null;
+    let observer = null;
+    
+    // Cria o overlay (botão visual) se não existir
+    function criarOverlay() {
+      if (overlay) return;
+      overlay = document.createElement("div");
+      overlay.id = OVERLAY_ID;
+      Object.assign(overlay.style, {
+        position: "fixed",
+        width: "70px",
+        height: "70px",
+        borderRadius: "50%",
+        backgroundImage: `url("${IMAGE_URL}")`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        boxShadow: "0 6px 18px rgba(0,0,0,0.25)",
+        cursor: "pointer",
+        zIndex: 999999, // acima de quase tudo
+        transition: "transform .18s ease, filter .18s ease",
+        transform: "scale(1)",
             display: "none", // aparece quando posicionado
           });
-
+          
           // hover
           overlay.addEventListener("mouseenter", () => {
             overlay.style.transform = "scale(1.08)";
@@ -465,7 +464,7 @@
             overlay.style.transform = "scale(1)";
             overlay.style.filter = "brightness(1)";
           });
-
+          
           // clique: dispara clique no botão original (se existir)
           overlay.addEventListener("click", (e) => {
             e.stopPropagation();
@@ -483,31 +482,31 @@
               }
             }
           });
-
+          
           document.body.appendChild(overlay);
         }
-
+        
         // Posiciona o overlay sobre o botão original
         function posicionarOverlay(btn) {
-  criarOverlay(); // ⬅️ ESSENCIAL
-
-  if (!btn || !overlay) return;
-
-  const rect = btn.getBoundingClientRect();
-  const visible = rect.width > 0 && rect.height > 0;
-
- if (!visible) {
-  overlay.style.display = "none";
+          criarOverlay(); // ⬅️ ESSENCIAL
+          
+          if (!btn || !overlay) return;
+          
+          const rect = btn.getBoundingClientRect();
+          const visible = rect.width > 0 && rect.height > 0;
+          
+          if (!visible) {
+            overlay.style.display = "none";
   return;
 }
 
 
-  overlay.style.position = "fixed";
-  overlay.style.right = "20px";
+overlay.style.position = "fixed";
+overlay.style.right = "20px";
   overlay.style.bottom = "20px";
   overlay.style.left = "auto";
   overlay.style.top = "auto";
-
+  
   if (window.innerWidth <= 480) {
     overlay.style.width = "86px";
     overlay.style.height = "86px";
@@ -515,9 +514,9 @@
     overlay.style.width = "70px";
     overlay.style.height = "70px";
   }
-
+  
   overlay.style.display = "block";
-
+  
   try {
     btn.style.opacity = "0";
     btn.style.background = "transparent";
@@ -555,7 +554,7 @@
           }
           return null;
         }
-
+        
         // Reinicia referência e reaplica posicionamento
         function atualizar() {
           const btn = encontrarBotao();
@@ -581,11 +580,11 @@
           });
           observer.observe(document.body, { childList: true, subtree: true });
         }
-
+        
         // também reposiciona ao rolar/resize
         window.addEventListener("resize", () => atualizar());
         window.addEventListener("scroll", () => atualizar());
-
+        
         // início: tenta várias vezes até encontrar o botão (widget pode demorar)
         function initTryLoop(retries = 30, delay = 300) {
           startObserving();
@@ -598,7 +597,7 @@
             }
           }, delay);
         }
-
+        
         // inicia quando DOM estiver pronto
         if (document.readyState === "loading") {
           document.addEventListener("DOMContentLoaded", () =>
@@ -609,5 +608,7 @@
         }
       })();
     </script>
+  <script src="/js/treino.js" defer></script>
   </body>
-</html>
+  </html>
+  

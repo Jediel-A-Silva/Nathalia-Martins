@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Depoimentos</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/pages/styledepoimentos.css" />
+  </head>
+  <body>
+    <a href="/index.html" class="back-link">🤰 Inicio</a>
+
+    <section class="testimonials">
+      <div class="testimonials-wrapper">
+        <!-- CONTAINER ESQUERDO -->
+        <div class="carousel-container">
+          <div class="card">
+            <div class="card-content">
+              <img />
+              <div class="text-area">
+                <p></p>
+                <div class="stars">★★★★★</div>
+                <h3 class="client-name"></h3>
+              </div>
+            </div>
+
+            <div class="carousel-nav">
+              <button class="nav prev">&#10094;</button>
+              <div class="dots"></div>
+              <button class="nav next">&#10095;</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- CONTAINER DIREITO -->
+        <div class="feedback-container">
+          <div class="card feedback-card">
+            <div class="feedback-header">
+              <h2>Compartilhe sua experiência</h2>
+              <p class="feedback-subtitle">
+                Seu depoimento ajuda outras famílias a se sentirem seguras ❤️
+              </p>
+            </div>
+
+            <form id="feedbackForm" class="feedback-form">
+              <!-- Nome -->
+              <div class="form-group">
+                <label for="name">Seu nome</label>
+                <input
+                  type="text"
+                  id="name"
+                  placeholder="Ex: Maria Silva"
+                  required
+                />
+              </div>
+
+              <!-- Depoimento -->
+              <div class="form-group">
+                <label for="message">Seu depoimento</label>
+                <textarea
+                  id="message"
+                  placeholder="Conte como foi sua experiência..."
+                  maxlength="500"
+                  required
+                ></textarea>
+                <small class="char-info">Máximo 500 caracteres</small>
+              </div>
+
+              <!-- Avaliação -->
+              <div class="form-group">
+                <label for="rating">Sua avaliação</label>
+                <select id="rating" required>
+                  <option value="5">★★★★★ (Excelente)</option>
+                  <option value="4">★★★★ (Muito bom)</option>
+                  <option value="3">★★★ (Bom)</option>
+                  <option value="2">★★ (Regular)</option>
+                  <option value="1">★ (Ruim)</option>
+                </select>
+              </div>
+
+              <!-- Foto -->
+              <div class="form-group">
+                <label for="photo">
+                  Sua foto de perfil <span class="required">*</span>
+                </label>
+
+                <input type="file" id="photo" accept="image/*" required />
+
+                <small class="photo-info">
+                  Envie uma foto sua para aparecer junto ao depoimento. (JPG ou
+                  PNG – até 2MB)
+                </small>
+              </div>
+
+              <!-- Botão -->
+              <button class="btn-submit"  type="button" id="btnEnviar">Enviar Feedback</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script type="module" src="/js/pages/depoimentos.js"></script>
+  </body>
+</html>
