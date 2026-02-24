@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - Feedbacks</title>
+  <link rel="stylesheet" href="css/pages/styleadmin.css">
+</head>
+<body>
+  <header>
+    <h1>Admin Dashboard</h1>
+    <p>Gerencie os feedbacks recebidos</p>
+  </header>
+
+  <main>
+    <!-- Login Google -->
+    <div class="login-container" id="loginContainer">
+      <h2>Login da Enfermeira</h2>
+      <button id="btnLogin">Entrar com Google</button>
+    </div>
+
+    <!-- Dashboard -->
+    <div id="dashboardContainer">
+      <div class="controls">
+        <input type="text" id="searchInput" placeholder="Pesquisar por nome...">
+        <div class="count-feedbacks" id="feedbackCount">Carregando...</div>
+      </div>
+      <div id="feedbackContainer"></div>
+      <div class="pagination">
+        <button id="prevPage">Anterior</button>
+        <button id="nextPage">Próximo</button>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="/js/pages/admin.js"></script>
+</body>
+</html>
